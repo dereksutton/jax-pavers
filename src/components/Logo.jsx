@@ -14,7 +14,7 @@ const Logo = () => {
       <motion.img 
         src={getImagePath("/pavers-logo.png")} 
         alt="Company Logo" 
-        className="h-32 sm:h-40 md:h-56 w-auto"
+        className="h-36 sm:h-44 md:h-56 w-auto"
         whileHover={{ scale: 1.1, rotate: 2 }}
         transition={{ type: "spring", stiffness: 300 }}
       />
