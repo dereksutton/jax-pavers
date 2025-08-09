@@ -124,7 +124,7 @@ const Testimonials = () => {
         >
           <StarRow rating={5} />
           <p className="text-md text-gray-200">
-            <span className="font-semibold">Proudly maintaining a Google 5-star rating</span>
+            <span className="font-semibold">Proudly maintaining a 5-star Google rating</span>
           </p>
         </motion.div>
 
