@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ShimmerButton from "./ShimmerButton";
+import getImagePath from '../utils/imagePaths';
 
 const services = [
   {
@@ -9,7 +10,7 @@ const services = [
     blurb:
       "Durable, code-compliant paver driveways that stand up to Florida heat, rain, and heavy vehicles.",
     points: ["Concrete & clay pavers", "Drainage-smart base prep", "HOA-friendly designs"],
-    backgroundImage: "/services-card1.png",
+    backgroundImage: getImagePath("/services-card1.png"),
     icon: (
       <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
         <path
@@ -24,7 +25,7 @@ const services = [
     blurb:
       "Cool-underfoot travertine and porcelain paver systems with slip resistance and expansion joints dialed in.",
     points: ["Travertine & porcelain", "Coping & mitered edges", "Salt-pool safe"],
-    backgroundImage: "/services-card2.png",
+    backgroundImage: getImagePath("/services-card2.png"),
     icon: (
       <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
         <path
@@ -39,7 +40,7 @@ const services = [
     blurb:
       "Outdoor living zones with patterns that flow—perfect for hosting in that Florida golden hour.",
     points: ["Herringbone & ashlar patterns", "Integrated lighting", "Drainage & grading"],
-    backgroundImage: "/services-card3.png",
+    backgroundImage: getImagePath("/services-card3.png"),
     icon: (
       <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
         <path
@@ -54,7 +55,7 @@ const services = [
     blurb:
       "Safe, even treads with precise soldier courses that tie into landscaping without heaving.",
     points: ["Code-true risers", "Border soldier course", "Curves & garden ties"],
-    backgroundImage: "/services-card4.png",
+    backgroundImage: getImagePath("/services-card4.png"),
     icon: (
       <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
         <path
@@ -69,7 +70,7 @@ const services = [
     blurb:
       "Clean, sand, and seal with breathable, UV-stable sealers that enrich color without making surfaces slick.",
     points: ["Efflorescence removal", "Polymeric re-sand", "Matte & wet-look options"],
-    backgroundImage: "/services-card5.png",
+    backgroundImage: getImagePath("/services-card5.png"),
     icon: (
       <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
         <path
@@ -84,7 +85,7 @@ const services = [
     blurb:
       "Fix settling, trip hazards, and sinking edges by addressing base failures—not just swapping stones.",
     points: ["Root & washout fixes", "Edge restraint repair", "Match existing pavers"],
-    backgroundImage: "/services-card6.png",
+    backgroundImage: getImagePath("/services-card6.png"),
     icon: (
       <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
         <path

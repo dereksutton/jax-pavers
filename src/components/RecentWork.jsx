@@ -2,6 +2,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ShimmerButton from "./ShimmerButton";
+import getImagePath from '../utils/imagePaths';
 
 const WORK_IMAGES = [
   "/work-driveway1.jpg",
@@ -15,7 +16,7 @@ const WORK_IMAGES = [
   "/work-pooldeck.jpg",
   "/work-staircase.jpg",
   "/work-walkway.jpg",
-];
+].map(path => getImagePath(path));
 
 const gridItem = {
   hidden: { opacity: 0, scale: 0.9 },

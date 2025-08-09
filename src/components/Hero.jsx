@@ -4,12 +4,13 @@ import { motion } from 'framer-motion';
 import Navbar from './Navbar';
 import Logo from './Logo';
 import ShimmerButton from './ShimmerButton';
+import getImagePath from '../utils/imagePaths';
 
 const Hero = () => {
   return (
     <section
       className="relative h-screen w-full bg-cover bg-center"
-      style={{ backgroundImage: `url(/pavers-hero.png)` }}
+      style={{ backgroundImage: `url(${getImagePath('/pavers-hero.png')})` }}
     >
       
       {/* Navbar */}

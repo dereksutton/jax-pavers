@@ -1,6 +1,7 @@
 // src/components/Logo.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
+import getImagePath from '../utils/imagePaths';
 
 const Logo = () => {
   return (
@@ -11,7 +12,7 @@ const Logo = () => {
       transition={{ duration: 1, ease: "easeOut" }}
     >
       <motion.img 
-        src="/pavers-logo.png" 
+        src={getImagePath("/pavers-logo.png")} 
         alt="Company Logo" 
         className="h-56 w-auto"
         whileHover={{ scale: 1.1, rotate: 2 }}

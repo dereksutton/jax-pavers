@@ -1,6 +1,7 @@
 // src/components/Footer.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import getImagePath from '../utils/imagePaths';
 
 const Footer = () => {
   return (
@@ -13,7 +14,7 @@ const Footer = () => {
           {/* Logo + Social */}
           <div className="flex flex-col items-center md:items-start">
             <motion.img
-              src="/pavers-logo.png"
+              src={getImagePath("/pavers-logo.png")}
               alt="Company Logo"
               className="h-48 w-auto"
               initial={{ opacity: 0, y: 10 }}

@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ShimmerButton from "./ShimmerButton";
+import getImagePath from '../utils/imagePaths';
 
 const STARS = 5;
 
@@ -14,8 +15,8 @@ const reviews = [
     headline: "Flawless pool deck — cool underfoot and gorgeous.",
     body:
       "They handled drainage, coping, and sealing like pros. We hosted the next weekend with zero puddling after a storm.",
-    avatar: "/avatars/melissa.jpg", // replace or use a generic avatar
-    media: { type: "image", src: "/reviews/pool-melissa.jpg", alt: "Travertine pool deck after install" },
+    avatar: null,
+    media: { type: "image", src: getImagePath("/work-pooldeck.jpg"), alt: "Travertine pool deck after install" },
     date: "2025-05-12",
   },
   {
@@ -26,8 +27,8 @@ const reviews = [
     headline: "Driveway transformed our curb appeal.",
     body:
       "Herringbone with a crisp border — laser-straight lines. Crew protected the landscaping and left everything spotless.",
-    avatar: "/avatars/david.jpg",
-    media: { type: "image", src: "/reviews/driveway-david.jpg", alt: "Herringbone driveway with border" },
+    avatar: null,
+    media: { type: "image", src: getImagePath("/work-driveway1.jpg"), alt: "Herringbone driveway with border" },
     date: "2025-04-03",
   },
   {
@@ -38,8 +39,8 @@ const reviews = [
     headline: "Walkway & steps feel safe and solid.",
     body:
       "Even risers, no wobble, and they matched our existing pavers perfectly. Communication was excellent throughout.",
-    avatar: "/avatars/lauren.jpg",
-    media: { type: "image", src: "/reviews/walkway-lauren.jpg", alt: "Curved walkway with soldier course" },
+    avatar: null,
+    media: { type: "image", src: getImagePath("/work-walkway.jpg"), alt: "Curved walkway with soldier course" },
     date: "2025-03-18",
   },
   {
@@ -50,8 +51,8 @@ const reviews = [
     headline: "Patio is now our favorite room in the house.",
     body:
       "They suggested an ashlar pattern that made the space feel bigger. Sealer enhanced the color without getting slick.",
-    avatar: "/avatars/jorge.jpg",
-    media: { type: "image", src: "/reviews/patio-jorge.jpg", alt: "Ashlar patio with seating" },
+    avatar: null,
+    media: { type: "image", src: getImagePath("/work-patio1.jpg"), alt: "Ashlar patio with seating" },
     date: "2025-02-09",
   },
 ];
@@ -156,13 +157,11 @@ const Testimonials = () => {
               </button>
               <div className="p-6 md:p-8">
                 <div className="flex items-center gap-3">
-                  <img
-                    src={reviews[0].avatar}
-                    alt=""
-                    className="h-12 w-12 rounded-full object-cover ring-2 ring-white"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <div className="h-12 w-12 rounded-full bg-gray-300 flex items-center justify-center ring-2 ring-white">
+                    <span className="text-gray-600 font-semibold text-lg">
+                      {reviews[0].name.charAt(0)}
+                    </span>
+                  </div>
                   <div>
                     <p className="font-semibold text-gray-900">{reviews[0].name}</p>
                     <p className="text-sm text-gray-600">{reviews[0].location}</p>
@@ -193,13 +192,11 @@ const Testimonials = () => {
                 className="group overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <div className="flex items-center gap-3">
-                  <img
-                    src={r.avatar}
-                    alt=""
-                    className="h-10 w-10 rounded-full object-cover ring-2 ring-white"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <div className="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center ring-2 ring-white">
+                    <span className="text-gray-600 font-semibold text-sm">
+                      {r.name.charAt(0)}
+                    </span>
+                  </div>
                   <div>
                     <p className="font-semibold text-gray-900">{r.name}</p>
                     <p className="text-sm text-gray-600">{r.location}</p>
