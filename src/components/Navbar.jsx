@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ShimmerButton from './ShimmerButton';
+import getImagePath from '../utils/imagePaths';
 
 const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
   // Prevent body scroll when menu is open
@@ -126,7 +127,7 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
               animate={{ rotate: isMobileMenuOpen ? 45 : 0 }}
               transition={{ duration: 0.2 }}
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path 
                   strokeLinecap="round" 
                   strokeLinejoin="round" 
@@ -213,6 +214,20 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                         Get My Quote
                       </ShimmerButton>
                     </motion.div>
+                    
+                    {/* Logo */}
+                    <motion.div
+                      className="pt-8 flex justify-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5, duration: 0.3 }}
+                    >
+                      <img
+                        src={getImagePath("/pavers-logo.png")}
+                        alt="Company Logo"
+                        className="h-24 w-auto opacity-80"
+                      />
+                    </motion.div>
                   </div>
                 </nav>
                 
@@ -221,7 +236,7 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                   className="border-t border-gray-700 p-6"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5, duration: 0.3 }}
+                  transition={{ delay: 0.6, duration: 0.3 }}
                 >
                   <p className="text-gray-400 text-sm mb-4">Follow Us</p>
                   <div className="flex space-x-4">
