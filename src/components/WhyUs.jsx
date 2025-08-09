@@ -194,7 +194,7 @@ const WhyUs = () => {
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { k: "250+", v: "Projects in Jax" },
-                  { k: "4.9★", v: "Avg. homeowner rating" },
+                  { k: "5.0★", v: "Avg. homeowner rating" },
                   { k: "10-yr", v: "Workmanship warranty" },
                   { k: "2-3 wk", v: "Typical lead time" },
                 ].map((s) => (
