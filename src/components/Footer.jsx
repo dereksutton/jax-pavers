@@ -113,7 +113,7 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="mt-12 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} Your Company Name. All rights reserved.
+          © {new Date().getFullYear()} Jacksonville Pavers & Outdoor Spaces. All rights reserved.
         </div>
       </div>
     </footer>
