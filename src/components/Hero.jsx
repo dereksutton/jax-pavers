@@ -1,5 +1,5 @@
 // src/components/Hero.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from './Navbar';
 import Logo from './Logo';
@@ -7,6 +7,7 @@ import ShimmerButton from './ShimmerButton';
 import getImagePath from '../utils/imagePaths';
 
 const Hero = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <section
       className="relative h-screen w-full bg-cover bg-center"
@@ -14,10 +15,13 @@ const Hero = () => {
     >
       
       {/* Navbar */}
-      <Navbar />
+      <Navbar 
+        isMobileMenuOpen={isMobileMenuOpen} 
+        setIsMobileMenuOpen={setIsMobileMenuOpen} 
+      />
 
       {/* Logo */}
-      <Logo />
+      <Logo isHidden={isMobileMenuOpen} />
 
       {/* Dark overlay */}
       <div 
