@@ -29,9 +29,9 @@ const Hero = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-36 sm:pt-44 md:pt-24">
         <motion.p 
-          className="text-lg uppercase text-white font-semibold mt-24 mb-6"
+          className="text-lg uppercase text-white font-semibold mb-6"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -39,7 +39,7 @@ const Hero = () => {
           Premium Paver Installation &amp; Design
         </motion.p>
         <motion.h1 
-          className="text-5xl md:text-6xl font-extrabold text-white mb-8"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
@@ -47,7 +47,7 @@ const Hero = () => {
           Outdoor Spaces Worthy of the Florida Lifestyle
         </motion.h1>
         <motion.p 
-          className="text-2xl text-gray-200 mb-6 max-w-2xl"
+          className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 max-w-2xl"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
@@ -59,7 +59,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 1.1 }}
         >
-          <ShimmerButton href="#quote" className="text-2xl">
+          <ShimmerButton href="#quote" className="text-lg sm:text-xl md:text-2xl">
             Get Your Free Quote
           </ShimmerButton>
         </motion.div>
