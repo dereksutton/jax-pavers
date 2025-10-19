@@ -40,7 +40,7 @@ const reviews = [
     body:
       "Even risers, no wobble, and they matched our existing pavers perfectly. Communication was excellent throughout.",
     avatar: null,
-    media: { type: "image", src: getImagePath("/work-walkway.jpg"), alt: "Curved walkway with soldier course" },
+    media: { type: "image", src: getImagePath("/work-staircase.jpg"), alt: "Curved walkway with soldier course" },
     date: "2025-03-18",
   },
   {
