@@ -223,10 +223,17 @@ const Quote = () => {
               </select>
             </div>
 
+            {/* Project Minimum Notice */}
+            <div className="mt-6 rounded-lg bg-blue-50 border border-blue-200 p-4">
+              <p className="text-sm font-medium text-blue-900">
+                Please Note: We have a $7,500 project minimum for all installations.
+              </p>
+            </div>
+
             {/* Submit */}
             <div className="mt-6 flex items-center justify-between gap-4">
               <p className="text-xs text-gray-500">
-                By submitting, you agree to be contacted about your project. We don’t share your info.
+                By submitting, you agree to be contacted about your project. We don't share your info.
               </p>
               <ShimmerButton
                 as="button"
@@ -310,6 +317,12 @@ const Quote = () => {
                   <div className="text-xs text-gray-600">{x.v}</div>
                 </div>
               ))}
+            </div>
+
+            {/* Project Minimum */}
+            <div className="mt-6 rounded-xl border border-[#0A86C4] bg-blue-50 p-4">
+              <p className="text-sm font-semibold text-gray-900 mb-1">Project Minimum</p>
+              <p className="text-sm text-gray-700">$7,500 for all installations</p>
             </div>
 
             <div className="mt-6 rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700">
