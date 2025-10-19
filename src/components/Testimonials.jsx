@@ -128,105 +128,180 @@ const Testimonials = () => {
           </p>
         </motion.div>
 
-        {/* Featured + grid */}
-        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
-          {/* Featured card (spans 2 cols on desktop) */}
+        {/* Bento Box Grid Layout */}
+        <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {/* Featured large card - spans 2 cols and 2 rows */}
           <motion.article
             variants={fadeIn}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            className="lg:col-span-2 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
+            className="md:col-span-2 lg:row-span-2 group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg transition-all hover:shadow-xl"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2">
-              <button
-                className="group relative aspect-[4/3] md:aspect-auto md:h-full overflow-hidden"
-                onClick={() =>
-                  setModal({ src: reviews[0].media.src, alt: reviews[0].media.alt })
-                }
-                aria-label="Open full-size testimonial image"
-              >
-                <img
-                  src={reviews[0].media.src}
-                  alt={reviews[0].media.alt}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-[#0A86C4] via-sky-400 to-[#0A86C4] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              </button>
-              <div className="p-6 md:p-8">
+            <button
+              className="group relative aspect-[16/9] w-full overflow-hidden bg-gray-100"
+              onClick={() =>
+                setModal({ src: reviews[0].media.src, alt: reviews[0].media.alt })
+              }
+              aria-label="Open full-size testimonial image"
+            >
+              <img
+                src={reviews[0].media.src}
+                alt={reviews[0].media.alt}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            </button>
+            <div className="p-6">
+              <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-full bg-gray-300 flex items-center justify-center ring-2 ring-white">
-                    <span className="text-gray-600 font-semibold text-lg">
+                  <div className="h-12 w-12 rounded-full bg-gradient-to-br from-[#0A86C4] to-sky-400 flex items-center justify-center">
+                    <span className="text-white font-bold text-lg">
                       {reviews[0].name.charAt(0)}
                     </span>
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">{reviews[0].name}</p>
+                    <p className="font-bold text-gray-900">{reviews[0].name}</p>
                     <p className="text-sm text-gray-600">{reviews[0].location}</p>
                   </div>
                 </div>
-                <div className="mt-3">
-                  <StarRow rating={reviews[0].rating} />
-                </div>
-                <h3 className="mt-4 text-xl font-semibold text-gray-900">{reviews[0].headline}</h3>
-                <p className="mt-2 text-gray-700">{reviews[0].body}</p>
-                <p className="mt-3 text-xs text-gray-500">Completed on {new Date(reviews[0].date).toLocaleDateString()}</p>
-                <div className="mt-6">
-                  <ShimmerButton href="#quote">Get a Same-Day Estimate</ShimmerButton>
-                </div>
+                <StarRow rating={reviews[0].rating} />
+              </div>
+              <h3 className="mt-4 text-xl font-bold text-gray-900">{reviews[0].headline}</h3>
+              <p className="mt-3 text-gray-700 leading-relaxed">{reviews[0].body}</p>
+              <div className="mt-4 flex items-center justify-between">
+                <p className="text-xs text-gray-500">Completed {new Date(reviews[0].date).toLocaleDateString()}</p>
+                <ShimmerButton href="#quote">Get Quote</ShimmerButton>
               </div>
             </div>
           </motion.article>
 
-          {/* Supporting review cards */}
-          <div className="space-y-6">
-            {reviews.slice(1).map((r) => (
-              <motion.article
-                key={r.id}
-                variants={fadeIn}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.2 }}
-                className="group overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+          {/* Second testimonial - horizontal card */}
+          <motion.article
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            className="md:col-span-2 group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-lg"
+          >
+            <div className="flex flex-col sm:flex-row">
+              <button
+                className="relative aspect-video sm:aspect-square sm:w-48 flex-shrink-0 overflow-hidden bg-gray-100"
+                onClick={() =>
+                  setModal({ src: reviews[1].media.src, alt: reviews[1].media.alt })
+                }
+                aria-label={`Open image for ${reviews[1].name}'s review`}
               >
+                <img
+                  src={reviews[1].media.src}
+                  alt={reviews[1].media.alt}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <div className="flex-1 p-5">
                 <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center ring-2 ring-white">
-                    <span className="text-gray-600 font-semibold text-sm">
-                      {r.name.charAt(0)}
+                  <div className="h-10 w-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center">
+                    <span className="text-white font-bold">
+                      {reviews[1].name.charAt(0)}
                     </span>
                   </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">{r.name}</p>
-                    <p className="text-sm text-gray-600">{r.location}</p>
+                  <div className="flex-1">
+                    <p className="font-semibold text-gray-900">{reviews[1].name}</p>
+                    <p className="text-sm text-gray-600">{reviews[1].location}</p>
                   </div>
                 </div>
-                <div className="mt-2">
-                  <StarRow rating={r.rating} />
-                </div>
-                <h4 className="mt-3 font-semibold text-gray-900">{r.headline}</h4>
-                <p className="mt-2 text-gray-700">{r.body}</p>
+                <StarRow rating={reviews[1].rating} />
+                <h4 className="mt-3 font-bold text-gray-900">{reviews[1].headline}</h4>
+                <p className="mt-2 text-sm text-gray-700">{reviews[1].body}</p>
+              </div>
+            </div>
+          </motion.article>
 
-                {/* Media thumb */}
-                {r.media?.src && (
-                  <button
-                    onClick={() => setModal({ src: r.media.src, alt: r.media.alt })}
-                    className="mt-4 block overflow-hidden rounded-xl"
-                    aria-label={`Open image for ${r.name}'s review`}
-                  >
-                    <img
-                      src={r.media.src}
-                      alt={r.media.alt}
-                      className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </button>
-                )}
-              </motion.article>
-            ))}
-          </div>
+          {/* Third testimonial - vertical card */}
+          <motion.article
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-lg"
+          >
+            <button
+              className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100"
+              onClick={() =>
+                setModal({ src: reviews[2].media.src, alt: reviews[2].media.alt })
+              }
+              aria-label={`Open image for ${reviews[2].name}'s review`}
+            >
+              <img
+                src={reviews[2].media.src}
+                alt={reviews[2].media.alt}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+            <div className="p-5">
+              <div className="flex items-center gap-2">
+                <div className="h-9 w-9 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">
+                    {reviews[2].name.charAt(0)}
+                  </span>
+                </div>
+                <div className="flex-1">
+                  <p className="font-semibold text-gray-900 text-sm">{reviews[2].name}</p>
+                  <p className="text-xs text-gray-600">{reviews[2].location}</p>
+                </div>
+              </div>
+              <StarRow rating={reviews[2].rating} />
+              <h4 className="mt-2 font-bold text-gray-900 text-sm">{reviews[2].headline}</h4>
+              <p className="mt-2 text-xs text-gray-700 line-clamp-3">{reviews[2].body}</p>
+            </div>
+          </motion.article>
+
+          {/* Fourth testimonial - vertical card */}
+          <motion.article
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-lg"
+          >
+            <button
+              className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100"
+              onClick={() =>
+                setModal({ src: reviews[3].media.src, alt: reviews[3].media.alt })
+              }
+              aria-label={`Open image for ${reviews[3].name}'s review`}
+            >
+              <img
+                src={reviews[3].media.src}
+                alt={reviews[3].media.alt}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+            <div className="p-5">
+              <div className="flex items-center gap-2">
+                <div className="h-9 w-9 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">
+                    {reviews[3].name.charAt(0)}
+                  </span>
+                </div>
+                <div className="flex-1">
+                  <p className="font-semibold text-gray-900 text-sm">{reviews[3].name}</p>
+                  <p className="text-xs text-gray-600">{reviews[3].location}</p>
+                </div>
+              </div>
+              <StarRow rating={reviews[3].rating} />
+              <h4 className="mt-2 font-bold text-gray-900 text-sm">{reviews[3].headline}</h4>
+              <p className="mt-2 text-xs text-gray-700 line-clamp-3">{reviews[3].body}</p>
+            </div>
+          </motion.article>
         </div>
 
         {/* CTA bar */}
@@ -243,7 +318,7 @@ const Testimonials = () => {
           
           <div>
             <p className="text-2xl font-semibold text-white">Ready to love your outdoor space?</p>
-            <p className="text-gray-300">We'll review photos and dimensions, then share a clear plan & estimate.</p>
+            <p className="text-gray-300">We'll review your project details, then share a clear plan & estimate.</p>
           </div>
           <ShimmerButton href="#quote">Get My Quote</ShimmerButton>
         </motion.div>

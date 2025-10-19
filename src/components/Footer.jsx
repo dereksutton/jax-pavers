@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12">
           {/* Logo + Social */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center">
             <motion.img
               src={getImagePath("/pavers-logo.png")}
               alt="Company Logo"
@@ -23,10 +23,10 @@ const Footer = () => {
               transition={{ duration: 0.5 }}
             />
 
-            {/* Social icons */}
-            <div className="mt-4 flex space-x-4">
+            {/* Social icons - centered under logo */}
+            <div className="mt-4 flex justify-center space-x-4">
               <a
-                href="https://facebook.com/yourcompany"
+                href="https://www.facebook.com/jaxoutdoorspaces"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -42,7 +42,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://instagram.com/yourcompany"
+                href="https://www.instagram.com/jaxoutdoorspaces"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -61,9 +61,9 @@ const Footer = () => {
           </div>
 
           {/* Navigation */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center">
             <h3 className="text-lg font-semibold text-white">Quick Links</h3>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-4 space-y-2 text-center md:text-left">
               <li>
                 <a href="#services" className="hover:text-white transition-colors">
                   Our Services
@@ -93,12 +93,12 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center">
             <h3 className="text-lg font-semibold text-white">Contact</h3>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-4 space-y-2 text-center md:text-left">
               <li>
-                <a href="tel:19045551234" className="hover:text-white transition-colors">
-                  (904) 553-4221
+                <a href="tel:19044451261" className="hover:text-white transition-colors">
+                  (904) 445-1261
                 </a>
               </li>
               <li>

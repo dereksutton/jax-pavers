@@ -7,88 +7,33 @@ const initialState = {
   name: "",
   email: "",
   phone: "",
-  city: "",
-  zip: "",
-  service: "",
-  sizeApprox: "",
-  timeline: "",
-  budget: "",
+  address: "",
   message: "",
+  howHeard: "",
   honeypot: "", // spam trap
 };
 
-const SERVICES = [
-  "Driveway",
-  "Pool Deck",
-  "Patio / Courtyard",
-  "Walkway / Steps",
-  "Sealing & Restoration",
-  "Repairs / Lift-Level",
+const HOW_HEARD_OPTIONS = [
+  "Google Search",
+  "Facebook",
+  "Instagram",
+  "Referral from friend/family",
+  "Saw your work in neighborhood",
+  "Other",
 ];
-
-const TIMELINES = ["ASAP", "2–4 weeks", "1–3 months", "Just planning"];
-
-const BUDGETS = ["Under $5k", "$5k–$10k", "$10k–$20k", "$20k+"];
 
 const variants = {
   hidden: { opacity: 0, y: 16 },
   show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
 };
 
-const MAX_FILES = 8;
-const MAX_MB = 12;
-
 const Quote = () => {
   const [form, setForm] = useState(initialState);
-  const [files, setFiles] = useState([]); // File[]
-  const [previews, setPreviews] = useState([]); // object URLs
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState(null); // { ok: boolean, msg: string }
   const [messageCount, setMessageCount] = useState(0);
-  const inputRef = useRef(null);
-  const dropRef = useRef(null);
 
   const remaining = useMemo(() => Math.max(0, 600 - messageCount), [messageCount]);
-
-  useEffect(() => {
-    const urls = files.map((f) => URL.createObjectURL(f));
-    setPreviews(urls);
-    return () => urls.forEach((u) => URL.revokeObjectURL(u));
-  }, [files]);
-
-  const onDrop = useCallback((ev) => {
-    ev.preventDefault();
-    ev.stopPropagation();
-    const list = ev.dataTransfer.files;
-    addFiles(list);
-    dropRef.current?.classList.remove("ring-2", "ring-[#0A86C4]");
-  }, []);
-
-  const onDragOver = useCallback((ev) => {
-    ev.preventDefault();
-    dropRef.current?.classList.add("ring-2", "ring-[#0A86C4]");
-  }, []);
-
-  const onDragLeave = useCallback(() => {
-    dropRef.current?.classList.remove("ring-2", "ring-[#0A86C4]");
-  }, []);
-
-  const addFiles = (fileList) => {
-    const arr = Array.from(fileList || []);
-    const current = [...files];
-    for (const f of arr) {
-      if (!f.type.startsWith("image/")) continue;
-      const sizeMb = f.size / (1024 * 1024);
-      if (sizeMb > MAX_MB) continue;
-      if (current.length >= MAX_FILES) break;
-      current.push(f);
-    }
-    setFiles(current);
-  };
-
-  const removeFile = (idx) => {
-    setFiles((prev) => prev.filter((_, i) => i !== idx));
-  };
 
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -102,7 +47,9 @@ const Quote = () => {
     if (!/^\S+@\S+\.\S+$/.test(form.email)) return { ok: false, msg: "Enter a valid email." };
     if (!/^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/.test(form.phone))
       return { ok: false, msg: "Enter a valid 10-digit phone." };
-    if (!form.service) return { ok: false, msg: "Select a service." };
+    if (!form.address.trim()) return { ok: false, msg: "Please enter your address." };
+    if (!form.message.trim()) return { ok: false, msg: "Please describe your project." };
+    if (!form.howHeard) return { ok: false, msg: "Please let us know how you heard about us." };
     return { ok: true };
   };
 
@@ -119,7 +66,6 @@ const Quote = () => {
     try {
       const data = new FormData();
       Object.entries(form).forEach(([k, v]) => data.append(k, v));
-      files.forEach((f, i) => data.append("photos", f, f.name || `photo-${i}.jpg`));
 
       // Adjust endpoint as needed for your backend
       const res = await fetch("/api/quote", {
@@ -127,9 +73,8 @@ const Quote = () => {
         body: data,
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      setResult({ ok: true, msg: "Thanks! We’ll follow up shortly with a ballpark estimate." });
+      setResult({ ok: true, msg: "Thanks! We'll contact you shortly to schedule your consultation." });
       setForm(initialState);
-      setFiles([]);
       setMessageCount(0);
     } catch (err) {
       setResult({
@@ -156,11 +101,11 @@ const Quote = () => {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 id="quote-heading" className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
-            Get Your Free Quote
+            Book a Consultation
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Share a few details (and photos if you have them). We’ll assess drainage, base, and layout
-            and reply with a clear plan and ballpark.
+            Schedule your free consultation today. We'll discuss your vision, assess your space,
+            and provide expert recommendations for your project.
           </p>
         </motion.div>
 
@@ -186,7 +131,7 @@ const Quote = () => {
               autoComplete="off"
             />
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700">Name *</label>
                 <input
@@ -212,7 +157,7 @@ const Quote = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700">Phone *</label>
+                <label className="block text-sm font-medium text-gray-700">Phone Number *</label>
                 <input
                   type="tel"
                   name="phone"
@@ -225,171 +170,24 @@ const Quote = () => {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">City</label>
-                  <input
-                    type="text"
-                    name="city"
-                    value={form.city}
-                    onChange={onChange}
-                    className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 outline-none transition focus:border-[#0A86C4] focus:ring-2 focus:ring-[#0A86C4]/20"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">ZIP</label>
-                  <input
-                    type="text"
-                    name="zip"
-                    inputMode="numeric"
-                    value={form.zip}
-                    onChange={onChange}
-                    className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 outline-none transition focus:border-[#0A86C4] focus:ring-2 focus:ring-[#0A86C4]/20"
-                  />
-                </div>
-              </div>
-
               <div>
-                <label className="block text-sm font-medium text-gray-700">Service *</label>
-                <select
-                  name="service"
-                  value={form.service}
-                  onChange={onChange}
-                  required
-                  className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 outline-none transition focus:border-[#0A86C4] focus:ring-2 focus:ring-[#0A86C4]/20"
-                >
-                  <option value="">Select a service</option>
-                  {SERVICES.map((s) => (
-                    <option key={s} value={s}>
-                      {s}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Approximate Size (sq ft)
-                </label>
+                <label className="block text-sm font-medium text-gray-700">Address *</label>
                 <input
                   type="text"
-                  name="sizeApprox"
-                  placeholder="e.g., 600"
-                  value={form.sizeApprox}
+                  name="address"
+                  value={form.address}
                   onChange={onChange}
+                  placeholder="Street address, City, State ZIP"
+                  required
                   className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 outline-none transition focus:border-[#0A86C4] focus:ring-2 focus:ring-[#0A86C4]/20"
                 />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Timeline</label>
-                <select
-                  name="timeline"
-                  value={form.timeline}
-                  onChange={onChange}
-                  className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 outline-none transition focus:border-[#0A86C4] focus:ring-2 focus:ring-[#0A86C4]/20"
-                >
-                  <option value="">Select</option>
-                  {TIMELINES.map((t) => (
-                    <option key={t} value={t}>
-                      {t}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Budget</label>
-                <select
-                  name="budget"
-                  value={form.budget}
-                  onChange={onChange}
-                  className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 outline-none transition focus:border-[#0A86C4] focus:ring-2 focus:ring-[#0A86C4]/20"
-                >
-                  <option value="">Select</option>
-                  {BUDGETS.map((b) => (
-                    <option key={b} value={b}>
-                      {b}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            {/* Photos */}
-            <div className="mt-6">
-              <label className="block text-sm font-medium text-gray-700">
-                Photos (optional) — up to {MAX_FILES} images, {MAX_MB}MB each
-              </label>
-
-              <div
-                ref={dropRef}
-                onDrop={onDrop}
-                onDragOver={onDragOver}
-                onDragLeave={onDragLeave}
-                className="mt-2 rounded-xl border border-dashed border-gray-300 bg-gray-50 p-4"
-                aria-label="Drag and drop project photos here"
-              >
-                <div className="flex items-center justify-between gap-3">
-                  <p className="text-sm text-gray-600">
-                    Drop images here, or{" "}
-                    <button
-                      type="button"
-                      onClick={() => inputRef.current?.click()}
-                      className="font-semibold text-[#0A86C4] underline underline-offset-2"
-                    >
-                      browse
-                    </button>
-                  </p>
-                  <input
-                    ref={inputRef}
-                    type="file"
-                    accept="image/*"
-                    multiple
-                    hidden
-                    onChange={(e) => addFiles(e.target.files)}
-                  />
-                </div>
-
-                {/* Previews */}
-                {files.length > 0 && (
-                  <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
-                    {files.map((f, i) => (
-                      <div
-                        key={`${f.name}-${i}`}
-                        className="group relative overflow-hidden rounded-lg border border-gray-200 bg-white"
-                      >
-                        <img
-                          src={previews[i]}
-                          alt=""
-                          className="h-28 w-full object-cover"
-                          loading="lazy"
-                          decoding="async"
-                        />
-                        <button
-                          type="button"
-                          onClick={() => removeFile(i)}
-                          className="absolute right-1 top-1 rounded-full bg-black/50 p-1 text-white opacity-0 transition group-hover:opacity-100"
-                          aria-label={`Remove ${f.name}`}
-                        >
-                          <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M6 18L18 6M6 6l12 12" />
-                          </svg>
-                        </button>
-                        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent px-2 py-1">
-                          <p className="truncate text-[11px] text-white">{f.name}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
               </div>
             </div>
 
             {/* Message */}
             <div className="mt-6">
               <label className="block text-sm font-medium text-gray-700">
-                Tell us about your project
+                Brief Description of your Project *
               </label>
               <textarea
                 name="message"
@@ -397,10 +195,32 @@ const Quote = () => {
                 maxLength={600}
                 value={form.message}
                 onChange={onChange}
-                placeholder="e.g., Existing concrete pool deck needs travertine with new coping. Slight pooling near the steps after heavy rain."
+                required
+                placeholder="Please describe your project, including type of work needed, approximate size, and any specific requirements or concerns."
                 className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 outline-none transition placeholder:text-gray-400 focus:border-[#0A86C4] focus:ring-2 focus:ring-[#0A86C4]/20"
               />
               <div className="mt-1 text-right text-xs text-gray-500">{remaining} characters left</div>
+            </div>
+
+            {/* How did you hear about us */}
+            <div className="mt-6">
+              <label className="block text-sm font-medium text-gray-700">
+                How did you hear about us? *
+              </label>
+              <select
+                name="howHeard"
+                value={form.howHeard}
+                onChange={onChange}
+                required
+                className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 outline-none transition focus:border-[#0A86C4] focus:ring-2 focus:ring-[#0A86C4]/20"
+              >
+                <option value="">Please select</option>
+                {HOW_HEARD_OPTIONS.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
             </div>
 
             {/* Submit */}
@@ -414,7 +234,7 @@ const Quote = () => {
                 disabled={submitting}
                 className={`min-w-[180px] text-center text-xl ${submitting ? "opacity-70" : ""}`}
               >
-                {submitting ? "Sending…" : "Get My Quote"}
+                {submitting ? "Sending…" : "Book Consultation"}
               </ShimmerButton>
             </div>
 
@@ -453,16 +273,16 @@ const Quote = () => {
             <ol className="mt-4 space-y-4">
               {[
                 {
-                  t: "Quick review",
-                  d: "We review your details, photos, and site constraints (drainage, access, base).",
+                  t: "Quick Response",
+                  d: "We'll contact you within 24 hours to discuss your project and schedule your consultation.",
                 },
                 {
-                  t: "Ballpark & plan",
-                  d: "We send a rough range with pattern/material ideas. If you like it, we schedule a site visit.",
+                  t: "On-Site Consultation",
+                  d: "We visit your property to assess the space, discuss design options, and understand your vision.",
                 },
                 {
-                  t: "Site visit & firm quote",
-                  d: "Measurements, layout, and any utility/HOA checks for a firm price.",
+                  t: "Custom Proposal",
+                  d: "Receive a detailed proposal with design recommendations, materials, timeline, and transparent pricing.",
                 },
               ].map((s, i) => (
                 <li key={s.t} className="flex items-start gap-3">
@@ -494,8 +314,8 @@ const Quote = () => {
 
             <div className="mt-6 rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700">
               Prefer to talk? Call{" "}
-              <a href="tel:19045551234" className="font-semibold text-[#0A86C4] underline underline-offset-2">
-                (904) 553-4221
+              <a href="tel:19044451261" className="font-semibold text-[#0A86C4] underline underline-offset-2">
+                (904) 445-1261
               </a>{" "}
               Mon–Fri, 8–6.
             </div>

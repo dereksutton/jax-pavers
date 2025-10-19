@@ -243,7 +243,7 @@ const WhyUs = () => {
 
               {/* Microcopy */}
               <p className="mt-2 text-center text-xs text-gray-500">
-                Share a few photos & rough dimensions — we’ll ballpark fast.
+                Share your project details and dimensions — we'll provide a quick estimate.
               </p>
             </div>
           </motion.aside>
