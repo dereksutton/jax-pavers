@@ -187,7 +187,7 @@ const Quote = () => {
             {/* Message */}
             <div className="mt-6">
               <label className="block text-sm font-medium text-gray-700">
-                Brief Description of your Project *
+                Brief Describe Your Project *
               </label>
               <textarea
                 name="message"
