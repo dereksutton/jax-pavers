@@ -4,35 +4,30 @@ import { motion, AnimatePresence } from "framer-motion";
 import ShimmerButton from "./ShimmerButton";
 import getImagePath from '../utils/imagePaths';
 
-const WORK_IMAGES = [
-  "/work-driveway1.jpg",
-  "/work-driveway2.jpg",
-  "/work-driveway3.jpg",
-  "/work-fireplace.jpg",
-  "/work-patio1.jpg",
-  "/work-patio2.jpg",
-  "/work-patio3.jpg",
-  "/work-patio4.jpg",
-  "/work-pooldeck.jpg",
-  "/work-staircase.jpg",
-].map(path => getImagePath(path));
+// Generate array of all 28 paver images
+const WORK_IMAGES = Array.from({ length: 28 }, (_, i) =>
+  getImagePath(`/pavers-${i + 1}.png`)
+);
 
-const gridItem = {
-  hidden: { opacity: 0, scale: 0.9 },
-  show: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
-};
+// Split images into three rows (roughly equal distribution)
+const ROW_1_IMAGES = WORK_IMAGES.slice(0, 9);   // Images 1-9
+const ROW_2_IMAGES = WORK_IMAGES.slice(9, 19);  // Images 10-19
+const ROW_3_IMAGES = WORK_IMAGES.slice(19, 28); // Images 20-28
 
 const RecentWork = () => {
   const [lightbox, setLightbox] = useState(null);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const openLightbox = useCallback((imageIndex) => {
-    setLightbox(imageIndex);
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  const openLightbox = useCallback((imageSrc) => {
+    setLightbox(imageSrc);
+    setIsPaused(true);
+    document.body.style.overflow = 'hidden';
   }, []);
 
   const closeLightbox = useCallback(() => {
     setLightbox(null);
-    document.body.style.overflow = 'unset'; // Restore scrolling
+    setIsPaused(false);
+    document.body.style.overflow = 'unset';
   }, []);
 
   // Handle ESC key to close lightbox
@@ -45,19 +40,83 @@ const RecentWork = () => {
     return () => window.removeEventListener('keydown', handleEscape);
   }, [lightbox, closeLightbox]);
 
+  // ScrollingRow component for reusability
+  const ScrollingRow = ({ images, direction, speed = 40 }) => {
+    // Duplicate images for seamless infinite scroll
+    const duplicatedImages = [...images, ...images, ...images];
+
+    return (
+      <div className="relative overflow-hidden w-full h-[200px] md:h-[250px] lg:h-[300px]">
+        <div
+          className="flex gap-4 absolute"
+          style={{
+            animation: `scroll-${direction} ${speed}s linear infinite`,
+            animationPlayState: isPaused ? 'paused' : 'running',
+            width: 'max-content'
+          }}
+        >
+          {duplicatedImages.map((image, index) => (
+            <div
+              key={`${direction}-${index}`}
+              className="flex-shrink-0 h-[200px] md:h-[250px] lg:h-[300px] w-[300px] md:w-[400px] lg:w-[500px] cursor-pointer group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
+              onClick={() => openLightbox(image)}
+            >
+              <img
+                src={image}
+                alt={`Paver work example ${index + 1}`}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+              />
+              {/* Hover overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              {/* Magnifying glass icon */}
+              <div className="absolute top-3 right-3 rounded-full bg-black/60 p-2 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <section id="recent-work" className="relative scroll-mt-24" aria-labelledby="recentwork-heading">
       {/* Background wash */}
       <div className="absolute inset-0 -z-10 bg-white [background:radial-gradient(900px_500px_at_50%_-10%,rgba(10,134,196,0.10),transparent_60%)]" />
 
-      <div className="mx-auto max-w-7xl px-4 py-10 md:px-8">
+      {/* CSS Animations */}
+      <style>{`
+        @keyframes scroll-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-33.333%);
+          }
+        }
+
+        @keyframes scroll-right {
+          0% {
+            transform: translateX(-33.333%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+      `}</style>
+
+      <div className="mx-auto max-w-[100vw] px-0 py-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-2xl text-center"
+          className="mx-auto max-w-2xl text-center px-4 mb-10"
         >
           <h2 id="recentwork-heading" className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
             Recent Work Around Jacksonville
@@ -67,232 +126,38 @@ const RecentWork = () => {
           </p>
         </motion.div>
 
-        {/* Bento Box Grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          className="mt-10 grid grid-cols-6 grid-rows-3 gap-4 h-[900px] md:h-[600px] lg:h-[700px]"
-        >
-          {/* Row 1: Large hero + 2 medium images */}
-          
-          {/* Large featured image - spans 2x2 */}
+        {/* Scrolling Rows */}
+        <div className="space-y-6">
+          {/* Row 1: Left to Right */}
           <motion.div
-            variants={gridItem}
-            className="col-span-6 row-span-2 md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-2xl cursor-pointer"
-            onClick={() => openLightbox(0)}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
           >
-            <img
-              src={WORK_IMAGES[0]}
-              alt="Recent paving work"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            {/* Magnifying Glass Icon */}
-            <div className="absolute top-3 right-3 rounded-full bg-black/60 p-2 backdrop-blur-sm">
-              <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
+            <ScrollingRow images={ROW_1_IMAGES} direction="left" speed={50} />
           </motion.div>
 
-          {/* Right column: 2 medium images stacked */}
+          {/* Row 2: Right to Left */}
           <motion.div
-            variants={gridItem}
-            className="col-span-3 row-span-1 md:col-span-2 md:row-span-1 group relative overflow-hidden rounded-2xl cursor-pointer"
-            onClick={() => openLightbox(1)}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <img
-              src={WORK_IMAGES[1]}
-              alt="Recent paving work"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            {/* Magnifying Glass Icon */}
-            <div className="absolute top-2 right-2 rounded-full bg-black/60 p-2 backdrop-blur-sm">
-              <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
+            <ScrollingRow images={ROW_2_IMAGES} direction="right" speed={55} />
           </motion.div>
 
-          {/* Tall medium image */}
+          {/* Row 3: Left to Right */}
           <motion.div
-            variants={gridItem}
-            className="col-span-3 row-span-1 md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-2xl cursor-pointer"
-            onClick={() => openLightbox(2)}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <img
-              src={WORK_IMAGES[2]}
-              alt="Recent paving work"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            {/* Magnifying Glass Icon */}
-            <div className="absolute top-2 right-2 rounded-full bg-black/60 p-2 backdrop-blur-sm">
-              <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
+            <ScrollingRow images={ROW_3_IMAGES} direction="left" speed={45} />
           </motion.div>
-
-          {/* Second medium on right */}
-          <motion.div
-            variants={gridItem}
-            className="col-span-6 row-span-1 md:col-span-2 md:row-span-1 group relative overflow-hidden rounded-2xl cursor-pointer"
-            onClick={() => openLightbox(3)}
-          >
-            <img
-              src={WORK_IMAGES[3]}
-              alt="Recent paving work"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            {/* Magnifying Glass Icon */}
-            <div className="absolute top-2 right-2 rounded-full bg-black/60 p-2 backdrop-blur-sm">
-              <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
-          </motion.div>
-
-          {/* Row 3: 7 smaller images in a balanced layout */}
-          
-          {/* First group of 3 small images */}
-          <motion.div
-            variants={gridItem}
-            className="col-span-2 row-span-1 md:col-span-1 md:row-span-1 group relative overflow-hidden rounded-2xl cursor-pointer"
-            onClick={() => openLightbox(4)}
-          >
-            <img
-              src={WORK_IMAGES[4]}
-              alt="Recent paving work"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            {/* Magnifying Glass Icon */}
-            <div className="absolute top-2 right-2 rounded-full bg-black/60 p-1.5 backdrop-blur-sm">
-              <svg className="h-3 w-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={gridItem}
-            className="col-span-2 row-span-1 md:col-span-1 md:row-span-1 group relative overflow-hidden rounded-2xl cursor-pointer"
-            onClick={() => openLightbox(5)}
-          >
-            <img
-              src={WORK_IMAGES[5]}
-              alt="Recent paving work"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            {/* Magnifying Glass Icon */}
-            <div className="absolute top-2 right-2 rounded-full bg-black/60 p-1.5 backdrop-blur-sm">
-              <svg className="h-3 w-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={gridItem}
-            className="col-span-2 row-span-1 md:col-span-1 md:row-span-1 group relative overflow-hidden rounded-2xl cursor-pointer"
-            onClick={() => openLightbox(6)}
-          >
-            <img
-              src={WORK_IMAGES[6]}
-              alt="Recent paving work"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            {/* Magnifying Glass Icon */}
-            <div className="absolute top-2 right-2 rounded-full bg-black/60 p-1.5 backdrop-blur-sm">
-              <svg className="h-3 w-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={gridItem}
-            className="col-span-2 row-span-1 md:col-span-1 md:row-span-1 group relative overflow-hidden rounded-2xl cursor-pointer"
-            onClick={() => openLightbox(7)}
-          >
-            <img
-              src={WORK_IMAGES[7]}
-              alt="Recent paving work"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            {/* Magnifying Glass Icon */}
-            <div className="absolute top-2 right-2 rounded-full bg-black/60 p-1.5 backdrop-blur-sm">
-              <svg className="h-3 w-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={gridItem}
-            className="col-span-2 row-span-1 md:col-span-1 md:row-span-1 group relative overflow-hidden rounded-2xl cursor-pointer"
-            onClick={() => openLightbox(8)}
-          >
-            <img
-              src={WORK_IMAGES[8]}
-              alt="Recent paving work"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            {/* Magnifying Glass Icon */}
-            <div className="absolute top-2 right-2 rounded-full bg-black/60 p-1.5 backdrop-blur-sm">
-              <svg className="h-3 w-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={gridItem}
-            className="col-span-2 row-span-1 md:col-span-1 md:row-span-1 group relative overflow-hidden rounded-2xl cursor-pointer"
-            onClick={() => openLightbox(9)}
-          >
-            <img
-              src={WORK_IMAGES[9]}
-              alt="Recent paving work"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-            {/* Magnifying Glass Icon */}
-            <div className="absolute top-2 right-2 rounded-full bg-black/60 p-1.5 backdrop-blur-sm">
-              <svg className="h-3 w-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
-          </motion.div>
-        </motion.div>
+        </div>
 
         {/* CTA */}
         <motion.div
@@ -300,12 +165,12 @@ const RecentWork = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5, delay: 0.05 }}
-          className="relative mt-12 flex flex-col items-center justify-between gap-4 rounded-2xl p-6 text-center md:flex-row md:text-left overflow-hidden"
+          className="relative mt-12 mx-4 md:mx-8 flex flex-col items-center justify-between gap-4 rounded-2xl p-6 text-center md:flex-row md:text-left overflow-hidden"
         >
           {/* Background gradients matching WhyUs component */}
           <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-slate-900 via-gray-800 to-[#0A86C4]" />
           <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-black/20 via-transparent to-black/10" />
-          
+
           <div>
             <p className="text-lg font-semibold mb-2 text-white">Want to see something similar at your home?</p>
             <p className="text-gray-300 text-lg">Share your project details and dimensions—we'll provide a quick estimate.</p>
@@ -349,7 +214,7 @@ const RecentWork = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={WORK_IMAGES[lightbox]}
+                src={lightbox}
                 alt="Full-size paving work showcase"
                 className="max-h-full max-w-full object-contain rounded-lg shadow-2xl"
                 loading="eager"
