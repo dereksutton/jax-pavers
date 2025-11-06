@@ -84,7 +84,7 @@ const RecentWork = () => {
   };
 
   return (
-    <section id="recent-work" className="relative scroll-mt-24" aria-labelledby="recentwork-heading">
+    <section id="recent-work" className="relative scroll-mt-24 overflow-x-hidden" aria-labelledby="recentwork-heading">
       {/* Background wash */}
       <div className="absolute inset-0 -z-10 bg-white [background:radial-gradient(900px_500px_at_50%_-10%,rgba(10,134,196,0.10),transparent_60%)]" />
 
