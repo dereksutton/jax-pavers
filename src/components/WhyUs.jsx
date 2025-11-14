@@ -59,7 +59,7 @@ const WhyUs = () => {
               {
                 title: "Engineered Base, Not Just Pretty Pavers",
                 copy:
-                  "We overbuild the foundation: proper excavation, geotextile (where needed), compaction, and drainage-minded grading for Florida’s sand and rain.",
+                  "We overbuild the foundation: proper excavation, geotextile (where needed), compaction, and drainage-minded grading for Florida's sand and rain.",
                 bullets: [
                   "98% compaction targets",
                   "Open-graded or dense-graded base as appropriate",
@@ -81,31 +81,13 @@ const WhyUs = () => {
                 bullets: [
                   "Coping & mitered corners dialed in",
                   "Consistent joint spacing",
-                  "Polymeric sand installed correctly",
+                  "Professional grade edge restraints",
                 ],
                 icon: (
                   <svg viewBox="0 0 24 24" className="h-7 w-7" aria-hidden="true">
                     <path
                       fill="currentColor"
                       d="M3 5h18v2H3V5Zm0 6h12v2H3v-2Zm0 6h18v2H3v-2Z"
-                    />
-                  </svg>
-                ),
-              },
-              {
-                title: "Climate-Smart Materials",
-                copy:
-                  "We spec pavers and sealers that play nice with salt pools, UV exposure, and coastal humidity—cool underfoot and color-stable.",
-                bullets: [
-                  "Travertine & porcelain specialists",
-                  "Matte & enhanced sealers",
-                  "Salt-safe components",
-                ],
-                icon: (
-                  <svg viewBox="0 0 24 24" className="h-7 w-7" aria-hidden="true">
-                    <path
-                      fill="currentColor"
-                      d="M12 2C8 6 6 9 6 12a6 6 0 1 0 12 0c0-3-2-6-6-10Z"
                     />
                   </svg>
                 ),
@@ -140,45 +122,6 @@ const WhyUs = () => {
                 </ul>
               </motion.article>
             ))}
-
-            {/* Mini process */}
-            <motion.div
-              variants={item}
-              className="mt-4 rounded-2xl border border-gray-200 bg-gray-50 p-6"
-            >
-              <p className="text-sm font-semibold tracking-wide text-[#0A86C4] uppercase">
-                Our 3-Step Process
-              </p>
-              <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3">
-                {[
-                  {
-                    step: "1",
-                    title: "Site & Design",
-                    desc: "Measure, drainage check, pattern selection, HOA-ready plan.",
-                  },
-                  {
-                    step: "2",
-                    title: "Build & Detail",
-                    desc: "Excavate, base prep, set lines, sanding, edge restraint.",
-                  },
-                  {
-                    step: "3",
-                    title: "Protect & Handover",
-                    desc: "Clean, seal (optional), care guide, warranty activation.",
-                  },
-                ].map((s) => (
-                  <div key={s.step} className="rounded-xl bg-black p-5 shadow-sm">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0A86C4] text-white font-bold">
-                        {s.step}
-                      </div>
-                      <h4 className="font-semibold text-white">{s.title}</h4>
-                    </div>
-                    <p className="mt-2 text-[#0A86C4] font-semibold">{s.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Right: proof / sticky card */}
@@ -205,40 +148,18 @@ const WhyUs = () => {
                 ))}
               </div>
 
-              {/* Warranty / badge row */}
-              <div className="mt-6 flex items-center gap-3">
-                <svg viewBox="0 0 24 24" className="h-6 w-6 text-[#0A86C4]" aria-hidden>
-                  <path
-                    fill="currentColor"
-                    d="M12 2 3 5v6c0 5 3.8 9.7 9 11 5.2-1.3 9-6 9-11V5l-9-3Zm0 17.5A8.6 8.6 0 0 1 5 11V6.3l7-2.3 7 2.3V11a8.6 8.6 0 0 1-7 8.5Z"
-                  />
-                </svg>
-                <p className="text-sm text-gray-700">
-                  Licensed & Insured • Manufacturer-approved install methods
+              {/* Call to action */}
+              <div className="mt-6 text-center">
+                <p className="text-lg font-semibold text-gray-900">
+                  Ready to transform your outdoor space?
+                </p>
+                <p className="mt-2 text-gray-600">
+                  Let's discuss your vision and create something beautiful together.
                 </p>
               </div>
 
-              {/* Trust checklist */}
-              <ul className="mt-4 space-y-2 text-gray-700">
-                {[
-                  "HOA-friendly designs & documentation",
-                  "Drainage-first layouts to prevent pooling",
-                  "Clean job sites — we protect landscaping",
-                ].map((t) => (
-                  <li key={t} className="flex items-start gap-2">
-                    <svg viewBox="0 0 24 24" className="mt-0.5 h-5 w-5 flex-none">
-                      <path
-                        fill="currentColor"
-                        d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2Z"
-                      />
-                    </svg>
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-6">
-                <ShimmerButton href="#quote">Get a Same-Day Estimate</ShimmerButton>
+              <div className="mt-6 flex justify-center">
+                <ShimmerButton href="#quote">Book a Consultation</ShimmerButton>
               </div>
 
               {/* Microcopy */}

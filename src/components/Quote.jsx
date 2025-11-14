@@ -2,6 +2,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ShimmerButton from "./ShimmerButton";
+import getImagePath from '../utils/imagePaths';
 
 const initialState = {
   name: "",
@@ -91,7 +92,22 @@ const Quote = () => {
       {/* Background wash */}
       <div className="absolute inset-0 -z-10 bg-white [background:radial-gradient(1100px_600px_at_50%_-10%,rgba(10,134,196,0.10),transparent_60%)]" />
 
-      <div className="mx-auto max-w-7xl px-4 py-20 md:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-6 md:py-10 md:px-8">
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.5 }}
+          className="flex justify-center mb-4"
+        >
+          <img
+            src={getImagePath("/jaxpavers-logo.png")}
+            alt="Jax Pavers Logo"
+            className="h-36 sm:h-38 md:h-40 lg:h-44 w-auto"
+          />
+        </motion.div>
+
         {/* Header */}
         <motion.div
           variants={variants}

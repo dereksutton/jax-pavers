@@ -6,11 +6,24 @@ import getImagePath from '../utils/imagePaths';
 
 const services = [
   {
+    title: "Summer Kitchens",
+    blurb:
+      "Create the ultimate outdoor entertaining space with fully equipped summer kitchens designed for Florida living.",
+    backgroundImage: getImagePath("/services-card1.png"),
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M8 5h2v5H8V5Zm0 7h2v7H8v-7Zm4-7h2v5h-2V5Zm0 7h2v7h-2v-7Zm4-7h2v5h-2V5Zm0 7h2v7h-2v-7ZM4 3v18h16V3H4ZM2 3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3Z"
+        />
+      </svg>
+    ),
+  },
+  {
     title: "Driveways",
     blurb:
       "Durable, code-compliant paver driveways that stand up to Florida heat, rain, and heavy vehicles.",
-    points: ["Concrete & clay pavers", "Drainage-smart base prep", "HOA-friendly designs"],
-    backgroundImage: getImagePath("/services-card1.png"),
+    backgroundImage: getImagePath("/services-card2.png"),
     icon: (
       <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
         <path
@@ -21,25 +34,9 @@ const services = [
     ),
   },
   {
-    title: "Pool Decks",
-    blurb:
-      "Cool-underfoot leathered marble and porcelain paver systems with slip resistance and expansion joints dialed in.",
-    points: ["Leathered marble & porcelain", "Coping & mitered edges", "Salt-pool safe"],
-    backgroundImage: getImagePath("/services-card2.png"),
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-        <path
-          fill="currentColor"
-          d="M4 6h16v2H4V6Zm0 10h16v2H4v-2Zm0-5h16v2H4v-2Z"
-        />
-      </svg>
-    ),
-  },
-  {
     title: "Patios & Courtyards",
     blurb:
       "Transform your backyard into an elegant extension of your home with premium paver installations built to last.",
-    points: ["Herringbone & ashlar patterns", "Integrated lighting", "Drainage & grading"],
     backgroundImage: getImagePath("/services-card3.png"),
     icon: (
       <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
@@ -51,46 +48,15 @@ const services = [
     ),
   },
   {
-    title: "Fire Pits",
+    title: "Pool Decks",
     blurb:
-      "Custom fire pit installations that create the perfect gathering spot for cool Florida evenings and year-round entertainment.",
-    points: ["Natural gas & wood-burning", "Integrated seating walls", "Heat-resistant paver surrounds"],
+      "Cool-underfoot leathered marble and porcelain paver systems with slip resistance and expansion joints dialed in.",
     backgroundImage: getImagePath("/services-card4.png"),
     icon: (
       <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
         <path
           fill="currentColor"
-          d="M17.66 11.2C17.43 10.9 17.15 10.64 16.89 10.38C16.22 9.78 15.46 9.35 14.82 8.72C13.33 7.26 13 4.85 13.95 3C13 3.23 12.17 3.75 11.46 4.32C8.87 6.4 7.85 10.07 9.07 13.22C9.11 13.32 9.15 13.42 9.15 13.55C9.15 13.77 9 13.97 8.8 14.05C8.57 14.15 8.33 14.09 8.14 13.93C8.08 13.88 8.04 13.83 8 13.76C6.87 12.33 6.69 10.28 7.45 8.64C5.78 10 4.87 12.3 5 14.47C5.06 14.97 5.12 15.47 5.29 15.97C5.43 16.57 5.7 17.17 6 17.7C7.08 19.43 8.95 20.67 10.96 20.92C13.1 21.19 15.39 20.8 17.03 19.32C18.86 17.66 19.5 15 18.56 12.72L18.43 12.46C18.22 12 17.66 11.2 17.66 11.2M14.5 17.5C14.22 17.74 13.76 18 13.4 18.1C12.28 18.5 11.16 17.94 10.5 17.28C11.69 17 12.4 16.12 12.61 15.23C12.78 14.43 12.46 13.77 12.33 13C12.21 12.26 12.23 11.63 12.5 10.94C12.69 11.32 12.89 11.7 13.13 12C13.9 13 15.11 13.44 15.37 14.8C15.41 14.94 15.43 15.08 15.43 15.23C15.46 16.05 15.1 16.95 14.5 17.5H14.5Z"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: "Walkways & Steps",
-    blurb:
-      "Utilize all sections of your property with beautifully crafted pathways and steps that connect your spaces seamlessly.",
-    points: ["Code-true risers", "Border soldier course", "Curves & garden ties"],
-    backgroundImage: getImagePath("/services-card5.png"),
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-        <path
-          fill="currentColor"
-          d="M4 18h16v2H4v-2Zm0-5h12v2H4v-2Zm0-5h8v2H4V8Z"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: "Sealing & Restoration",
-    blurb:
-      "Clean, sand, and seal with breathable, UV-stable sealers that enrich color without making surfaces slick.",
-    points: ["Efflorescence removal", "Polymeric re-sand", "Matte & wet-look options"],
-    backgroundImage: getImagePath("/services-card6.png"),
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
-        <path
-          fill="currentColor"
-          d="M12 2C8 6 6 9 6 12a6 6 0 0 0 12 0c0-3-2-6-6-10Z"
+          d="M4 6h16v2H4V6Zm0 10h16v2H4v-2Zm0-5h16v2H4v-2Z"
         />
       </svg>
     ),
@@ -121,7 +87,7 @@ const Services = () => {
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-50 via-blue-50 to-gray-100" />
       <div className="absolute inset-0 -z-10 [background:radial-gradient(1200px_600px_at_50%_-10%,rgba(10,134,196,0.08),transparent_70%)]" />
 
-      <div className="mx-auto max-w-7xl px-4 py-20 md:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:py-20 md:px-8">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
@@ -148,13 +114,13 @@ const Services = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4"
         >
           {services.map((svc) => (
             <motion.article
               key={svc.title}
               variants={item}
-              className="group relative overflow-hidden rounded-2xl border border-gray-700 shadow-lg transition-all duration-300 hover:shadow-2xl hover:border-[#0A86C4]/50 hover:scale-[1.02]"
+              className="group relative overflow-hidden rounded-2xl border border-gray-700 shadow-lg transition-all duration-300 hover:shadow-2xl hover:border-[#0A86C4]/50 hover:scale-[1.02] min-h-[320px] sm:min-h-[300px] lg:min-h-[320px]"
               style={{
                 backgroundImage: `url(${svc.backgroundImage})`,
                 backgroundSize: 'cover',
@@ -165,36 +131,23 @@ const Services = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/40 to-black/45" />
               
               {/* Content */}
-              <div className="relative z-10 p-6">
-                <div className="flex items-start gap-4">
+              <div className="relative z-10 p-6 flex flex-col h-full">
+                {/* Top section with icon and title - centered */}
+                <div className="flex flex-col items-center text-center">
                   <div className="rounded-xl bg-[#0A86C4] p-3 text-black transition-all duration-300 group-hover:scale-110 group-hover:bg-[#0875B1]">
                     {svc.icon}
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white">
-                      {svc.title}
-                    </h3>
-                    <p className="mt-2 text-gray-100 font-medium">{svc.blurb}</p>
-                  </div>
+                  <h3 className="text-2xl sm:text-2xl md:text-xl lg:text-2xl font-bold text-white mt-3">
+                    {svc.title}
+                  </h3>
                 </div>
 
-                <ul className="mt-5 space-y-2">
-                  {svc.points.map((p) => (
-                    <li key={p} className="flex items-start gap-2 text-gray-200">
-                      <svg
-                        viewBox="0 0 24 24"
-                        className="mt-0.5 h-5 w-5 flex-none text-[#0A86C4]"
-                        aria-hidden="true"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2Z"
-                        />
-                      </svg>
-                      <span>{p}</span>
-                    </li>
-                  ))}
-                </ul>
+                {/* Middle section with description - centered with max-width */}
+                <div className="flex-1 flex items-center justify-center mt-6">
+                  <p className="text-gray-100 font-medium leading-relaxed text-base text-center max-w-[250px] sm:max-w-none">
+                    {svc.blurb}
+                  </p>
+                </div>
               </div>
 
               {/* Hover edge highlight */}
@@ -217,13 +170,13 @@ const Services = () => {
           
           <div>
             <p className="text-lg mb-2 font-semibold text-white">
-              Not sure which service fits your project?
+              Ready to transform your outdoor living space?
             </p>
             <p className="text-gray-300">
-              We'll assess drainage, soil, and usage to recommend the right system.
+              Get expert design advice and a detailed quote for your dream project.
             </p>
           </div>
-          <ShimmerButton href="#quote">Get My Free Assessment</ShimmerButton>
+          <ShimmerButton href="#quote">Book a Consultation</ShimmerButton>
         </motion.div>
       </div>
     </section>

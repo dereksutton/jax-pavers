@@ -160,13 +160,14 @@ const RecentWork = () => {
         </div>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5, delay: 0.05 }}
-          className="relative mt-12 mx-4 md:mx-8 flex flex-col items-center justify-between gap-4 rounded-2xl p-6 text-center md:flex-row md:text-left overflow-hidden"
-        >
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="relative mt-12 flex flex-col items-center justify-between gap-4 rounded-2xl p-6 text-center md:flex-row md:text-left overflow-hidden"
+          >
           {/* Background gradients matching WhyUs component */}
           <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-slate-900 via-gray-800 to-[#0A86C4]" />
           <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-black/20 via-transparent to-black/10" />
@@ -175,8 +176,9 @@ const RecentWork = () => {
             <p className="text-lg font-semibold mb-2 text-white">Want to see something similar at your home?</p>
             <p className="text-gray-300 text-lg">Share your project details and dimensions—we'll provide a quick estimate.</p>
           </div>
-          <ShimmerButton href="#quote">Get My Quote</ShimmerButton>
-        </motion.div>
+          <ShimmerButton href="#quote">Book a Consultation</ShimmerButton>
+          </motion.div>
+        </div>
       </div>
 
       {/* Full-Screen Lightbox Modal */}

@@ -25,7 +25,7 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
         <div className="flex-1"></div>
 
         {/* Menu Items - Centered */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden lg:flex items-center space-x-8">
           <motion.a 
             href="#services" 
             className="text-white font-semibold hover:text-gray-300 transition-colors"
@@ -83,7 +83,7 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
         </div>
 
         {/* Social Icons - Far Right */}
-        <div className="hidden md:flex items-center space-x-4 flex-1 justify-end">
+        <div className="hidden lg:flex items-center space-x-4 flex-1 justify-end">
           <motion.a
             href="https://www.facebook.com/jaxoutdoorspaces"
             target="_blank"
@@ -117,7 +117,7 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
 
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <motion.button 
             onClick={toggleMenu}
             className="text-white z-50 relative p-2"
@@ -146,7 +146,7 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
           <>
             {/* Backdrop */}
             <motion.div
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -156,7 +156,7 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
             
             {/* Slide-in Menu */}
             <motion.div
-              className="fixed top-0 right-0 h-full w-80 max-w-[80vw] bg-gray-900/95 backdrop-blur-lg border-l border-gray-700 z-50 md:hidden"
+              className="fixed top-0 right-0 h-full w-80 max-w-[80vw] bg-gray-900/95 backdrop-blur-lg border-l border-gray-700 z-50 lg:hidden"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
