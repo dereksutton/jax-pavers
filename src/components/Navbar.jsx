@@ -85,7 +85,7 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
         {/* Social Icons - Far Right */}
         <div className="hidden lg:flex items-center space-x-4 flex-1 justify-end">
           <motion.a
-            href="https://www.facebook.com/jaxoutdoorspaces"
+            href="https://www.facebook.com/profile.php?id=61582980187014"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-gray-300 transition-colors"
@@ -99,7 +99,7 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
             </svg>
           </motion.a>
           <motion.a
-            href="https://www.instagram.com/jaxoutdoorspaces"
+            href="https://www.instagram.com/jaxpavers/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-gray-300 transition-colors"
@@ -227,7 +227,7 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                     transition={{ delay: 0.5, duration: 0.3 }}
                   >
                     <img
-                      src={getImagePath("/pavers-logo.png")}
+                      src={getImagePath("/jaxpavers-logo.png")}
                       alt="Company Logo"
                       className="h-28 w-auto opacity-80"
                     />

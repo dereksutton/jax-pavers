@@ -318,9 +318,9 @@ const Testimonials = () => {
           
           <div>
             <p className="text-2xl font-semibold text-white">Ready to love your outdoor space?</p>
-            <p className="text-gray-300">We'll review your project details, then share a clear plan & estimate.</p>
+            <p className="text-gray-300">Transform your vision into reality with expert design and flawless execution.</p>
           </div>
-          <ShimmerButton href="#quote">Get My Quote</ShimmerButton>
+          <ShimmerButton href="#quote">Book Your Consultation</ShimmerButton>
         </motion.div>
       </div>
 

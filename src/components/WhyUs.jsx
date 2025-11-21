@@ -40,8 +40,10 @@ const WhyUs = () => {
             Why Homeowners Choose Us
           </h2>
           <p className="mt-4 text-lg text-gray-300">
-            Jacksonville climate is unique. We build paver systems that drain, breathe,
-            and last—without the shifting, pooling, or fading you dread.
+            Jacksonville climate is unique. We put happy customers over profits—every decision,
+            from pricing to project timelines, is guided by what's best for you, not our bottom line.
+            That means transparent quotes, no hidden fees, and solutions tailored to your needs—even
+            if it means going the extra mile.
           </p>
         </motion.div>
 
@@ -57,9 +59,9 @@ const WhyUs = () => {
             {/* Pillar cards */}
             {[
               {
-                title: "Engineered Base, Not Just Pretty Pavers",
+                title: "Our Craftsmanship: Built To Last, Backed By Neighbors.",
                 copy:
-                  "We overbuild the foundation: proper excavation, geotextile (where needed), compaction, and drainage-minded grading for Florida's sand and rain.",
+                  "Master craftsmanship in every detail. We treat your project like our own home—using premium materials, time-tested techniques, and never cutting corners.",
                 bullets: [
                   "98% compaction targets",
                   "Open-graded or dense-graded base as appropriate",
@@ -152,9 +154,6 @@ const WhyUs = () => {
               <div className="mt-6 text-center">
                 <p className="text-lg font-semibold text-gray-900">
                   Ready to transform your outdoor space?
-                </p>
-                <p className="mt-2 text-gray-600">
-                  Let's discuss your vision and create something beautiful together.
                 </p>
               </div>
 

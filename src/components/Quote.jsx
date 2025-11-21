@@ -1,26 +1,61 @@
-// src/components/Quote.jsx
+// src/components/QuoteUpdated.jsx
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ShimmerButton from "./ShimmerButton";
 import getImagePath from '../utils/imagePaths';
+import { submitQuoteRequest } from '../services/quoteService';
 
 const initialState = {
-  name: "",
+  fullName: "",
   email: "",
   phone: "",
   address: "",
-  message: "",
+  projectType: "",
+  projectDetails: "",
+  budget: "",
+  timeline: "",
   howHeard: "",
   honeypot: "", // spam trap
 };
+
+const PROJECT_TYPES = [
+  "Driveway",
+  "Patio",
+  "Pool Deck",
+  "Walkway",
+  "Retaining Wall",
+  "Outdoor Kitchen",
+  "Fire Pit",
+  "Multiple Projects",
+  "Other"
+];
+
+const BUDGET_OPTIONS = [
+  "Under $10,000",
+  "$10,000 - $25,000",
+  "$25,000 - $50,000",
+  "$50,000 - $100,000",
+  "Over $100,000",
+  "Not sure yet"
+];
+
+const TIMELINE_OPTIONS = [
+  "ASAP",
+  "Within 1 month",
+  "Within 3 months",
+  "Within 6 months",
+  "Planning for next year",
+  "Just exploring options"
+];
 
 const HOW_HEARD_OPTIONS = [
   "Google Search",
   "Facebook",
   "Instagram",
-  "Referral from friend/family",
-  "Saw your work in neighborhood",
-  "Other",
+  "Referral",
+  "Previous Customer",
+  "Yard Sign",
+  "Other"
 ];
 
 const variants = {
@@ -34,23 +69,23 @@ const Quote = () => {
   const [result, setResult] = useState(null); // { ok: boolean, msg: string }
   const [messageCount, setMessageCount] = useState(0);
 
-  const remaining = useMemo(() => Math.max(0, 600 - messageCount), [messageCount]);
+  const remaining = useMemo(() => Math.max(0, 2000 - messageCount), [messageCount]);
 
   const onChange = (e) => {
     const { name, value } = e.target;
     setForm((s) => ({ ...s, [name]: value }));
-    if (name === "message") setMessageCount(value.length);
+    if (name === "projectDetails") setMessageCount(value.length);
   };
 
   const validate = () => {
     if (form.honeypot) return { ok: false, msg: "Spam detected." };
-    if (!form.name.trim()) return { ok: false, msg: "Please enter your name." };
+    if (!form.fullName.trim()) return { ok: false, msg: "Please enter your name." };
     if (!/^\S+@\S+\.\S+$/.test(form.email)) return { ok: false, msg: "Enter a valid email." };
-    if (!/^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/.test(form.phone))
-      return { ok: false, msg: "Enter a valid 10-digit phone." };
+    if (!form.phone.trim()) return { ok: false, msg: "Please enter your phone number." };
     if (!form.address.trim()) return { ok: false, msg: "Please enter your address." };
-    if (!form.message.trim()) return { ok: false, msg: "Please describe your project." };
-    if (!form.howHeard) return { ok: false, msg: "Please let us know how you heard about us." };
+    if (!form.projectType) return { ok: false, msg: "Please select a project type." };
+    if (!form.projectDetails.trim() || form.projectDetails.trim().length < 10)
+      return { ok: false, msg: "Please describe your project (at least 10 characters)." };
     return { ok: true };
   };
 
@@ -65,22 +100,26 @@ const Quote = () => {
     setResult(null);
 
     try {
-      const data = new FormData();
-      Object.entries(form).forEach(([k, v]) => data.append(k, v));
+      // Remove honeypot field before sending
+      const { honeypot, ...submitData } = form;
 
-      // Adjust endpoint as needed for your backend
-      const res = await fetch("/api/quote", {
-        method: "POST",
-        body: data,
-      });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      setResult({ ok: true, msg: "Thanks! We'll contact you shortly to schedule your consultation." });
-      setForm(initialState);
-      setMessageCount(0);
+      const response = await submitQuoteRequest(submitData);
+
+      if (response.success) {
+        setResult({
+          ok: true,
+          msg: "Thanks! We'll contact you shortly to schedule your consultation."
+        });
+        setForm(initialState);
+        setMessageCount(0);
+      } else {
+        throw new Error(response.message || "Submission failed");
+      }
     } catch (err) {
+      console.error('Form submission error:', err);
       setResult({
         ok: false,
-        msg: "Something went wrong submitting your request. Please try again or call us.",
+        msg: "Something went wrong submitting your request. Please try again or call us at (904) 445-1261.",
       });
     } finally {
       setSubmitting(false);
@@ -152,8 +191,8 @@ const Quote = () => {
                 <label className="block text-sm font-medium text-gray-700">Name *</label>
                 <input
                   type="text"
-                  name="name"
-                  value={form.name}
+                  name="fullName"
+                  value={form.fullName}
                   onChange={onChange}
                   required
                   className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 outline-none transition focus:border-[#0A86C4] focus:ring-2 focus:ring-[#0A86C4]/20"
@@ -198,6 +237,22 @@ const Quote = () => {
                   className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 outline-none transition focus:border-[#0A86C4] focus:ring-2 focus:ring-[#0A86C4]/20"
                 />
               </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Project Type *</label>
+                <select
+                  name="projectType"
+                  value={form.projectType}
+                  onChange={onChange}
+                  required
+                  className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 outline-none transition focus:border-[#0A86C4] focus:ring-2 focus:ring-[#0A86C4]/20"
+                >
+                  <option value="">Please select</option>
+                  {PROJECT_TYPES.map((type) => (
+                    <option key={type} value={type}>{type}</option>
+                  ))}
+                </select>
+              </div>
             </div>
 
             {/* Message */}
@@ -206,10 +261,10 @@ const Quote = () => {
                 Briefly Describe Your Project *
               </label>
               <textarea
-                name="message"
+                name="projectDetails"
                 rows={4}
-                maxLength={600}
-                value={form.message}
+                maxLength={2000}
+                value={form.projectDetails}
                 onChange={onChange}
                 required
                 placeholder="Please describe your project, including type of work needed, approximate size, and any specific requirements or concerns."
@@ -218,23 +273,53 @@ const Quote = () => {
               <div className="mt-1 text-right text-xs text-gray-500">{remaining} characters left</div>
             </div>
 
+            {/* Optional fields in two columns */}
+            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Budget Range</label>
+                <select
+                  name="budget"
+                  value={form.budget}
+                  onChange={onChange}
+                  className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 outline-none transition focus:border-[#0A86C4] focus:ring-2 focus:ring-[#0A86C4]/20"
+                >
+                  <option value="">Please select</option>
+                  {BUDGET_OPTIONS.map((budget) => (
+                    <option key={budget} value={budget}>{budget}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Timeline</label>
+                <select
+                  name="timeline"
+                  value={form.timeline}
+                  onChange={onChange}
+                  className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 outline-none transition focus:border-[#0A86C4] focus:ring-2 focus:ring-[#0A86C4]/20"
+                >
+                  <option value="">Please select</option>
+                  {TIMELINE_OPTIONS.map((timeline) => (
+                    <option key={timeline} value={timeline}>{timeline}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
             {/* How did you hear about us */}
             <div className="mt-6">
               <label className="block text-sm font-medium text-gray-700">
-                How did you hear about us? *
+                How did you hear about us?
               </label>
               <select
                 name="howHeard"
                 value={form.howHeard}
                 onChange={onChange}
-                required
                 className="mt-1 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 outline-none transition focus:border-[#0A86C4] focus:ring-2 focus:ring-[#0A86C4]/20"
               >
                 <option value="">Please select</option>
                 {HOW_HEARD_OPTIONS.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
+                  <option key={option} value={option}>{option}</option>
                 ))}
               </select>
             </div>

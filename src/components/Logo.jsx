@@ -16,7 +16,7 @@ const Logo = ({ isHidden = false }) => {
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <motion.img
-        src={getImagePath("/pavers-logo.png")}
+        src={getImagePath("/jaxpavers-logo.png")}
         alt="Company Logo"
         className="h-40 sm:h-42 md:h-44 lg:h-48 w-auto"
         whileHover={{ scale: 1.1, rotate: 2 }}

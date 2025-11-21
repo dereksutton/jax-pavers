@@ -5,16 +5,16 @@ import getImagePath from '../utils/imagePaths';
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gray-900 text-gray-300">
+    <footer className="relative bg-gradient-to-r from-[#0A86C4] to-[#003366] text-white">
       {/* Background accent gradient */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-gray-800 via-gray-900 to-black" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#0A86C4] to-[#003366]" />
 
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12">
           {/* Logo + Social */}
           <div className="flex flex-col items-center">
             <motion.img
-              src={getImagePath("/pavers-logo.png")}
+              src={getImagePath("/jaxpavers-logo.png")}
               alt="Company Logo"
               className="h-48 w-auto"
               initial={{ opacity: 0, y: 10 }}
@@ -26,10 +26,10 @@ const Footer = () => {
             {/* Social icons - centered under logo */}
             <div className="mt-4 flex justify-center space-x-4">
               <a
-                href="https://www.facebook.com/jaxoutdoorspaces"
+                href="https://www.facebook.com/profile.php?id=61582980187014"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-white/80 hover:text-gray-300 transition-colors"
                 aria-label="Facebook"
               >
                 <svg
@@ -42,10 +42,10 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com/jaxoutdoorspaces"
+                href="https://www.instagram.com/jaxpavers/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-white/80 hover:text-gray-300 transition-colors"
                 aria-label="Instagram"
               >
                 <svg
@@ -65,27 +65,27 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">Quick Links</h3>
             <ul className="mt-4 space-y-2 text-center md:text-left">
               <li>
-                <a href="#services" className="hover:text-white transition-colors">
+                <a href="#services" className="text-white/90 hover:text-gray-300 transition-colors">
                   Our Services
                 </a>
               </li>
               <li>
-                <a href="#why-us" className="hover:text-white transition-colors">
+                <a href="#why-us" className="text-white/90 hover:text-gray-300 transition-colors">
                   Why Us?
                 </a>
               </li>
               <li>
-                <a href="#recent-work" className="hover:text-white transition-colors">
+                <a href="#recent-work" className="text-white/90 hover:text-gray-300 transition-colors">
                   Recent Work
                 </a>
               </li>
               <li>
-                <a href="#testimonials" className="hover:text-white transition-colors">
+                <a href="#testimonials" className="text-white/90 hover:text-gray-300 transition-colors">
                   Testimonials
                 </a>
               </li>
               <li>
-                <a href="#quote" className="hover:text-white transition-colors">
+                <a href="#quote" className="text-white/90 hover:text-gray-300 transition-colors">
                   Get My Quote
                 </a>
               </li>
@@ -97,23 +97,23 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">Contact</h3>
             <ul className="mt-4 space-y-2 text-center md:text-left">
               <li>
-                <a href="tel:19044451261" className="hover:text-white transition-colors">
+                <a href="tel:19044451261" className="text-white/90 hover:text-gray-300 transition-colors">
                   (904) 445-1261
                 </a>
               </li>
               <li>
-                <a href="mailto:info@yourcompany.com" className="hover:text-white transition-colors">
+                <a href="mailto:info@yourcompany.com" className="text-white/90 hover:text-gray-300 transition-colors">
                   info@jaxoutdoorspaces.com
                 </a>
               </li>
-              <li>Jacksonville, FL</li>
+              <li className="text-white/90">Jacksonville, FL</li>
             </ul>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} Jacksonville Pavers & Outdoor Spaces. All rights reserved.
+        <div className="mt-12 border-t border-white/20 pt-6 text-center text-sm text-white/70">
+          © {new Date().getFullYear()} Jax Pavers. All rights reserved.
         </div>
       </div>
     </footer>

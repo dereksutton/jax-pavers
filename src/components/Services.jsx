@@ -50,7 +50,7 @@ const services = [
   {
     title: "Pool Decks",
     blurb:
-      "Cool-underfoot leathered marble and porcelain paver systems with slip resistance and expansion joints dialed in.",
+      "Elevate your poolside with stunning paver decks, expertly crafted with premium materials and precision.",
     backgroundImage: getImagePath("/services-card4.png"),
     icon: (
       <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
@@ -170,10 +170,10 @@ const Services = () => {
           
           <div>
             <p className="text-lg mb-2 font-semibold text-white">
-              Ready to transform your outdoor living space?
+              Tired of that cracked concrete?
             </p>
             <p className="text-gray-300">
-              Get expert design advice and a detailed quote for your dream project.
+              We'll build the paver driveway of your dreams with lasting beauty and durability.
             </p>
           </div>
           <ShimmerButton href="#quote">Book a Consultation</ShimmerButton>
