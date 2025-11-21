@@ -1,14 +1,10 @@
-// Utility to get correct image paths for both development and GitHub Pages deployment
+// Utility to get correct image paths for deployment
 const getImagePath = (imagePath) => {
   // Ensure the path starts with a slash
   const normalizedPath = imagePath.startsWith('/') ? imagePath : `/${imagePath}`;
 
-  // In production (GitHub Pages), add the base path
-  if (import.meta.env.PROD) {
-    return `/jax-pavers${normalizedPath}`;
-  }
-
-  // In development, return the normalized path directly
+  // Return the path directly - works for both development and Render deployment
+  // No prefix needed since we're deploying at root domain on Render
   return normalizedPath;
 };
 
