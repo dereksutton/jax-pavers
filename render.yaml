@@ -5,13 +5,11 @@ services:
     env: node
     region: oregon
     plan: starter
-    buildCommand: cd backend && npm install
+    buildCommand: cd backend && npm ci --production=false
     startCommand: cd backend && npm start
     envVars:
       - key: NODE_VERSION
-        value: 20.11.0
-      - key: PORT
-        value: 10000
+        value: 18
       - key: NODE_ENV
         value: production
     autoDeploy: false
