@@ -14,7 +14,7 @@ services:
     autoDeploy: false
 
   # Frontend Static Site
-  - type: pstatic
+  - type: static_site
     name: jax-pavers-web
     env: static
     plan: free
