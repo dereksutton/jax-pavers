@@ -13,14 +13,17 @@ services:
         value: 10000
     autoDeploy: false
 
-staticSites:
-  - name: jax-pavers-web
+  # Frontend Static Site
+  - type: web
+    name: jax-pavers-web
+    runtime: static
     plan: free
     buildCommand: npm install && npm run build
-    publishPath: ./dist
+    staticPublishPath: ./dist
     envVars:
       - key: VITE_API_URL
         fromService:
           type: web
           name: jax-pavers-api
           property: host
+    autoDeploy: false
