@@ -3,7 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
-import { testConnection } from './config/supabase.js';
+import connectDB from './config/database.js';
 import quoteRoutes from './routes/quoteRoutes.js';
 
 // Load environment variables
@@ -13,8 +13,8 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Test Supabase connection
-testConnection();
+// Connect to MongoDB
+connectDB();
 
 // Security middleware
 app.use(helmet());
@@ -72,7 +72,7 @@ app.get('/api/health', (req, res) => {
     message: 'Jax Pavers API is running',
     timestamp: new Date().toISOString(),
     environment: process.env.NODE_ENV || 'development',
-    database: 'Supabase/PostgreSQL'
+    database: 'MongoDB'
   });
 });
 
@@ -96,7 +96,7 @@ app.use((err, req, res, next) => {
     });
   }
 
-  // Handle validation errors
+  // Handle MongoDB validation errors
   if (err.name === 'ValidationError') {
     const errors = Object.values(err.errors).map(e => ({
       field: e.path,
@@ -110,11 +110,20 @@ app.use((err, req, res, next) => {
     });
   }
 
-  // Handle PostgreSQL unique constraint violations
-  if (err.code === '23505') {
+  // Handle MongoDB duplicate key errors
+  if (err.code === 11000) {
+    const field = Object.keys(err.keyValue)[0];
     return res.status(400).json({
       success: false,
-      message: 'Duplicate entry error'
+      message: `Duplicate ${field} entered`
+    });
+  }
+
+  // Handle MongoDB CastError (invalid ObjectId)
+  if (err.name === 'CastError') {
+    return res.status(400).json({
+      success: false,
+      message: 'Invalid ID format'
     });
   }
 
@@ -129,11 +138,11 @@ app.use((err, req, res, next) => {
 // Start server
 app.listen(PORT, () => {
   console.log(`
-╔════════════════════════════════════════════╗
+╔════════════════════════════════════════════════╗
 ║   Jax Pavers Backend Server                ║
 ║   Running on port ${PORT}                      ║
 ║   Environment: ${process.env.NODE_ENV || 'development'}             ║
-║   Database: Supabase/PostgreSQL            ║
-╚════════════════════════════════════════════╝
+║   Database: MongoDB                        ║
+╚════════════════════════════════════════════════╝
   `);
 });
