@@ -243,7 +243,7 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                     <p className="text-gray-400 text-sm mb-3">Follow Us</p>
                     <div className="flex justify-center space-x-4">
                       <a
-                        href="https://www.facebook.com/jaxoutdoorspaces"
+                        href="https://www.facebook.com/profile.php?id=61582980187014"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-400 hover:text-white transition-colors"
@@ -253,7 +253,7 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                         </svg>
                       </a>
                       <a
-                        href="https://www.instagram.com/jaxoutdoorspaces"
+                        href="https://www.instagram.com/jaxpavers/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-400 hover:text-white transition-colors"

@@ -170,7 +170,7 @@ const Services = () => {
           
           <div>
             <p className="text-lg mb-2 font-semibold text-white">
-              Tired of that cracked concrete?
+              Ready to elevate your curb appeal?
             </p>
             <p className="text-gray-300">
               We'll build the paver driveway of your dreams with lasting beauty and durability.
