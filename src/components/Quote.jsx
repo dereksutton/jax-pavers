@@ -22,12 +22,7 @@ const PROJECT_TYPES = [
   "Driveway",
   "Patio",
   "Pool Deck",
-  "Walkway",
-  "Retaining Wall",
-  "Outdoor Kitchen",
-  "Fire Pit",
-  "Multiple Projects",
-  "Other"
+  "Outdoor Kitchen"
 ];
 
 const BUDGET_OPTIONS = [
@@ -381,7 +376,7 @@ const Quote = () => {
               transition={{ delay: 0.2, duration: 0.4 }}
               className="text-sm font-semibold tracking-wide text-[#0A86C4] uppercase"
             >
-              Your Path to a Stunning Outdoor Space
+              What to Expect
             </motion.p>
 
             <ol className="mt-5 space-y-5">

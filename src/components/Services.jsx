@@ -6,9 +6,9 @@ import getImagePath from '../utils/imagePaths';
 
 const services = [
   {
-    title: "Summer Kitchens",
+    title: "Outdoor Kitchens",
     blurb:
-      "Create the ultimate outdoor entertaining space with fully equipped summer kitchens designed for Florida living.",
+      "Create the ultimate outdoor entertaining space with fully equipped outdoor kitchens designed for Florida living.",
     backgroundImage: getImagePath("/services-card1.png"),
     icon: (
       <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
