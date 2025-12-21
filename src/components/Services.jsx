@@ -76,6 +76,37 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
 };
 
+// Logo animation variants
+const logoContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+  },
+};
+
+const logoItem = {
+  hidden: { opacity: 0, scale: 0.8, y: 20 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 12,
+      duration: 0.6,
+    },
+  },
+};
+
+// Brand logos
+const brandLogos = [
+  { name: "Tremron", src: getImagePath("/tremron-logo.png"), className: "h-28 sm:h-24 md:h-28" },
+  { name: "Belgard", src: getImagePath("/belgard-logo.png"), className: "h-28 sm:h-24 md:h-28" },
+  { name: "TrueFlame", src: getImagePath("/trueflame-logo.png"), className: "h-20 sm:h-24 md:h-28" },
+];
+
 const Services = () => {
   return (
     <section
@@ -154,6 +185,62 @@ const Services = () => {
               <span className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-white via-blue-200 to-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </motion.article>
           ))}
+        </motion.div>
+
+        {/* Brand Logos Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+          className="mt-16 text-center"
+        >
+          <p className="text-lg font-semibold uppercase tracking-widest text-gray-500 mb-8">
+            Premium Materials From Trusted Brands
+          </p>
+
+          <motion.div
+            variants={logoContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-12 md:gap-16"
+          >
+            {brandLogos.map((logo, index) => (
+              <motion.div
+                key={logo.name}
+                variants={logoItem}
+                whileHover={{
+                  scale: 1.1,
+                  transition: { type: "spring", stiffness: 300, damping: 15 }
+                }}
+                className="relative group"
+              >
+                <motion.div
+                  animate={{
+                    y: [0, -6, 0],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    delay: index * 0.3,
+                    ease: "easeInOut",
+                  }}
+                  className="relative"
+                >
+                  {/* Glow effect on hover */}
+                  <div className="absolute inset-0 bg-[#0A86C4]/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  <img
+                    src={logo.src}
+                    alt={`${logo.name} logo`}
+                    className={`${logo.className} w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 relative z-10`}
+                  />
+                </motion.div>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
 
         {/* CTA Bar */}
