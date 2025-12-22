@@ -189,16 +189,13 @@ const Services = () => {
                 {brandLogos.map((logo) => (
                   <div
                     key={logo.name}
-                    className="flex-shrink-0 px-8 sm:px-10"
+                    className="flex-shrink-0 px-6 sm:px-10"
                   >
-                    <div className="group relative">
-                      <div className="absolute inset-0 bg-[#0A86C4]/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <img
-                        src={logo.src}
-                        alt={`${logo.name} logo`}
-                        className="h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 relative z-10"
-                      />
-                    </div>
+                    <img
+                      src={logo.src}
+                      alt={`${logo.name} logo`}
+                      className="h-14 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300"
+                    />
                   </div>
                 ))}
               </div>
@@ -206,16 +203,13 @@ const Services = () => {
                 {brandLogos.map((logo) => (
                   <div
                     key={`${logo.name}-dup`}
-                    className="flex-shrink-0 px-8 sm:px-10"
+                    className="flex-shrink-0 px-6 sm:px-10"
                   >
-                    <div className="group relative">
-                      <div className="absolute inset-0 bg-[#0A86C4]/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <img
-                        src={logo.src}
-                        alt={`${logo.name} logo`}
-                        className="h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 relative z-10"
-                      />
-                    </div>
+                    <img
+                      src={logo.src}
+                      alt={`${logo.name} logo`}
+                      className="h-14 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300"
+                    />
                   </div>
                 ))}
               </div>
