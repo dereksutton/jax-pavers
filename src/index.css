@@ -1,25 +1,19 @@
 @import "tailwindcss";
 
-/* Infinite marquee carousel - iOS compatible */
+/* Infinite marquee carousel */
 .marquee-wrapper {
-  position: relative;
   overflow: hidden;
   width: 100%;
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
-  mask-image: radial-gradient(white, black);
 }
 
 .marquee-content {
-  display: inline-flex;
-  white-space: nowrap;
+  display: flex;
   -webkit-animation: marquee-scroll 20s linear infinite;
   animation: marquee-scroll 20s linear infinite;
 }
 
 .marquee-item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  flex: 0 0 auto;
   padding: 0 1.5rem;
 }
 
@@ -30,22 +24,22 @@
 }
 
 @-webkit-keyframes marquee-scroll {
-  from {
+  0% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
   }
-  to {
+  100% {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
   }
 }
 
 @keyframes marquee-scroll {
-  from {
+  0% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
   }
-  to {
+  100% {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
   }
