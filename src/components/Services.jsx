@@ -183,10 +183,11 @@ const Services = () => {
             <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none" />
 
-            {/* Scrolling track - single track with doubled content */}
+            {/* Scrolling track - triple duplicated for seamless loop */}
             <div className="marquee-wrapper">
               <div className="marquee-content">
-                {[...brandLogos, ...brandLogos].map((logo, index) => (
+                {/* Render logos 3 times to ensure seamless infinite scroll */}
+                {[...brandLogos, ...brandLogos, ...brandLogos].map((logo, index) => (
                   <div
                     key={`${logo.name}-${index}`}
                     className="marquee-item"
@@ -195,6 +196,7 @@ const Services = () => {
                       src={logo.src}
                       alt={`${logo.name} logo`}
                       className="h-14 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300"
+                      loading="eager"
                     />
                   </div>
                 ))}
