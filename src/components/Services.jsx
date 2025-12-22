@@ -76,35 +76,13 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
 };
 
-// Logo animation variants
-const logoContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
-  },
-};
-
-const logoItem = {
-  hidden: { opacity: 0, scale: 0.8, y: 20 },
-  show: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 12,
-      duration: 0.6,
-    },
-  },
-};
-
 // Brand logos
 const brandLogos = [
-  { name: "Tremron", src: getImagePath("/tremron-logo.png"), className: "h-28 sm:h-24 md:h-28" },
-  { name: "Belgard", src: getImagePath("/belgard-logo.png"), className: "h-28 sm:h-24 md:h-28" },
-  { name: "TrueFlame", src: getImagePath("/trueflame-logo.png"), className: "h-20 sm:h-24 md:h-28" },
+  { name: "Tremron", src: getImagePath("/tremron-logo.png") },
+  { name: "Belgard", src: getImagePath("/belgard-logo.png") },
+  { name: "TrueFlame", src: getImagePath("/trueflame-logo.png") },
+  { name: "SurfaceLogix", src: getImagePath("/surfacelogix-logo.png") },
+  { name: "Trident", src: getImagePath("/trident-logo.png") },
 ];
 
 const Services = () => {
@@ -187,7 +165,7 @@ const Services = () => {
           ))}
         </motion.div>
 
-        {/* Brand Logos Section */}
+        {/* Brand Logos Carousel Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -199,48 +177,50 @@ const Services = () => {
             Premium Materials From Trusted Brands
           </p>
 
-          <motion.div
-            variants={logoContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-12 md:gap-16"
-          >
-            {brandLogos.map((logo, index) => (
-              <motion.div
-                key={logo.name}
-                variants={logoItem}
-                whileHover={{
-                  scale: 1.1,
-                  transition: { type: "spring", stiffness: 300, damping: 15 }
-                }}
-                className="relative group"
-              >
-                <motion.div
-                  animate={{
-                    y: [0, -6, 0],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    delay: index * 0.3,
-                    ease: "easeInOut",
-                  }}
-                  className="relative"
-                >
-                  {/* Glow effect on hover */}
-                  <div className="absolute inset-0 bg-[#0A86C4]/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {/* Carousel Container */}
+          <div className="relative overflow-hidden py-4">
+            {/* Gradient fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none" />
 
-                  <img
-                    src={logo.src}
-                    alt={`${logo.name} logo`}
-                    className={`${logo.className} w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 relative z-10`}
-                  />
-                </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
+            {/* Scrolling track - CSS marquee approach */}
+            <div className="marquee-container">
+              <div className="marquee-track">
+                {brandLogos.map((logo) => (
+                  <div
+                    key={logo.name}
+                    className="flex-shrink-0 px-8 sm:px-10"
+                  >
+                    <div className="group relative">
+                      <div className="absolute inset-0 bg-[#0A86C4]/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <img
+                        src={logo.src}
+                        alt={`${logo.name} logo`}
+                        className="h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 relative z-10"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="marquee-track" aria-hidden="true">
+                {brandLogos.map((logo) => (
+                  <div
+                    key={`${logo.name}-dup`}
+                    className="flex-shrink-0 px-8 sm:px-10"
+                  >
+                    <div className="group relative">
+                      <div className="absolute inset-0 bg-[#0A86C4]/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <img
+                        src={logo.src}
+                        alt={`${logo.name} logo`}
+                        className="h-16 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 relative z-10"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* CTA Bar */}

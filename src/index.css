@@ -1,5 +1,27 @@
 @import "tailwindcss";
 
+/* Infinite marquee carousel */
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  gap: 0;
+}
+
+.marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
