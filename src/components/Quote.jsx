@@ -22,7 +22,8 @@ const PROJECT_TYPES = [
   "Driveway",
   "Patio",
   "Pool Deck",
-  "Outdoor Kitchen"
+  "Outdoor Kitchen",
+  "Other"
 ];
 
 const BUDGET_OPTIONS = [
@@ -154,8 +155,8 @@ const Quote = () => {
             Book a Consultation
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Schedule your free consultation today. We'll discuss your vision, assess your space,
-            and provide expert recommendations for your project.
+            Your dream project starts here. Book a consultation, and our team will meet you at your home to
+            listen to your ideas, offer creative solutions, and guide you every step of the way.
           </p>
         </motion.div>
 
