@@ -203,15 +203,34 @@ const Services = () => {
                 className="flex sm:hidden justify-center items-center gap-8 w-full px-8"
               >
                 <motion.img
+                  animate={{
+                    y: [0, -8, 0],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                  }}
                   whileHover={{ scale: 1.05, filter: "grayscale(0%)" }}
-                  transition={{ duration: 0.3 }}
+                  whileTap={{ scale: 0.95, filter: "grayscale(0%)" }}
                   src={brandLogos[0].src}
                   alt={`${brandLogos[0].name} logo`}
                   className="h-20 w-auto max-w-[140px] object-contain grayscale"
                 />
                 <motion.img
+                  animate={{
+                    y: [0, -8, 0],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                    delay: 0.3,
+                  }}
                   whileHover={{ scale: 1.05, filter: "grayscale(0%)" }}
-                  transition={{ duration: 0.3 }}
+                  whileTap={{ scale: 0.95, filter: "grayscale(0%)" }}
                   src={brandLogos[1].src}
                   alt={`${brandLogos[1].name} logo`}
                   className="h-20 w-auto max-w-[140px] object-contain grayscale"
@@ -219,7 +238,7 @@ const Services = () => {
               </motion.div>
 
               {/* Mobile: Wide logos - one per row */}
-              {[brandLogos[2], brandLogos[3], brandLogos[4]].map((logo) => (
+              {[brandLogos[2], brandLogos[3], brandLogos[4]].map((logo, index) => (
                 <motion.div
                   key={logo.name}
                   variants={{
@@ -229,8 +248,18 @@ const Services = () => {
                   className="flex sm:hidden justify-center items-center w-full px-8"
                 >
                   <motion.img
+                    animate={{
+                      y: [0, -8, 0],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "easeInOut",
+                      delay: index * 0.3,
+                    }}
                     whileHover={{ scale: 1.05, filter: "grayscale(0%)" }}
-                    transition={{ duration: 0.3 }}
+                    whileTap={{ scale: 0.95, filter: "grayscale(0%)" }}
                     src={logo.src}
                     alt={`${logo.name} logo`}
                     className="h-16 w-auto max-w-full object-contain grayscale"
@@ -247,18 +276,37 @@ const Services = () => {
                 className="hidden sm:flex justify-center items-center gap-16"
               >
                 <motion.img
+                  animate={{
+                    y: [0, -10, 0],
+                  }}
+                  transition={{
+                    duration: 3.5,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                  }}
                   whileHover={{ scale: 1.08, filter: "grayscale(0%)" }}
-                  transition={{ duration: 0.3 }}
+                  whileTap={{ scale: 0.95, filter: "grayscale(0%)" }}
                   src={brandLogos[0].src}
                   alt={`${brandLogos[0].name} logo`}
-                  className="h-24 md:h-28 w-auto object-contain grayscale"
+                  className="h-24 md:h-28 w-auto object-contain grayscale cursor-pointer"
                 />
                 <motion.img
+                  animate={{
+                    y: [0, -10, 0],
+                  }}
+                  transition={{
+                    duration: 3.5,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                    delay: 0.4,
+                  }}
                   whileHover={{ scale: 1.08, filter: "grayscale(0%)" }}
-                  transition={{ duration: 0.3 }}
+                  whileTap={{ scale: 0.95, filter: "grayscale(0%)" }}
                   src={brandLogos[1].src}
                   alt={`${brandLogos[1].name} logo`}
-                  className="h-24 md:h-28 w-auto object-contain grayscale"
+                  className="h-24 md:h-28 w-auto object-contain grayscale cursor-pointer"
                 />
               </motion.div>
 
@@ -270,27 +318,26 @@ const Services = () => {
                 }}
                 className="hidden sm:flex justify-center items-center gap-8 md:gap-12"
               >
-                <motion.img
-                  whileHover={{ scale: 1.08, filter: "grayscale(0%)" }}
-                  transition={{ duration: 0.3 }}
-                  src={brandLogos[2].src}
-                  alt={`${brandLogos[2].name} logo`}
-                  className="h-18 md:h-20 w-auto object-contain grayscale"
-                />
-                <motion.img
-                  whileHover={{ scale: 1.08, filter: "grayscale(0%)" }}
-                  transition={{ duration: 0.3 }}
-                  src={brandLogos[3].src}
-                  alt={`${brandLogos[3].name} logo`}
-                  className="h-18 md:h-20 w-auto object-contain grayscale"
-                />
-                <motion.img
-                  whileHover={{ scale: 1.08, filter: "grayscale(0%)" }}
-                  transition={{ duration: 0.3 }}
-                  src={brandLogos[4].src}
-                  alt={`${brandLogos[4].name} logo`}
-                  className="h-18 md:h-20 w-auto object-contain grayscale"
-                />
+                {[brandLogos[2], brandLogos[3], brandLogos[4]].map((logo, index) => (
+                  <motion.img
+                    key={logo.name}
+                    animate={{
+                      y: [0, -10, 0],
+                    }}
+                    transition={{
+                      duration: 3.5,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "easeInOut",
+                      delay: index * 0.4,
+                    }}
+                    whileHover={{ scale: 1.08, filter: "grayscale(0%)" }}
+                    whileTap={{ scale: 0.95, filter: "grayscale(0%)" }}
+                    src={logo.src}
+                    alt={`${logo.name} logo`}
+                    className="h-18 md:h-20 w-auto object-contain grayscale cursor-pointer"
+                  />
+                ))}
               </motion.div>
             </motion.div>
           </div>
