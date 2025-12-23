@@ -1,5 +1,5 @@
 // src/components/Services.jsx
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import ShimmerButton from "./ShimmerButton";
 import getImagePath from '../utils/imagePaths';
@@ -86,6 +86,17 @@ const brandLogos = [
 ];
 
 const Services = () => {
+  const [activeLogo, setActiveLogo] = useState(null);
+
+  const handleLogoClick = (logoName, e) => {
+    e.stopPropagation();
+    setActiveLogo(activeLogo === logoName ? null : logoName);
+  };
+
+  const handleOutsideClick = () => {
+    setActiveLogo(null);
+  };
+
   return (
     <section
       id="services"
@@ -178,7 +189,7 @@ const Services = () => {
           </p>
 
           {/* Carousel Container */}
-          <div className="relative overflow-hidden py-4">
+          <div className="relative overflow-hidden py-4" onClick={handleOutsideClick}>
             {/* Logo grid with stagger animations */}
             <motion.div
               variants={{
@@ -212,11 +223,15 @@ const Services = () => {
                     repeatType: "reverse",
                     ease: "easeInOut",
                   }}
-                  whileHover={{ scale: 1.05, filter: "grayscale(0%)" }}
-                  whileTap={{ scale: 0.95, filter: "grayscale(0%)" }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={(e) => handleLogoClick(brandLogos[0].name, e)}
                   src={brandLogos[0].src}
                   alt={`${brandLogos[0].name} logo`}
-                  className="h-20 w-auto max-w-[140px] object-contain grayscale"
+                  className={`h-20 w-auto max-w-[140px] object-contain transition-all duration-300 ${
+                    activeLogo === brandLogos[0].name ? '' : 'grayscale'
+                  }`}
+                  style={{ cursor: 'pointer' }}
                 />
                 <motion.img
                   animate={{
@@ -229,11 +244,15 @@ const Services = () => {
                     ease: "easeInOut",
                     delay: 0.3,
                   }}
-                  whileHover={{ scale: 1.05, filter: "grayscale(0%)" }}
-                  whileTap={{ scale: 0.95, filter: "grayscale(0%)" }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={(e) => handleLogoClick(brandLogos[1].name, e)}
                   src={brandLogos[1].src}
                   alt={`${brandLogos[1].name} logo`}
-                  className="h-20 w-auto max-w-[140px] object-contain grayscale"
+                  className={`h-20 w-auto max-w-[140px] object-contain transition-all duration-300 ${
+                    activeLogo === brandLogos[1].name ? '' : 'grayscale'
+                  }`}
+                  style={{ cursor: 'pointer' }}
                 />
               </motion.div>
 
@@ -258,11 +277,15 @@ const Services = () => {
                       ease: "easeInOut",
                       delay: index * 0.3,
                     }}
-                    whileHover={{ scale: 1.05, filter: "grayscale(0%)" }}
-                    whileTap={{ scale: 0.95, filter: "grayscale(0%)" }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={(e) => handleLogoClick(logo.name, e)}
                     src={logo.src}
                     alt={`${logo.name} logo`}
-                    className="h-16 w-auto max-w-full object-contain grayscale"
+                    className={`h-16 w-auto max-w-full object-contain transition-all duration-300 ${
+                      activeLogo === logo.name ? '' : 'grayscale'
+                    }`}
+                    style={{ cursor: 'pointer' }}
                   />
                 </motion.div>
               ))}
