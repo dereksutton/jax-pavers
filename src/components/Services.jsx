@@ -308,11 +308,10 @@ const Services = () => {
                     repeatType: "reverse",
                     ease: "easeInOut",
                   }}
-                  whileHover={{ scale: 1.08, filter: "grayscale(0%)" }}
-                  whileTap={{ scale: 0.95, filter: "grayscale(0%)" }}
+                  whileHover={{ scale: 1.08 }}
                   src={brandLogos[0].src}
                   alt={`${brandLogos[0].name} logo`}
-                  className="h-24 md:h-28 w-auto object-contain grayscale cursor-pointer"
+                  className="h-24 md:h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
                 />
                 <motion.img
                   animate={{
@@ -325,11 +324,10 @@ const Services = () => {
                     ease: "easeInOut",
                     delay: 0.4,
                   }}
-                  whileHover={{ scale: 1.08, filter: "grayscale(0%)" }}
-                  whileTap={{ scale: 0.95, filter: "grayscale(0%)" }}
+                  whileHover={{ scale: 1.08 }}
                   src={brandLogos[1].src}
                   alt={`${brandLogos[1].name} logo`}
-                  className="h-24 md:h-28 w-auto object-contain grayscale cursor-pointer"
+                  className="h-24 md:h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
                 />
               </motion.div>
 
@@ -354,11 +352,10 @@ const Services = () => {
                       ease: "easeInOut",
                       delay: index * 0.4,
                     }}
-                    whileHover={{ scale: 1.08, filter: "grayscale(0%)" }}
-                    whileTap={{ scale: 0.95, filter: "grayscale(0%)" }}
+                    whileHover={{ scale: 1.08 }}
                     src={logo.src}
                     alt={`${logo.name} logo`}
-                    className="h-18 md:h-20 w-auto object-contain grayscale cursor-pointer"
+                    className="h-18 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
                   />
                 ))}
               </motion.div>
