@@ -179,61 +179,120 @@ const Services = () => {
 
           {/* Carousel Container */}
           <div className="relative overflow-hidden py-4">
-            {/* Logo grid - Mobile: 1-2-2, Desktop: 2-3 */}
-            <div className="flex flex-col items-center gap-8">
+            {/* Logo grid with stagger animations */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0 },
+                show: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.15, delayChildren: 0.1 }
+                }
+              }}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
+              className="flex flex-col items-center gap-6 sm:gap-8"
+            >
 
-              {/* Row 1: 1 logo on mobile, 2 larger logos on desktop */}
-              <div className="flex justify-center items-center gap-12 sm:gap-16">
-                <img
+              {/* Mobile: First two logos side by side */}
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                }}
+                className="flex sm:hidden justify-center items-center gap-8 w-full px-8"
+              >
+                <motion.img
+                  whileHover={{ scale: 1.05, filter: "grayscale(0%)" }}
+                  transition={{ duration: 0.3 }}
                   src={brandLogos[0].src}
                   alt={`${brandLogos[0].name} logo`}
-                  className="h-16 sm:h-24 md:h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-20 w-auto max-w-[140px] object-contain grayscale"
                 />
-                <img
+                <motion.img
+                  whileHover={{ scale: 1.05, filter: "grayscale(0%)" }}
+                  transition={{ duration: 0.3 }}
                   src={brandLogos[1].src}
                   alt={`${brandLogos[1].name} logo`}
-                  className="hidden sm:block h-24 md:h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-20 w-auto max-w-[140px] object-contain grayscale"
                 />
-              </div>
+              </motion.div>
 
-              {/* Row 2: 2 logos on mobile, 3 logos on desktop */}
-              <div className="flex justify-center items-center gap-12 sm:gap-8 md:gap-12">
-                <img
+              {/* Mobile: Wide logos - one per row */}
+              {[brandLogos[2], brandLogos[3], brandLogos[4]].map((logo) => (
+                <motion.div
+                  key={logo.name}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                  }}
+                  className="flex sm:hidden justify-center items-center w-full px-8"
+                >
+                  <motion.img
+                    whileHover={{ scale: 1.05, filter: "grayscale(0%)" }}
+                    transition={{ duration: 0.3 }}
+                    src={logo.src}
+                    alt={`${logo.name} logo`}
+                    className="h-16 w-auto max-w-full object-contain grayscale"
+                  />
+                </motion.div>
+              ))}
+
+              {/* Desktop: Row 1 - 2 larger logos */}
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                }}
+                className="hidden sm:flex justify-center items-center gap-16"
+              >
+                <motion.img
+                  whileHover={{ scale: 1.08, filter: "grayscale(0%)" }}
+                  transition={{ duration: 0.3 }}
+                  src={brandLogos[0].src}
+                  alt={`${brandLogos[0].name} logo`}
+                  className="h-24 md:h-28 w-auto object-contain grayscale"
+                />
+                <motion.img
+                  whileHover={{ scale: 1.08, filter: "grayscale(0%)" }}
+                  transition={{ duration: 0.3 }}
                   src={brandLogos[1].src}
                   alt={`${brandLogos[1].name} logo`}
-                  className="sm:hidden h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-24 md:h-28 w-auto object-contain grayscale"
                 />
-                <img
+              </motion.div>
+
+              {/* Desktop: Row 2 - 3 logos */}
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                }}
+                className="hidden sm:flex justify-center items-center gap-8 md:gap-12"
+              >
+                <motion.img
+                  whileHover={{ scale: 1.08, filter: "grayscale(0%)" }}
+                  transition={{ duration: 0.3 }}
                   src={brandLogos[2].src}
                   alt={`${brandLogos[2].name} logo`}
-                  className="h-16 sm:h-18 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-18 md:h-20 w-auto object-contain grayscale"
                 />
-                <img
+                <motion.img
+                  whileHover={{ scale: 1.08, filter: "grayscale(0%)" }}
+                  transition={{ duration: 0.3 }}
                   src={brandLogos[3].src}
                   alt={`${brandLogos[3].name} logo`}
-                  className="hidden sm:block h-18 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-18 md:h-20 w-auto object-contain grayscale"
                 />
-                <img
+                <motion.img
+                  whileHover={{ scale: 1.08, filter: "grayscale(0%)" }}
+                  transition={{ duration: 0.3 }}
                   src={brandLogos[4].src}
                   alt={`${brandLogos[4].name} logo`}
-                  className="hidden sm:block h-18 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-18 md:h-20 w-auto object-contain grayscale"
                 />
-              </div>
-
-              {/* Row 3: 2 logos on mobile only */}
-              <div className="flex sm:hidden justify-center items-center gap-12">
-                <img
-                  src={brandLogos[3].src}
-                  alt={`${brandLogos[3].name} logo`}
-                  className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                />
-                <img
-                  src={brandLogos[4].src}
-                  alt={`${brandLogos[4].name} logo`}
-                  className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </motion.div>
 
