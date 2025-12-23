@@ -179,43 +179,59 @@ const Services = () => {
 
           {/* Carousel Container */}
           <div className="relative overflow-hidden py-4">
-            {/* Gradient fade edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none" />
+            {/* Logo grid - Mobile: 1-2-2, Desktop: 2-3 */}
+            <div className="flex flex-col items-center gap-8">
 
-            {/* Logo carousel using RecentWork technique */}
-            <style>{`
-              @keyframes logo-scroll {
-                0% {
-                  transform: translate3d(0, 0, 0);
-                }
-                100% {
-                  transform: translate3d(calc(-100% / 3), 0, 0);
-                }
-              }
-            `}</style>
+              {/* Row 1: 1 logo on mobile, 2 larger logos on desktop */}
+              <div className="flex justify-center items-center gap-12 sm:gap-16">
+                <img
+                  src={brandLogos[0].src}
+                  alt={`${brandLogos[0].name} logo`}
+                  className="h-16 sm:h-24 md:h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+                <img
+                  src={brandLogos[1].src}
+                  alt={`${brandLogos[1].name} logo`}
+                  className="hidden sm:block h-24 md:h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
 
-            <div className="relative overflow-hidden w-full h-20 sm:h-24 md:h-28">
-              <div
-                className="flex absolute items-center"
-                style={{
-                  animation: 'logo-scroll 20s linear infinite',
-                  width: 'max-content',
-                  backfaceVisibility: 'hidden',
-                  WebkitBackfaceVisibility: 'hidden'
-                }}
-              >
-                {/* Triple duplication for seamless loop */}
-                {[...brandLogos, ...brandLogos, ...brandLogos].map((logo, index) => (
-                  <div key={`logo-${index}`} className="flex-shrink-0 px-8">
-                    <img
-                      src={logo.src}
-                      alt={index < brandLogos.length ? `${logo.name} logo` : ''}
-                      className="h-14 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                      loading="eager"
-                    />
-                  </div>
-                ))}
+              {/* Row 2: 2 logos on mobile, 3 logos on desktop */}
+              <div className="flex justify-center items-center gap-12 sm:gap-8 md:gap-12">
+                <img
+                  src={brandLogos[1].src}
+                  alt={`${brandLogos[1].name} logo`}
+                  className="sm:hidden h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+                <img
+                  src={brandLogos[2].src}
+                  alt={`${brandLogos[2].name} logo`}
+                  className="h-16 sm:h-18 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+                <img
+                  src={brandLogos[3].src}
+                  alt={`${brandLogos[3].name} logo`}
+                  className="hidden sm:block h-18 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+                <img
+                  src={brandLogos[4].src}
+                  alt={`${brandLogos[4].name} logo`}
+                  className="hidden sm:block h-18 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+
+              {/* Row 3: 2 logos on mobile only */}
+              <div className="flex sm:hidden justify-center items-center gap-12">
+                <img
+                  src={brandLogos[3].src}
+                  alt={`${brandLogos[3].name} logo`}
+                  className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+                <img
+                  src={brandLogos[4].src}
+                  alt={`${brandLogos[4].name} logo`}
+                  className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
               </div>
             </div>
           </div>
