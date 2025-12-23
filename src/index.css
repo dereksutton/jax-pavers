@@ -14,20 +14,12 @@
   display: flex;
   flex-direction: row;
   width: fit-content;
-  animation: logo-scroll 25s linear infinite;
+  animation: logo-scroll 30s linear infinite;
   will-change: transform;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-}
-
-.logo-carousel-group {
-  display: flex;
-  flex-direction: row;
-  flex-shrink: 0;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 
 .logo-carousel-item {
@@ -81,7 +73,7 @@
     transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translate3d(-25%, 0, 0);
+    transform: translate3d(calc(-100% / 6), 0, 0);
   }
 }
 

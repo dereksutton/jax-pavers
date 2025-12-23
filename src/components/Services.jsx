@@ -183,23 +183,25 @@ const Services = () => {
             <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none" />
 
-            {/* Scrolling track - iOS Safari compatible with extra coverage */}
+            {/* Scrolling track - continuous stream approach */}
             <div className="logo-carousel-wrapper">
               <div className="logo-carousel-track">
-                {/* Render 4 sets of logos for complete coverage */}
-                {[0, 1, 2, 3].map((setIndex) => (
-                  <div key={setIndex} className="logo-carousel-group" aria-hidden={setIndex > 0}>
-                    {brandLogos.map((logo, logoIndex) => (
-                      <div key={`${logo.name}-${setIndex}-${logoIndex}`} className="logo-carousel-item">
-                        <img
-                          src={logo.src}
-                          alt={`${logo.name} logo`}
-                          className="logo-carousel-image"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                ))}
+                {/* Render logos 6 times as continuous flat list */}
+                {Array.from({ length: 6 }).flatMap((_, setIndex) =>
+                  brandLogos.map((logo, logoIndex) => (
+                    <div
+                      key={`logo-${setIndex}-${logoIndex}`}
+                      className="logo-carousel-item"
+                      aria-hidden={setIndex > 0}
+                    >
+                      <img
+                        src={logo.src}
+                        alt={setIndex === 0 ? `${logo.name} logo` : ''}
+                        className="logo-carousel-image"
+                      />
+                    </div>
+                  ))
+                )}
               </div>
             </div>
           </div>
