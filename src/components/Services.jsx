@@ -183,25 +183,29 @@ const Services = () => {
             <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none" />
 
-            {/* Scrolling track - continuous stream approach */}
-            <div className="logo-carousel-wrapper">
-              <div className="logo-carousel-track">
-                {/* Render logos 6 times as continuous flat list */}
-                {Array.from({ length: 6 }).flatMap((_, setIndex) =>
-                  brandLogos.map((logo, logoIndex) => (
-                    <div
-                      key={`logo-${setIndex}-${logoIndex}`}
-                      className="logo-carousel-item"
-                      aria-hidden={setIndex > 0}
-                    >
-                      <img
-                        src={logo.src}
-                        alt={setIndex === 0 ? `${logo.name} logo` : ''}
-                        className="logo-carousel-image"
-                      />
-                    </div>
-                  ))
-                )}
+            {/* Pure CSS approach - proven to work */}
+            <div className="marquee-wrapper">
+              <div className="marquee-content">
+                {brandLogos.map((logo) => (
+                  <div key={logo.name} className="marquee-logo">
+                    <img
+                      src={logo.src}
+                      alt={`${logo.name} logo`}
+                      className="h-14 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="marquee-content" aria-hidden="true">
+                {brandLogos.map((logo) => (
+                  <div key={`${logo.name}-dup`} className="marquee-logo">
+                    <img
+                      src={logo.src}
+                      alt=""
+                      className="h-14 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>

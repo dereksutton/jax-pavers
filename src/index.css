@@ -1,85 +1,42 @@
 @import "tailwindcss";
 
-/* Logo carousel - iOS Safari bulletproof */
-.logo-carousel-wrapper {
+/* Seamless infinite marquee */
+.marquee-wrapper {
+  display: flex;
   overflow: hidden;
-  width: 100%;
-  position: relative;
-  display: flex;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
+  user-select: none;
 }
 
-.logo-carousel-track {
-  display: flex;
-  flex-direction: row;
-  width: fit-content;
-  animation: logo-scroll 30s linear infinite;
-  will-change: transform;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-
-.logo-carousel-item {
+.marquee-content {
   flex-shrink: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 1.5rem;
-  min-width: 120px;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-.logo-carousel-image {
-  height: 3.5rem;
-  width: auto;
-  object-fit: contain;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-  display: block;
-  max-width: 180px;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-.logo-carousel-image:hover {
-  filter: grayscale(0%);
+  justify-content: space-around;
+  gap: 3rem;
+  min-width: 100%;
+  padding-right: 3rem;
+  animation: scroll 25s linear infinite;
 }
 
 @media (min-width: 640px) {
-  .logo-carousel-item {
-    padding: 0 2.5rem;
-    min-width: 150px;
-  }
-
-  .logo-carousel-image {
-    height: 5rem;
-    max-width: 220px;
+  .marquee-content {
+    gap: 4rem;
+    padding-right: 4rem;
   }
 }
 
-@media (min-width: 768px) {
-  .logo-carousel-image {
-    height: 6rem;
-    max-width: 260px;
-  }
+.marquee-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 
-@keyframes logo-scroll {
-  0% {
-    transform: translate3d(0, 0, 0);
+@keyframes scroll {
+  from {
+    transform: translateX(0);
   }
-  100% {
-    transform: translate3d(calc(-100% / 6), 0, 0);
+  to {
+    transform: translateX(-100%);
   }
-}
-
-/* Pause on hover */
-.logo-carousel-track:hover {
-  animation-play-state: paused;
 }
 
 :root {
