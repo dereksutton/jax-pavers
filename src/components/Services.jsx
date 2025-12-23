@@ -183,26 +183,36 @@ const Services = () => {
             <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none" />
 
-            {/* Pure CSS approach - proven to work */}
-            <div className="marquee-wrapper">
-              <div className="marquee-content">
-                {brandLogos.map((logo) => (
-                  <div key={logo.name} className="marquee-logo">
+            {/* Logo carousel using RecentWork technique */}
+            <style>{`
+              @keyframes logo-scroll {
+                0% {
+                  transform: translate3d(0, 0, 0);
+                }
+                100% {
+                  transform: translate3d(calc(-100% / 3), 0, 0);
+                }
+              }
+            `}</style>
+
+            <div className="relative overflow-hidden w-full h-20 sm:h-24 md:h-28">
+              <div
+                className="flex absolute items-center"
+                style={{
+                  animation: 'logo-scroll 20s linear infinite',
+                  width: 'max-content',
+                  backfaceVisibility: 'hidden',
+                  WebkitBackfaceVisibility: 'hidden'
+                }}
+              >
+                {/* Triple duplication for seamless loop */}
+                {[...brandLogos, ...brandLogos, ...brandLogos].map((logo, index) => (
+                  <div key={`logo-${index}`} className="flex-shrink-0 px-8">
                     <img
                       src={logo.src}
-                      alt={`${logo.name} logo`}
+                      alt={index < brandLogos.length ? `${logo.name} logo` : ''}
                       className="h-14 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className="marquee-content" aria-hidden="true">
-                {brandLogos.map((logo) => (
-                  <div key={`${logo.name}-dup`} className="marquee-logo">
-                    <img
-                      src={logo.src}
-                      alt=""
-                      className="h-14 sm:h-20 md:h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                      loading="eager"
                     />
                   </div>
                 ))}
