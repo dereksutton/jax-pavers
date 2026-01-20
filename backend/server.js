@@ -5,6 +5,7 @@ import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
 import connectDB from './config/database.js';
 import quoteRoutes from './routes/quoteRoutes.js';
+import reviewRoutes from './routes/reviewRoutes.js';
 
 // Load environment variables
 dotenv.config();
@@ -64,6 +65,7 @@ app.use('/api/quotes', quoteLimiter);
 
 // API Routes
 app.use('/api/quotes', quoteRoutes);
+app.use('/api/reviews', reviewRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

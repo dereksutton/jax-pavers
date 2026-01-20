@@ -1,6 +1,7 @@
 import express from 'express';
 import QuoteService from '../services/quoteService.js';
 import EmailService from '../services/emailService.js';
+import MetaConversionsService from '../services/metaConversionsService.js';
 import { validateQuoteRequest, handleValidationErrors } from '../middleware/validation.js';
 
 const router = express.Router();
@@ -37,6 +38,29 @@ router.post('/', validateQuoteRequest, handleValidationErrors, async (req, res) 
       await QuoteService.updateEmailStatus(savedQuote.id, false, notificationResult.error);
     }
 
+    // Send Meta Conversions API Lead event
+    const metaRequestInfo = {
+      ipAddress,
+      userAgent,
+      sourceUrl: req.headers.referer || req.headers.origin,
+      fbc: req.body._fbc, // Facebook click ID from frontend
+      fbp: req.body._fbp, // Facebook browser ID from frontend
+    };
+
+    // Track lead and get eventId for frontend deduplication
+    let metaEventId = null;
+    try {
+      const metaResult = await MetaConversionsService.trackLead(savedQuote, metaRequestInfo);
+      metaEventId = metaResult.eventId;
+      if (metaResult.success) {
+        console.log('Meta Lead event sent:', metaResult.eventId);
+      } else {
+        console.warn('Meta Lead event failed:', metaResult.error);
+      }
+    } catch (err) {
+      console.error('Meta Conversions API error:', err);
+    }
+
     // Return success response
     res.status(201).json({
       success: true,
@@ -50,7 +74,8 @@ router.post('/', validateQuoteRequest, handleValidationErrors, async (req, res) 
       emailStatus: {
         notification: notificationResult.success,
         confirmation: confirmationResult.success
-      }
+      },
+      eventId: metaEventId, // For frontend Meta Pixel deduplication
     });
 
   } catch (error) {

@@ -1,5 +1,5 @@
 // src/components/QuoteUpdated.jsx
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ShimmerButton from "./ShimmerButton";
 import getImagePath from '../utils/imagePaths';
@@ -16,6 +16,35 @@ const initialState = {
   timeline: "",
   howHeard: "",
   honeypot: "", // spam trap
+};
+
+/**
+ * Get Facebook cookie value
+ * @param {string} name - Cookie name (_fbc or _fbp)
+ * @returns {string|null} - Cookie value or null
+ */
+const getFbCookie = (name) => {
+  if (typeof document === 'undefined') return null;
+  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  return match ? match[2] : null;
+};
+
+/**
+ * Track Lead event with Meta Pixel (browser-side)
+ * @param {Object} formData - Form submission data
+ * @param {string} eventId - Event ID for deduplication with Conversions API
+ */
+const trackMetaLead = (formData, eventId) => {
+  if (typeof window !== 'undefined' && window.fbq) {
+    window.fbq('track', 'Lead', {
+      content_name: 'Quote Request',
+      content_category: formData.projectType || 'General',
+      value: 0,
+      currency: 'USD',
+    }, {
+      eventID: eventId, // For deduplication with server-side event
+    });
+  }
 };
 
 const PROJECT_TYPES = [
@@ -99,9 +128,21 @@ const Quote = () => {
       // Remove honeypot field before sending
       const { honeypot, ...submitData } = form;
 
-      const response = await submitQuoteRequest(submitData);
+      // Add Meta tracking cookies for Conversions API deduplication
+      const dataWithMeta = {
+        ...submitData,
+        _fbc: getFbCookie('_fbc'),
+        _fbp: getFbCookie('_fbp'),
+      };
+
+      const response = await submitQuoteRequest(dataWithMeta);
 
       if (response.success) {
+        // Track Lead event with Meta Pixel (browser-side)
+        // Generate event ID for deduplication if not provided by server
+        const eventId = response.eventId || `lead_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+        trackMetaLead(submitData, eventId);
+
         setResult({
           ok: true,
           msg: "Thanks! We'll contact you shortly to schedule your consultation."
