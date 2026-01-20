@@ -9,7 +9,8 @@
 
 import crypto from 'crypto';
 
-const META_API_VERSION = 'v21.0';
+// Use stable API version
+const META_API_VERSION = 'v18.0';
 const META_GRAPH_URL = 'https://graph.facebook.com';
 
 /**
@@ -53,23 +54,18 @@ function hashPhone(phone) {
 function parseAddress(address) {
   if (!address) return {};
 
-  // Basic parsing - this handles common formats like "123 Main St, Jacksonville, FL 32256"
   const parts = address.split(',').map(p => p.trim());
-
   const result = {};
 
   if (parts.length >= 1) {
-    // First part is usually street address
     result.street = parts[0];
   }
 
   if (parts.length >= 2) {
-    // Second part is usually city
     result.city = parts[1];
   }
 
   if (parts.length >= 3) {
-    // Third part usually contains state and zip
     const stateZip = parts[2].trim();
     const stateZipMatch = stateZip.match(/^([A-Z]{2})\s*(\d{5}(?:-\d{4})?)?$/i);
 
@@ -79,7 +75,6 @@ function parseAddress(address) {
         result.zip = stateZipMatch[2];
       }
     } else {
-      // Try to extract just the state or zip
       const zipMatch = stateZip.match(/(\d{5})/);
       if (zipMatch) result.zip = zipMatch[1];
 
@@ -93,37 +88,37 @@ function parseAddress(address) {
 
 /**
  * Build user data object for Conversions API
- * @param {Object} quoteData - Quote submission data
+ * @param {Object} data - User/quote data
  * @param {Object} requestInfo - Request metadata (IP, user agent)
  * @returns {Object} - User data object with hashed values
  */
-function buildUserData(quoteData, requestInfo) {
+function buildUserData(data, requestInfo) {
   const userData = {};
 
   // Email (hashed)
-  if (quoteData.email) {
-    userData.em = [hashData(quoteData.email)];
+  if (data.email) {
+    userData.em = [hashData(data.email)];
   }
 
   // Phone (hashed)
-  if (quoteData.phone) {
-    userData.ph = [hashPhone(quoteData.phone)];
+  if (data.phone) {
+    userData.ph = [hashPhone(data.phone)];
   }
 
   // Name parsing
-  if (quoteData.fullName) {
-    const nameParts = quoteData.fullName.trim().split(/\s+/);
+  if (data.fullName) {
+    const nameParts = data.fullName.trim().split(/\s+/);
     if (nameParts.length >= 1) {
-      userData.fn = [hashData(nameParts[0])]; // First name
+      userData.fn = [hashData(nameParts[0])];
     }
     if (nameParts.length >= 2) {
-      userData.ln = [hashData(nameParts[nameParts.length - 1])]; // Last name
+      userData.ln = [hashData(nameParts[nameParts.length - 1])];
     }
   }
 
   // Address components (hashed)
-  if (quoteData.address) {
-    const addressParts = parseAddress(quoteData.address);
+  if (data.address) {
+    const addressParts = parseAddress(data.address);
 
     if (addressParts.city) {
       userData.ct = [hashData(addressParts.city)];
@@ -136,27 +131,27 @@ function buildUserData(quoteData, requestInfo) {
     }
   }
 
-  // Country (default to US for Jacksonville business)
+  // Country (default to US)
   userData.country = [hashData('us')];
 
-  // Client IP address
+  // Client IP address (required for server events)
   if (requestInfo.ipAddress) {
-    // Handle forwarded IPs (take the first one)
     const ip = requestInfo.ipAddress.split(',')[0].trim();
-    userData.client_ip_address = ip;
+    // Remove IPv6 prefix if present
+    userData.client_ip_address = ip.replace(/^::ffff:/, '');
   }
 
-  // User agent
+  // User agent (required for server events)
   if (requestInfo.userAgent) {
     userData.client_user_agent = requestInfo.userAgent;
   }
 
-  // Facebook click ID (fbc) - from URL parameter or cookie
+  // Facebook click ID (fbc) - improves attribution
   if (requestInfo.fbc) {
     userData.fbc = requestInfo.fbc;
   }
 
-  // Facebook browser ID (fbp) - from cookie
+  // Facebook browser ID (fbp) - improves attribution
   if (requestInfo.fbp) {
     userData.fbp = requestInfo.fbp;
   }
@@ -165,8 +160,29 @@ function buildUserData(quoteData, requestInfo) {
 }
 
 /**
+ * Log configuration status on startup
+ */
+function logConfigStatus() {
+  const pixelId = process.env.META_PIXEL_ID;
+  const accessToken = process.env.META_ACCESS_TOKEN;
+  const testCode = process.env.META_TEST_EVENT_CODE;
+
+  console.log('\n========== META CONVERSIONS API CONFIG ==========');
+  console.log(`Pixel ID: ${pixelId ? pixelId : 'NOT SET'}`);
+  console.log(`Access Token: ${accessToken ? `${accessToken.substring(0, 10)}...` : 'NOT SET'}`);
+  console.log(`Token Format Valid: ${accessToken?.startsWith('EAA') ? 'YES' : 'NO - Should start with EAA'}`);
+  console.log(`Test Event Code: ${testCode || 'NOT SET (production mode)'}`);
+  console.log(`API Version: ${META_API_VERSION}`);
+  console.log(`Website URL: ${process.env.WEBSITE_URL || 'https://jaxoutdoorspaces.com'}`);
+  console.log('==================================================\n');
+}
+
+// Log config on module load
+logConfigStatus();
+
+/**
  * Send event to Meta Conversions API
- * @param {string} eventName - Event name (e.g., 'Lead', 'Purchase')
+ * @param {string} eventName - Event name (e.g., 'Lead', 'PageView')
  * @param {Object} eventData - Event-specific data
  * @param {Object} userData - User data object
  * @param {string} eventId - Unique event ID for deduplication
@@ -175,37 +191,68 @@ function buildUserData(quoteData, requestInfo) {
 async function sendEvent(eventName, eventData, userData, eventId) {
   const pixelId = process.env.META_PIXEL_ID;
   const accessToken = process.env.META_ACCESS_TOKEN;
+  const testEventCode = process.env.META_TEST_EVENT_CODE;
 
-  if (!pixelId || !accessToken) {
-    console.warn('Meta Conversions API not configured - skipping event');
-    return { success: false, error: 'Not configured' };
+  console.log('\n---------- CAPI EVENT START ----------');
+  console.log(`Event: ${eventName}`);
+  console.log(`Event ID: ${eventId}`);
+  console.log(`Timestamp: ${new Date().toISOString()}`);
+
+  // Check configuration
+  if (!pixelId) {
+    console.error('ERROR: META_PIXEL_ID not set in environment variables');
+    console.log('---------- CAPI EVENT END (FAILED) ----------\n');
+    return { success: false, error: 'META_PIXEL_ID not configured' };
+  }
+
+  if (!accessToken) {
+    console.error('ERROR: META_ACCESS_TOKEN not set in environment variables');
+    console.log('---------- CAPI EVENT END (FAILED) ----------\n');
+    return { success: false, error: 'META_ACCESS_TOKEN not configured' };
+  }
+
+  if (!accessToken.startsWith('EAA')) {
+    console.error('ERROR: META_ACCESS_TOKEN appears invalid (should start with EAA)');
+    console.log('---------- CAPI EVENT END (FAILED) ----------\n');
+    return { success: false, error: 'Invalid access token format' };
   }
 
   const url = `${META_GRAPH_URL}/${META_API_VERSION}/${pixelId}/events`;
+  console.log(`API URL: ${url}`);
+
+  // Build event payload
+  const eventTime = Math.floor(Date.now() / 1000);
+  const eventSourceUrl = eventData.sourceUrl || process.env.WEBSITE_URL || 'https://jaxoutdoorspaces.com';
 
   const eventPayload = {
     event_name: eventName,
-    event_time: Math.floor(Date.now() / 1000),
-    event_id: eventId, // For deduplication with browser pixel
+    event_time: eventTime,
+    event_id: eventId,
     action_source: 'website',
-    event_source_url: eventData.sourceUrl || process.env.WEBSITE_URL || 'https://jaxoutdoorspaces.com',
+    event_source_url: eventSourceUrl,
     user_data: userData,
   };
 
   // Add custom data if provided
-  if (eventData.customData) {
+  if (eventData.customData && Object.keys(eventData.customData).length > 0) {
     eventPayload.custom_data = eventData.customData;
   }
 
   const payload = {
     data: [eventPayload],
-    // Test event code for debugging (remove in production)
-    ...(process.env.META_TEST_EVENT_CODE && {
-      test_event_code: process.env.META_TEST_EVENT_CODE
-    }),
   };
 
+  // Add test event code if configured
+  if (testEventCode) {
+    payload.test_event_code = testEventCode;
+    console.log(`Test Event Code: ${testEventCode}`);
+  }
+
+  console.log('Payload:', JSON.stringify(payload, null, 2));
+
   try {
+    console.log('Sending request to Meta...');
+
     const response = await fetch(`${url}?access_token=${accessToken}`, {
       method: 'POST',
       headers: {
@@ -214,36 +261,75 @@ async function sendEvent(eventName, eventData, userData, eventId) {
       body: JSON.stringify(payload),
     });
 
-    const result = await response.json();
+    const responseText = await response.text();
+    console.log(`Response Status: ${response.status}`);
+    console.log(`Response Body: ${responseText}`);
+
+    let result;
+    try {
+      result = JSON.parse(responseText);
+    } catch {
+      console.error('Failed to parse response as JSON');
+      result = { raw: responseText };
+    }
 
     if (!response.ok) {
-      console.error('Meta Conversions API error:', result);
+      console.error('META CAPI ERROR:', result);
+      console.log('---------- CAPI EVENT END (FAILED) ----------\n');
       return {
         success: false,
-        error: result.error?.message || 'API request failed',
-        details: result
+        error: result.error?.message || `HTTP ${response.status}`,
+        details: result,
+        statusCode: response.status,
       };
     }
 
-    console.log('Meta Conversions API success:', {
-      eventName,
-      eventId,
-      eventsReceived: result.events_received,
-    });
+    console.log('SUCCESS: Event sent to Meta');
+    console.log(`Events Received: ${result.events_received}`);
+    console.log(`FB Trace ID: ${result.fbtrace_id}`);
+    console.log('---------- CAPI EVENT END (SUCCESS) ----------\n');
 
     return {
       success: true,
       eventsReceived: result.events_received,
       fbTraceId: result.fbtrace_id,
+      eventId,
     };
 
   } catch (error) {
-    console.error('Meta Conversions API request failed:', error);
+    console.error('NETWORK ERROR:', error.message);
+    console.error('Stack:', error.stack);
+    console.log('---------- CAPI EVENT END (FAILED) ----------\n');
     return {
       success: false,
-      error: error.message
+      error: error.message,
+      networkError: true,
     };
   }
+}
+
+/**
+ * Track a PageView event
+ * @param {Object} requestInfo - Request metadata
+ * @returns {Promise<Object>} - API response
+ */
+async function trackPageView(requestInfo) {
+  const eventId = `pv_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+
+  const userData = {
+    client_ip_address: requestInfo.ipAddress?.split(',')[0].trim().replace(/^::ffff:/, ''),
+    client_user_agent: requestInfo.userAgent,
+  };
+
+  if (requestInfo.fbc) userData.fbc = requestInfo.fbc;
+  if (requestInfo.fbp) userData.fbp = requestInfo.fbp;
+
+  const eventData = {
+    sourceUrl: requestInfo.sourceUrl || process.env.WEBSITE_URL || 'https://jaxoutdoorspaces.com',
+  };
+
+  const result = await sendEvent('PageView', eventData, userData, eventId);
+  return { ...result, eventId };
 }
 
 /**
@@ -253,7 +339,6 @@ async function sendEvent(eventName, eventData, userData, eventId) {
  * @returns {Promise<Object>} - API response
  */
 async function trackLead(quoteData, requestInfo) {
-  // Generate unique event ID for deduplication
   const eventId = `lead_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
   const userData = buildUserData(quoteData, requestInfo);
@@ -263,7 +348,6 @@ async function trackLead(quoteData, requestInfo) {
     customData: {
       content_name: 'Quote Request',
       content_category: quoteData.projectType || 'General',
-      // Include non-PII custom data
       lead_type: 'consultation_request',
       project_type: quoteData.projectType || 'Not specified',
       budget_range: quoteData.budget || 'Not specified',
@@ -273,16 +357,11 @@ async function trackLead(quoteData, requestInfo) {
   };
 
   const result = await sendEvent('Lead', eventData, userData, eventId);
-
-  // Return the eventId for frontend deduplication
-  return {
-    ...result,
-    eventId,
-  };
+  return { ...result, eventId };
 }
 
 /**
- * Track a Contact event (phone call click, etc.)
+ * Track a Contact event
  * @param {Object} contactData - Contact event data
  * @param {Object} requestInfo - Request metadata
  * @returns {Promise<Object>} - API response
@@ -300,33 +379,67 @@ async function trackContact(contactData, requestInfo) {
     },
   };
 
-  return sendEvent('Contact', eventData, userData, eventId);
+  const result = await sendEvent('Contact', eventData, userData, eventId);
+  return { ...result, eventId };
 }
 
 /**
- * Track a custom event
- * @param {string} eventName - Custom event name
- * @param {Object} eventData - Event data
- * @param {Object} userData - User data
+ * Send a test event to verify CAPI is working
  * @param {Object} requestInfo - Request metadata
  * @returns {Promise<Object>} - API response
  */
-async function trackCustomEvent(eventName, eventData, userData, requestInfo) {
-  const eventId = `${eventName.toLowerCase()}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+async function sendTestEvent(requestInfo = {}) {
+  const eventId = `test_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-  const fullUserData = {
-    ...userData,
-    ...(requestInfo.ipAddress && { client_ip_address: requestInfo.ipAddress.split(',')[0].trim() }),
-    ...(requestInfo.userAgent && { client_user_agent: requestInfo.userAgent }),
+  const userData = {
+    client_ip_address: requestInfo.ipAddress?.split(',')[0].trim().replace(/^::ffff:/, '') || '127.0.0.1',
+    client_user_agent: requestInfo.userAgent || 'CAPI-Test-Agent',
   };
 
-  return sendEvent(eventName, eventData, fullUserData, eventId);
+  const eventData = {
+    sourceUrl: process.env.WEBSITE_URL || 'https://jaxoutdoorspaces.com',
+    customData: {
+      test: true,
+      timestamp: new Date().toISOString(),
+    },
+  };
+
+  console.log('\n*** SENDING TEST EVENT ***');
+  const result = await sendEvent('PageView', eventData, userData, eventId);
+  return { ...result, eventId };
+}
+
+/**
+ * Get current configuration status
+ * @returns {Object} - Configuration status
+ */
+function getConfigStatus() {
+  const pixelId = process.env.META_PIXEL_ID;
+  const accessToken = process.env.META_ACCESS_TOKEN;
+  const testEventCode = process.env.META_TEST_EVENT_CODE;
+
+  return {
+    pixelId: pixelId || null,
+    pixelIdSet: !!pixelId,
+    accessTokenSet: !!accessToken,
+    accessTokenValid: accessToken?.startsWith('EAA') || false,
+    accessTokenPreview: accessToken ? `${accessToken.substring(0, 15)}...` : null,
+    testEventCode: testEventCode || null,
+    testMode: !!testEventCode,
+    apiVersion: META_API_VERSION,
+    apiUrl: META_GRAPH_URL,
+    websiteUrl: process.env.WEBSITE_URL || 'https://jaxoutdoorspaces.com',
+  };
 }
 
 export default {
+  trackPageView,
   trackLead,
   trackContact,
-  trackCustomEvent,
+  sendTestEvent,
+  sendEvent,
+  getConfigStatus,
   hashData,
   hashPhone,
+  buildUserData,
 };
