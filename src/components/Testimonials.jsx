@@ -18,7 +18,7 @@ const fallbackReviews = [
     body:
       "They handled drainage, coping, and sealing like pros. We hosted the next weekend with zero puddling after a storm.",
     avatar: null,
-    media: { type: "image", src: getImagePath("/work-pooldeck.jpg"), alt: "Travertine pool deck after install" },
+    media: { type: "image", src: getImagePath("/testimonial0.jpg"), alt: "Beautiful completed paver project" },
     date: "2025-05-12",
     isGoogleReview: false,
   },
@@ -31,7 +31,7 @@ const fallbackReviews = [
     body:
       "Herringbone with a crisp border — laser-straight lines. Crew protected the landscaping and left everything spotless.",
     avatar: null,
-    media: { type: "image", src: getImagePath("/work-driveway1.jpg"), alt: "Herringbone driveway with border" },
+    media: { type: "image", src: getImagePath("/testimonial1.jpg"), alt: "Professional paver installation" },
     date: "2025-04-03",
     isGoogleReview: false,
   },
@@ -44,7 +44,7 @@ const fallbackReviews = [
     body:
       "Even risers, no wobble, and they matched our existing pavers perfectly. Communication was excellent throughout.",
     avatar: null,
-    media: { type: "image", src: getImagePath("/work-staircase.jpg"), alt: "Curved walkway with soldier course" },
+    media: { type: "image", src: getImagePath("/testimonial2.jpg"), alt: "Stunning outdoor living space" },
     date: "2025-03-18",
     isGoogleReview: false,
   },
@@ -57,18 +57,18 @@ const fallbackReviews = [
     body:
       "They suggested an ashlar pattern that made the space feel bigger. Sealer enhanced the color without getting slick.",
     avatar: null,
-    media: { type: "image", src: getImagePath("/work-patio1.jpg"), alt: "Ashlar patio with seating" },
+    media: { type: "image", src: getImagePath("/testimonial4.jpg"), alt: "Expert craftsmanship on display" },
     date: "2025-02-09",
     isGoogleReview: false,
   },
 ];
 
-// Project images to pair with Google reviews
+// Project images to pair with Google reviews (indexed by display position)
 const projectImages = [
-  { src: getImagePath("/work-pooldeck.jpg"), alt: "Beautiful pool deck installation" },
-  { src: getImagePath("/work-driveway1.jpg"), alt: "Elegant driveway pavers" },
-  { src: getImagePath("/work-staircase.jpg"), alt: "Professional walkway and steps" },
-  { src: getImagePath("/work-patio1.jpg"), alt: "Stunning patio design" },
+  { src: getImagePath("/testimonial0.jpg"), alt: "Beautiful completed paver project" },
+  { src: getImagePath("/testimonial1.jpg"), alt: "Professional paver installation" },
+  { src: getImagePath("/testimonial2.jpg"), alt: "Stunning outdoor living space" },
+  { src: getImagePath("/testimonial4.jpg"), alt: "Expert craftsmanship on display" },
 ];
 
 const fadeIn = {
