@@ -76,24 +76,30 @@ const fadeIn = {
   show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
 };
 
-const StarRow = ({ rating }) => (
-  <div className="flex items-center gap-1" aria-label={`${rating} out of 5 stars`}>
-    {Array.from({ length: STARS }).map((_, i) => {
-      const filled = i < rating;
-      return (
-        <svg
-          key={i}
-          className={`h-5 w-5 ${filled ? "text-yellow-400" : "text-gray-300"}`}
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 0 0 .95.69h3.462c.967 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 0 0-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 0 0-1.175 0l-2.8 2.034c-.785.57-1.84-.197-1.54-1.118l1.07-3.292a1 1 0 0 0-.364-1.118L2.98 8.72c-.783-.57-.379-1.81.588-1.81H7.03a1 1 0 0 0 .95-.69l1.07-3.292Z" />
-        </svg>
-      );
-    })}
-  </div>
-);
+const StarRow = ({ rating, size = "default" }) => {
+  const sizeClasses = size === "small"
+    ? "h-4 w-4 sm:h-5 sm:w-5"
+    : "h-4 w-4 sm:h-5 sm:w-5";
+
+  return (
+    <div className="flex items-center gap-0.5 sm:gap-1" aria-label={`${rating} out of 5 stars`}>
+      {Array.from({ length: STARS }).map((_, i) => {
+        const filled = i < rating;
+        return (
+          <svg
+            key={i}
+            className={`${sizeClasses} ${filled ? "text-yellow-400" : "text-gray-300"}`}
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 0 0 .95.69h3.462c.967 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 0 0-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 0 0-1.175 0l-2.8 2.034c-.785.57-1.84-.197-1.54-1.118l1.07-3.292a1 1 0 0 0-.364-1.118L2.98 8.72c-.783-.57-.379-1.81.588-1.81H7.03a1 1 0 0 0 .95-.69l1.07-3.292Z" />
+          </svg>
+        );
+      })}
+    </div>
+  );
+};
 
 // Google logo SVG for attribution
 const GoogleLogo = () => (
@@ -288,36 +294,36 @@ const Testimonials = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </button>
               )}
-              <div className="p-6">
-                <div className="flex items-center justify-between">
+              <div className="p-4 sm:p-6">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                   <div className="flex items-center gap-3">
                     {reviews[0]?.avatar ? (
                       <img
                         src={reviews[0].avatar}
                         alt=""
-                        className="h-12 w-12 rounded-full object-cover"
+                        className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover"
                         referrerPolicy="no-referrer"
                       />
                     ) : (
-                      <div className={`h-12 w-12 rounded-full bg-gradient-to-br ${getAvatarGradient(0)} flex items-center justify-center`}>
-                        <span className="text-white font-bold text-lg">
+                      <div className={`h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-gradient-to-br ${getAvatarGradient(0)} flex items-center justify-center`}>
+                        <span className="text-white font-bold text-base sm:text-lg">
                           {reviews[0]?.name?.charAt(0) || 'C'}
                         </span>
                       </div>
                     )}
                     <div>
                       <div className="flex items-center gap-2">
-                        <p className="font-bold text-gray-900">{reviews[0]?.name}</p>
+                        <p className="font-bold text-gray-900 text-sm sm:text-base">{reviews[0]?.name}</p>
                         {reviews[0]?.isGoogleReview && <GoogleLogo />}
                       </div>
-                      <p className="text-sm text-gray-600">{reviews[0]?.location}</p>
+                      <p className="text-xs sm:text-sm text-gray-600">{reviews[0]?.location}</p>
                     </div>
                   </div>
                   <StarRow rating={reviews[0]?.rating || 5} />
                 </div>
-                <h3 className="mt-4 text-xl font-bold text-gray-900">{reviews[0]?.headline}</h3>
-                <p className="mt-3 text-gray-700 leading-relaxed line-clamp-4">{reviews[0]?.body}</p>
-                <div className="mt-4 flex items-center justify-between">
+                <h3 className="mt-3 sm:mt-4 text-lg sm:text-xl font-bold text-gray-900">{reviews[0]?.headline}</h3>
+                <p className="mt-2 sm:mt-3 text-sm sm:text-base text-gray-700 leading-relaxed line-clamp-4">{reviews[0]?.body}</p>
+                <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                   {reviews[0]?.date && !reviews[0]?.isGoogleReview && (
                     <p className="text-xs text-gray-500">Completed {new Date(reviews[0].date).toLocaleDateString()}</p>
                   )}
@@ -356,33 +362,35 @@ const Testimonials = () => {
                       />
                     </button>
                   )}
-                  <div className="flex-1 p-5">
+                  <div className="flex-1 p-4 sm:p-5">
                     <div className="flex items-center gap-3">
                       {reviews[1]?.avatar ? (
                         <img
                           src={reviews[1].avatar}
                           alt=""
-                          className="h-10 w-10 rounded-full object-cover"
+                          className="h-9 w-9 sm:h-10 sm:w-10 rounded-full object-cover"
                           referrerPolicy="no-referrer"
                         />
                       ) : (
-                        <div className={`h-10 w-10 rounded-full bg-gradient-to-br ${getAvatarGradient(1)} flex items-center justify-center`}>
-                          <span className="text-white font-bold">
+                        <div className={`h-9 w-9 sm:h-10 sm:w-10 rounded-full bg-gradient-to-br ${getAvatarGradient(1)} flex items-center justify-center`}>
+                          <span className="text-white font-bold text-sm sm:text-base">
                             {reviews[1]?.name?.charAt(0) || 'C'}
                           </span>
                         </div>
                       )}
-                      <div className="flex-1">
+                      <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
-                          <p className="font-semibold text-gray-900">{reviews[1]?.name}</p>
+                          <p className="font-semibold text-gray-900 text-sm sm:text-base truncate">{reviews[1]?.name}</p>
                           {reviews[1]?.isGoogleReview && <GoogleLogo />}
                         </div>
-                        <p className="text-sm text-gray-600">{reviews[1]?.location}</p>
+                        <p className="text-xs sm:text-sm text-gray-600 truncate">{reviews[1]?.location}</p>
                       </div>
                     </div>
-                    <StarRow rating={reviews[1]?.rating || 5} />
-                    <h4 className="mt-3 font-bold text-gray-900">{reviews[1]?.headline}</h4>
-                    <p className="mt-2 text-sm text-gray-700 line-clamp-3">{reviews[1]?.body}</p>
+                    <div className="mt-2">
+                      <StarRow rating={reviews[1]?.rating || 5} />
+                    </div>
+                    <h4 className="mt-2 sm:mt-3 font-bold text-gray-900 text-sm sm:text-base">{reviews[1]?.headline}</h4>
+                    <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-gray-700 line-clamp-3">{reviews[1]?.body}</p>
                   </div>
                 </div>
               </motion.article>
@@ -414,33 +422,35 @@ const Testimonials = () => {
                     />
                   </button>
                 )}
-                <div className="p-5">
+                <div className="p-4 sm:p-5">
                   <div className="flex items-center gap-2">
                     {reviews[2]?.avatar ? (
                       <img
                         src={reviews[2].avatar}
                         alt=""
-                        className="h-9 w-9 rounded-full object-cover"
+                        className="h-8 w-8 sm:h-9 sm:w-9 rounded-full object-cover"
                         referrerPolicy="no-referrer"
                       />
                     ) : (
-                      <div className={`h-9 w-9 rounded-full bg-gradient-to-br ${getAvatarGradient(2)} flex items-center justify-center`}>
-                        <span className="text-white font-bold text-sm">
+                      <div className={`h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-gradient-to-br ${getAvatarGradient(2)} flex items-center justify-center`}>
+                        <span className="text-white font-bold text-xs sm:text-sm">
                           {reviews[2]?.name?.charAt(0) || 'C'}
                         </span>
                       </div>
                     )}
-                    <div className="flex-1">
+                    <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-1">
-                        <p className="font-semibold text-gray-900 text-sm">{reviews[2]?.name}</p>
+                        <p className="font-semibold text-gray-900 text-sm truncate">{reviews[2]?.name}</p>
                         {reviews[2]?.isGoogleReview && <GoogleLogo />}
                       </div>
-                      <p className="text-xs text-gray-600">{reviews[2]?.location}</p>
+                      <p className="text-xs text-gray-600 truncate">{reviews[2]?.location}</p>
                     </div>
                   </div>
-                  <StarRow rating={reviews[2]?.rating || 5} />
-                  <h4 className="mt-2 font-bold text-gray-900 text-sm">{reviews[2]?.headline}</h4>
-                  <p className="mt-2 text-xs text-gray-700 line-clamp-3">{reviews[2]?.body}</p>
+                  <div className="mt-2">
+                    <StarRow rating={reviews[2]?.rating || 5} />
+                  </div>
+                  <h4 className="mt-2 font-bold text-gray-900 text-sm line-clamp-2">{reviews[2]?.headline}</h4>
+                  <p className="mt-1 sm:mt-2 text-xs text-gray-700 line-clamp-3">{reviews[2]?.body}</p>
                 </div>
               </motion.article>
             )}
@@ -471,33 +481,35 @@ const Testimonials = () => {
                     />
                   </button>
                 )}
-                <div className="p-5">
+                <div className="p-4 sm:p-5">
                   <div className="flex items-center gap-2">
                     {reviews[3]?.avatar ? (
                       <img
                         src={reviews[3].avatar}
                         alt=""
-                        className="h-9 w-9 rounded-full object-cover"
+                        className="h-8 w-8 sm:h-9 sm:w-9 rounded-full object-cover"
                         referrerPolicy="no-referrer"
                       />
                     ) : (
-                      <div className={`h-9 w-9 rounded-full bg-gradient-to-br ${getAvatarGradient(3)} flex items-center justify-center`}>
-                        <span className="text-white font-bold text-sm">
+                      <div className={`h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-gradient-to-br ${getAvatarGradient(3)} flex items-center justify-center`}>
+                        <span className="text-white font-bold text-xs sm:text-sm">
                           {reviews[3]?.name?.charAt(0) || 'C'}
                         </span>
                       </div>
                     )}
-                    <div className="flex-1">
+                    <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-1">
-                        <p className="font-semibold text-gray-900 text-sm">{reviews[3]?.name}</p>
+                        <p className="font-semibold text-gray-900 text-sm truncate">{reviews[3]?.name}</p>
                         {reviews[3]?.isGoogleReview && <GoogleLogo />}
                       </div>
-                      <p className="text-xs text-gray-600">{reviews[3]?.location}</p>
+                      <p className="text-xs text-gray-600 truncate">{reviews[3]?.location}</p>
                     </div>
                   </div>
-                  <StarRow rating={reviews[3]?.rating || 5} />
-                  <h4 className="mt-2 font-bold text-gray-900 text-sm">{reviews[3]?.headline}</h4>
-                  <p className="mt-2 text-xs text-gray-700 line-clamp-3">{reviews[3]?.body}</p>
+                  <div className="mt-2">
+                    <StarRow rating={reviews[3]?.rating || 5} />
+                  </div>
+                  <h4 className="mt-2 font-bold text-gray-900 text-sm line-clamp-2">{reviews[3]?.headline}</h4>
+                  <p className="mt-1 sm:mt-2 text-xs text-gray-700 line-clamp-3">{reviews[3]?.body}</p>
                 </div>
               </motion.article>
             )}
