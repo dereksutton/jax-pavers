@@ -122,7 +122,7 @@ const RecentWork = () => {
             Recent Work Around Jacksonville
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            A look at driveways, patios, and pool decks we've built—engineered for Florida rain, heat, and salt air.
+            Transforming Jacksonville homes with stunning driveways, patios, pool decks, outdoor kitchens, and pergolas—each project crafted to elevate your outdoor living.
           </p>
         </motion.div>
 

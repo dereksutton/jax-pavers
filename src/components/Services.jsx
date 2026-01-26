@@ -61,6 +61,20 @@ const services = [
       </svg>
     ),
   },
+  {
+    title: "Pergolas",
+    blurb:
+      "Add shade and style to your outdoor space with custom aluminum or cedar pergolas built to withstand Florida's elements.",
+    backgroundImage: getImagePath("/services-card5.png"),
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M3 3h2v18H3V3Zm16 0h2v18h-2V3ZM7 4h10v2H7V4Zm0 4h10v2H7V8Zm0 4h10v2H7v-2Z"
+        />
+      </svg>
+    ),
+  },
 ];
 
 const container = {
@@ -134,7 +148,7 @@ const Services = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4"
+          className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
         >
           {services.map((svc) => (
             <motion.article
