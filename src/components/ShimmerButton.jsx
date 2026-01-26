@@ -64,7 +64,7 @@ const ShimmerButton = ({
           ease: "easeInOut"
         }}
       />
-      <span className="relative z-10 text-white text-xl">
+      <span className="relative z-10 text-white text-base sm:text-lg md:text-xl whitespace-nowrap">
         {children}
       </span>
     </Component>

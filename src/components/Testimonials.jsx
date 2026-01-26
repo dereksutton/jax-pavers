@@ -323,12 +323,12 @@ const Testimonials = () => {
                 </div>
                 <h3 className="mt-3 sm:mt-4 text-lg sm:text-xl font-bold text-gray-900">{reviews[0]?.headline}</h3>
                 <p className="mt-2 sm:mt-3 text-sm sm:text-base text-gray-700 leading-relaxed line-clamp-4">{reviews[0]?.body}</p>
-                <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div className="mt-3 sm:mt-4 flex flex-col items-center sm:flex-row sm:justify-between gap-3">
                   {reviews[0]?.date && !reviews[0]?.isGoogleReview && (
-                    <p className="text-xs text-gray-500">Completed {new Date(reviews[0].date).toLocaleDateString()}</p>
+                    <p className="text-xs text-gray-500 text-center sm:text-left">Completed {new Date(reviews[0].date).toLocaleDateString()}</p>
                   )}
                   {reviews[0]?.isGoogleReview && (
-                    <p className="text-xs text-gray-500">{reviews[0]?.location}</p>
+                    <p className="text-xs text-gray-500 text-center sm:text-left">{reviews[0]?.location}</p>
                   )}
                   <ShimmerButton href="#quote">Get Quote</ShimmerButton>
                 </div>
