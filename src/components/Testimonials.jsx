@@ -330,7 +330,7 @@ const Testimonials = () => {
                   {reviews[0]?.isGoogleReview && (
                     <p className="text-xs text-gray-500 text-center sm:text-left">{reviews[0]?.location}</p>
                   )}
-                  <ShimmerButton href="#quote">Get Quote</ShimmerButton>
+                  <ShimmerButton href="#quote">Book Your Consultation</ShimmerButton>
                 </div>
               </div>
             </motion.article>

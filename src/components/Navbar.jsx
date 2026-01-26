@@ -206,12 +206,12 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.4, duration: 0.3 }}
                     >
-                      <ShimmerButton 
+                      <ShimmerButton
                         href="#quote"
                         className="text-lg w-full text-center"
                         onClick={toggleMenu}
                       >
-                        Get My Quote
+                        Book a Consultation
                       </ShimmerButton>
                     </motion.div>
                   </div>
