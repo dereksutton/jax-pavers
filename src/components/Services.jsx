@@ -96,7 +96,7 @@ const brandLogos = [
   { name: "Belgard", src: getImagePath("/belgard-logo.png") },
   { name: "TrueFlame", src: getImagePath("/trueflame-logo.png") },
   { name: "SurfaceLogix", src: getImagePath("/surfacelogix-logo.png") },
-  { name: "Trident", src: getImagePath("/trident-logo.png") },
+  { name: "StruXure", src: getImagePath("/struxure-logo.png") },
 ];
 
 const Services = () => {
