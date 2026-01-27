@@ -1,5 +1,5 @@
 // src/components/Services.jsx
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import ShimmerButton from "./ShimmerButton";
 import getImagePath from '../utils/imagePaths';
@@ -97,20 +97,10 @@ const brandLogos = [
   { name: "TrueFlame", src: getImagePath("/trueflame-logo.png") },
   { name: "SurfaceLogix", src: getImagePath("/surfacelogix-logo.png") },
   { name: "StruXure", src: getImagePath("/struxure-logo.png") },
+  { name: "Twin Eagles", src: getImagePath("/twineagles-logo.png") },
 ];
 
 const Services = () => {
-  const [activeLogo, setActiveLogo] = useState(null);
-
-  const handleLogoClick = (logoName, e) => {
-    e.stopPropagation();
-    setActiveLogo(activeLogo === logoName ? null : logoName);
-  };
-
-  const handleOutsideClick = () => {
-    setActiveLogo(null);
-  };
-
   return (
     <section
       id="services"
@@ -202,178 +192,67 @@ const Services = () => {
             Premium Materials From Trusted Brands
           </p>
 
+          {/* CSS Animation for infinite scroll - translates exactly one set width */}
+          <style>{`
+            @keyframes scroll-logos {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-33.333%);
+              }
+            }
+          `}</style>
+
           {/* Carousel Container */}
-          <div className="relative overflow-hidden py-4" onClick={handleOutsideClick}>
-            {/* Logo grid with stagger animations */}
-            <motion.div
-              variants={{
-                hidden: { opacity: 0 },
-                show: {
-                  opacity: 1,
-                  transition: { staggerChildren: 0.15, delayChildren: 0.1 }
-                }
+          <div className="relative overflow-hidden py-6">
+            <div
+              className="flex items-center"
+              style={{
+                animation: 'scroll-logos 20s linear infinite',
+                width: 'fit-content'
               }}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.3 }}
-              className="flex flex-col items-center gap-6 sm:gap-8"
             >
-
-              {/* Mobile: First two logos side by side */}
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-                }}
-                className="flex sm:hidden justify-center items-center gap-8 w-full px-8"
-              >
-                <motion.img
-                  animate={{
-                    y: [0, -8, 0],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    ease: "easeInOut",
-                  }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={(e) => handleLogoClick(brandLogos[0].name, e)}
-                  src={brandLogos[0].src}
-                  alt={`${brandLogos[0].name} logo`}
-                  className={`h-20 w-auto max-w-[140px] object-contain transition-all duration-300 ${
-                    activeLogo === brandLogos[0].name ? '' : 'grayscale'
-                  }`}
-                  style={{ cursor: 'pointer' }}
-                />
-                <motion.img
-                  animate={{
-                    y: [0, -8, 0],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    ease: "easeInOut",
-                    delay: 0.3,
-                  }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={(e) => handleLogoClick(brandLogos[1].name, e)}
-                  src={brandLogos[1].src}
-                  alt={`${brandLogos[1].name} logo`}
-                  className={`h-20 w-auto max-w-[140px] object-contain transition-all duration-300 ${
-                    activeLogo === brandLogos[1].name ? '' : 'grayscale'
-                  }`}
-                  style={{ cursor: 'pointer' }}
-                />
-              </motion.div>
-
-              {/* Mobile: Wide logos - one per row */}
-              {[brandLogos[2], brandLogos[3], brandLogos[4]].map((logo, index) => (
-                <motion.div
-                  key={logo.name}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-                  }}
-                  className="flex sm:hidden justify-center items-center w-full px-8"
+              {/* First set */}
+              {brandLogos.map((logo, index) => (
+                <div
+                  key={`set1-${logo.name}-${index}`}
+                  className="flex-shrink-0 flex items-center justify-center w-[240px] sm:w-[260px] md:w-[300px] h-[75px] sm:h-[80px] md:h-[85px] lg:h-[90px] mx-3 sm:mx-4 md:mx-6"
                 >
-                  <motion.img
-                    animate={{
-                      y: [0, -8, 0],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      repeatType: "reverse",
-                      ease: "easeInOut",
-                      delay: index * 0.3,
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={(e) => handleLogoClick(logo.name, e)}
+                  <img
                     src={logo.src}
                     alt={`${logo.name} logo`}
-                    className={`h-16 w-auto max-w-full object-contain transition-all duration-300 ${
-                      activeLogo === logo.name ? '' : 'grayscale'
-                    }`}
-                    style={{ cursor: 'pointer' }}
+                    className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
                   />
-                </motion.div>
+                </div>
               ))}
-
-              {/* Desktop: Row 1 - 2 larger logos */}
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-                }}
-                className="hidden sm:flex justify-center items-center gap-16"
-              >
-                <motion.img
-                  animate={{
-                    y: [0, -10, 0],
-                  }}
-                  transition={{
-                    duration: 3.5,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    ease: "easeInOut",
-                  }}
-                  whileHover={{ scale: 1.08 }}
-                  src={brandLogos[0].src}
-                  alt={`${brandLogos[0].name} logo`}
-                  className="h-24 md:h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
-                />
-                <motion.img
-                  animate={{
-                    y: [0, -10, 0],
-                  }}
-                  transition={{
-                    duration: 3.5,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    ease: "easeInOut",
-                    delay: 0.4,
-                  }}
-                  whileHover={{ scale: 1.08 }}
-                  src={brandLogos[1].src}
-                  alt={`${brandLogos[1].name} logo`}
-                  className="h-24 md:h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
-                />
-              </motion.div>
-
-              {/* Desktop: Row 2 - 3 logos */}
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-                }}
-                className="hidden sm:flex justify-center items-center gap-8 md:gap-12"
-              >
-                {[brandLogos[2], brandLogos[3], brandLogos[4]].map((logo, index) => (
-                  <motion.img
-                    key={logo.name}
-                    animate={{
-                      y: [0, -10, 0],
-                    }}
-                    transition={{
-                      duration: 3.5,
-                      repeat: Infinity,
-                      repeatType: "reverse",
-                      ease: "easeInOut",
-                      delay: index * 0.4,
-                    }}
-                    whileHover={{ scale: 1.08 }}
+              {/* Second set (duplicate for seamless loop) */}
+              {brandLogos.map((logo, index) => (
+                <div
+                  key={`set2-${logo.name}-${index}`}
+                  className="flex-shrink-0 flex items-center justify-center w-[240px] sm:w-[260px] md:w-[300px] h-[75px] sm:h-[80px] md:h-[85px] lg:h-[90px] mx-3 sm:mx-4 md:mx-6"
+                >
+                  <img
                     src={logo.src}
                     alt={`${logo.name} logo`}
-                    className="h-18 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
+                    className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
                   />
-                ))}
-              </motion.div>
-            </motion.div>
+                </div>
+              ))}
+              {/* Third set (duplicate for seamless loop) */}
+              {brandLogos.map((logo, index) => (
+                <div
+                  key={`set3-${logo.name}-${index}`}
+                  className="flex-shrink-0 flex items-center justify-center w-[240px] sm:w-[260px] md:w-[300px] h-[75px] sm:h-[80px] md:h-[85px] lg:h-[90px] mx-3 sm:mx-4 md:mx-6"
+                >
+                  <img
+                    src={logo.src}
+                    alt={`${logo.name} logo`}
+                    className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
 
