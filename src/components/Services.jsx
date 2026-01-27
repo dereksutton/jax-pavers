@@ -1,5 +1,5 @@
 // src/components/Services.jsx
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import ShimmerButton from "./ShimmerButton";
 import getImagePath from '../utils/imagePaths';
@@ -101,6 +101,12 @@ const brandLogos = [
 ];
 
 const Services = () => {
+  const [activeLogo, setActiveLogo] = useState(null);
+
+  const handleLogoTap = (logoName) => {
+    setActiveLogo(activeLogo === logoName ? null : logoName);
+  };
+
   return (
     <section
       id="services"
@@ -217,12 +223,15 @@ const Services = () => {
               {brandLogos.map((logo, index) => (
                 <div
                   key={`set1-${logo.name}-${index}`}
-                  className="flex-shrink-0 flex items-center justify-center w-[240px] sm:w-[260px] md:w-[300px] h-[75px] sm:h-[80px] md:h-[85px] lg:h-[90px] mx-3 sm:mx-4 md:mx-6"
+                  className="flex-shrink-0 flex items-center justify-center w-[240px] sm:w-[260px] md:w-[300px] h-[75px] sm:h-[80px] md:h-[85px] lg:h-[90px] mx-3 sm:mx-4 md:mx-6 cursor-pointer"
+                  onClick={() => handleLogoTap(logo.name)}
                 >
                   <img
                     src={logo.src}
                     alt={`${logo.name} logo`}
-                    className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    className={`max-h-full max-w-full object-contain transition-all duration-300 hover:grayscale-0 ${
+                      activeLogo === logo.name ? 'grayscale-0' : 'grayscale'
+                    }`}
                   />
                 </div>
               ))}
@@ -230,12 +239,15 @@ const Services = () => {
               {brandLogos.map((logo, index) => (
                 <div
                   key={`set2-${logo.name}-${index}`}
-                  className="flex-shrink-0 flex items-center justify-center w-[240px] sm:w-[260px] md:w-[300px] h-[75px] sm:h-[80px] md:h-[85px] lg:h-[90px] mx-3 sm:mx-4 md:mx-6"
+                  className="flex-shrink-0 flex items-center justify-center w-[240px] sm:w-[260px] md:w-[300px] h-[75px] sm:h-[80px] md:h-[85px] lg:h-[90px] mx-3 sm:mx-4 md:mx-6 cursor-pointer"
+                  onClick={() => handleLogoTap(logo.name)}
                 >
                   <img
                     src={logo.src}
                     alt={`${logo.name} logo`}
-                    className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    className={`max-h-full max-w-full object-contain transition-all duration-300 hover:grayscale-0 ${
+                      activeLogo === logo.name ? 'grayscale-0' : 'grayscale'
+                    }`}
                   />
                 </div>
               ))}
@@ -243,12 +255,15 @@ const Services = () => {
               {brandLogos.map((logo, index) => (
                 <div
                   key={`set3-${logo.name}-${index}`}
-                  className="flex-shrink-0 flex items-center justify-center w-[240px] sm:w-[260px] md:w-[300px] h-[75px] sm:h-[80px] md:h-[85px] lg:h-[90px] mx-3 sm:mx-4 md:mx-6"
+                  className="flex-shrink-0 flex items-center justify-center w-[240px] sm:w-[260px] md:w-[300px] h-[75px] sm:h-[80px] md:h-[85px] lg:h-[90px] mx-3 sm:mx-4 md:mx-6 cursor-pointer"
+                  onClick={() => handleLogoTap(logo.name)}
                 >
                   <img
                     src={logo.src}
                     alt={`${logo.name} logo`}
-                    className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    className={`max-h-full max-w-full object-contain transition-all duration-300 hover:grayscale-0 ${
+                      activeLogo === logo.name ? 'grayscale-0' : 'grayscale'
+                    }`}
                   />
                 </div>
               ))}
