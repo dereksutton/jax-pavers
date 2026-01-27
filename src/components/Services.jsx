@@ -208,6 +208,17 @@ const Services = () => {
                 transform: translateX(-33.333%);
               }
             }
+            @keyframes logo-bounce {
+              0%, 100% {
+                transform: scale(1.15) translateY(0);
+              }
+              50% {
+                transform: scale(1.15) translateY(-8px);
+              }
+            }
+            .logo-active {
+              animation: logo-bounce 0.6s ease-in-out infinite;
+            }
           `}</style>
 
           {/* Carousel Container */}
@@ -229,8 +240,8 @@ const Services = () => {
                   <img
                     src={logo.src}
                     alt={`${logo.name} logo`}
-                    className={`max-h-full max-w-full object-contain transition-all duration-300 hover:grayscale-0 ${
-                      activeLogo === logo.name ? 'grayscale-0' : 'grayscale'
+                    className={`max-h-full max-w-full object-contain transition-all duration-300 hover:grayscale-0 hover:scale-[1.15] ${
+                      activeLogo === logo.name ? 'grayscale-0 logo-active' : 'grayscale'
                     }`}
                   />
                 </div>
@@ -245,8 +256,8 @@ const Services = () => {
                   <img
                     src={logo.src}
                     alt={`${logo.name} logo`}
-                    className={`max-h-full max-w-full object-contain transition-all duration-300 hover:grayscale-0 ${
-                      activeLogo === logo.name ? 'grayscale-0' : 'grayscale'
+                    className={`max-h-full max-w-full object-contain transition-all duration-300 hover:grayscale-0 hover:scale-[1.15] ${
+                      activeLogo === logo.name ? 'grayscale-0 logo-active' : 'grayscale'
                     }`}
                   />
                 </div>
@@ -261,8 +272,8 @@ const Services = () => {
                   <img
                     src={logo.src}
                     alt={`${logo.name} logo`}
-                    className={`max-h-full max-w-full object-contain transition-all duration-300 hover:grayscale-0 ${
-                      activeLogo === logo.name ? 'grayscale-0' : 'grayscale'
+                    className={`max-h-full max-w-full object-contain transition-all duration-300 hover:grayscale-0 hover:scale-[1.15] ${
+                      activeLogo === logo.name ? 'grayscale-0 logo-active' : 'grayscale'
                     }`}
                   />
                 </div>
