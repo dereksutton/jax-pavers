@@ -94,10 +94,10 @@ const item = {
 const brandLogos = [
   { name: "Tremron", src: getImagePath("/tremron-logo.png") },
   { name: "Belgard", src: getImagePath("/belgard-logo.png") },
-  { name: "TrueFlame", src: getImagePath("/trueflame-logo.png") },
-  { name: "SurfaceLogix", src: getImagePath("/surfacelogix-logo.png") },
-  { name: "StruXure", src: getImagePath("/struxure-logo.png") },
   { name: "Twin Eagles", src: getImagePath("/twineagles-logo.png") },
+  { name: "TrueFlame", src: getImagePath("/trueflame-logo.png") },
+  { name: "StruXure", src: getImagePath("/struxure-logo.png") },
+  { name: "SurfaceLogix", src: getImagePath("/surfacelogix-logo.png") },
 ];
 
 const Services = () => {
