@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#0A86C4] to-[#003366]" />
 
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-12">
           {/* Logo + Social */}
           <div className="flex flex-col items-center">
             <motion.img
@@ -87,6 +87,23 @@ const Footer = () => {
               <li>
                 <a href="#quote" className="text-white/90 hover:text-gray-300 transition-colors">
                   Get My Quote
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Catalogs */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-lg font-semibold text-white">Catalogs</h3>
+            <ul className="mt-4 space-y-2 text-center md:text-left">
+              <li>
+                <a href="https://www.tremron.com/flipbook/south_hardscape_book/" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-gray-300 transition-colors">
+                  Tremron Catalog
+                </a>
+              </li>
+              <li>
+                <a href="https://www.belgard.com/wp-content/uploads/2021/03/Coastal-2026-Catalog_WEB_Single-Pages_BEL25-D-577275.pdf" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-gray-300 transition-colors">
+                  Belgard Catalog
                 </a>
               </li>
             </ul>

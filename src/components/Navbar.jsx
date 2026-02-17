@@ -1,10 +1,12 @@
 // src/components/Navbar.jsx
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ShimmerButton from './ShimmerButton';
 import getImagePath from '../utils/imagePaths';
 
 const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
+  const [catalogsOpen, setCatalogsOpen] = useState(false);
+
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -198,7 +200,61 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                         {link.text}
                       </motion.a>
                     ))}
-                    
+
+                    {/* Catalogs Dropdown */}
+                    <motion.div
+                      initial={{ opacity: 0, x: 50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.4, duration: 0.3 }}
+                    >
+                      <button
+                        onClick={() => setCatalogsOpen(!catalogsOpen)}
+                        className="flex items-center justify-between w-full text-white text-lg font-medium hover:text-[#0A86C4] transition-colors"
+                      >
+                        Catalogs
+                        <motion.svg
+                          className="w-5 h-5 ml-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          animate={{ rotate: catalogsOpen ? 180 : 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </motion.svg>
+                      </button>
+                      <AnimatePresence>
+                        {catalogsOpen && (
+                          <motion.div
+                            className="ml-4 mt-3 space-y-3"
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            <a
+                              href="https://www.tremron.com/flipbook/south_hardscape_book/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-gray-300 text-base font-medium hover:text-[#0A86C4] transition-colors"
+                              onClick={toggleMenu}
+                            >
+                              Tremron Catalog
+                            </a>
+                            <a
+                              href="https://www.belgard.com/wp-content/uploads/2021/03/Coastal-2026-Catalog_WEB_Single-Pages_BEL25-D-577275.pdf"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-gray-300 text-base font-medium hover:text-[#0A86C4] transition-colors"
+                              onClick={toggleMenu}
+                            >
+                              Belgard Catalog
+                            </a>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+
                     {/* CTA Button */}
                     <motion.div
                       className="pt-4"
