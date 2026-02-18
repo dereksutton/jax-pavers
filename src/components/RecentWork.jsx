@@ -4,15 +4,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import ShimmerButton from "./ShimmerButton";
 import getImagePath from '../utils/imagePaths';
 
-// Generate array of all 28 paver images
-const WORK_IMAGES = Array.from({ length: 28 }, (_, i) =>
+// Generate array of all 26 paver images
+const WORK_IMAGES = Array.from({ length: 26 }, (_, i) =>
   getImagePath(`/pavers-${i + 1}.png`)
 );
 
 // Split images into three rows (roughly equal distribution)
 const ROW_1_IMAGES = WORK_IMAGES.slice(0, 9);   // Images 1-9
-const ROW_2_IMAGES = WORK_IMAGES.slice(9, 19);  // Images 10-19
-const ROW_3_IMAGES = WORK_IMAGES.slice(19, 28); // Images 20-28
+const ROW_2_IMAGES = WORK_IMAGES.slice(9, 18);  // Images 10-18
+const ROW_3_IMAGES = WORK_IMAGES.slice(18);      // Images 19-26
 
 const RecentWork = () => {
   const [lightbox, setLightbox] = useState(null);
