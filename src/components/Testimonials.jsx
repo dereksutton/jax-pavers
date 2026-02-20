@@ -192,7 +192,16 @@ const Testimonials = () => {
           <span className="text-sm text-gray-600">
             {TOTAL_REVIEWS} Reviews
           </span>
-          <GoogleLogo />
+          <span className="h-4 w-px bg-gray-300" aria-hidden="true" />
+          <a
+            href="https://www.google.com/maps/place/?q=place_id:ChIJW5hkwX-QcokRVKzV4I3CI-U&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-sm font-medium text-[#0A86C4] transition-colors hover:text-[#0875B1]"
+          >
+            <GoogleLogo />
+            <span>See All</span>
+          </a>
         </motion.div>
 
         {/* ── Carousel ── */}
