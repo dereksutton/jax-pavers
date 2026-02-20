@@ -184,7 +184,7 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mx-auto mt-8 flex max-w-sm items-center justify-center gap-3 rounded-full border border-gray-200 bg-white px-6 py-3 shadow-md"
+          className="mx-auto mt-8 flex w-fit items-center justify-center gap-3 whitespace-nowrap rounded-full border border-gray-200 bg-white px-6 py-3 shadow-md"
         >
           <StarRow rating={5} />
           <span className="text-sm font-semibold text-gray-800">5.0</span>
