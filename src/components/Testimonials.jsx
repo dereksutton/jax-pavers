@@ -194,7 +194,7 @@ const Testimonials = () => {
           </span>
           <span className="h-4 w-px bg-gray-300" aria-hidden="true" />
           <a
-            href="https://www.google.com/maps/place/?q=place_id:ChIJW5hkwX-QcokRVKzV4I3CI-U&hl=en"
+            href="https://www.google.com/maps/search/?api=1&query=JAX+Pavers&query_place_id=ChIJW5hkwX-QcokRVKzV4I3CI-U"
             target="_blank"
             rel="noopener noreferrer"
             className="relative z-10 -my-3 flex items-center gap-1.5 py-3 pl-1 pr-2 text-sm font-medium text-[#0A86C4] transition-colors hover:text-[#0875B1]"
