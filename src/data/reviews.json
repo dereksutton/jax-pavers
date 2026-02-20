@@ -1,0 +1,62 @@
+[
+  {
+    "id": "jake-thomas-review",
+    "name": "Jake Thomas",
+    "rating": 5,
+    "text": "Excellent job start to finish. Clear communication. Told me exactly what it would cost and worked with me on the design. No surprises. Job was finished as expected. Highly recommend.",
+    "featured": false,
+    "source": {
+      "platform": "Google"
+    }
+  },
+  {
+    "id": "chris-dawson-review",
+    "name": "Chris Dawson",
+    "rating": 5,
+    "text": "Highly recommend. Aaron and team were very professional and easy to work with. Fair and honest pricing, would recommend to anyone looking for a backyard transformation.",
+    "featured": false,
+    "source": {
+      "platform": "Google"
+    }
+  },
+  {
+    "id": "paul-kulick-review",
+    "name": "Paul Kulick",
+    "rating": 5,
+    "text": "Outstanding and professional work by JAX Pavers installing pavers on our driveway. Excellent craftsmanship. Great crew. Highly recommend them for any outdoor project you have.",
+    "featured": true,
+    "source": {
+      "platform": "Google"
+    }
+  },
+  {
+    "id": "heather-brewer-review",
+    "name": "Heather Brewer",
+    "rating": 5,
+    "text": "Great company! I had old ground level decking that was rotten and they removed the old deck in one day, and laid down a beautiful 20x25 paver patio for me over the next 2 days. They even extended my front porch with pavers as well. It came out beautifully and it is still looking great years later. Highly recommend!",
+    "featured": true,
+    "source": {
+      "platform": "Google"
+    }
+  },
+  {
+    "id": "edward-webb-review",
+    "name": "Edward Webb",
+    "rating": 5,
+    "text": "Very professional and courteous!!! Great work and even better people! Everyone involved is very knowledgeable. Great people Great work 10 out of 10 would recommend to all my family and friends",
+    "featured": false,
+    "source": {
+      "platform": "Google"
+    }
+  },
+  {
+    "id": "jordan-cooper-review",
+    "name": "Jordan Cooper",
+    "rating": 5,
+    "text": "I can't say enough good things about Aaron and his crew at Jax Pavers. We had a very specific idea in mind for our backyard and they made it come to life better than we could have imagined. Fast forward a couple of years and I now own my own paver company in a different city. Aaron has been a huge help in that process!",
+    "featured": true,
+    "source": {
+      "platform": "Google"
+    }
+  }
+]

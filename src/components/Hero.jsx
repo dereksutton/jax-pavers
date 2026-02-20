@@ -56,7 +56,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
         >
-          Transform your patio, driveway, or pool deck with high-quality pavers tailored for North Florida's unique climate and style.
+          Jacksonville’s luxury hardscape specialists — paver driveways, patios & pool decks, and custom outdoor kitchens.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 50, scale: 0.8 }}
