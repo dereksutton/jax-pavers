@@ -26,7 +26,7 @@ function getReviewerImage(name) {
 }
 
 const GoogleLogo = () => (
-  <svg className="h-4 w-4 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+  <svg className="pointer-events-none h-4 w-4 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
     <path
       fill="#4285F4"
       d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.07 5.07 0 0 1-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -197,10 +197,10 @@ const Testimonials = () => {
             href="https://www.google.com/maps/place/?q=place_id:ChIJW5hkwX-QcokRVKzV4I3CI-U&hl=en"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-sm font-medium text-[#0A86C4] transition-colors hover:text-[#0875B1]"
+            className="relative z-10 -my-3 flex items-center gap-1.5 py-3 pl-1 pr-2 text-sm font-medium text-[#0A86C4] transition-colors hover:text-[#0875B1]"
           >
             <GoogleLogo />
-            <span>See All</span>
+            <span className="pointer-events-none">See All</span>
           </a>
         </motion.div>
 
