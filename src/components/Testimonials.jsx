@@ -10,7 +10,7 @@ import {
 import ShimmerButton from "./ShimmerButton";
 import { getAllReviews } from "../lib/reviews";
 
-const TOTAL_REVIEWS = 20;
+const TOTAL_REVIEWS = 21;
 const AUTO_PLAY_MS = 6000;
 const SWIPE_THRESHOLD = 10000;
 
