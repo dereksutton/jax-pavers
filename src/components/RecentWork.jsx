@@ -4,15 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import ShimmerButton from "./ShimmerButton";
 import getImagePath from '../utils/imagePaths';
 
-// Generate array of all 26 paver images
-const WORK_IMAGES = Array.from({ length: 26 }, (_, i) =>
-  getImagePath(`/pavers-${i + 1}.png`)
-);
-
-// Split images into three rows (roughly equal distribution)
-const ROW_1_IMAGES = WORK_IMAGES.slice(0, 9);   // Images 1-9
-const ROW_2_IMAGES = WORK_IMAGES.slice(9, 18);  // Images 10-18
-const ROW_3_IMAGES = WORK_IMAGES.slice(18);      // Images 19-26
+// Images grouped by job category
+const DRIVEWAYS_WALKWAYS = [3, 4, 8, 11, 24, 25, 26, 33, 39, 40, 42, 47, 48, 49, 50].map(n => getImagePath(`/pavers-${n}.png`));
+const PATIOS_POOL_DECKS = [1, 5, 7, 9, 10, 12, 13, 15, 16, 18, 19, 20, 22, 23, 27, 28, 30, 31, 32, 34, 35, 36, 37, 38, 43, 46, 51, 52].map(n => getImagePath(`/pavers-${n}.png`));
+const OUTDOOR_KITCHENS_PERGOLAS = [2, 6, 14, 17, 21, 29, 41, 44, 45, 53, 54].map(n => getImagePath(`/pavers-${n}.png`));
 
 const RecentWork = () => {
   const [lightbox, setLightbox] = useState(null);
@@ -126,36 +121,51 @@ const RecentWork = () => {
           </p>
         </motion.div>
 
-        {/* Scrolling Rows */}
-        <div className="space-y-6">
-          {/* Row 1: Left to Right */}
+        {/* Scrolling Rows by Category */}
+        <div className="space-y-10">
+          {/* Row 1: Driveways & Walkways */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
           >
-            <ScrollingRow images={ROW_1_IMAGES} direction="left" speed={50} />
+            <div className="flex items-center gap-3 px-4 md:px-8 mb-4">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+              <h3 className="text-sm md:text-base font-semibold uppercase tracking-widest text-gray-500">Driveways &amp; Walkways</h3>
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+            </div>
+            <ScrollingRow images={DRIVEWAYS_WALKWAYS} direction="left" speed={85} />
           </motion.div>
 
-          {/* Row 2: Right to Left */}
+          {/* Row 2: Patios & Pool Decks */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <ScrollingRow images={ROW_2_IMAGES} direction="right" speed={55} />
+            <div className="flex items-center gap-3 px-4 md:px-8 mb-4">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+              <h3 className="text-sm md:text-base font-semibold uppercase tracking-widest text-gray-500">Patios &amp; Pool Decks</h3>
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+            </div>
+            <ScrollingRow images={PATIOS_POOL_DECKS} direction="right" speed={155} />
           </motion.div>
 
-          {/* Row 3: Left to Right */}
+          {/* Row 3: Outdoor Kitchens & Pergolas */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <ScrollingRow images={ROW_3_IMAGES} direction="left" speed={45} />
+            <div className="flex items-center gap-3 px-4 md:px-8 mb-4">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+              <h3 className="text-sm md:text-base font-semibold uppercase tracking-widest text-gray-500">Outdoor Kitchens &amp; Pergolas</h3>
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+            </div>
+            <ScrollingRow images={OUTDOOR_KITCHENS_PERGOLAS} direction="left" speed={60} />
           </motion.div>
         </div>
 
