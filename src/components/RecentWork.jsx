@@ -7,7 +7,7 @@ import getImagePath from '../utils/imagePaths';
 // Images grouped by job category
 const DRIVEWAYS_WALKWAYS = [3, 4, 8, 11, 24, 25, 26, 33, 39, 40, 42, 47, 48, 49, 50].map(n => getImagePath(`/pavers-${n}.png`));
 const PATIOS_POOL_DECKS = [1, 5, 7, 9, 10, 12, 13, 15, 16, 18, 19, 20, 22, 23, 27, 28, 30, 31, 32, 34, 35, 36, 37, 38, 43, 46, 51, 52].map(n => getImagePath(`/pavers-${n}.png`));
-const OUTDOOR_KITCHENS_PERGOLAS = [2, 6, 14, 17, 21, 29, 41, 44, 45, 53, 54].map(n => getImagePath(`/pavers-${n}.png`));
+const OUTDOOR_KITCHENS_PERGOLAS = [2, 6, 14, 17, 21, 29, 41, 44, 53, 54].map(n => getImagePath(`/pavers-${n}.png`));
 
 const RecentWork = () => {
   const [lightbox, setLightbox] = useState(null);
