@@ -284,7 +284,7 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                   >
                     <img
                       src={getImagePath("/jaxpavers-logo.png")}
-                      alt="Company Logo"
+                      alt="Jax Pavers Logo"
                       className="h-28 w-auto opacity-80"
                     />
                   </motion.div>

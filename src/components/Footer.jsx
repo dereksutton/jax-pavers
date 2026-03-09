@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="flex flex-col items-center">
             <motion.img
               src={getImagePath("/jaxpavers-logo.png")}
-              alt="Company Logo"
+              alt="Jax Pavers - Jacksonville FL Paver Installation"
               className="h-48 w-auto"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
 
           {/* Navigation */}
-          <div className="flex flex-col items-center">
+          <nav className="flex flex-col items-center" aria-label="Footer navigation">
             <h3 className="text-lg font-semibold text-white">Quick Links</h3>
             <ul className="mt-4 space-y-2 text-center md:text-left">
               <li>
@@ -90,7 +90,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </nav>
 
           {/* Catalogs */}
           <div className="flex flex-col items-center">
@@ -119,7 +119,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@yourcompany.com" className="text-white/90 hover:text-gray-300 transition-colors">
+                <a href="mailto:info@jaxoutdoorspaces.com" className="text-white/90 hover:text-gray-300 transition-colors">
                   info@jaxoutdoorspaces.com
                 </a>
               </li>

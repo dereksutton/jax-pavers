@@ -36,7 +36,7 @@ const RecentWork = () => {
   }, [lightbox, closeLightbox]);
 
   // ScrollingRow component for reusability
-  const ScrollingRow = ({ images, direction, speed = 40 }) => {
+  const ScrollingRow = ({ images, direction, speed = 40, category = "paver" }) => {
     // Duplicate images for seamless infinite scroll
     const duplicatedImages = [...images, ...images, ...images];
 
@@ -58,7 +58,7 @@ const RecentWork = () => {
             >
               <img
                 src={image}
-                alt={`Paver work example ${index + 1}`}
+                alt={`${category} installation project ${(index % images.length) + 1} by Jax Pavers in Jacksonville FL`}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
               />
@@ -135,7 +135,7 @@ const RecentWork = () => {
               <h3 className="text-sm md:text-base font-semibold uppercase tracking-widest text-gray-500">Driveways &amp; Walkways</h3>
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
             </div>
-            <ScrollingRow images={DRIVEWAYS_WALKWAYS} direction="left" speed={85} />
+            <ScrollingRow images={DRIVEWAYS_WALKWAYS} direction="left" speed={85} category="Paver driveway and walkway" />
           </motion.div>
 
           {/* Row 2: Patios & Pool Decks */}
@@ -150,7 +150,7 @@ const RecentWork = () => {
               <h3 className="text-sm md:text-base font-semibold uppercase tracking-widest text-gray-500">Patios &amp; Pool Decks</h3>
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
             </div>
-            <ScrollingRow images={PATIOS_POOL_DECKS} direction="right" speed={155} />
+            <ScrollingRow images={PATIOS_POOL_DECKS} direction="right" speed={155} category="Patio and pool deck paver" />
           </motion.div>
 
           {/* Row 3: Outdoor Kitchens & Pergolas */}
@@ -165,7 +165,7 @@ const RecentWork = () => {
               <h3 className="text-sm md:text-base font-semibold uppercase tracking-widest text-gray-500">Outdoor Kitchens &amp; Pergolas</h3>
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
             </div>
-            <ScrollingRow images={OUTDOOR_KITCHENS_PERGOLAS} direction="left" speed={60} />
+            <ScrollingRow images={OUTDOOR_KITCHENS_PERGOLAS} direction="left" speed={60} category="Outdoor kitchen and pergola" />
           </motion.div>
         </div>
 

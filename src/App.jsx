@@ -9,15 +9,17 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="overflow-x-hidden">
+    <>
       <Hero />
-      <Services />
-      <WhyUs />
-      <RecentWork />
-      <Testimonials />
-      <Quote />
+      <main className="overflow-x-hidden">
+        <Services />
+        <WhyUs />
+        <RecentWork />
+        <Testimonials />
+        <Quote />
+      </main>
       <Footer />
-    </div>
+    </>
   )
 }
 

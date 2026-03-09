@@ -9,9 +9,10 @@ import getImagePath from '../utils/imagePaths';
 const Hero = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
-    <section
+    <header
       className="relative h-screen w-full bg-cover bg-center"
       style={{ backgroundImage: `url(${getImagePath('/pavers-hero.png')})` }}
+      role="banner"
     >
       
       {/* Navbar */}
@@ -68,7 +69,7 @@ const Hero = () => {
           </ShimmerButton>
         </motion.div>
       </div>
-    </section>
+    </header>
   );
 };
 
