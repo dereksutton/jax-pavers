@@ -48,6 +48,7 @@ const AboutUs = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
+            className="order-1"
           >
             <h2
               id="aboutus-heading"
@@ -80,8 +81,8 @@ const AboutUs = () => {
               </p>
             </div>
 
-            {/* CTA */}
-            <div className="relative mt-10 flex flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl p-6 text-center md:flex-row md:text-left">
+            {/* CTA — visible only on desktop, stays under text */}
+            <div className="relative mt-10 hidden lg:flex flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl p-6 text-center md:flex-row md:text-left">
               <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-slate-900 via-gray-800 to-[#0A86C4]" />
               <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-black/20 via-transparent to-black/10" />
               <div>
@@ -103,7 +104,7 @@ const AboutUs = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="relative mx-auto mt-3 max-w-[calc(100%-2rem)] lg:mx-0 lg:mt-0 lg:max-w-none"
+            className="relative order-2 mx-auto mt-3 max-w-[calc(100%-2rem)] lg:mx-0 lg:mt-0 lg:max-w-none"
           >
             {/* Self-drawing offset border */}
             <motion.div className="absolute -right-3 -bottom-3 h-full w-full rounded-2xl">
@@ -183,6 +184,23 @@ const AboutUs = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
             </motion.div>
           </motion.div>
+
+          {/* CTA — visible only on mobile, positioned below image */}
+          <div className="relative flex lg:hidden order-3 flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl p-6 text-center md:flex-row md:text-left">
+            <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-slate-900 via-gray-800 to-[#0A86C4]" />
+            <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-black/20 via-transparent to-black/10" />
+            <div>
+              <p className="text-xl mb-1 font-semibold text-white">
+                Let's bring your vision to life.
+              </p>
+              <p className="text-base text-gray-300">
+                Tell us what you have in mind — we'll handle the rest.
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <ShimmerButton href="#quote">Book a Consultation</ShimmerButton>
+            </div>
+          </div>
         </div>
       </div>
     </section>
