@@ -370,10 +370,10 @@ const Testimonials = () => {
           <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-slate-900 via-gray-800 to-[#0A86C4]" />
           <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-black/20 via-transparent to-black/10" />
           <div>
-            <p className="text-2xl font-semibold text-white">
+            <p className="text-xl mb-1 font-semibold text-white">
               Ready to love your outdoor space?
             </p>
-            <p className="mt-1 text-gray-300">
+            <p className="text-base text-gray-300">
               Transform your vision into reality with expert design and flawless
               execution.
             </p>

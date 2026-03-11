@@ -1,6 +1,7 @@
 import './App.css'
 import Hero from './components/Hero';
 import Services from './components/Services';
+import AboutUs from './components/AboutUs';
 import WhyUs from './components/WhyUs';
 import RecentWork from './components/RecentWork';
 import Testimonials from './components/Testimonials';
@@ -13,6 +14,7 @@ function App() {
       <Hero />
       <main className="overflow-x-hidden">
         <Services />
+        <AboutUs />
         <WhyUs />
         <RecentWork />
         <Testimonials />

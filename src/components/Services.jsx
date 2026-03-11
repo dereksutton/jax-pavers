@@ -295,10 +295,10 @@ const Services = () => {
           <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-black/20 via-transparent to-black/10" />
           
           <div>
-            <p className="text-lg mb-2 font-semibold text-white">
+            <p className="text-xl mb-1 font-semibold text-white">
               Ready to elevate your curb appeal?
             </p>
-            <p className="text-gray-300">
+            <p className="text-base text-gray-300">
               We'll build the paver driveway of your dreams with lasting beauty and durability.
             </p>
           </div>

@@ -64,7 +64,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 1.1 }}
         >
-          <ShimmerButton href="#quote" className="text-lg sm:text-xl md:text-2xl">
+          <ShimmerButton href="#quote" className="text-xl sm:text-2xl md:text-3xl py-4 px-8">
             Book a Consultation
           </ShimmerButton>
         </motion.div>

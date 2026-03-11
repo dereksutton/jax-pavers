@@ -23,7 +23,7 @@ const ShimmerButton = ({
   return (
     <Component
       {...componentProps}
-      className={`inline-block relative overflow-hidden font-semibold py-3 px-6 rounded-lg transition-all duration-300 ${
+      className={`inline-flex items-center justify-center relative overflow-hidden font-semibold py-3 px-6 rounded-lg transition-all duration-300 ${
         disabled ? 'cursor-not-allowed' : 'cursor-pointer'
       } ${className}`}
       style={{
@@ -64,7 +64,7 @@ const ShimmerButton = ({
           ease: "easeInOut"
         }}
       />
-      <span className="relative z-10 text-white text-base sm:text-lg md:text-xl whitespace-nowrap">
+      <span className="relative z-10 text-white whitespace-nowrap">
         {children}
       </span>
     </Component>

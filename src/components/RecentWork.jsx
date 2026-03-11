@@ -5,8 +5,8 @@ import ShimmerButton from "./ShimmerButton";
 import getImagePath from '../utils/imagePaths';
 
 // Images grouped by job category
-const DRIVEWAYS_WALKWAYS = [3, 4, 8, 11, 24, 25, 26, 33, 39, 40, 42, 47, 48, 49, 50].map(n => getImagePath(`/pavers-${n}.png`));
-const PATIOS_POOL_DECKS = [1, 5, 7, 9, 10, 12, 13, 15, 16, 18, 19, 20, 22, 23, 27, 28, 30, 31, 32, 34, 35, 36, 37, 38, 43, 46, 51, 52].map(n => getImagePath(`/pavers-${n}.png`));
+const DRIVEWAYS_WALKWAYS = [4, 8, 25, 26, 33, 39, 40, 42, 47, 48, 49, 50].map(n => getImagePath(`/pavers-${n}.png`));
+const PATIOS_POOL_DECKS = [1, 7, 28, 5, 9, 15, 18, 32, 12, 13, 16, 20, 22, 23, 30, 31, 37, 43, 46, 52].map(n => getImagePath(`/pavers-${n}.png`));
 const OUTDOOR_KITCHENS_PERGOLAS = [2, 6, 14, 17, 21, 29, 41, 44, 53, 54].map(n => getImagePath(`/pavers-${n}.png`));
 
 const RecentWork = () => {
@@ -135,7 +135,7 @@ const RecentWork = () => {
               <h3 className="text-sm md:text-base font-semibold uppercase tracking-widest text-gray-500">Driveways &amp; Walkways</h3>
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
             </div>
-            <ScrollingRow images={DRIVEWAYS_WALKWAYS} direction="left" speed={85} category="Paver driveway and walkway" />
+            <ScrollingRow images={DRIVEWAYS_WALKWAYS} direction="right" speed={85} category="Paver driveway and walkway" />
           </motion.div>
 
           {/* Row 2: Patios & Pool Decks */}
@@ -150,7 +150,7 @@ const RecentWork = () => {
               <h3 className="text-sm md:text-base font-semibold uppercase tracking-widest text-gray-500">Patios &amp; Pool Decks</h3>
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
             </div>
-            <ScrollingRow images={PATIOS_POOL_DECKS} direction="right" speed={155} category="Patio and pool deck paver" />
+            <ScrollingRow images={PATIOS_POOL_DECKS} direction="left" speed={155} category="Patio and pool deck paver" />
           </motion.div>
 
           {/* Row 3: Outdoor Kitchens & Pergolas */}
@@ -165,7 +165,7 @@ const RecentWork = () => {
               <h3 className="text-sm md:text-base font-semibold uppercase tracking-widest text-gray-500">Outdoor Kitchens &amp; Pergolas</h3>
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
             </div>
-            <ScrollingRow images={OUTDOOR_KITCHENS_PERGOLAS} direction="left" speed={60} category="Outdoor kitchen and pergola" />
+            <ScrollingRow images={OUTDOOR_KITCHENS_PERGOLAS} direction="right" speed={60} category="Outdoor kitchen and pergola" />
           </motion.div>
         </div>
 
@@ -183,8 +183,8 @@ const RecentWork = () => {
           <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-black/20 via-transparent to-black/10" />
 
           <div>
-            <p className="text-lg font-semibold mb-2 text-white">Want to see something similar at your home?</p>
-            <p className="text-gray-300 text-lg">Share your project details and dimensions—we'll provide a quick estimate.</p>
+            <p className="text-xl mb-1 font-semibold text-white">Want to see something similar at your home?</p>
+            <p className="text-base text-gray-300">Share your project details and dimensions—we'll provide a quick estimate.</p>
           </div>
           <ShimmerButton href="#quote">Book a Consultation</ShimmerButton>
           </motion.div>
