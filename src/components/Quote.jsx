@@ -178,7 +178,7 @@ const Quote = () => {
           className="flex justify-center mb-4"
         >
           <img
-            src={getImagePath("/jaxpavers-logo.png")}
+            src={getImagePath("/jaxpavers-logo.webp")}
             alt="Jax Pavers Logo"
             className="h-36 sm:h-38 md:h-40 lg:h-44 w-auto"
           />
@@ -225,8 +225,9 @@ const Quote = () => {
 
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700">Name *</label>
+                <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">Name *</label>
                 <input
+                  id="fullName"
                   type="text"
                   name="fullName"
                   value={form.fullName}
@@ -237,8 +238,9 @@ const Quote = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700">Email *</label>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email *</label>
                 <input
+                  id="email"
                   type="email"
                   name="email"
                   value={form.email}
@@ -249,8 +251,9 @@ const Quote = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700">Phone Number *</label>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number *</label>
                 <input
+                  id="phone"
                   type="tel"
                   name="phone"
                   inputMode="tel"
@@ -263,8 +266,9 @@ const Quote = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700">Address *</label>
+                <label htmlFor="address" className="block text-sm font-medium text-gray-700">Address *</label>
                 <input
+                  id="address"
                   type="text"
                   name="address"
                   value={form.address}
@@ -276,8 +280,9 @@ const Quote = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700">Project Type *</label>
+                <label htmlFor="projectType" className="block text-sm font-medium text-gray-700">Project Type *</label>
                 <select
+                  id="projectType"
                   name="projectType"
                   value={form.projectType}
                   onChange={onChange}
@@ -294,10 +299,11 @@ const Quote = () => {
 
             {/* Message */}
             <div className="mt-6">
-              <label className="block text-sm font-medium text-gray-700">
+              <label htmlFor="projectDetails" className="block text-sm font-medium text-gray-700">
                 Briefly Describe Your Project *
               </label>
               <textarea
+                id="projectDetails"
                 name="projectDetails"
                 rows={4}
                 maxLength={2000}
@@ -313,8 +319,9 @@ const Quote = () => {
             {/* Optional fields in two columns */}
             <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
-                <label className="block text-sm font-medium text-gray-700">Budget Range</label>
+                <label htmlFor="budget" className="block text-sm font-medium text-gray-700">Budget Range</label>
                 <select
+                  id="budget"
                   name="budget"
                   value={form.budget}
                   onChange={onChange}
@@ -328,8 +335,9 @@ const Quote = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700">Timeline</label>
+                <label htmlFor="timeline" className="block text-sm font-medium text-gray-700">Timeline</label>
                 <select
+                  id="timeline"
                   name="timeline"
                   value={form.timeline}
                   onChange={onChange}
@@ -345,10 +353,11 @@ const Quote = () => {
 
             {/* How did you hear about us */}
             <div className="mt-6">
-              <label className="block text-sm font-medium text-gray-700">
+              <label htmlFor="howHeard" className="block text-sm font-medium text-gray-700">
                 How did you hear about us?
               </label>
               <select
+                id="howHeard"
                 name="howHeard"
                 value={form.howHeard}
                 onChange={onChange}
@@ -578,7 +587,7 @@ const Quote = () => {
                 </svg>
                 (904) 445-1261
               </motion.a>
-              <p className="text-xs text-gray-500 mt-1">Mon–Fri, 8am–6pm</p>
+              <p className="text-xs text-gray-500 mt-1">Mon–Fri 8am–6pm | Sat 9am–2pm</p>
             </motion.div>
           </motion.aside>
         </div>

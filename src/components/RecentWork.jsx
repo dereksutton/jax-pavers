@@ -5,9 +5,9 @@ import ShimmerButton from "./ShimmerButton";
 import getImagePath from '../utils/imagePaths';
 
 // Images grouped by job category
-const DRIVEWAYS_WALKWAYS = [4, 8, 25, 26, 33, 39, 40, 42, 47, 48, 49, 50].map(n => getImagePath(`/pavers-${n}.png`));
-const PATIOS_POOL_DECKS = [1, 7, 28, 5, 9, 15, 18, 32, 12, 13, 16, 20, 22, 23, 30, 31, 37, 43, 46, 52].map(n => getImagePath(`/pavers-${n}.png`));
-const OUTDOOR_KITCHENS_PERGOLAS = [2, 6, 14, 17, 21, 29, 41, 44, 53, 54].map(n => getImagePath(`/pavers-${n}.png`));
+const DRIVEWAYS_WALKWAYS = [4, 8, 25, 26, 33, 39, 40, 42, 47, 48, 49, 50].map(n => getImagePath(`/pavers-${n}.webp`));
+const PATIOS_POOL_DECKS = [1, 7, 28, 5, 9, 15, 18, 32, 12, 13, 16, 20, 22, 23, 30, 31, 37, 43, 46, 52].map(n => getImagePath(`/pavers-${n}.webp`));
+const OUTDOOR_KITCHENS_PERGOLAS = [2, 6, 14, 17, 21, 29, 41, 44, 53, 54].map(n => getImagePath(`/pavers-${n}.webp`));
 
 const RecentWork = () => {
   const [lightbox, setLightbox] = useState(null);

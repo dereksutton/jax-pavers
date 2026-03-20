@@ -175,7 +175,7 @@ const AboutUs = () => {
               }}
             >
               <img
-                src={getImagePath("/pavers-1.png")}
+                src={getImagePath("/pavers-1.webp")}
                 alt="Completed paver installation project by Jax Pavers in Jacksonville, FL"
                 className="h-full w-full object-cover aspect-[4/5] lg:aspect-[3/4]"
                 loading="lazy"

@@ -9,7 +9,7 @@ const services = [
     title: "Outdoor Kitchens",
     blurb:
       "Create the ultimate outdoor entertaining space with fully equipped outdoor kitchens designed for Florida living.",
-    backgroundImage: getImagePath("/services-card1.png"),
+    backgroundImage: getImagePath("/services-card1.webp"),
     icon: (
       <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
         <path
@@ -23,7 +23,7 @@ const services = [
     title: "Driveways",
     blurb:
       "Durable, code-compliant paver driveways that stand up to Florida heat, rain, and heavy vehicles.",
-    backgroundImage: getImagePath("/services-card2.png"),
+    backgroundImage: getImagePath("/services-card2.webp"),
     icon: (
       <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
         <path
@@ -37,7 +37,7 @@ const services = [
     title: "Patios & Courtyards",
     blurb:
       "Transform your backyard into an elegant extension of your home with premium paver installations built to last.",
-    backgroundImage: getImagePath("/services-card3.png"),
+    backgroundImage: getImagePath("/services-card3.webp"),
     icon: (
       <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
         <path
@@ -51,7 +51,7 @@ const services = [
     title: "Pool Decks",
     blurb:
       "Elevate your poolside with stunning paver decks, expertly crafted with premium materials and precision.",
-    backgroundImage: getImagePath("/services-card4.png"),
+    backgroundImage: getImagePath("/services-card4.webp"),
     icon: (
       <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
         <path
@@ -65,7 +65,7 @@ const services = [
     title: "Pergolas",
     blurb:
       "Add shade and style to your outdoor space with custom aluminum or cedar pergolas built to withstand Florida's elements.",
-    backgroundImage: getImagePath("/services-card5.png"),
+    backgroundImage: getImagePath("/services-card5.webp"),
     icon: (
       <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
         <path
@@ -92,12 +92,12 @@ const item = {
 
 // Brand logos
 const brandLogos = [
-  { name: "Tremron", src: getImagePath("/tremron-logo.png") },
-  { name: "Belgard", src: getImagePath("/belgard-logo.png") },
-  { name: "Twin Eagles", src: getImagePath("/twineagles-logo.png") },
-  { name: "TrueFlame", src: getImagePath("/trueflame-logo.png") },
-  { name: "StruXure", src: getImagePath("/struxure-logo.png") },
-  { name: "SurfaceLogix", src: getImagePath("/surfacelogix-logo.png") },
+  { name: "Tremron", src: getImagePath("/tremron-logo.webp") },
+  { name: "Belgard", src: getImagePath("/belgard-logo.webp") },
+  { name: "Twin Eagles", src: getImagePath("/twineagles-logo.webp") },
+  { name: "TrueFlame", src: getImagePath("/trueflame-logo.webp") },
+  { name: "StruXure", src: getImagePath("/struxure-logo.webp") },
+  { name: "SurfaceLogix", src: getImagePath("/surfacelogix-logo.webp") },
 ];
 
 const Services = () => {

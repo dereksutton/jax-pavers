@@ -22,7 +22,7 @@ function getReviewerImage(name) {
       .slice(1)
       .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
       .join("");
-  return `/reviewer-${camelCase}.png`;
+  return `/reviewer-${camelCase}.webp`;
 }
 
 const GoogleLogo = () => (
@@ -283,7 +283,7 @@ const Testimonials = () => {
                     </svg>
 
                     {/* Review text */}
-                    <p className="mt-2 text-lg leading-relaxed text-gray-700 italic md:text-xl">
+                    <p className="mt-2 text-lg leading-relaxed text-gray-700 italic md:text-xl line-clamp-4">
                       &ldquo;{review.text}&rdquo;
                     </p>
 

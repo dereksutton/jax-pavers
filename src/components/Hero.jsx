@@ -10,10 +10,22 @@ const Hero = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <header
-      className="relative h-screen w-full bg-cover bg-center"
-      style={{ backgroundImage: `url(${getImagePath('/pavers-hero.png')})` }}
+      className="relative h-screen w-full overflow-hidden"
       role="banner"
     >
+      {/* Responsive hero background image */}
+      <picture className="absolute inset-0 w-full h-full">
+        <source
+          type="image/webp"
+          srcSet={`${getImagePath('/pavers-hero-640w.webp')} 640w, ${getImagePath('/pavers-hero-1024w.webp')} 1024w, ${getImagePath('/pavers-hero-1920w.webp')} 1920w`}
+          sizes="100vw"
+        />
+        <img
+          src={getImagePath('/pavers-hero.png')}
+          alt="Premium paver installation by Jax Pavers in Jacksonville, Florida"
+          className="w-full h-full object-cover"
+        />
+      </picture>
       
       {/* Navbar */}
       <Navbar 
@@ -49,7 +61,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
         >
-          Outdoor Spaces Worthy of the Florida Lifestyle
+          Jacksonville's Premier Paver Installation for the Florida Lifestyle
         </motion.h1>
         <motion.p 
           className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 max-w-2xl"
