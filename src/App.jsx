@@ -5,6 +5,7 @@ import AboutUs from './components/AboutUs';
 import WhyUs from './components/WhyUs';
 import RecentWork from './components/RecentWork';
 import Testimonials from './components/Testimonials';
+import FAQ from './components/FAQ';
 import Quote from './components/Quote';
 import Footer from './components/Footer';
 
@@ -24,6 +25,7 @@ function App() {
         <WhyUs />
         <RecentWork />
         <Testimonials />
+        <FAQ />
         <Quote />
       </main>
       <Footer />
