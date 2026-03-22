@@ -1,3 +1,5 @@
+"use client";
+
 // src/components/QuoteUpdated.jsx
 import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";

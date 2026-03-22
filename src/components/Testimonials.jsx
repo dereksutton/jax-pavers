@@ -1,3 +1,5 @@
+"use client";
+
 // src/components/Testimonials.jsx
 import React, { useState, useEffect, useCallback } from "react";
 import {

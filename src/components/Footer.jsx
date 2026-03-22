@@ -1,3 +1,5 @@
+"use client";
+
 // src/components/Footer.jsx
 import React from "react";
 import { motion } from "framer-motion";

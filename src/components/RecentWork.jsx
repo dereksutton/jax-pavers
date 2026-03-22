@@ -1,3 +1,5 @@
+"use client";
+
 // src/components/RecentWork.jsx
 import React, { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
