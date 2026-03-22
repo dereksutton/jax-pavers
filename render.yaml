@@ -19,7 +19,7 @@ services:
     name: jax-pavers-web
     env: static
     buildCommand: npm install && npm run build
-    staticPublishPath: ./dist
+    staticPublishPath: ./out
     headers:
       - path: /*
         name: X-Frame-Options
@@ -47,6 +47,6 @@ services:
         source: /*
         destination: /index.html
     envVars:
-      - key: VITE_API_URL
+      - key: NEXT_PUBLIC_API_URL
         value: https://jax-pavers-api.onrender.com/api
     autoDeploy: false

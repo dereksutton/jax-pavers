@@ -1,3 +1,5 @@
+"use client";
+
 // src/components/Navbar.jsx
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';

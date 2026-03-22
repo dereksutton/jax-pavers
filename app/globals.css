@@ -10,7 +10,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 body {
   margin: 0;
   min-width: 320px;
@@ -20,4 +19,14 @@ body {
 
 html {
   overflow-x: hidden;
+}
+
+/* Custom focus indicators for keyboard navigation (accessibility) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #0A86C4;
+  outline-offset: 2px;
 }

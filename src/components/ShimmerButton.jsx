@@ -1,3 +1,5 @@
+"use client";
+
 // src/components/ShimmerButton.jsx
 import React from 'react';
 import { motion } from 'framer-motion';

@@ -1,3 +1,5 @@
+"use client";
+
 // src/components/WhyUs.jsx
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";

@@ -1,15 +1,14 @@
-import './App.css'
-import Hero from './components/Hero';
-import Services from './components/Services';
-import AboutUs from './components/AboutUs';
-import WhyUs from './components/WhyUs';
-import RecentWork from './components/RecentWork';
-import Testimonials from './components/Testimonials';
-import FAQ from './components/FAQ';
-import Quote from './components/Quote';
-import Footer from './components/Footer';
+import Hero from '../src/components/Hero';
+import Services from '../src/components/Services';
+import AboutUs from '../src/components/AboutUs';
+import WhyUs from '../src/components/WhyUs';
+import RecentWork from '../src/components/RecentWork';
+import Testimonials from '../src/components/Testimonials';
+import FAQ from '../src/components/FAQ';
+import Quote from '../src/components/Quote';
+import Footer from '../src/components/Footer';
 
-function App() {
+export default function Home() {
   return (
     <>
       <a
@@ -30,7 +29,5 @@ function App() {
       </main>
       <Footer />
     </>
-  )
+  );
 }
-
-export default App
