@@ -175,7 +175,10 @@ export default function RootLayout({ children }) {
                   {
                     "@type": "OfferCatalog",
                     "name": "Paver Driveways",
-                    "itemListElement": [{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paver Driveway Installation", "description": "Durable, code-compliant paver driveways that stand up to Florida heat, rain, and heavy vehicles." } }]
+                    "itemListElement": [
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paver Driveway Installation", "description": "Durable, code-compliant paver driveways that stand up to Florida heat, rain, and heavy vehicles." } },
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paver Driveway Repair", "description": "Professional paver driveway repair and restoration to fix settling, shifting, or damaged pavers." } }
+                    ]
                   },
                   {
                     "@type": "OfferCatalog",
@@ -185,7 +188,10 @@ export default function RootLayout({ children }) {
                   {
                     "@type": "OfferCatalog",
                     "name": "Patios & Courtyards",
-                    "itemListElement": [{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paver Patio Installation", "description": "Premium paver patio installations that transform your backyard into an elegant extension of your home." } }]
+                    "itemListElement": [
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paver Patio Installation", "description": "Premium paver patio installations that transform your backyard into an elegant extension of your home." } },
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Patio Paving", "description": "Expert patio paving services using premium materials for beautiful, long-lasting outdoor living spaces." } }
+                    ]
                   },
                   {
                     "@type": "OfferCatalog",
@@ -196,6 +202,30 @@ export default function RootLayout({ children }) {
                     "@type": "OfferCatalog",
                     "name": "Pergolas",
                     "itemListElement": [{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pergola Installation", "description": "Custom aluminum or cedar pergolas built to withstand Florida's elements." } }]
+                  },
+                  {
+                    "@type": "OfferCatalog",
+                    "name": "Paver Installation",
+                    "itemListElement": [
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brick Paver Installation", "description": "Expert brick paver installation for driveways, patios, walkways, and pool decks throughout Jacksonville." } },
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paver Installation", "description": "Full-service paver installation using premium materials from Tremron and Belgard for residential and commercial projects." } },
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Walkway Paver Installation", "description": "Custom paver walkways designed to enhance curb appeal and provide durable, slip-resistant pathways." } }
+                    ]
+                  },
+                  {
+                    "@type": "OfferCatalog",
+                    "name": "Paver Maintenance",
+                    "itemListElement": [{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paver Sealing", "description": "Professional paver sealing to protect against stains, UV fading, and weed growth while enhancing color." } }]
+                  },
+                  {
+                    "@type": "OfferCatalog",
+                    "name": "Hardscaping & Outdoor Living",
+                    "itemListElement": [
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hardscape Installation", "description": "Comprehensive hardscape installation including pavers, retaining walls, fire pits, and outdoor structures." } },
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Backyard Renovation", "description": "Complete backyard renovation and transformation services to create your ideal outdoor living space." } },
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Outdoor Living Design", "description": "Custom outdoor living space design tailored to your lifestyle, property, and the Florida climate." } },
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Retaining Wall Installation", "description": "Engineered retaining walls built for drainage management, erosion control, and landscape aesthetics." } }
+                    ]
                   }
                 ]
               },
