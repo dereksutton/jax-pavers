@@ -181,6 +181,8 @@ const AboutUs = () => {
                 alt="Completed paver installation project by Jax Pavers in Jacksonville, FL"
                 className="h-full w-full object-cover aspect-[4/5] lg:aspect-[3/4]"
                 loading="lazy"
+                width={1536}
+                height={1024}
               />
               {/* Subtle gradient overlay at bottom */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />

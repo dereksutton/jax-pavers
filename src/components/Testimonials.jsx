@@ -300,6 +300,8 @@ const Testimonials = () => {
                         src={getReviewerImage(review.name)}
                         alt={review.name}
                         className="h-14 w-14 rounded-full object-cover shadow-md ring-2 ring-[#0A86C4]/20"
+                        width={56}
+                        height={56}
                       />
                       <div>
                         <p className="font-semibold text-gray-900">
@@ -354,6 +356,8 @@ const Testimonials = () => {
                     src={getReviewerImage(r.name)}
                     alt={r.name}
                     className="h-full w-full object-cover"
+                    width={48}
+                    height={48}
                   />
                 </div>
               </motion.button>

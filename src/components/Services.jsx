@@ -3,12 +3,14 @@
 // src/components/Services.jsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import ShimmerButton from "./ShimmerButton";
 import getImagePath from '../utils/imagePaths';
 
 const services = [
   {
     title: "Outdoor Kitchens",
+    href: "/outdoor-kitchens",
     blurb:
       "Create the ultimate outdoor entertaining space with fully equipped outdoor kitchens designed for Florida living.",
     backgroundImage: getImagePath("/services-card1.webp"),
@@ -23,6 +25,7 @@ const services = [
   },
   {
     title: "Driveways",
+    href: "/driveways",
     blurb:
       "Durable, code-compliant paver driveways that stand up to Florida heat, rain, and heavy vehicles.",
     backgroundImage: getImagePath("/services-card2.webp"),
@@ -37,6 +40,7 @@ const services = [
   },
   {
     title: "Patios & Courtyards",
+    href: "/patios",
     blurb:
       "Transform your backyard into an elegant extension of your home with premium paver installations built to last.",
     backgroundImage: getImagePath("/services-card3.webp"),
@@ -51,6 +55,7 @@ const services = [
   },
   {
     title: "Pool Decks",
+    href: "/pool-decks",
     blurb:
       "Elevate your poolside with stunning paver decks, expertly crafted with premium materials and precision.",
     backgroundImage: getImagePath("/services-card4.webp"),
@@ -65,6 +70,7 @@ const services = [
   },
   {
     title: "Pergolas",
+    href: "/pergolas",
     blurb:
       "Add shade and style to your outdoor space with custom aluminum or cedar pergolas built to withstand Florida's elements.",
     backgroundImage: getImagePath("/services-card5.webp"),
@@ -180,6 +186,19 @@ const Services = () => {
                     {svc.blurb}
                   </p>
                 </div>
+
+                {/* Learn more link */}
+                <div className="mt-4 text-center">
+                  <Link
+                    href={svc.href}
+                    className="inline-flex items-center gap-1 text-sm font-semibold text-[#0A86C4] bg-white/90 rounded-full px-4 py-1.5 hover:bg-white transition-colors"
+                  >
+                    Learn More
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
 
               {/* Hover edge highlight */}
@@ -245,6 +264,8 @@ const Services = () => {
                     className={`max-h-full max-w-full object-contain transition-all duration-300 hover:grayscale-0 hover:scale-[1.15] ${
                       activeLogo === logo.name ? 'grayscale-0 logo-active' : 'grayscale'
                     }`}
+                    width={800}
+                    height={200}
                   />
                 </div>
               ))}
@@ -261,6 +282,8 @@ const Services = () => {
                     className={`max-h-full max-w-full object-contain transition-all duration-300 hover:grayscale-0 hover:scale-[1.15] ${
                       activeLogo === logo.name ? 'grayscale-0 logo-active' : 'grayscale'
                     }`}
+                    width={800}
+                    height={200}
                   />
                 </div>
               ))}
@@ -277,6 +300,8 @@ const Services = () => {
                     className={`max-h-full max-w-full object-contain transition-all duration-300 hover:grayscale-0 hover:scale-[1.15] ${
                       activeLogo === logo.name ? 'grayscale-0 logo-active' : 'grayscale'
                     }`}
+                    width={800}
+                    height={200}
                   />
                 </div>
               ))}

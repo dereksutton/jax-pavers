@@ -183,6 +183,8 @@ const Quote = () => {
             src={getImagePath("/jaxpavers-logo.webp")}
             alt="Jax Pavers Logo"
             className="h-36 sm:h-38 md:h-40 lg:h-44 w-auto"
+            width={500}
+            height={500}
           />
         </motion.div>
 

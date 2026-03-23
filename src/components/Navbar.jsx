@@ -3,6 +3,7 @@
 // src/components/Navbar.jsx
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import ShimmerButton from './ShimmerButton';
 import getImagePath from '../utils/imagePaths';
 
@@ -30,60 +31,60 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
 
         {/* Menu Items - Centered */}
         <div className="hidden lg:flex items-center space-x-8">
-          <motion.a 
-            href="#services" 
-            className="text-white font-semibold hover:text-gray-300 transition-colors"
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ scale: 1.1 }}
           >
-            Our Services
-          </motion.a>
-          <motion.a 
-            href="#why-us" 
-            className="text-white font-semibold hover:text-gray-300 transition-colors"
+            <Link href="/#services" className="text-white font-semibold hover:text-gray-300 transition-colors">
+              Our Services
+            </Link>
+          </motion.div>
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             whileHover={{ scale: 1.1 }}
           >
-            Why Us?
-          </motion.a>
-          <motion.a 
-            href="#recent-work" 
-            className="text-white font-semibold hover:text-gray-300 transition-colors"
+            <Link href="/#why-us" className="text-white font-semibold hover:text-gray-300 transition-colors">
+              Why Us?
+            </Link>
+          </motion.div>
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
             whileHover={{ scale: 1.1 }}
           >
-            Recent Work
-          </motion.a>
-          <motion.a 
-            href="#testimonials" 
-            className="text-white font-semibold hover:text-gray-300 transition-colors"
+            <Link href="/#recent-work" className="text-white font-semibold hover:text-gray-300 transition-colors">
+              Recent Work
+            </Link>
+          </motion.div>
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             whileHover={{ scale: 1.1 }}
           >
-            Testimonials
-          </motion.a>
-          <motion.a 
-            href="#quote" 
-            className="relative text-white font-semibold py-2 px-4 rounded-lg bg-[#0A86C4] transition-colors overflow-hidden"
+            <Link href="/#testimonials" className="text-white font-semibold hover:text-gray-300 transition-colors">
+              Testimonials
+            </Link>
+          </motion.div>
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
-            whileHover={{ 
+            whileHover={{
               scale: 1.05,
               rotate: [0, -1, 1, -1, 0],
               transition: { duration: 0.5 }
             }}
           >
-            Get My Quote
-          </motion.a>
+            <Link href="/#quote" className="relative text-white font-semibold py-2 px-4 rounded-lg bg-[#0A86C4] transition-colors overflow-hidden">
+              Get My Quote
+            </Link>
+          </motion.div>
         </div>
 
         {/* Phone + Social Icons - Far Right */}
@@ -217,23 +218,26 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                 <nav className="flex-1 px-6 py-8">
                   <div className="space-y-8">
                     {[
-                      { href: "#services", text: "Our Services" },
-                      { href: "#why-us", text: "Why Us?" },
-                      { href: "#recent-work", text: "Recent Work" },
-                      { href: "#testimonials", text: "Testimonials" }
+                      { href: "/#services", text: "Our Services" },
+                      { href: "/#why-us", text: "Why Us?" },
+                      { href: "/#recent-work", text: "Recent Work" },
+                      { href: "/#testimonials", text: "Testimonials" }
                     ].map((link, index) => (
-                      <motion.a
+                      <motion.div
                         key={link.href}
-                        href={link.href}
-                        className="block text-white text-lg font-medium hover:text-[#0A86C4] transition-colors"
-                        onClick={toggleMenu}
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.1, duration: 0.3 }}
                         whileHover={{ x: 10 }}
                       >
-                        {link.text}
-                      </motion.a>
+                        <Link
+                          href={link.href}
+                          className="block text-white text-lg font-medium hover:text-[#0A86C4] transition-colors"
+                          onClick={toggleMenu}
+                        >
+                          {link.text}
+                        </Link>
+                      </motion.div>
                     ))}
 
                     {/* Catalogs Dropdown */}
@@ -298,7 +302,7 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                       transition={{ delay: 0.4, duration: 0.3 }}
                     >
                       <ShimmerButton
-                        href="#quote"
+                        href="/#quote"
                         className="text-lg w-full text-center"
                         onClick={toggleMenu}
                       >
@@ -335,6 +339,8 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                       src={getImagePath("/jaxpavers-logo.webp")}
                       alt="Jax Pavers Logo"
                       className="h-28 w-auto opacity-80"
+                      width={500}
+                      height={500}
                     />
                   </motion.div>
                   

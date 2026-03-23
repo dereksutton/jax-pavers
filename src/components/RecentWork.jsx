@@ -6,17 +6,73 @@ import { motion, AnimatePresence } from "framer-motion";
 import ShimmerButton from "./ShimmerButton";
 import getImagePath from '../utils/imagePaths';
 
+// Descriptive alt text for each portfolio image
+// Descriptive, business-focused alt text for each portfolio image
+const IMAGE_ALT = {
+  1: "Paver patio installation with stone fire pit and covered lanai by Jax Pavers in Jacksonville FL",
+  2: "Custom outdoor kitchen installation with wood-plank ceiling and paver flooring by Jax Pavers in Jacksonville FL",
+  4: "Tumbled paver driveway installation with curved border by Jax Pavers in Jacksonville FL",
+  5: "Paver patio and retaining wall installation with built-in accent lighting by Jax Pavers in Jacksonville FL",
+  6: "Outdoor kitchen and pergola installation with stone veneer base and poolside dining by Jax Pavers in Jacksonville FL",
+  7: "Backyard paver patio installation with circular fire pit by Jax Pavers in Jacksonville FL",
+  8: "Multi-toned paver driveway installation with charcoal border by Jax Pavers in Jacksonville FL",
+  9: "Paver pool deck and retaining wall installation with tropical landscaping by Jax Pavers in Jacksonville FL",
+  12: "Covered patio installation with outdoor fireplace and paver flooring by Jax Pavers in Jacksonville FL",
+  13: "Covered paver patio installation with fireplace and poolside access by Jax Pavers in Jacksonville FL",
+  14: "Built-in grill island installation on stone veneer base with paver patio by Jax Pavers in Jacksonville FL",
+  15: "Retaining wall installation with landscape accent lighting by Jax Pavers in Jacksonville FL",
+  16: "Travertine pool deck installation with geometric spa surround by Jax Pavers in Jacksonville FL",
+  17: "Outdoor kitchen and pergola installation with grill and kamado smoker by Jax Pavers in Jacksonville FL",
+  18: "Backyard putting green and paver retaining wall installation by Jax Pavers in Jacksonville FL",
+  20: "Paver patio installation with fire pit and covered lanai by Jax Pavers in Jacksonville FL",
+  21: "L-shaped outdoor kitchen installation with pergola, grill, and smoker by Jax Pavers in Jacksonville FL",
+  22: "Freeform paver patio installation with fire pit and in-ground lighting by Jax Pavers in Jacksonville FL",
+  23: "Paver pool deck installation surrounding a freeform pool with covered living area by Jax Pavers in Jacksonville FL",
+  25: "Straight-lay paver driveway installation in natural earth tones by Jax Pavers in Jacksonville FL",
+  26: "Paver fire pit pad and walkway installation with charcoal border by Jax Pavers in Jacksonville FL",
+  28: "Paver patio installation with fire pit and poolside pergola by Jax Pavers in Jacksonville FL",
+  29: "Custom outdoor kitchen installation with grill, range hood, TV, and bar seating by Jax Pavers in Jacksonville FL",
+  30: "Travertine pool deck and spa installation by Jax Pavers in North Florida",
+  31: "Paver pool deck installation with covered lanai and outdoor kitchen by Jax Pavers in Jacksonville FL",
+  32: "Block retaining wall and iron fence installation by Jax Pavers in Jacksonville FL",
+  33: "Aerial view of paver driveway and walkway installation at a luxury Jacksonville FL home by Jax Pavers",
+  37: "Paver patio and fire pit installation with pathway lighting by Jax Pavers in Jacksonville FL",
+  39: "Running bond paver driveway installation in gray tones by Jax Pavers in Jacksonville FL",
+  40: "Paver walkway and entry step installation with multi-toned pavers by Jax Pavers in Jacksonville FL",
+  41: "Elevated paver patio installation with fire pit, outdoor kitchen, and accent lighting by Jax Pavers in Jacksonville FL",
+  42: "Paver driveway installation at a Jacksonville FL home with mature oak tree by Jax Pavers",
+  43: "Covered outdoor living area installation with paver flooring and grill station by Jax Pavers in Jacksonville FL",
+  44: "Outdoor kitchen installation with kamado smoker, grill, and refrigerator by Jax Pavers in Jacksonville FL",
+  46: "Paver pool deck installation with sun shelf and tropical landscaping by Jax Pavers in Jacksonville FL",
+  47: "Circle medallion paver driveway installation at a three-car garage home by Jax Pavers in Jacksonville FL",
+  48: "Curved paver driveway installation through palm-lined landscaping by Jax Pavers in Jacksonville FL",
+  49: "Paver driveway and garage pad installation in a North Florida community by Jax Pavers",
+  50: "Paver driveway installation curving through a wooded estate lot by Jax Pavers in Jacksonville FL",
+  52: "Artificial turf and paver border installation by Jax Pavers in Jacksonville FL",
+  53: "Outdoor kitchen island installation with grill, side burner, and pergola by Jax Pavers in Jacksonville FL",
+  54: "Natural stone veneer outdoor kitchen installation with dual grills by Jax Pavers in Jacksonville FL",
+};
+
 // Images grouped by job category
-const DRIVEWAYS_WALKWAYS = [4, 8, 25, 26, 33, 39, 40, 42, 47, 48, 49, 50].map(n => getImagePath(`/pavers-${n}.webp`));
-const PATIOS_POOL_DECKS = [1, 7, 28, 5, 9, 15, 18, 32, 12, 13, 16, 20, 22, 23, 30, 31, 37, 43, 46, 52].map(n => getImagePath(`/pavers-${n}.webp`));
-const OUTDOOR_KITCHENS_PERGOLAS = [2, 6, 14, 17, 21, 29, 41, 44, 53, 54].map(n => getImagePath(`/pavers-${n}.webp`));
+const DRIVEWAYS_WALKWAYS = [4, 8, 25, 26, 33, 39, 40, 42, 47, 48, 49, 50].map(n => ({
+  src: getImagePath(`/pavers-${n}.webp`),
+  alt: IMAGE_ALT[n],
+}));
+const PATIOS_POOL_DECKS = [1, 7, 28, 5, 9, 15, 18, 32, 12, 13, 16, 20, 22, 23, 30, 31, 37, 43, 46, 52].map(n => ({
+  src: getImagePath(`/pavers-${n}.webp`),
+  alt: IMAGE_ALT[n],
+}));
+const OUTDOOR_KITCHENS_PERGOLAS = [2, 6, 14, 17, 21, 29, 41, 44, 53, 54].map(n => ({
+  src: getImagePath(`/pavers-${n}.webp`),
+  alt: IMAGE_ALT[n],
+}));
 
 const RecentWork = () => {
   const [lightbox, setLightbox] = useState(null);
   const [isPaused, setIsPaused] = useState(false);
 
-  const openLightbox = useCallback((imageSrc) => {
-    setLightbox(imageSrc);
+  const openLightbox = useCallback((image) => {
+    setLightbox(image);
     setIsPaused(true);
     document.body.style.overflow = 'hidden';
   }, []);
@@ -59,10 +115,12 @@ const RecentWork = () => {
               onClick={() => openLightbox(image)}
             >
               <img
-                src={image}
-                alt={`${category} installation project ${(index % images.length) + 1} by Jax Pavers in Jacksonville FL`}
+                src={image.src}
+                alt={image.alt}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
+                width={500}
+                height={300}
               />
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -228,11 +286,13 @@ const RecentWork = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={lightbox}
-                alt="Full-size paving work showcase"
+                src={lightbox.src}
+                alt={lightbox.alt}
                 className="max-h-full max-w-full object-contain rounded-lg shadow-2xl"
                 loading="eager"
                 decoding="async"
+                width={1536}
+                height={1024}
               />
             </motion.div>
 

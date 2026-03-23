@@ -26,6 +26,9 @@ const Hero = () => {
           src={getImagePath('/pavers-hero.png')}
           alt="Premium paver installation by Jax Pavers in Jacksonville, Florida"
           className="w-full h-full object-cover"
+          width={1536}
+          height={1024}
+          fetchPriority="high"
         />
       </picture>
       

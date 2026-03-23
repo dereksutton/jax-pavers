@@ -3,6 +3,7 @@
 // src/components/Footer.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import getImagePath from '../utils/imagePaths';
 
 const Footer = () => {
@@ -19,6 +20,8 @@ const Footer = () => {
               src={getImagePath("/jaxpavers-logo.webp")}
               alt="Jax Pavers - Jacksonville FL Paver Installation"
               className="h-48 w-auto"
+              width={500}
+              height={500}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -85,29 +88,29 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">Quick Links</h3>
             <ul className="mt-4 space-y-2 text-center md:text-left">
               <li>
-                <a href="#services" className="text-white/90 hover:text-gray-300 transition-colors">
+                <Link href="/#services" className="text-white/90 hover:text-gray-300 transition-colors">
                   Our Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#why-us" className="text-white/90 hover:text-gray-300 transition-colors">
+                <Link href="/#why-us" className="text-white/90 hover:text-gray-300 transition-colors">
                   Why Us?
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#recent-work" className="text-white/90 hover:text-gray-300 transition-colors">
+                <Link href="/#recent-work" className="text-white/90 hover:text-gray-300 transition-colors">
                   Recent Work
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#testimonials" className="text-white/90 hover:text-gray-300 transition-colors">
+                <Link href="/#testimonials" className="text-white/90 hover:text-gray-300 transition-colors">
                   Testimonials
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#quote" className="text-white/90 hover:text-gray-300 transition-colors">
+                <Link href="/#quote" className="text-white/90 hover:text-gray-300 transition-colors">
                   Get My Quote
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
