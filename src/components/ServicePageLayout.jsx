@@ -32,7 +32,7 @@ const ServicePageLayout = ({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <>
+    <div className="overflow-x-hidden">
       {/* Hero Banner */}
       <header
         className="relative h-[55vh] min-h-[420px] w-full overflow-hidden"
@@ -199,7 +199,7 @@ const ServicePageLayout = ({
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 };
 
