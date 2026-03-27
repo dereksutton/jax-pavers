@@ -39,4 +39,4 @@ services:
     envVars:
       - key: NEXT_PUBLIC_API_URL
         value: https://jax-pavers-api.onrender.com/api
-    autoDeploy: false
+    autoDeploy: true
