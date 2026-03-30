@@ -1,0 +1,7 @@
+# 301 redirects: non-trailing-slash to trailing-slash for service pages
+/driveways /driveways/ 301
+/patios /patios/ 301
+/pool-decks /pool-decks/ 301
+/outdoor-kitchens /outdoor-kitchens/ 301
+/pergolas /pergolas/ 301
+/service-areas /service-areas/ 301

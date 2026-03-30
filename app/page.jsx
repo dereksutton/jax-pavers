@@ -2,6 +2,7 @@ import Hero from '../src/components/Hero';
 import Services from '../src/components/Services';
 import AboutUs from '../src/components/AboutUs';
 import WhyUs from '../src/components/WhyUs';
+import ProcessSection from '../src/components/ProcessSection';
 import RecentWork from '../src/components/RecentWork';
 import Testimonials from '../src/components/Testimonials';
 import FAQ from '../src/components/FAQ';
@@ -22,6 +23,7 @@ export default function Home() {
         <Services />
         <AboutUs />
         <WhyUs />
+        <ProcessSection />
         <RecentWork />
         <Testimonials />
         <FAQ />

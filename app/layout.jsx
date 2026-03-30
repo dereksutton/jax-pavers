@@ -2,8 +2,8 @@ import './globals.css';
 import Script from 'next/script';
 
 export const metadata = {
-  title: 'Paver Installation Jacksonville FL | Jax Pavers',
-  description: "Jacksonville's trusted paver contractor. Expert driveways, patios, pool decks & outdoor kitchens. Licensed, insured, 10-yr warranty. Free consultations — (904) 445-1261.",
+  title: 'Paver Installation Jacksonville FL | 10-Year Warranty | Jax Pavers',
+  description: "Jacksonville's top-rated paver contractor. Expert driveways, patios, pool decks, outdoor kitchens & pergolas. Licensed, insured, 10-year warranty. Get your free quote — (904) 445-1261.",
   keywords: 'paver installation Jacksonville FL, paver driveways Jacksonville, paver patios Jacksonville, pool deck pavers Jacksonville, outdoor kitchen Jacksonville, pergola installation Jacksonville, hardscape contractor Jacksonville, paver contractor near me, Jacksonville pavers, North Florida pavers, Tremron pavers Jacksonville, Belgard pavers Jacksonville',
   authors: [{ name: 'Jax Pavers' }],
   metadataBase: new URL('https://jaxoutdoorspaces.com'),
@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     url: 'https://jaxoutdoorspaces.com/',
-    title: 'Paver Installation Jacksonville FL | Jax Pavers',
+    title: 'Paver Installation Jacksonville FL | 10-Year Warranty | Jax Pavers',
     description: 'Premium paver installation & design in Jacksonville FL. Driveways, patios, pool decks, outdoor kitchens & pergolas. Licensed, insured, 10-year warranty. 5-star Google rated.',
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Paver Installation Jacksonville FL | Jax Pavers',
+    title: 'Paver Installation Jacksonville FL | 10-Year Warranty | Jax Pavers',
     description: 'Premium paver installation & design in Jacksonville FL. Driveways, patios, pool decks, outdoor kitchens & pergolas. Licensed, insured, 10-year warranty.',
     images: [
       {
@@ -303,60 +303,6 @@ export default function RootLayout({ children }) {
               "name": "Jax Pavers",
               "url": "https://jaxoutdoorspaces.com"
             }),
-          }}
-        />
-
-        {/* Structured Data: Service (individual services) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              {
-                "@context": "https://schema.org",
-                "@type": "Service",
-                "name": "Paver Driveway Installation",
-                "description": "Custom paver driveway installation in Jacksonville FL. Durable, code-compliant driveways using premium Tremron and Belgard pavers designed for Florida heat, rain, and heavy vehicles.",
-                "provider": { "@id": "https://jaxoutdoorspaces.com/#business" },
-                "areaServed": { "@type": "City", "name": "Jacksonville", "addressRegion": "FL" },
-                "serviceType": "Paver Driveway Installation"
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "Service",
-                "name": "Paver Patio Installation",
-                "description": "Premium paver patio and courtyard installation in Jacksonville FL. Transform your backyard into an elegant outdoor living space with expert craftsmanship and lasting materials.",
-                "provider": { "@id": "https://jaxoutdoorspaces.com/#business" },
-                "areaServed": { "@type": "City", "name": "Jacksonville", "addressRegion": "FL" },
-                "serviceType": "Paver Patio Installation"
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "Service",
-                "name": "Pool Deck Paver Installation",
-                "description": "Stunning paver pool deck installation in Jacksonville FL. Slip-resistant, heat-reflective pool decks expertly crafted with premium materials and precision finishing.",
-                "provider": { "@id": "https://jaxoutdoorspaces.com/#business" },
-                "areaServed": { "@type": "City", "name": "Jacksonville", "addressRegion": "FL" },
-                "serviceType": "Pool Deck Paver Installation"
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "Service",
-                "name": "Outdoor Kitchen Installation",
-                "description": "Fully equipped outdoor kitchen installation in Jacksonville FL. Custom designs with premium appliances from Twin Eagles and TrueFlame, built for Florida outdoor entertaining.",
-                "provider": { "@id": "https://jaxoutdoorspaces.com/#business" },
-                "areaServed": { "@type": "City", "name": "Jacksonville", "addressRegion": "FL" },
-                "serviceType": "Outdoor Kitchen Installation"
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "Service",
-                "name": "Pergola Installation",
-                "description": "Custom aluminum and cedar pergola installation in Jacksonville FL. Engineered to withstand Florida's elements while adding shade and style to your outdoor living space.",
-                "provider": { "@id": "https://jaxoutdoorspaces.com/#business" },
-                "areaServed": { "@type": "City", "name": "Jacksonville", "addressRegion": "FL" },
-                "serviceType": "Pergola Installation"
-              }
-            ]),
           }}
         />
 

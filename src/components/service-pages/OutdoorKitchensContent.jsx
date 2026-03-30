@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import ServicePageLayout from "../ServicePageLayout";
 import ServiceGallery from "../ServiceGallery";
@@ -108,7 +109,9 @@ const OutdoorKitchensContent = () => {
           throughout Jacksonville and Northeast Florida. From compact grilling
           stations to expansive L-shaped islands with full appliance suites, every
           project we deliver is engineered for Florida's heat, humidity, and
-          afternoon storms, backed by our 10-year workmanship warranty. As a
+          afternoon storms, backed by our 10-year workmanship warranty. We also build the{" "}
+          <Link href="/patios" className="text-[#0A86C4] hover:underline">paver patios</Link> and{" "}
+          <Link href="/pergolas" className="text-[#0A86C4] hover:underline">pergolas</Link> that complete your outdoor living space. As a
           licensed and insured contractor, we handle every detail from design
           consultation through final inspection so you can focus on choosing your
           favorite recipes.

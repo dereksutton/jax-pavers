@@ -1,14 +1,15 @@
 import DrivewaysContent from '../../src/components/service-pages/DrivewaysContent';
 
 export const metadata = {
-  title: 'Paver Driveway Installation Jacksonville FL | Jax Pavers',
+  title: 'Paver Driveways Jacksonville FL | 10-Year Warranty | Jax Pavers',
   description:
     'Expert paver driveway installation in Jacksonville FL. Tremron & Belgard pavers, 10-year warranty, licensed & insured. Free consultation — (904) 445-1261.',
   alternates: {
     canonical: '/driveways',
   },
   openGraph: {
-    title: 'Paver Driveway Installation Jacksonville FL | Jax Pavers',
+    type: 'website',
+    title: 'Paver Driveways Jacksonville FL | 10-Year Warranty | Jax Pavers',
     description:
       'Expert paver driveway installation in Jacksonville FL. Premium Tremron & Belgard pavers, 10-year warranty. Free consultation — (904) 445-1261.',
     url: 'https://jaxoutdoorspaces.com/driveways',
@@ -20,10 +21,12 @@ export const metadata = {
         alt: 'Paver driveway installation by Jax Pavers in Jacksonville FL',
       },
     ],
+    locale: 'en_US',
+    siteName: 'Jax Pavers',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Paver Driveway Installation Jacksonville FL | Jax Pavers',
+    title: 'Paver Driveways Jacksonville FL | 10-Year Warranty | Jax Pavers',
     description:
       'Expert paver driveway installation in Jacksonville FL. Premium Tremron & Belgard pavers, 10-year warranty. Free consultation.',
     images: [

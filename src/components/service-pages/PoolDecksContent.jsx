@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import ServicePageLayout from "../ServicePageLayout";
 import ServiceGallery from "../ServiceGallery";
@@ -105,7 +106,10 @@ const PoolDecksContent = () => {
           As a licensed and insured paver contractor serving Jacksonville, Ponte
           Vedra Beach, Nocatee, St. Augustine, and communities throughout North
           Florida, we bring decades of combined hardscaping experience to every
-          pool deck project. Every installation is backed by our 10-year
+          pool deck project. Many clients pair their new pool deck with a{" "}
+          <Link href="/patios" className="text-[#0A86C4] hover:underline">paver patio</Link>,{" "}
+          <Link href="/outdoor-kitchens" className="text-[#0A86C4] hover:underline">outdoor kitchen</Link>, or{" "}
+          <Link href="/pergolas" className="text-[#0A86C4] hover:underline">pergola</Link> to create a complete outdoor living space. Every installation is backed by our 10-year
           workmanship warranty and a commitment to precision craftsmanship that our
           clients rely on.
         </p>

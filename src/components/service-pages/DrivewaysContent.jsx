@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import ServicePageLayout from "../ServicePageLayout";
 import ServiceGallery from "../ServiceGallery";
@@ -106,7 +107,9 @@ const DrivewaysContent = () => {
           can make. Unlike poured concrete that cracks and stains over time, interlocking
           pavers deliver lasting beauty, superior strength, and the kind of curb appeal
           that sets your property apart. At Jax Pavers, we design and install custom
-          paver driveways throughout Jacksonville and Northeast Florida, backed by a
+          paver driveways, <Link href="/patios" className="text-[#0A86C4] hover:underline">patios</Link>,{" "}
+          <Link href="/pool-decks" className="text-[#0A86C4] hover:underline">pool decks</Link>, and more
+          throughout Jacksonville and Northeast Florida, backed by a
           10-year workmanship warranty and the craftsmanship your home deserves.
         </p>
       </motion.section>

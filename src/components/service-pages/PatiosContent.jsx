@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import ServicePageLayout from "../ServicePageLayout";
 import ServiceGallery from "../ServiceGallery";
@@ -113,8 +114,10 @@ const PatiosContent = () => {
         <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
           At Jax Pavers, we specialize in custom paver patio and courtyard installations throughout
           Jacksonville, Ponte Vedra Beach, Nocatee, St. Augustine, and the surrounding communities.
-          Whether you are looking for a cozy fire pit patio, a sprawling outdoor living area, or an
-          elegant courtyard, our team designs and builds patios that stand up to Florida&apos;s
+          Whether you are looking for a cozy fire pit patio, a sprawling outdoor living area with an{" "}
+          <Link href="/outdoor-kitchens" className="text-[#0A86C4] hover:underline">outdoor kitchen</Link>, or an
+          elegant courtyard beside your{" "}
+          <Link href="/pool-decks" className="text-[#0A86C4] hover:underline">pool deck</Link>, our team designs and builds patios that stand up to Florida&apos;s
           weather while looking stunning for years to come. Every project is backed by our 10-year
           workmanship warranty, and we are fully licensed and insured.
         </p>

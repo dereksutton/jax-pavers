@@ -19,7 +19,7 @@ const Logo = ({ isHidden = false }) => {
     >
       <motion.img
         src={getImagePath("/jaxpavers-logo.webp")}
-        alt="Company Logo"
+        alt="Jax Pavers - Paver Installation Jacksonville FL"
         className="h-40 sm:h-42 md:h-44 lg:h-48 w-auto"
         whileHover={{ scale: 1.1, rotate: 2 }}
         transition={{ type: "spring", stiffness: 300 }}

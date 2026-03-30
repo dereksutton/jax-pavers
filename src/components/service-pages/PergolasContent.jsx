@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import ServicePageLayout from "../ServicePageLayout";
 import ServiceGallery from "../ServiceGallery";
@@ -100,7 +101,9 @@ const PergolasContent = () => {
           outdoor space. In Jacksonville, where the Florida sun is relentless and
           afternoon storms roll in without warning, a well-built pergola creates a
           sheltered outdoor room where you can cook, dine, relax, and entertain
-          year-round. At Jax Pavers, we design and install custom pergolas
+          year-round — the perfect complement to a{" "}
+          <Link href="/patios" className="text-[#0A86C4] hover:underline">paver patio</Link> or{" "}
+          <Link href="/outdoor-kitchens" className="text-[#0A86C4] hover:underline">outdoor kitchen</Link>. At Jax Pavers, we design and install custom pergolas
           throughout Jacksonville and Northeast Florida using premium materials
           that stand up to Florida's heat, humidity, and coastal conditions. Every
           project is backed by our 10-year workmanship warranty and the attention

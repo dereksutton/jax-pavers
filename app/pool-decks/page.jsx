@@ -1,7 +1,7 @@
 import PoolDecksContent from '../../src/components/service-pages/PoolDecksContent';
 
 export const metadata = {
-  title: 'Pool Deck Pavers Jacksonville FL | Jax Pavers',
+  title: 'Pool Deck Pavers Jacksonville FL | 10-Year Warranty | Jax Pavers',
   description:
     'Expert pool deck paver installation in Jacksonville FL. Slip-resistant, heat-reflective travertine and brick pavers. Licensed, insured, 10-year warranty. Free estimates.',
   alternates: {
@@ -10,7 +10,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     url: 'https://jaxoutdoorspaces.com/pool-decks',
-    title: 'Pool Deck Pavers Jacksonville FL | Jax Pavers',
+    title: 'Pool Deck Pavers Jacksonville FL | 10-Year Warranty | Jax Pavers',
     description:
       'Expert pool deck paver installation in Jacksonville FL. Slip-resistant, heat-reflective travertine and brick pavers. Licensed, insured, 10-year warranty.',
     images: [
@@ -26,7 +26,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pool Deck Pavers Jacksonville FL | Jax Pavers',
+    title: 'Pool Deck Pavers Jacksonville FL | 10-Year Warranty | Jax Pavers',
     description:
       'Expert pool deck paver installation in Jacksonville FL. Slip-resistant, heat-reflective travertine and brick pavers. Licensed, insured, 10-year warranty.',
     images: [
@@ -47,6 +47,17 @@ const serviceSchema = {
   provider: { '@id': 'https://jaxoutdoorspaces.com/#business' },
   areaServed: { '@type': 'City', name: 'Jacksonville', addressRegion: 'FL' },
   serviceType: 'Pool Deck Paver Installation',
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'USD',
+    price: '7500',
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      priceCurrency: 'USD',
+      price: '7500',
+      description: 'Project minimum',
+    },
+  },
 };
 
 const faqSchema = {

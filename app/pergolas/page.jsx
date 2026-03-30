@@ -1,14 +1,15 @@
 import PergolasContent from '../../src/components/service-pages/PergolasContent';
 
 export const metadata = {
-  title: 'Pergola Installation Jacksonville FL | Jax Pavers',
+  title: 'Pergola Installation Jacksonville FL | 10-Year Warranty | Jax Pavers',
   description:
     'Custom pergola installation in Jacksonville FL. Aluminum, cedar & StruXure louvered pergolas. 10-year warranty, licensed & insured. Free consultation — (904) 445-1261.',
   alternates: {
     canonical: '/pergolas',
   },
   openGraph: {
-    title: 'Pergola Installation Jacksonville FL | Jax Pavers',
+    type: 'website',
+    title: 'Pergola Installation Jacksonville FL | 10-Year Warranty | Jax Pavers',
     description:
       'Custom pergola installation in Jacksonville FL. Aluminum, cedar & StruXure louvered pergolas. 10-year warranty. Free consultation — (904) 445-1261.',
     url: 'https://jaxoutdoorspaces.com/pergolas',
@@ -20,10 +21,12 @@ export const metadata = {
         alt: 'Pergola installation by Jax Pavers in Jacksonville FL',
       },
     ],
+    locale: 'en_US',
+    siteName: 'Jax Pavers',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pergola Installation Jacksonville FL | Jax Pavers',
+    title: 'Pergola Installation Jacksonville FL | 10-Year Warranty | Jax Pavers',
     description:
       'Custom pergola installation in Jacksonville FL. Aluminum, cedar & StruXure louvered pergolas. 10-year warranty. Free consultation.',
     images: [

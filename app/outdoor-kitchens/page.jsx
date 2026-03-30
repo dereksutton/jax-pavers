@@ -1,14 +1,15 @@
 import OutdoorKitchensContent from '../../src/components/service-pages/OutdoorKitchensContent';
 
 export const metadata = {
-  title: 'Outdoor Kitchen Builders Jacksonville FL | Jax Pavers',
+  title: 'Outdoor Kitchens Jacksonville FL | 10-Year Warranty | Jax Pavers',
   description:
     'Custom outdoor kitchen installation in Jacksonville FL. Twin Eagles & TrueFlame grills, granite countertops, 10-year warranty. Free consultation — (904) 445-1261.',
   alternates: {
     canonical: '/outdoor-kitchens',
   },
   openGraph: {
-    title: 'Outdoor Kitchen Builders Jacksonville FL | Jax Pavers',
+    type: 'website',
+    title: 'Outdoor Kitchens Jacksonville FL | 10-Year Warranty | Jax Pavers',
     description:
       'Custom outdoor kitchen installation in Jacksonville FL. Premium grills, granite countertops, 10-year warranty. Free consultation — (904) 445-1261.',
     url: 'https://jaxoutdoorspaces.com/outdoor-kitchens',
@@ -20,10 +21,12 @@ export const metadata = {
         alt: 'Outdoor kitchen installation by Jax Pavers in Jacksonville FL',
       },
     ],
+    locale: 'en_US',
+    siteName: 'Jax Pavers',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Outdoor Kitchen Builders Jacksonville FL | Jax Pavers',
+    title: 'Outdoor Kitchens Jacksonville FL | 10-Year Warranty | Jax Pavers',
     description:
       'Custom outdoor kitchen installation in Jacksonville FL. Premium grills, granite countertops, 10-year warranty. Free consultation.',
     images: [

@@ -83,28 +83,38 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Navigation */}
-          <nav className="flex flex-col items-center" aria-label="Footer navigation">
-            <h3 className="text-lg font-semibold text-white">Quick Links</h3>
+          {/* Services Navigation */}
+          <nav className="flex flex-col items-center" aria-label="Footer services navigation">
+            <h3 className="text-lg font-semibold text-white">Services</h3>
             <ul className="mt-4 space-y-2 text-center md:text-left">
               <li>
-                <Link href="/#services" className="text-white/90 hover:text-gray-300 transition-colors">
-                  Our Services
+                <Link href="/driveways" className="text-white/90 hover:text-gray-300 transition-colors">
+                  Driveways
                 </Link>
               </li>
               <li>
-                <Link href="/#why-us" className="text-white/90 hover:text-gray-300 transition-colors">
-                  Why Us?
+                <Link href="/patios" className="text-white/90 hover:text-gray-300 transition-colors">
+                  Patios & Courtyards
                 </Link>
               </li>
               <li>
-                <Link href="/#recent-work" className="text-white/90 hover:text-gray-300 transition-colors">
-                  Recent Work
+                <Link href="/pool-decks" className="text-white/90 hover:text-gray-300 transition-colors">
+                  Pool Decks
                 </Link>
               </li>
               <li>
-                <Link href="/#testimonials" className="text-white/90 hover:text-gray-300 transition-colors">
-                  Testimonials
+                <Link href="/outdoor-kitchens" className="text-white/90 hover:text-gray-300 transition-colors">
+                  Outdoor Kitchens
+                </Link>
+              </li>
+              <li>
+                <Link href="/pergolas" className="text-white/90 hover:text-gray-300 transition-colors">
+                  Pergolas
+                </Link>
+              </li>
+              <li>
+                <Link href="/service-areas" className="text-white/90 hover:text-gray-300 transition-colors">
+                  Service Areas
                 </Link>
               </li>
               <li>

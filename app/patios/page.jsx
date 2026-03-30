@@ -1,7 +1,7 @@
 import PatiosContent from "../../src/components/service-pages/PatiosContent";
 
 export const metadata = {
-  title: "Paver Patio Installation Jacksonville FL | Jax Pavers",
+  title: "Paver Patios Jacksonville FL | 10-Year Warranty | Jax Pavers",
   description:
     "Expert paver patio & courtyard installation in Jacksonville FL. Custom designs, fire pits, seating walls & more. Licensed, insured, 10-yr warranty. Free consultation!",
   alternates: {
@@ -10,7 +10,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     url: "https://jaxoutdoorspaces.com/patios",
-    title: "Paver Patio Installation Jacksonville FL | Jax Pavers",
+    title: "Paver Patios Jacksonville FL | 10-Year Warranty | Jax Pavers",
     description:
       "Expert paver patio & courtyard installation in Jacksonville FL. Custom designs, fire pits, seating walls & more. Licensed, insured, 10-yr warranty.",
     images: [
@@ -26,7 +26,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Paver Patio Installation Jacksonville FL | Jax Pavers",
+    title: "Paver Patios Jacksonville FL | 10-Year Warranty | Jax Pavers",
     description:
       "Expert paver patio & courtyard installation in Jacksonville FL. Custom designs, fire pits, seating walls & more. Licensed, insured, 10-yr warranty.",
     images: [
@@ -51,6 +51,17 @@ const serviceSchema = {
     addressRegion: "FL",
   },
   serviceType: "Paver Patio Installation",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "USD",
+    price: "7500",
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      priceCurrency: "USD",
+      price: "7500",
+      description: "Project minimum",
+    },
+  },
 };
 
 const faqSchema = {
