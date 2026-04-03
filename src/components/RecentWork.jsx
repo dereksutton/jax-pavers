@@ -13,7 +13,7 @@ const IMAGE_ALT = {
   2: "Custom outdoor kitchen installation with wood-plank ceiling and paver flooring by Jax Pavers in Jacksonville FL",
   4: "Tumbled paver driveway installation with curved border by Jax Pavers in Jacksonville FL",
   5: "Paver patio and retaining wall installation with built-in accent lighting by Jax Pavers in Jacksonville FL",
-  6: "Outdoor kitchen and pergola installation with stone veneer base and poolside dining by Jax Pavers in Jacksonville FL",
+  6: "Linear outdoor kitchen installation with built-in grill, refrigerator drawers, and wood-plank cabinetry under covered patio by Jax Pavers in Jacksonville FL",
   7: "Backyard paver patio installation with circular fire pit by Jax Pavers in Jacksonville FL",
   8: "Multi-toned paver driveway installation with charcoal border by Jax Pavers in Jacksonville FL",
   9: "Paver pool deck and retaining wall installation with tropical landscaping by Jax Pavers in Jacksonville FL",
@@ -22,7 +22,7 @@ const IMAGE_ALT = {
   14: "Built-in grill island installation on stone veneer base with paver patio by Jax Pavers in Jacksonville FL",
   15: "Retaining wall installation with landscape accent lighting by Jax Pavers in Jacksonville FL",
   16: "Travertine pool deck installation with geometric spa surround by Jax Pavers in Jacksonville FL",
-  17: "Outdoor kitchen and pergola installation with grill and kamado smoker by Jax Pavers in Jacksonville FL",
+  17: "Waterfront outdoor kitchen island with built-in grill and LED lighting at sunset by Jax Pavers in Jacksonville FL",
   18: "Backyard putting green and paver retaining wall installation by Jax Pavers in Jacksonville FL",
   20: "Paver patio installation with fire pit and covered lanai by Jax Pavers in Jacksonville FL",
   21: "L-shaped outdoor kitchen installation with pergola, grill, and smoker by Jax Pavers in Jacksonville FL",
@@ -51,6 +51,12 @@ const IMAGE_ALT = {
   52: "Artificial turf and paver border installation by Jax Pavers in Jacksonville FL",
   53: "Outdoor kitchen island installation with grill, side burner, and pergola by Jax Pavers in Jacksonville FL",
   54: "Natural stone veneer outdoor kitchen installation with dual grills by Jax Pavers in Jacksonville FL",
+  55: "Covered patio with outdoor fireplace, TV, and built-in storage cabinets by Jax Pavers in Jacksonville FL",
+  56: "L-shaped outdoor kitchen with stainless steel grill, refrigerator drawers, and travertine flooring by Jax Pavers in Jacksonville FL",
+  57: "Outdoor kitchen with stacked stone veneer, built-in grill, and pergola lighting by Jax Pavers in Jacksonville FL",
+  58: "Freeform paver pool deck installation with tumbled stone coping by Jax Pavers in Jacksonville FL",
+  59: "L-shaped outdoor kitchen with kamado smoker, built-in grill, and natural stone veneer by Jax Pavers in Jacksonville FL",
+  60: "Pergola and outdoor kitchen installation with paver patio and horizontal privacy fence by Jax Pavers in Jacksonville FL",
 };
 
 // Images grouped by job category
@@ -58,11 +64,11 @@ const DRIVEWAYS_WALKWAYS = [4, 8, 25, 26, 33, 39, 40, 42, 47, 48, 49, 50].map(n 
   src: getImagePath(`/pavers-${n}.webp`),
   alt: IMAGE_ALT[n],
 }));
-const PATIOS_POOL_DECKS = [1, 7, 28, 5, 9, 15, 18, 32, 12, 13, 16, 20, 22, 23, 30, 31, 37, 43, 46, 52].map(n => ({
+const PATIOS_POOL_DECKS = [1, 7, 28, 5, 9, 15, 18, 32, 12, 13, 16, 20, 22, 23, 30, 31, 37, 43, 46, 52, 55, 58].map(n => ({
   src: getImagePath(`/pavers-${n}.webp`),
   alt: IMAGE_ALT[n],
 }));
-const OUTDOOR_KITCHENS_PERGOLAS = [2, 6, 14, 17, 21, 29, 41, 44, 53, 54].map(n => ({
+const OUTDOOR_KITCHENS_PERGOLAS = [2, 6, 14, 17, 21, 29, 41, 44, 53, 54, 56, 57, 59, 60].map(n => ({
   src: getImagePath(`/pavers-${n}.webp`),
   alt: IMAGE_ALT[n],
 }));

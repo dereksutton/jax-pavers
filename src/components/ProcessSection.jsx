@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import ShimmerButton from "./ShimmerButton";
 import getImagePath from "../utils/imagePaths";
@@ -34,14 +34,33 @@ const steps = [
 ];
 
 const ProcessSection = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden" id="process">
-      {/* Parallax background image */}
+    <section ref={sectionRef} className="relative py-16 md:py-24 overflow-hidden" id="process">
+      {/* Desktop: CSS bg-fixed parallax (broken on mobile browsers) */}
       <div
-        className="absolute inset-0 -top-[20%] -bottom-[20%] bg-cover bg-center bg-fixed"
+        className="absolute inset-0 -top-[20%] -bottom-[20%] bg-cover bg-center bg-fixed hidden md:block"
         style={{ backgroundImage: `url(${getImagePath("/pavers-33.webp")})` }}
         aria-hidden="true"
       />
+      {/* Mobile: Framer Motion scroll-based parallax */}
+      <motion.div
+        className="absolute inset-0 -top-[10%] -bottom-[10%] md:hidden"
+        style={{ y: backgroundY }}
+        aria-hidden="true"
+      >
+        <img
+          src={getImagePath("/pavers-33.webp")}
+          alt=""
+          className="h-full w-full object-cover"
+        />
+      </motion.div>
       {/* Overlay */}
       <div className="absolute inset-0 bg-[#003366]/70" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/25" />
