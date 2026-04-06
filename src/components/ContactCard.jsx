@@ -52,7 +52,7 @@ const ContactCard = () => {
     <div className="h-dvh grid grid-cols-1 lg:grid-cols-2 overflow-hidden bg-white">
 
       {/* Left / Top: Image */}
-      <div className="relative h-36 sm:h-48 lg:h-full">
+      <div className="relative h-[35dvh] sm:h-[40dvh] lg:h-full">
         <img
           src={getImagePath("/pavers-56.webp")}
           alt="L-shaped outdoor kitchen with stainless steel grill, refrigerator drawers, and travertine flooring by Jax Pavers in Jacksonville FL"
@@ -65,7 +65,7 @@ const ContactCard = () => {
 
       {/* Right / Bottom: Content */}
       <motion.div
-        className="flex-1 flex flex-col justify-center px-8 py-5 sm:px-10 sm:py-8 lg:px-14 lg:py-12"
+        className="flex-1 flex flex-col justify-center px-8 py-4 sm:px-10 sm:py-6 lg:px-14 lg:py-12"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
