@@ -54,8 +54,8 @@ const ContactCard = () => {
       {/* Left / Top: Image */}
       <div className="relative h-36 sm:h-48 lg:h-full">
         <img
-          src={getImagePath("/pavers-17.webp")}
-          alt="Waterfront outdoor kitchen island with built-in grill at sunset by Jax Pavers in Jacksonville FL"
+          src={getImagePath("/pavers-55.webp")}
+          alt="Covered patio with outdoor fireplace, TV, and built-in storage cabinets by Jax Pavers in Jacksonville FL"
           className="w-full h-full object-cover"
           width={800}
           height={600}
