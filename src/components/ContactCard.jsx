@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import ShimmerButton from "./ShimmerButton";
 import getImagePath from "../utils/imagePaths";
 
@@ -50,10 +49,10 @@ const ContactCard = () => {
   }, []);
 
   return (
-    <div className="h-dvh grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
+    <div className="h-dvh grid grid-cols-1 lg:grid-cols-2 overflow-hidden bg-white">
 
       {/* Left / Top: Image */}
-      <div className="relative h-44 sm:h-56 lg:h-full">
+      <div className="relative h-36 sm:h-48 lg:h-full">
         <img
           src={getImagePath("/pavers-17.webp")}
           alt="Waterfront outdoor kitchen island with built-in grill at sunset by Jax Pavers in Jacksonville FL"
@@ -66,14 +65,14 @@ const ContactCard = () => {
 
       {/* Right / Bottom: Content */}
       <motion.div
-        className="flex-1 flex flex-col justify-center px-6 py-6 sm:px-10 sm:py-8 lg:px-14 lg:py-12 bg-white"
+        className="flex-1 flex flex-col justify-center px-8 py-5 sm:px-10 sm:py-8 lg:px-14 lg:py-12"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="max-w-md mx-auto lg:mx-0 w-full flex flex-col gap-5 lg:gap-6">
+        <div className="max-w-md mx-auto lg:mx-0 w-full">
 
-          {/* Identity: Logo + Name + Tagline */}
+          {/* Identity */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
             <img
               src={getImagePath("/jaxpavers-logo.webp")}
@@ -83,19 +82,23 @@ const ContactCard = () => {
               height={112}
               loading="eager"
             />
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 mt-2">
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 mt-1.5">
               {OWNER_NAME}
             </h1>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#0A86C4]">
               {OWNER_TITLE}
             </p>
-            <p className="text-base lg:text-lg font-medium text-gray-700 mt-3 leading-snug">
+          </div>
+
+          {/* Tagline */}
+          <div className="text-center lg:text-left mt-4">
+            <p className="text-base lg:text-lg font-medium text-gray-700 leading-snug">
               Jacksonville&apos;s Trusted Paver &amp; Outdoor Living Contractor
             </p>
             <p className="text-sm text-gray-500 mt-1 leading-relaxed">
               Driveways, patios, pool decks, outdoor kitchens &amp; pergolas — built to last in the Florida climate.
             </p>
-            <div className="flex items-center gap-2 mt-3">
+            <div className="flex items-center justify-center lg:justify-start gap-2 mt-2.5">
               <div className="flex items-center gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="h-3.5 w-3.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
@@ -103,57 +106,56 @@ const ContactCard = () => {
                   </svg>
                 ))}
               </div>
-              <span className="text-xs text-gray-400">Licensed &amp; Insured &bull; 10-Year Warranty &bull; Free Estimates</span>
+              <span className="text-xs text-gray-400">Licensed &amp; Insured &bull; 10-Year Warranty</span>
             </div>
           </div>
 
           {/* Divider */}
-          <div className="h-px w-full bg-gray-200" />
+          <div className="mx-auto lg:mx-0 h-px w-16 bg-gray-200 my-5 lg:my-6" />
 
-          {/* Actions */}
-          <div className="flex flex-col gap-4">
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href={PHONE_HREF}
-                onClick={() => trackEvent("contact_card_call_click")}
-                className="flex items-center justify-center gap-2 flex-1 py-3.5 px-6 rounded-lg bg-[#003366] font-semibold text-white text-base hover:bg-[#002244] active:scale-[0.97] transition-all duration-200 shadow-md"
-              >
-                <PhoneIcon className="h-5 w-5" />
-                Call Now
-              </a>
-              <div className="flex-1" onClick={() => trackEvent("contact_card_quote_click")}>
-                <ShimmerButton href="/#quote" className="w-full text-base py-3.5">
-                  Book a Consultation
-                </ShimmerButton>
-              </div>
-            </div>
-
-            {/* Contact links */}
-            <div className="flex items-center justify-center lg:justify-start gap-4">
-              <a href={PHONE_HREF} className="flex items-center gap-2 text-gray-600 hover:text-[#0A86C4] transition-colors">
-                <div className="rounded-lg bg-[#0A86C4]/10 p-1.5">
-                  <PhoneIcon className="h-3.5 w-3.5 text-[#0A86C4]" />
-                </div>
-                <span className="text-sm font-medium">{PHONE}</span>
-              </a>
-              <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-gray-600 hover:text-[#0A86C4] transition-colors">
-                <div className="rounded-lg bg-[#0A86C4]/10 p-1.5">
-                  <EnvelopeIcon className="h-3.5 w-3.5 text-[#0A86C4]" />
-                </div>
-                <span className="text-sm font-medium">Email</span>
-              </a>
-              <Link href="/" onClick={() => trackEvent("contact_card_website_click")} className="flex items-center gap-2 text-gray-600 hover:text-[#0A86C4] transition-colors">
-                <div className="rounded-lg bg-[#0A86C4]/10 p-1.5">
-                  <GlobeIcon className="h-3.5 w-3.5 text-[#0A86C4]" />
-                </div>
-                <span className="text-sm font-medium">Website</span>
-              </Link>
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href={PHONE_HREF}
+              onClick={() => trackEvent("contact_card_call_click")}
+              className="flex items-center justify-center gap-2 flex-1 py-3.5 px-6 rounded-lg bg-[#003366] font-semibold text-white text-base hover:bg-[#002244] active:scale-[0.97] transition-all duration-200 shadow-md"
+            >
+              <PhoneIcon className="h-5 w-5" />
+              Call Now
+            </a>
+            <div className="flex-1" onClick={() => trackEvent("contact_card_quote_click")}>
+              <ShimmerButton href="/#quote" className="w-full text-base py-3.5">
+                Book a Consultation
+              </ShimmerButton>
             </div>
           </div>
 
+          {/* Contact links */}
+          <div className="mt-4 flex flex-col items-center lg:items-start gap-2">
+            <a href={PHONE_HREF} className="flex items-center gap-2 text-gray-600 hover:text-[#0A86C4] transition-colors">
+              <div className="rounded-lg bg-[#0A86C4]/10 p-1.5">
+                <PhoneIcon className="h-3.5 w-3.5 text-[#0A86C4]" />
+              </div>
+              <span className="text-sm font-medium">{PHONE}</span>
+            </a>
+            <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-gray-600 hover:text-[#0A86C4] transition-colors">
+              <div className="rounded-lg bg-[#0A86C4]/10 p-1.5">
+                <EnvelopeIcon className="h-3.5 w-3.5 text-[#0A86C4]" />
+              </div>
+              <span className="text-sm font-medium">{EMAIL}</span>
+            </a>
+            <a href="https://jaxoutdoorspaces.com" onClick={() => trackEvent("contact_card_website_click")} className="flex items-center gap-2 text-gray-600 hover:text-[#0A86C4] transition-colors">
+              <div className="rounded-lg bg-[#0A86C4]/10 p-1.5">
+                <GlobeIcon className="h-3.5 w-3.5 text-[#0A86C4]" />
+              </div>
+              <span className="text-sm font-medium">jaxoutdoorspaces.com</span>
+            </a>
+          </div>
+
           {/* Footer */}
-          <p className="text-xs text-gray-400 text-center lg:text-left">
-            Serving Jacksonville, Ponte Vedra, St. Augustine &amp; Orange Park &bull; &copy; {new Date().getFullYear()} Jax Pavers
+          <p className="text-[0.65rem] text-gray-400 text-center lg:text-left mt-5 lg:mt-6">
+            Serving Jacksonville, Ponte Vedra, St. Augustine &amp; Orange Park<br className="sm:hidden" />
+            {" "}&bull; &copy; {new Date().getFullYear()} Jax Pavers
           </p>
 
         </div>
