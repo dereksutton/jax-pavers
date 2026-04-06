@@ -36,6 +36,10 @@ services:
       - path: /robots.txt
         name: Cache-Control
         value: public, max-age=86400
+    routes:
+      - type: redirect
+        source: /contact-card
+        destination: /contact-card/
     envVars:
       - key: NEXT_PUBLIC_API_URL
         value: https://jax-pavers-api.onrender.com/api
