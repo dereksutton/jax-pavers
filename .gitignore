@@ -30,6 +30,6 @@ out
 *.sln
 *.sw?
 
-# Claude Code personal files
+# Claude Code
+.claude/
 CLAUDE.local.md
-.claude/settings.local.json
