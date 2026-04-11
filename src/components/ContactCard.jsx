@@ -113,21 +113,11 @@ const ContactCard = () => {
           {/* Divider */}
           <div className="mx-auto lg:mx-0 h-px w-16 bg-gray-200 my-5 lg:my-6" />
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3">
-            <a
-              href={PHONE_HREF}
-              onClick={() => trackEvent("contact_card_call_click")}
-              className="flex items-center justify-center gap-2 flex-1 py-3.5 px-6 rounded-lg bg-[#003366] font-semibold text-white text-base hover:bg-[#002244] active:scale-[0.97] transition-all duration-200 shadow-md"
-            >
-              <PhoneIcon className="h-5 w-5" />
-              Call Now
-            </a>
-            <div className="flex-1" onClick={() => trackEvent("contact_card_quote_click")}>
-              <ShimmerButton href="/#quote" className="w-full text-base py-3.5">
-                Book a Consultation
-              </ShimmerButton>
-            </div>
+          {/* CTA */}
+          <div onClick={() => trackEvent("contact_card_quote_click")}>
+            <ShimmerButton href="/#quote" className="w-full text-base py-3.5">
+              Book a Consultation
+            </ShimmerButton>
           </div>
 
           {/* Contact links */}
