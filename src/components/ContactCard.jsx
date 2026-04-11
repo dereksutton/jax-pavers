@@ -15,33 +15,6 @@ const trackEvent = (eventName) => {
 
 const OWNER_NAME = "Aaron Locke";
 const OWNER_TITLE = "Owner";
-const PHONE = "(904) 445-1261";
-const PHONE_HREF = "tel:+19044451261";
-const EMAIL = "info@jaxoutdoorspaces.com";
-
-function PhoneIcon({ className }) {
-  return (
-    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-    </svg>
-  );
-}
-
-function EnvelopeIcon({ className }) {
-  return (
-    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-    </svg>
-  );
-}
-
-function GlobeIcon({ className }) {
-  return (
-    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-    </svg>
-  );
-}
 
 const ContactCard = () => {
   React.useEffect(() => {
@@ -118,28 +91,6 @@ const ContactCard = () => {
             <ShimmerButton href="/#quote" className="w-full text-base py-3.5">
               Book a Consultation
             </ShimmerButton>
-          </div>
-
-          {/* Contact links */}
-          <div className="mt-4 flex flex-col items-center lg:items-start gap-2">
-            <a href={PHONE_HREF} className="flex items-center gap-2 text-gray-600 hover:text-[#0A86C4] transition-colors">
-              <div className="rounded-lg bg-[#0A86C4]/10 p-1.5">
-                <PhoneIcon className="h-3.5 w-3.5 text-[#0A86C4]" />
-              </div>
-              <span className="text-sm font-medium">{PHONE}</span>
-            </a>
-            <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-gray-600 hover:text-[#0A86C4] transition-colors">
-              <div className="rounded-lg bg-[#0A86C4]/10 p-1.5">
-                <EnvelopeIcon className="h-3.5 w-3.5 text-[#0A86C4]" />
-              </div>
-              <span className="text-sm font-medium">{EMAIL}</span>
-            </a>
-            <a href="https://jaxoutdoorspaces.com" onClick={() => trackEvent("contact_card_website_click")} className="flex items-center gap-2 text-gray-600 hover:text-[#0A86C4] transition-colors">
-              <div className="rounded-lg bg-[#0A86C4]/10 p-1.5">
-                <GlobeIcon className="h-3.5 w-3.5 text-[#0A86C4]" />
-              </div>
-              <span className="text-sm font-medium">jaxoutdoorspaces.com</span>
-            </a>
           </div>
 
           {/* Footer */}
