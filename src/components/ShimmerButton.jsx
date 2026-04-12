@@ -32,22 +32,21 @@ const ShimmerButton = ({
         background: 'linear-gradient(90deg, #0A86C4 0%, #0875B1 50%, #0A86C4 100%)',
         backgroundSize: '200% 100%',
       }}
+      initial={{ scale: 1 }}
       animate={{
         backgroundPosition: disabled ? '0% 50%' : ['0% 50%', '100% 50%', '0% 50%'],
+        scale: 1,
       }}
       transition={{
-        duration: 3,
-        repeat: disabled ? 0 : Infinity,
-        ease: "linear"
+        backgroundPosition: {
+          duration: 3,
+          repeat: disabled ? 0 : Infinity,
+          ease: "linear",
+        },
+        scale: { duration: 0.2, ease: "easeOut" },
       }}
-      whileHover={disabled ? {} : {
-        scale: 1.05,
-        transition: { duration: 0.2 }
-      }}
-      whileTap={disabled ? {} : {
-        scale: 0.95,
-        transition: { duration: 0.1 }
-      }}
+      whileHover={disabled ? {} : { scale: 1.05 }}
+      whileTap={disabled ? {} : { scale: 0.95 }}
     >
       <motion.div
         className="absolute inset-0 opacity-0"
