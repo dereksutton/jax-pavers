@@ -115,12 +115,6 @@ const ContactCard = () => {
             </ShimmerButton>
           </div>
 
-          {/* Footer */}
-          <p className="text-[0.65rem] text-gray-400 text-center lg:text-left mt-5 lg:mt-6">
-            Serving Jacksonville, Ponte Vedra, St. Augustine &amp; Orange Park<br className="sm:hidden" />
-            {" "}&bull; &copy; {new Date().getFullYear()} Jax Pavers
-          </p>
-
         </div>
       </motion.div>
 
