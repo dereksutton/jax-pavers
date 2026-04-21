@@ -12,7 +12,7 @@ import {
 import ShimmerButton from "./ShimmerButton";
 import { getAllReviews } from "../lib/reviews";
 
-const TOTAL_REVIEWS = 21;
+const TOTAL_REVIEWS = 23;
 const AUTO_PLAY_MS = 6000;
 const SWIPE_THRESHOLD = 10000;
 
@@ -285,7 +285,7 @@ const Testimonials = () => {
                     </svg>
 
                     {/* Review text */}
-                    <p className="mt-2 text-lg leading-relaxed text-gray-700 italic md:text-xl line-clamp-4">
+                    <p className="mt-2 min-h-[7.5rem] text-lg leading-relaxed text-gray-700 italic md:min-h-[8.25rem] md:text-xl line-clamp-4">
                       &ldquo;{review.text}&rdquo;
                     </p>
 
