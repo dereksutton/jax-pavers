@@ -17,9 +17,9 @@ export const metadata = {
     description: 'Premium paver installation & design in Jacksonville FL. Driveways, patios, pool decks, outdoor kitchens & pergolas. Licensed, insured, 10-year warranty. 5-star Google rated.',
     images: [
       {
-        url: '/pavers-hero.png',
-        width: 1200,
-        height: 630,
+        url: '/base.webp',
+        width: 2400,
+        height: 1350,
         alt: 'Jax Pavers - Premium paver installation in Jacksonville, Florida',
       },
     ],
@@ -32,7 +32,7 @@ export const metadata = {
     description: 'Premium paver installation & design in Jacksonville FL. Driveways, patios, pool decks, outdoor kitchens & pergolas. Licensed, insured, 10-year warranty.',
     images: [
       {
-        url: '/pavers-hero.png',
+        url: '/base.webp',
         alt: 'Jax Pavers - Premium paver installation in Jacksonville, Florida',
       },
     ],
