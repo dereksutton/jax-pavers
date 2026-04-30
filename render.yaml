@@ -20,6 +20,16 @@ services:
     env: static
     buildCommand: npm install && npm run build
     staticPublishPath: ./out
+    routes:
+      # Legacy URL redirects — historical URLs from prior site that
+      # Google still has indexed. 301 to closest current equivalent
+      # to recover backlink/authority signals.
+      - type: redirect
+        source: /services
+        destination: /
+      - type: redirect
+        source: /contact-us
+        destination: /#quote
     headers:
       - path: /*
         name: X-Frame-Options
