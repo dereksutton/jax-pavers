@@ -15,22 +15,17 @@ const Hero = () => {
       className="relative h-screen w-full overflow-hidden"
       role="banner"
     >
-      {/* Responsive hero background image */}
-      <picture className="absolute inset-0 w-full h-full">
-        <source
-          type="image/webp"
-          srcSet={`${getImagePath('/pavers-hero-640w.webp')} 640w, ${getImagePath('/pavers-hero-1024w.webp')} 1024w, ${getImagePath('/pavers-hero-1920w.webp')} 1920w`}
-          sizes="100vw"
-        />
-        <img
-          src={getImagePath('/pavers-hero.png')}
-          alt="Premium paver installation by Jax Pavers in Jacksonville, Florida"
-          className="w-full h-full object-cover"
-          width={1536}
-          height={1024}
-          fetchPriority="high"
-        />
-      </picture>
+      {/* Hero background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover bg-black"
+        src={getImagePath('/pavers-bg-hero.mp4')}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        aria-label="Premium paver installation by Jax Pavers in Jacksonville, Florida"
+      />
       
       {/* Navbar */}
       <Navbar 
@@ -60,8 +55,12 @@ const Hero = () => {
         >
           Premium Paver Installation &amp; Design
         </motion.p>
-        <motion.h1 
+        <motion.h1
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8"
+          style={{
+            WebkitTextStroke: '3.5px #0A86C4',
+            paintOrder: 'stroke fill',
+          }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
