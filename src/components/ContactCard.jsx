@@ -27,8 +27,8 @@ const ContactCard = () => {
       {/* Left / Top: Image */}
       <div className="relative h-[35dvh] sm:h-[40dvh] lg:h-full">
         <img
-          src={getImagePath("/pavers-56.webp")}
-          alt="L-shaped outdoor kitchen with stainless steel grill, refrigerator drawers, and travertine flooring by Jax Pavers in Jacksonville FL"
+          src={getImagePath("/jp-bizcard-new.webp")}
+          alt="Jax Pavers business card featuring Jacksonville paver and outdoor living services"
           className="w-full h-full object-cover"
           width={800}
           height={600}
