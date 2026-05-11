@@ -238,7 +238,7 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex justify-between items-center px-5 py-4 border-b border-gray-700">
-                  <h2 className="text-white text-lg font-semibold">Menu</h2>
+                  <h2 data-ui-heading="true" className="text-white text-lg font-semibold">Menu</h2>
                   <button
                     onClick={toggleMenu}
                     className="text-gray-400 hover:text-white transition-colors p-1"

@@ -56,10 +56,10 @@ const Hero = () => {
           Premium Paver Installation &amp; Design
         </motion.p>
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 md:mb-8 tracking-tight leading-[1.1]"
           style={{
-            WebkitTextStroke: '3.5px #0A86C4',
-            paintOrder: 'stroke fill',
+            fontFamily: 'var(--font-playfair), Georgia, serif',
+            textShadow: '0 2px 20px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.4)',
           }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

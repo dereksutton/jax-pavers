@@ -1,5 +1,20 @@
 import './globals.css';
 import Script from 'next/script';
+import { Playfair_Display, Inter } from 'next/font/google';
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['700', '800', '900'],
+  variable: '--font-playfair',
+  display: 'swap',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 export const metadata = {
   title: 'Paver Installation Jacksonville FL | 10-Year Warranty | Jax Pavers',
@@ -64,7 +79,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
         {/* Preload hero image for Core Web Vitals — responsive by viewport */}
         <link rel="preload" as="image" href="/pavers-hero-640w.webp" type="image/webp" media="(max-width: 640px)" />

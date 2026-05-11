@@ -1,13 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2 {
+  font-family: var(--font-playfair), Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+/* UI chrome headings (nav menu labels) stay in the body sans */
+[data-ui-heading="true"] {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  letter-spacing: normal;
 }
 
 body {
