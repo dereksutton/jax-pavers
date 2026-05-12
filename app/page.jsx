@@ -16,7 +16,7 @@ export default function Home() {
       <link
         rel="preload"
         as="image"
-        href="/pavers-hero-640w.webp"
+        href="/jp-preload-hero.webp"
         type="image/webp"
         fetchPriority="high"
       />

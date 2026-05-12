@@ -19,7 +19,7 @@ const Hero = () => {
       <video
         className="absolute inset-0 w-full h-full object-cover bg-black"
         src={getImagePath('/pavers-bg-hero.mp4')}
-        poster={getImagePath('/pavers-hero-640w.webp')}
+        poster={getImagePath('/jp-preload-hero.webp')}
         autoPlay
         loop
         muted
