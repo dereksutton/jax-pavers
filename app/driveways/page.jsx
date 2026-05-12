@@ -74,6 +74,38 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
+      name: 'Why do you recommend Tremron pavers for Jacksonville driveways?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Tremron is one of the largest paver manufacturers in the Southeast and produces pavers in Florida. That matters in two ways: their products are engineered specifically for Florida\'s heat, humidity, and UV exposure (not generic North American climate), and the local manufacturing keeps lead times short and shipping costs low. Tremron also offers one of the broadest color and texture libraries in the industry, including the popular Stonehedge, Olde Town, and Mega-Olde Towne lines that work beautifully on Jacksonville driveways.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What Tremron paver styles work best for Florida driveways?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'For Jacksonville driveways we most often install Tremron Stonehedge (a tumbled paver with old-world character that hides minor wear naturally), Olde Town (a smaller-format tumbled paver ideal for intricate patterns and circle medallions), and Mega-Olde Towne (larger format for a more contemporary look and faster installation on bigger driveways). All three are rated for vehicular traffic, available in a wide range of color blends, and engineered for Florida\'s UV and heat conditions.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are Tremron pavers available in modern color blends in Jacksonville?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Tremron\'s color library includes warm sand and terracotta tones, classic earth blends, and cool gray and charcoal palettes that work well for modern homes. We bring physical samples to every consultation so you can see how Tremron colors look against your home\'s exterior, landscaping, and existing hardscape. Multi-toned blends with contrasting border pavers are increasingly popular for Jacksonville driveways looking for a contemporary edge.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you install Tremron pavers over or around my existing concrete driveway?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, with the right preparation. In some cases we can overlay thin pavers on top of structurally sound concrete; in most cases we recommend removing the concrete and installing the proper aggregate base and pavers from scratch, which produces a longer-lasting result. We assess the existing concrete during the consultation and recommend the right approach for your specific driveway.',
+      },
+    },
+    {
+      '@type': 'Question',
       name: 'How long does a driveway installation take?',
       acceptedAnswer: {
         '@type': 'Answer',

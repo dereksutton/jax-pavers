@@ -35,7 +35,11 @@ const galleryImages = [
 ];
 
 const faqs = [
-  { q: "How much does a pergola cost in Jacksonville?", a: "Pergola costs vary based on material, size, and features such as louvered roofs or integrated lighting. We have a $7,500 project minimum for all installations. Contact us for a free consultation and we'll provide a custom quote tailored to your outdoor space." },
+  { q: "How much does a pergola cost in Jacksonville?", a: "Pergola costs in Jacksonville depend on material, size, attachment style, and features. A standard 12x12 aluminum pergola without a roof system typically runs $8,000 to $14,000 installed. Cedar pergolas of similar size range from $10,000 to $16,000. StruXure louvered roof systems, which offer adjustable shade and rain protection, generally start around $20,000 for a basic installation and can exceed $35,000 for larger or multi-zone setups. Our project minimum is $7,500." },
+  { q: "How much does a louvered pergola cost in Jacksonville FL?", a: "Louvered pergolas, also called adjustable-louver pergolas or motorized pergolas, are the premium tier of pergola installations. As an authorized StruXure dealer in Jacksonville, our typical louvered pergola installations start around $20,000 and run between $25,000 and $35,000 for most residential projects, with larger or multi-zone systems going higher. The premium reflects the engineered roof system, motorized louvers, integrated gutter drainage, and the engineering required to meet Florida's wind code." },
+  { q: "Are pergolas in Jacksonville rated for hurricanes and Florida wind code?", a: "Yes. Every pergola we install in Jacksonville is engineered to meet or exceed Florida Building Code wind-load requirements, which vary by county and proximity to the coast. Homes east of the Intracoastal (Jacksonville Beach, Ponte Vedra Beach, Atlantic Beach) face stricter wind ratings than inland homes. We use marine-grade hardware, properly sized concrete footings, and engineered mounting brackets so the structure stays put through summer thunderstorms and named storms alike." },
+  { q: "What's the difference between a pergola and a gazebo?", a: "A gazebo is a fully roofed, freestanding outdoor structure, usually octagonal or hexagonal, with a solid roof that completely blocks sun and rain. A pergola is more architectural — it has vertical posts and a slatted, louvered, or open roof framework that filters light and creates partial shade without fully enclosing the space. Pergolas attach to homes, anchor outdoor kitchens, and define paver patios in ways gazebos can't. Most Jacksonville homeowners choose pergolas for outdoor living because they offer flexibility and a cleaner architectural fit." },
+  { q: "Can you build a pergola over my existing paver patio?", a: "Yes, and it's one of the most common project combinations we handle. If your existing paver patio has the right base structure, we can mount pergola posts directly to the patio surface or install concrete footings adjacent to it. For homeowners planning both, we recommend designing the pavers and pergola together from day one — it's faster, cleaner, and almost always less expensive than retrofitting later." },
   { q: "What pergola material is best for Florida weather?", a: "Aluminum is the most popular pergola material in Florida because it won't rot, resists rust, and requires virtually no maintenance. Powder-coated aluminum stands up to Jacksonville's heat, humidity, and salt air. Cedar is a beautiful natural option but requires periodic sealing and staining to maintain its appearance in Florida's climate." },
   { q: "Do I need a permit for a pergola in Jacksonville?", a: "Yes, most pergola installations in Jacksonville require a building permit. As a licensed and insured contractor, we handle the entire permitting process for you, from engineering drawings to final inspection, so you don't have to worry about the paperwork." },
   { q: "Can a pergola be attached to my house?", a: "Yes, attached pergolas are one of our most popular installations. They create a seamless transition from your indoor living space to the outdoors and are ideal for covering patios, outdoor kitchens, and dining areas directly off the back of the home." },
@@ -232,6 +236,100 @@ const PergolasContent = () => {
               <img src={getImagePath("/pavers-21.webp")} alt="L-shaped outdoor kitchen with pergola installation by Jax Pavers in Jacksonville FL" className="w-full h-full object-cover aspect-[4/3]" loading="lazy" width={800} height={600} />
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Local Knowledge / SEO cluster content */}
+      <section className="relative bg-white">
+        <div className="mx-auto max-w-4xl px-4 py-16 sm:py-20 md:px-8">
+          <motion.div {...fadeUp}>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#0A86C4]">Florida-Built</p>
+            <div className="mt-2 h-px w-12 bg-[#0A86C4]/40" />
+            <h2 className="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
+              Pergolas in Jacksonville, FL: Hurricane-Code Construction &amp; Cost Guide
+            </h2>
+            <div className="mt-6 space-y-4 text-gray-600 leading-relaxed">
+              <p>
+                A pergola in Jacksonville isn't the same project as a pergola in the Midwest. Florida's
+                building code, wind-load requirements, summer thunderstorms, and salt air all change
+                what a properly engineered pergola needs to look like. As one of the more experienced
+                pergola builders in Jacksonville, we design every structure we install around the
+                conditions homeowners here actually face — not the conditions a generic kit pergola
+                manufacturer assumes you live in.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Hurricane-Code Pergolas Built for Florida Wind Loads
+              </h3>
+              <p>
+                Every pergola we install in Northeast Florida is engineered to meet Florida Building
+                Code wind-load requirements. Wind ratings vary by location — homes east of the
+                Intracoastal in Jacksonville Beach, Atlantic Beach, Neptune Beach, and Ponte Vedra
+                Beach face higher design wind speeds than inland communities like Mandarin, Riverside,
+                or Fleming Island. Our installations factor in:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Engineered concrete footings sized for soil conditions and post placement</li>
+                <li>Marine-grade mounting hardware for attached pergolas connected to the home</li>
+                <li>Through-bolted post connections rather than surface-mount brackets where exposure is high</li>
+                <li>StruXure louvered systems rated for sustained winds well above local code minimums</li>
+                <li>Permitting and inspection coordination so the engineering is documented and on file</li>
+              </ul>
+              <p>
+                A properly built pergola doesn't just survive Florida storms — it adds value because
+                future buyers and inspectors can see it was built to code with the right materials.
+                That documentation matters at resale.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Pergola Cost in Jacksonville: What to Expect in 2026
+              </h3>
+              <p>
+                Pergola pricing in Jacksonville varies more than most homeowners expect. The biggest
+                cost drivers are the material, the size, whether the structure is freestanding or
+                attached to the home, the roof system (open-rafter, slatted, or louvered), and the
+                permitting complexity for your specific location.
+              </p>
+              <p>
+                Standard aluminum pergolas in the 10x10 to 14x14 range typically install for $8,000
+                to $14,000. Cedar pergolas of similar size run $10,000 to $16,000 because of material
+                cost and the additional finishing work to seal and stain the wood. StruXure motorized
+                louvered systems — the premium tier — start around $20,000 for compact installations
+                and commonly land between $25,000 and $35,000 for full residential projects, with
+                multi-zone or oversized structures running higher. Our $7,500 project minimum applies
+                across all pergola installations.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Pavers and Pergolas: Designed Together
+              </h3>
+              <p>
+                Most of our pergola work in Jacksonville pairs with a hardscape project. A pergola
+                over a custom{" "}
+                <Link href="/patios" className="text-[#0A86C4] hover:underline">paver patio</Link>,
+                shading an{" "}
+                <Link href="/outdoor-kitchens" className="text-[#0A86C4] hover:underline">outdoor kitchen</Link>,
+                or extending a{" "}
+                <Link href="/pool-decks" className="text-[#0A86C4] hover:underline">paver pool deck</Link>{" "}
+                is dramatically more cohesive when both projects are designed and installed by the
+                same crew. We coordinate the paver layout, post placement, and drainage from day one
+                so nothing has to be retrofitted later. If you're considering both pavers and a
+                pergola, designing them as one project almost always costs less than phasing them.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Service Areas for Pergola Installation
+              </h3>
+              <p>
+                We install pergolas across Jacksonville and the surrounding Northeast Florida
+                communities, including Ponte Vedra Beach, Nocatee, St. Johns, Fruit Cove, Mandarin,
+                Riverside, San Marco, Atlantic Beach, Neptune Beach, Jacksonville Beach, St.
+                Augustine, Fleming Island, Orange Park, and Green Cove Springs. Each county has its
+                own permitting office and timeline — we coordinate with all of them so your pergola
+                project moves from design to inspection without homeowner intervention.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 

@@ -39,6 +39,10 @@ const galleryImages = [
 
 const faqs = [
   { q: "How much does a paver driveway cost in Jacksonville?", a: "Paver driveway costs depend on the size of the area, materials selected, and project complexity. We have a $7,500 project minimum for all installations. Contact us for a free consultation and we'll provide a detailed, no-obligation quote tailored to your property." },
+  { q: "Why do you recommend Tremron pavers for Jacksonville driveways?", a: "Tremron is one of the largest paver manufacturers in the Southeast and produces pavers in Jacksonville at their Florida facility. That matters in two ways: their products are engineered specifically for Florida's heat, humidity, and UV exposure (not generic North American climate), and the local manufacturing keeps lead times short and shipping costs low. Tremron also offers one of the broadest color and texture libraries in the industry, including the popular Stonehedge, Olde Town, and Mega-Olde Towne lines that work beautifully on Jacksonville driveways." },
+  { q: "What Tremron paver styles work best for Florida driveways?", a: "For Jacksonville driveways we most often install Tremron Stonehedge (a tumbled paver with old-world character that hides minor wear naturally), Olde Town (a smaller-format tumbled paver ideal for intricate patterns and circle medallions), and Mega-Olde Towne (larger format for a more contemporary look and faster installation on bigger driveways). All three are rated for vehicular traffic, available in a wide range of color blends, and engineered for Florida's UV and heat conditions." },
+  { q: "Are Tremron pavers available in modern color blends in Jacksonville?", a: "Yes. Tremron's color library includes warm sand and terracotta tones, classic earth blends, and cool gray and charcoal palettes that work well for modern homes. We bring physical samples to every consultation so you can see how Tremron colors look against your home's exterior, landscaping, and existing hardscape. Multi-toned blends with contrasting border pavers are increasingly popular for Jacksonville driveways looking for a contemporary edge." },
+  { q: "Can you install Tremron pavers over or around my existing concrete driveway?", a: "Yes, with the right preparation. In some cases we can overlay thin pavers on top of structurally sound concrete; in most cases we recommend removing the concrete and installing the proper aggregate base and pavers from scratch, which produces a longer-lasting result. We assess the existing concrete during the consultation and recommend the right approach for your specific driveway." },
   { q: "How long does a driveway installation take?", a: "Most paver driveway installations take between 3 to 7 days depending on the size and complexity of the project. Larger driveways or designs with intricate patterns may take a bit longer. During your consultation, we'll provide a clear timeline so you know exactly what to expect." },
   { q: "Are paver driveways better than concrete in Florida?", a: "Yes. Paver driveways offer several advantages over poured concrete in Florida's climate. They flex with the ground instead of cracking under heat expansion, provide superior drainage through the joints, and individual pavers can be replaced if damaged. That makes long-term maintenance simpler and more affordable than tearing out and re-pouring an entire concrete slab." },
   { q: "Do paver driveways need maintenance?", a: "Paver driveways are low-maintenance. We recommend periodic sweeping, rinsing with a garden hose, and re-sealing every 2 to 3 years to preserve color and protect against stains. Polymeric joint sand should be topped off as needed to prevent weed growth and ant activity." },
@@ -287,6 +291,96 @@ const DrivewaysContent = () => {
               />
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Local Knowledge / SEO cluster content: Tremron focus */}
+      <section className="relative bg-white">
+        <div className="mx-auto max-w-4xl px-4 py-16 sm:py-20 md:px-8">
+          <motion.div {...fadeUp}>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#0A86C4]">Manufacturer Spotlight</p>
+            <div className="mt-2 h-px w-12 bg-[#0A86C4]/40" />
+            <h2 className="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
+              Tremron Pavers in Jacksonville: Why We're a Preferred Installer
+            </h2>
+            <div className="mt-6 space-y-4 text-gray-600 leading-relaxed">
+              <p>
+                Tremron is one of the largest paver manufacturers in the Southeast, with a major
+                production facility in Florida. For Jacksonville homeowners, that local manufacturing
+                base translates into three real advantages: pavers engineered specifically for
+                Florida's UV, heat, and humidity (not generic North American climate); short lead
+                times because the product doesn't have to ship across the country; and consistent
+                color quality across large driveway installations where lot-to-lot variation can
+                otherwise show up as visible seams.
+              </p>
+              <p>
+                After hundreds of paver driveway projects across Duval, St. Johns, and Clay counties,
+                Tremron remains our most-installed paver brand for residential driveways in
+                Jacksonville. We carry their full residential catalog and bring physical samples to
+                every consultation so you can see how each color and texture looks against your
+                home's exterior in natural light.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Most-Installed Tremron Paver Lines for Jacksonville Driveways
+              </h3>
+              <p>
+                A few Tremron products account for the majority of the paver driveways we install in
+                Jacksonville:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>
+                  <strong className="text-gray-900">Tremron Stonehedge</strong> — A tumbled paver with
+                  Old-World character. The slightly weathered edges hide minor wear naturally and the
+                  multi-toned color blends give driveways visual depth without looking busy. One of
+                  the most popular choices for traditional and transitional Jacksonville homes.
+                </li>
+                <li>
+                  <strong className="text-gray-900">Tremron Olde Town</strong> — A smaller-format
+                  tumbled paver ideal for intricate patterns, herringbone layouts, and circle
+                  medallion accents at the driveway entrance. Excellent fit for homes that want
+                  detail and craftsmanship visible from the curb.
+                </li>
+                <li>
+                  <strong className="text-gray-900">Tremron Mega-Olde Towne</strong> — Larger format
+                  for a more contemporary look. Faster installation on bigger driveways and a cleaner
+                  modern aesthetic. Popular in newer Jacksonville construction and Ponte Vedra and
+                  Nocatee builds where the architecture leans modern.
+                </li>
+                <li>
+                  <strong className="text-gray-900">Tremron Sahara</strong> &amp;{" "}
+                  <strong className="text-gray-900">Mega-Sahara</strong> — Smoother-faced pavers in
+                  warm sand and earth tones. A clean, contemporary alternative to tumbled finishes
+                  with excellent durability ratings for vehicular traffic.
+                </li>
+              </ul>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Tremron vs. Belgard for Jacksonville Driveways
+              </h3>
+              <p>
+                We install both Tremron and Belgard pavers and recommend whichever fits the project
+                better. Tremron generally has shorter lead times in Jacksonville because of the local
+                manufacturing footprint and tends to win on price for medium-to-large driveways.
+                Belgard offers a few premium product lines — particularly in their Mega-Arbel and
+                Catalina collections — that are worth specifying when the homeowner wants something
+                less common. During your free consultation we walk through both manufacturers'
+                samples side by side so you can see the actual differences before making a decision.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Paver Driveways for Every Jacksonville Neighborhood
+              </h3>
+              <p>
+                We install Tremron paver driveways across Jacksonville and the surrounding Northeast
+                Florida communities, including Ponte Vedra Beach, Nocatee, St. Johns, Fruit Cove,
+                Mandarin, Riverside, San Marco, Jacksonville Beach, Atlantic Beach, Neptune Beach,
+                St. Augustine, Fleming Island, Orange Park, and Green Cove Springs. Each
+                neighborhood has its own architectural character — we help you choose the Tremron
+                product, color, and pattern that fits both your home and the surrounding streetscape.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 

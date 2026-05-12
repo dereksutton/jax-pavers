@@ -69,7 +69,39 @@ const faqSchema = {
       name: 'How much does a pergola cost in Jacksonville?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Pergola costs vary based on material, size, and features such as louvered roofs or integrated lighting. We have a $7,500 project minimum for all installations. Contact us for a free consultation and we will provide a custom quote tailored to your outdoor space.',
+        text: 'Pergola costs in Jacksonville depend on material, size, attachment style, and features. A standard 12x12 aluminum pergola without a roof system typically runs $8,000 to $14,000 installed. Cedar pergolas of similar size range from $10,000 to $16,000. StruXure louvered roof systems, which offer adjustable shade and rain protection, generally start around $20,000 for a basic installation and can exceed $35,000 for larger or multi-zone setups. Our project minimum is $7,500.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does a louvered pergola cost in Jacksonville FL?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Louvered pergolas, also called adjustable-louver pergolas or motorized pergolas, are the premium tier of pergola installations. As an authorized StruXure dealer in Jacksonville, our typical louvered pergola installations start around $20,000 and run between $25,000 and $35,000 for most residential projects, with larger or multi-zone systems going higher. The premium reflects the engineered roof system, motorized louvers, integrated gutter drainage, and the engineering required to meet Florida\'s wind code.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are pergolas in Jacksonville rated for hurricanes and Florida wind code?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Every pergola we install in Jacksonville is engineered to meet or exceed Florida Building Code wind-load requirements, which vary by county and proximity to the coast. Homes east of the Intracoastal (Jacksonville Beach, Ponte Vedra Beach, Atlantic Beach) face stricter wind ratings than inland homes. We use marine-grade hardware, properly sized concrete footings, and engineered mounting brackets so the structure stays put through summer thunderstorms and named storms alike.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between a pergola and a gazebo?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A gazebo is a fully roofed, freestanding outdoor structure, usually octagonal or hexagonal, with a solid roof that completely blocks sun and rain. A pergola is more architectural — it has vertical posts and a slatted, louvered, or open roof framework that filters light and creates partial shade without fully enclosing the space. Pergolas attach to homes, anchor outdoor kitchens, and define paver patios in ways gazebos cannot. Most Jacksonville homeowners choose pergolas for outdoor living because they offer flexibility and a cleaner architectural fit.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you build a pergola over my existing paver patio?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, and it is one of the most common project combinations we handle. If your existing paver patio has the right base structure, we can mount pergola posts directly to the patio surface or install concrete footings adjacent to it. For homeowners planning both, we recommend designing the pavers and pergola together from day one — it is faster, cleaner, and almost always less expensive than retrofitting later.',
       },
     },
     {

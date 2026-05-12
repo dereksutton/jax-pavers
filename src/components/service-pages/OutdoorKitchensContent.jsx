@@ -36,7 +36,11 @@ const galleryImages = [
 ];
 
 const faqs = [
-  { q: "How much does an outdoor kitchen cost in Jacksonville?", a: "Outdoor kitchen costs vary widely based on the size of the island, number and type of appliances, countertop material, and overall design complexity. We have a $7,500 project minimum for all installations. Contact us for a free consultation and we'll provide a detailed, no-obligation quote tailored to your property." },
+  { q: "How much does an outdoor kitchen cost in Jacksonville?", a: "Outdoor kitchen costs in Jacksonville typically range from around $15,000 for a compact grill station to $50,000 or more for a full L-shaped suite with premium appliances, granite countertops, stone veneer, and a covered structure. We have a $7,500 project minimum for all installations. Contact us for a free consultation and we'll provide a detailed, no-obligation quote tailored to your property." },
+  { q: "What's the typical price range for outdoor kitchens in Jacksonville FL?", a: "Most outdoor kitchen projects we install in Jacksonville fall into three tiers. Compact builds with a built-in grill, side burner, and storage start around $15,000 to $20,000. Mid-range L-shaped or U-shaped islands with refrigeration, premium appliances, and stone veneer typically run $25,000 to $40,000. Full luxury outdoor kitchens with pizza ovens, dedicated smokers, granite or quartz counters, bar seating, weatherproof TVs, and integrated lighting can exceed $50,000." },
+  { q: "Are outdoor kitchens worth it in Jacksonville's climate?", a: "Yes. Jacksonville averages over 220 sunny days per year and mild winters that rarely drop below freezing, which means an outdoor kitchen gets serious use almost year-round. Beyond lifestyle, outdoor kitchens are consistently ranked among the highest-ROI home improvements in the Southeast, with most installations recouping 50 to 70 percent of their cost at resale and significantly increasing buyer interest in Jacksonville's competitive housing market." },
+  { q: "Can I use my outdoor kitchen year-round in Northeast Florida?", a: "Absolutely. With Florida's mild winters and warm shoulder seasons, most of our Jacksonville clients use their outdoor kitchens 9 to 11 months of the year. Adding a pergola or covered structure extends usability during summer storms and the few cooler weeks in January. Many homeowners pair their kitchen with a paver patio, pergola, and fire pit to create a true four-season outdoor living space." },
+  { q: "Where should I put an outdoor kitchen in my Jacksonville backyard?", a: "The best location depends on your home's layout, prevailing wind direction (typically east in Jacksonville), and how close you can get to existing gas, water, and electrical service. Most clients build their outdoor kitchen 10 to 20 feet from the back of the home for convenient access, with a covered structure or pergola overhead. We assess all of this during the free site consultation and design a layout that fits your space and habits." },
   { q: "Do I need permits for an outdoor kitchen in Jacksonville?", a: "In most cases, yes. Gas lines, electrical circuits, and plumbing connections typically require permits in Duval County. As a licensed and insured contractor, we handle the entire permitting process so you don't have to worry about code compliance or inspections." },
   { q: "How long does an outdoor kitchen take to build?", a: "Most outdoor kitchen installations take between 2 to 4 weeks depending on the complexity of the design, appliance lead times, and permitting timelines. During your consultation, we'll provide a clear project schedule so you know exactly what to expect." },
   { q: "What countertop materials work best for outdoor kitchens in Florida?", a: "Granite and quartz are the most popular countertop choices for outdoor kitchens in Florida. Both materials are heat-resistant, weather-resistant, and require very little maintenance. They stand up well to Jacksonville's intense sun, humidity, and rain while maintaining their appearance for years." },
@@ -232,6 +236,98 @@ const OutdoorKitchensContent = () => {
               <img src={getImagePath("/pavers-29.webp")} alt="Custom outdoor kitchen with grill, range hood, TV, and bar seating by Jax Pavers" className="w-full h-full object-cover aspect-[4/3]" loading="lazy" width={800} height={600} />
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Local Knowledge / SEO cluster content */}
+      <section className="relative bg-white">
+        <div className="mx-auto max-w-4xl px-4 py-16 sm:py-20 md:px-8">
+          <motion.div {...fadeUp}>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#0A86C4]">Local Knowledge</p>
+            <div className="mt-2 h-px w-12 bg-[#0A86C4]/40" />
+            <h2 className="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
+              Outdoor Kitchens in Jacksonville, FL: Cost, Climate &amp; Local Considerations
+            </h2>
+            <div className="mt-6 space-y-4 text-gray-600 leading-relaxed">
+              <p>
+                Outdoor kitchens in Jacksonville are different from outdoor kitchens almost anywhere else
+                in the country. The Florida climate is hot, humid, salt-laden along the coast, and prone
+                to dramatic afternoon thunderstorms — all of which place demands on materials, appliances,
+                and structural protection that builders in milder climates simply don't have to plan for.
+                After hundreds of completed projects across Duval, St. Johns, and Clay counties, we've
+                learned what holds up here and what doesn't.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                What Does an Outdoor Kitchen Cost in Jacksonville?
+              </h3>
+              <p>
+                Pricing for outdoor kitchens in Jacksonville FL varies more than almost any other
+                hardscape category we install. The biggest cost drivers are the size and shape of the
+                island, the appliances you select, the countertop material, whether the kitchen is
+                covered, and how far it sits from existing gas, water, and electrical service.
+              </p>
+              <p>
+                Compact outdoor kitchens with a built-in gas grill, single side burner, storage drawers,
+                and a granite top usually fall between $15,000 and $20,000 installed. Mid-range L-shaped
+                islands with an outdoor refrigerator, bar seating, dedicated power burner, and premium
+                stone veneer typically run $25,000 to $40,000. Full luxury outdoor kitchens — the kind
+                that include a kamado smoker, pizza oven, weatherproof TV, sink with hot and cold water,
+                custom lighting, and a covering overhead — can exceed $50,000. Our project minimum is
+                $7,500, and every quote we provide is itemized so there are no surprises later.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Building Outdoor Kitchens for the Florida Climate
+              </h3>
+              <p>
+                Jacksonville sees over 220 days of sun per year, daily summer highs in the low 90s, and
+                summer humidity that routinely cracks 80 percent. Materials that work fine in drier
+                climates rust, fade, swell, or warp here within a season or two. That's why every
+                outdoor kitchen we build uses 304-grade stainless steel for all metal components,
+                weather-rated electrical boxes and gas connectors, sealed granite or quartz
+                countertops, and stone veneer or stacked-stone island bases that won't degrade in
+                humidity or salt spray. For homes east of the Intracoastal — Jacksonville Beach,
+                Atlantic Beach, Neptune Beach, Ponte Vedra Beach — we specify marine-grade hardware
+                throughout to handle salt air exposure.
+              </p>
+              <p>
+                We also account for Florida's wind and storm load. Any covering, pergola, or attached
+                structure over an outdoor kitchen we build is engineered to meet or exceed Florida
+                Building Code wind requirements. The same{" "}
+                <Link href="/pergolas" className="text-[#0A86C4] hover:underline">pergola installation</Link>{" "}
+                that gives you shade during August also protects your appliances when an afternoon
+                thunderstorm rolls in unannounced.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Outdoor Kitchen Locations We Serve Around Jacksonville
+              </h3>
+              <p>
+                We design and install custom outdoor kitchens throughout Jacksonville and the
+                surrounding communities, including Ponte Vedra Beach, Nocatee, St. Johns, Fruit Cove,
+                Mandarin, Riverside, Atlantic Beach, Neptune Beach, Jacksonville Beach, St. Augustine,
+                Fleming Island, Orange Park, and Green Cove Springs. Every neighborhood has its own
+                character and code considerations, and we work with each county's permitting offices so
+                your project moves cleanly from design to inspection without surprises.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Pairing an Outdoor Kitchen with the Rest of Your Backyard
+              </h3>
+              <p>
+                Most of our Jacksonville clients don't build an outdoor kitchen in isolation. The
+                kitchen anchors a larger outdoor living space that typically includes a custom{" "}
+                <Link href="/patios" className="text-[#0A86C4] hover:underline">paver patio</Link>, a{" "}
+                <Link href="/pergolas" className="text-[#0A86C4] hover:underline">pergola</Link>{" "}
+                overhead, and often a{" "}
+                <Link href="/pool-decks" className="text-[#0A86C4] hover:underline">paver pool deck</Link>{" "}
+                if the home has a pool. Designing all of these together from day one produces a
+                cohesive look, simplifies permitting, and almost always costs less than phasing the
+                work over multiple years.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 

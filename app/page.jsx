@@ -6,6 +6,7 @@ import ProcessSection from '../src/components/ProcessSection';
 import RecentWork from '../src/components/RecentWork';
 import Testimonials from '../src/components/Testimonials';
 import FAQ from '../src/components/FAQ';
+import JacksonvillePaverInstallation from '../src/components/JacksonvillePaverInstallation';
 import Quote from '../src/components/Quote';
 import Footer from '../src/components/Footer';
 
@@ -35,6 +36,7 @@ export default function Home() {
         <RecentWork />
         <Testimonials />
         <FAQ />
+        <JacksonvillePaverInstallation />
         <Quote />
       </main>
       <Footer />

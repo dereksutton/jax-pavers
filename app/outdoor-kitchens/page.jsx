@@ -69,7 +69,39 @@ const faqSchema = {
       name: 'How much does an outdoor kitchen cost in Jacksonville?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Outdoor kitchen costs vary widely based on the size of the island, number and type of appliances, countertop material, and overall design complexity. We have a $7,500 project minimum for all installations. Contact us for a free consultation and we will provide a detailed, no-obligation quote tailored to your property.',
+        text: 'Outdoor kitchen costs in Jacksonville typically range from around $15,000 for a compact grill station to $50,000 or more for a full L-shaped suite with premium appliances, granite countertops, stone veneer, and a covered structure. We have a $7,500 project minimum for all installations. Contact us for a free consultation and we will provide a detailed, no-obligation quote tailored to your property.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the typical price range for outdoor kitchens in Jacksonville FL?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Most outdoor kitchen projects we install in Jacksonville fall into three tiers. Compact builds with a built-in grill, side burner, and storage start around $15,000 to $20,000. Mid-range L-shaped or U-shaped islands with refrigeration, premium appliances, and stone veneer typically run $25,000 to $40,000. Full luxury outdoor kitchens with pizza ovens, dedicated smokers, granite or quartz counters, bar seating, weatherproof TVs, and integrated lighting can exceed $50,000.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are outdoor kitchens worth it in Jacksonville\'s climate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Jacksonville averages over 220 sunny days per year and mild winters that rarely drop below freezing, which means an outdoor kitchen gets serious use almost year-round. Beyond lifestyle, outdoor kitchens are consistently ranked among the highest-ROI home improvements in the Southeast, with most installations recouping 50 to 70 percent of their cost at resale and significantly increasing buyer interest in Jacksonville\'s competitive housing market.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I use my outdoor kitchen year-round in Northeast Florida?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Absolutely. With Florida\'s mild winters and warm shoulder seasons, most of our Jacksonville clients use their outdoor kitchens 9 to 11 months of the year. Adding a pergola or covered structure extends usability during summer storms and the few cooler weeks in January. Many homeowners pair their kitchen with a paver patio, pergola, and fire pit to create a true four-season outdoor living space.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where should I put an outdoor kitchen in my Jacksonville backyard?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The best location depends on your home\'s layout, prevailing wind direction (typically east in Jacksonville), and how close you can get to existing gas, water, and electrical service. Most clients build their outdoor kitchen 10 to 20 feet from the back of the home for convenient access, with a covered structure or pergola overhead. We assess all of this during the free site consultation and design a layout that fits your space and habits.',
       },
     },
     {
