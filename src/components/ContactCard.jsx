@@ -79,7 +79,7 @@ const ContactCard = () => {
                   </svg>
                 ))}
               </div>
-              <span className="text-xs text-gray-400">Licensed &amp; Insured &bull; 10-Year Warranty</span>
+              <span className="text-xs text-gray-400">Licensed &amp; Insured &bull; Jacksonville, FL</span>
             </div>
           </div>
 

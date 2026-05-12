@@ -1,23 +1,23 @@
 import OutdoorKitchensContent from '../../src/components/service-pages/OutdoorKitchensContent';
 
 export const metadata = {
-  title: 'Outdoor Kitchens Jacksonville FL | 10-Year Warranty | Jax Pavers',
+  title: 'Outdoor Kitchens Jacksonville FL | Jax Pavers',
   description:
-    'Custom outdoor kitchen installation in Jacksonville FL. Twin Eagles & TrueFlame grills, granite countertops, 10-year warranty. Free consultation — (904) 445-1261.',
+    'Custom outdoor kitchen installation in Jacksonville FL. Twin Eagles & TrueFlame grills, granite countertops, licensed and insured. Free consultation — (904) 445-1261.',
   alternates: {
-    canonical: '/outdoor-kitchens',
+    canonical: '/outdoor-kitchens/',
   },
   openGraph: {
     type: 'website',
-    title: 'Outdoor Kitchens Jacksonville FL | 10-Year Warranty | Jax Pavers',
+    title: 'Outdoor Kitchens Jacksonville FL | Jax Pavers',
     description:
-      'Custom outdoor kitchen installation in Jacksonville FL. Premium grills, granite countertops, 10-year warranty. Free consultation — (904) 445-1261.',
-    url: 'https://jaxoutdoorspaces.com/outdoor-kitchens',
+      'Custom outdoor kitchen installation in Jacksonville FL. Premium grills, granite countertops, licensed and insured. Free consultation — (904) 445-1261.',
+    url: 'https://jaxoutdoorspaces.com/outdoor-kitchens/',
     images: [
       {
-        url: '/pavers-hero.png',
-        width: 1200,
-        height: 630,
+        url: '/base.webp',
+        width: 2400,
+        height: 1350,
         alt: 'Outdoor kitchen installation by Jax Pavers in Jacksonville FL',
       },
     ],
@@ -26,12 +26,12 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Outdoor Kitchens Jacksonville FL | 10-Year Warranty | Jax Pavers',
+    title: 'Outdoor Kitchens Jacksonville FL | Jax Pavers',
     description:
-      'Custom outdoor kitchen installation in Jacksonville FL. Premium grills, granite countertops, 10-year warranty. Free consultation.',
+      'Custom outdoor kitchen installation in Jacksonville FL. Premium grills, granite countertops, licensed and insured. Free consultation.',
     images: [
       {
-        url: '/pavers-hero.png',
+        url: '/base.webp',
         alt: 'Outdoor kitchen installation by Jax Pavers in Jacksonville FL',
       },
     ],
@@ -121,7 +121,7 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 2,
       name: 'Outdoor Kitchens',
-      item: 'https://jaxoutdoorspaces.com/outdoor-kitchens',
+      item: 'https://jaxoutdoorspaces.com/outdoor-kitchens/',
     },
   ],
 };

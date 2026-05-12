@@ -3,21 +3,21 @@ import ServiceAreasContent from '../../src/components/service-pages/ServiceAreas
 export const metadata = {
   title: 'Paver Installation Service Areas | Jacksonville FL | Jax Pavers',
   description:
-    'Jax Pavers serves Jacksonville, Ponte Vedra Beach, Nocatee, St. Augustine, Mandarin, Fleming Island & surrounding Northeast Florida communities. 10-year warranty. Free quotes — (904) 445-1261.',
+    'Jax Pavers serves Jacksonville, Ponte Vedra Beach, Nocatee, St. Augustine, Mandarin, Fleming Island & surrounding Northeast Florida communities. Licensed and insured. Free quotes — (904) 445-1261.',
   alternates: {
-    canonical: '/service-areas',
+    canonical: '/service-areas/',
   },
   openGraph: {
     type: 'website',
     title: 'Paver Installation Service Areas | Jacksonville FL | Jax Pavers',
     description:
-      'Serving Jacksonville and all of Northeast Florida with premium paver driveways, patios, pool decks, outdoor kitchens & pergolas. Licensed, insured, 10-year warranty.',
-    url: 'https://jaxoutdoorspaces.com/service-areas',
+      'Serving Jacksonville and all of Northeast Florida with premium paver driveways, patios, pool decks, outdoor kitchens & pergolas. Licensed and insured.',
+    url: 'https://jaxoutdoorspaces.com/service-areas/',
     images: [
       {
-        url: '/pavers-hero.png',
-        width: 1200,
-        height: 630,
+        url: '/base.webp',
+        width: 2400,
+        height: 1350,
         alt: 'Jax Pavers service areas in Northeast Florida',
       },
     ],
@@ -28,10 +28,10 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Paver Installation Service Areas | Jacksonville FL | Jax Pavers',
     description:
-      'Serving Jacksonville and all of Northeast Florida with premium paver installation. 10-year warranty. Free quotes.',
+      'Serving Jacksonville and all of Northeast Florida with premium paver installation. Licensed and insured. Free quotes.',
     images: [
       {
-        url: '/pavers-hero.png',
+        url: '/base.webp',
         alt: 'Jax Pavers service areas in Northeast Florida',
       },
     ],

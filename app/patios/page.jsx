@@ -1,23 +1,23 @@
 import PatiosContent from "../../src/components/service-pages/PatiosContent";
 
 export const metadata = {
-  title: "Paver Patios Jacksonville FL | 10-Year Warranty | Jax Pavers",
+  title: "Paver Patios Jacksonville FL | Jax Pavers",
   description:
-    "Expert paver patio & courtyard installation in Jacksonville FL. Custom designs, fire pits, seating walls & more. Licensed, insured, 10-yr warranty. Free consultation!",
+    "Expert paver patio & courtyard installation in Jacksonville FL. Custom designs, fire pits, seating walls & more. Licensed and insured. Free consultation!",
   alternates: {
-    canonical: "/patios",
+    canonical: "/patios/",
   },
   openGraph: {
     type: "website",
-    url: "https://jaxoutdoorspaces.com/patios",
-    title: "Paver Patios Jacksonville FL | 10-Year Warranty | Jax Pavers",
+    url: "https://jaxoutdoorspaces.com/patios/",
+    title: "Paver Patios Jacksonville FL | Jax Pavers",
     description:
-      "Expert paver patio & courtyard installation in Jacksonville FL. Custom designs, fire pits, seating walls & more. Licensed, insured, 10-yr warranty.",
+      "Expert paver patio & courtyard installation in Jacksonville FL. Custom designs, fire pits, seating walls & more. Licensed and insured.",
     images: [
       {
-        url: "/pavers-hero.png",
-        width: 1200,
-        height: 630,
+        url: "/base.webp",
+        width: 2400,
+        height: 1350,
         alt: "Paver patio installation by Jax Pavers in Jacksonville FL",
       },
     ],
@@ -26,12 +26,12 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Paver Patios Jacksonville FL | 10-Year Warranty | Jax Pavers",
+    title: "Paver Patios Jacksonville FL | Jax Pavers",
     description:
-      "Expert paver patio & courtyard installation in Jacksonville FL. Custom designs, fire pits, seating walls & more. Licensed, insured, 10-yr warranty.",
+      "Expert paver patio & courtyard installation in Jacksonville FL. Custom designs, fire pits, seating walls & more. Licensed and insured.",
     images: [
       {
-        url: "/pavers-hero.png",
+        url: "/base.webp",
         alt: "Paver patio installation by Jax Pavers in Jacksonville FL",
       },
     ],
@@ -43,7 +43,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Paver Patio Installation",
   description:
-    "Premium paver patio and courtyard installation in Jacksonville FL. Custom designs with fire pits, seating walls, lighting, and more. Licensed, insured, 10-year workmanship warranty.",
+    "Premium paver patio and courtyard installation in Jacksonville FL. Custom designs with fire pits, seating walls, lighting, and more. Licensed and insured, built for the Florida climate.",
   provider: { "@id": "https://jaxoutdoorspaces.com/#business" },
   areaServed: {
     "@type": "City",
@@ -125,7 +125,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 2,
       name: "Paver Patios",
-      item: "https://jaxoutdoorspaces.com/patios",
+      item: "https://jaxoutdoorspaces.com/patios/",
     },
   ],
 };

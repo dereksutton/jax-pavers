@@ -17,8 +17,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: 'Paver Installation Jacksonville FL | 10-Year Warranty | Jax Pavers',
-  description: "Jacksonville's top-rated paver contractor. Expert driveways, patios, pool decks, outdoor kitchens & pergolas. Licensed, insured, 10-year warranty. Get your free quote — (904) 445-1261.",
+  title: 'Paver Installation Jacksonville FL | Jax Pavers',
+  description: "Jacksonville's top-rated paver contractor. Expert driveways, patios, pool decks, outdoor kitchens & pergolas. Licensed and insured, premium Tremron & Belgard materials. Get your free quote — (904) 445-1261.",
   keywords: 'paver installation Jacksonville FL, paver driveways Jacksonville, paver patios Jacksonville, pool deck pavers Jacksonville, outdoor kitchen Jacksonville, pergola installation Jacksonville, hardscape contractor Jacksonville, paver contractor near me, Jacksonville pavers, North Florida pavers, Tremron pavers Jacksonville, Belgard pavers Jacksonville',
   authors: [{ name: 'Jax Pavers' }],
   metadataBase: new URL('https://jaxoutdoorspaces.com'),
@@ -28,8 +28,8 @@ export const metadata = {
   openGraph: {
     type: 'website',
     url: 'https://jaxoutdoorspaces.com/',
-    title: 'Paver Installation Jacksonville FL | 10-Year Warranty | Jax Pavers',
-    description: 'Premium paver installation & design in Jacksonville FL. Driveways, patios, pool decks, outdoor kitchens & pergolas. Licensed, insured, 10-year warranty. 5-star Google rated.',
+    title: 'Paver Installation Jacksonville FL | Jax Pavers',
+    description: 'Premium paver installation & design in Jacksonville FL. Driveways, patios, pool decks, outdoor kitchens & pergolas. Licensed and insured. 5-star Google rated.',
     images: [
       {
         url: '/base.webp',
@@ -43,8 +43,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Paver Installation Jacksonville FL | 10-Year Warranty | Jax Pavers',
-    description: 'Premium paver installation & design in Jacksonville FL. Driveways, patios, pool decks, outdoor kitchens & pergolas. Licensed, insured, 10-year warranty.',
+    title: 'Paver Installation Jacksonville FL | Jax Pavers',
+    description: 'Premium paver installation & design in Jacksonville FL. Driveways, patios, pool decks, outdoor kitchens & pergolas. Licensed and insured.',
     images: [
       {
         url: '/base.webp',
@@ -81,10 +81,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
-        {/* Preload hero image for Core Web Vitals — responsive by viewport */}
-        <link rel="preload" as="image" href="/pavers-hero-640w.webp" type="image/webp" media="(max-width: 640px)" />
-        <link rel="preload" as="image" href="/pavers-hero-1024w.webp" type="image/webp" media="(min-width: 641px) and (max-width: 1024px)" />
-        <link rel="preload" as="image" href="/pavers-hero-1920w.webp" type="image/webp" media="(min-width: 1025px)" />
         <link rel="preconnect" href="https://connect.facebook.net" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
 
@@ -100,8 +96,8 @@ export default function RootLayout({ children }) {
               "alternateName": "JAX Pavers",
               "url": "https://jaxoutdoorspaces.com",
               "logo": "https://jaxoutdoorspaces.com/jaxpavers-logo.png",
-              "image": "https://jaxoutdoorspaces.com/pavers-hero.png",
-              "description": "Jacksonville FL's trusted paver contractor specializing in paver driveways, patios, pool decks, outdoor kitchens, and pergolas. Licensed, insured, with a 10-year workmanship warranty.",
+              "image": "https://jaxoutdoorspaces.com/base.webp",
+              "description": "Jacksonville FL's trusted paver contractor specializing in paver driveways, patios, pool decks, outdoor kitchens, and pergolas. Licensed and insured, with premium Tremron and Belgard materials built for the Florida climate.",
               "telephone": "+1-904-445-1261",
               "email": "info@jaxoutdoorspaces.com",
               "address": {
@@ -281,7 +277,7 @@ export default function RootLayout({ children }) {
                 {
                   "@type": "Question",
                   "name": "Do you offer a warranty on your work?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "Yes. We stand behind our craftsmanship with a 10-year workmanship warranty on all installations. The paver manufacturers also provide their own product warranties. We're licensed and insured for your peace of mind." }
+                  "acceptedAnswer": { "@type": "Answer", "text": "Yes. We're fully licensed and insured, and we stand behind every installation — if something isn't right, we make it right. The premium paver manufacturers we work with, including Tremron and Belgard, also provide their own product warranties on materials." }
                 },
                 {
                   "@type": "Question",

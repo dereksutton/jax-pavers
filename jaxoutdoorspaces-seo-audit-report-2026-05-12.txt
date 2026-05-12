@@ -1,0 +1,418 @@
+================================================================================
+                     SEO AUDIT & STRATEGY REPORT
+                       jaxoutdoorspaces.com
+       Comprehensive Analysis  ·  Ubersuggest Data
+              Report Date: May 12, 2026
+================================================================================
+
+EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+This report presents a complete SEO audit of jaxoutdoorspaces.com, a
+Jacksonville, FL-based paver, pergola, and outdoor kitchen installation
+company. Data was pulled from Ubersuggest on May 12, 2026 covering site
+health, organic keyword rankings, traffic trends, backlink profile,
+competitor landscape, and growth opportunities.
+
+HEADLINE METRICS
+--------------------------------------------------------------------------------
+  Metric                                Value
+  ------------------------------------  ------------------------------
+  On-Page SEO Score                     95 / 100 (Great)
+  Est. Organic Monthly Traffic          31 visits
+  Organic Keywords Ranking              24
+  Domain Authority                      4 / 100 (Low)
+  Backlinks                             7 (2 NoFollow)
+  Referring Domains                     4
+  Pages Crawled                         7 (0 broken, 0 blocked)
+  SEO Issues Discovered                 3 (all Easy difficulty)
+  Last Crawl                            May 09, 2026
+
+TOP-LINE FINDINGS
+--------------------------------------------------------------------------------
+  * Technical SEO health is strong (95/100). Only 3 minor issues, all
+    classified as Easy to fix.
+  * Domain Authority of 4 is the single biggest constraint - this is a
+    young/under-linked domain and limits ranking ceiling.
+  * Backlink profile is thin (7 links, 4 referring domains) and contains
+    one high-spam-score link (93%) that should be reviewed for disavow.
+  * Traffic plunged from ~30 visits/mo (Oct-Dec 2024) to near-zero
+    (Jun 2025-Jan 2026) and recovered to 31 in April 2026 - investigate
+    the cause of the 2025 drop.
+  * Mobile load time (8.17s) is rated POOR and is the highest-priority
+    technical fix. Desktop load (2.79s) also needs improvement.
+  * All ranking keywords are local (Jacksonville/Jax). Several are on
+    page 2-3 and represent quick-win optimization targets.
+
+
+================================================================================
+1. SITE AUDIT (TECHNICAL SEO)
+================================================================================
+
+1.1 OVERALL HEALTH
+--------------------------------------------------------------------------------
+The site scores 95/100 on Ubersuggest's on-page audit, classified as GREAT.
+All 7 crawled pages return 200 OK - no redirects, no broken pages, no
+blocked pages. Indexability is clean.
+
+1.2 SEO ISSUES DISCOVERED (3 TOTAL)
+--------------------------------------------------------------------------------
+  Issue                         Pages   Difficulty   SEO Impact
+  ----------------------------  ------  -----------  -----------
+  Title tag too long            2       Easy         Medium
+  Poorly formatted URL          1       Easy         Medium
+
+Pages with title tags >60 characters:
+  * https://jaxoutdoorspaces.com/
+      "Paver Installation Jacksonville FL | 10-Year Warranty | Jax Pavers"
+      (~64 chars)
+  * https://jaxoutdoorspaces.com/pergolas/
+      "Pergola Installation Jacksonville FL | 10-Year Warranty | Jax Pavers"
+      (~67 chars)
+
+Recommendation: Shorten by dropping the duplicate brand "Jax Pavers" suffix
+(the brand already appears in the first segment). Example:
+  "Paver Installation Jacksonville FL | 10-Year Warranty" (54 chars)
+
+1.3 SITE SPEED (CORE WEB VITALS - LAST 28 DAYS)
+--------------------------------------------------------------------------------
+  Metric                            Value       Status
+  --------------------------------  ----------  ----------------------------
+  Desktop Load Time                 2.79 s      Needs Improvement (<2.5s)
+  Desktop Interactivity (TBT)       123.5 ms    Great (<200ms)
+  Desktop Visual Stability (CLS)    0.00        Great (<0.1)
+  Mobile Load Time                  8.17 s      POOR - top priority
+  Mobile Interactivity (TBT)        137.0 ms    Great (<200ms)
+  Mobile Visual Stability (CLS)     0.00        Great (<0.1)
+
+Mobile LCP at 8.17s is the most damaging technical issue on the site.
+Given Google's mobile-first indexing and that most local-service searches
+come from phones, this likely suppresses rankings and conversions.
+
+Mobile speed remediation checklist:
+  * Compress and convert hero/portfolio images to WebP or AVIF; serve
+    responsive sizes via srcset.
+  * Lazy-load below-the-fold imagery and embedded maps.
+  * Defer or async non-critical JavaScript; remove unused plugins/scripts.
+  * Enable HTTP/2 + Brotli, set long cache headers, use a CDN.
+  * Inline critical CSS; eliminate render-blocking resources.
+  * Audit the WordPress theme/builder (if applicable) for bloat - consider
+    a lightweight theme like GeneratePress or Kadence.
+
+
+================================================================================
+2. CURRENT KEYWORD RANKINGS
+================================================================================
+
+2.1 RANKINGS OVERVIEW
+--------------------------------------------------------------------------------
+The site currently ranks for 24 keywords in the US, all clustered around
+Jacksonville-area paver, pergola, and outdoor kitchen searches.
+Estimated organic traffic is 31 visits/month with 0 paid traffic.
+
+Position distribution (April 2026):
+  1-3:    0 keywords
+  4-10:   1 keyword
+  11-50:  ~14 keywords
+  51-100: ~9 keywords
+
+2.2 FULL KEYWORD INVENTORY (24 KEYWORDS)
+--------------------------------------------------------------------------------
+  Keyword                                 Vol  Pos  Vis  SD  Target Page
+  --------------------------------------  ---  ---  ---  --  ----------------------
+  jax outdoor solutions                   140  19   1    32  /
+  jacksonville paver installation         90   13   1    18  /
+  jax outdoor kitchens                    110  6    1    18  /outdoor-kitchens/
+  tremron jacksonville                    480  24   1    28  /driveways/
+  parker hardscape                        210  69   0    23  /
+  tremron jacksonville fl                 30   24   0    26  /driveways/
+  pavers and pergolas                     260  27   0    18  /pergolas/
+  jax paver guys                          70   72   0    26  /patios/
+  jacksonville pergola contractor         110  60   0    10  /pergolas/
+  outdoor kitchens jacksonville           210  44   0    9   /outdoor-kitchens/
+  jacksonville pergola builders           140  30   0    7   /pergolas/
+  orange park pavers                      40   24   0    29  /
+  jacksonville outdoor kitchen            210  41   0    11  /outdoor-kitchens/
+  outdoor kitchens in jacksonville fl     210  45   0    9   /outdoor-kitchens/
+  gazebo jacksonville fl                  50   78   0    15  /pergolas/
+  pergolas jacksonville                   70   20   0    12  /pergolas/
+  pergolas jacksonville fl                70   25   0    11  /pergolas/
+  pergola jacksonville                    70   26   0    19  /pergolas/
+  paver patio jacksonville                30   44   0    21  /
+  outdoor kitchens jacksonville fl        210  67   0    12  /outdoor-kitchens/
+  outdoor kitchen jacksonville fl         210  47   0    9   /outdoor-kitchens/
+
+  Vol = monthly search volume   Pos = current Google position
+  Vis = est. monthly visits     SD  = SEO Difficulty (0-100, lower = easier)
+
+2.3 THE ONLY REAL WINNER (PAGE 1)
+--------------------------------------------------------------------------------
+  * "jax outdoor kitchens" - Position 6, Volume 110, SD 18.
+    This is the site's best-performing keyword. Push it to top 3 with
+    internal links, a stronger H1/title, and an FAQ section on
+    /outdoor-kitchens/.
+
+2.4 PAGE-2 OPPORTUNITIES (POSITIONS 11-20)
+--------------------------------------------------------------------------------
+  * "jacksonville paver installation"  - Pos 13, Vol 90,  SD 18.
+    Very achievable jump to page 1.
+  * "jax outdoor solutions"            - Pos 19, Vol 140, SD 32.
+    Branded variation; strengthen homepage signals.
+  * "pergolas jacksonville"            - Pos 20, Vol 70,  SD 12.
+    Low difficulty, attainable top-10 in 1-2 cycles.
+
+
+================================================================================
+3. TRAFFIC TRENDS & HISTORY
+================================================================================
+
+Estimated organic visits over the last 19 months show a worrying decline
+followed by a recent recovery.
+
+  Period                Est. Organic Visits
+  --------------------  -------------------
+  Oct 2024              ~18
+  Nov 2024              ~14
+  Dec 2024              ~30
+  Jan 2025              ~15
+  Feb 2025              ~5
+  Mar 2025              ~2
+  Apr 2025              ~4
+  May 2025              ~3
+  Jun - Dec 2025        0 - 1
+  Jan 2026              ~1
+  Feb 2026              ~2
+  Mar 2026              ~15
+  Apr 2026              31
+
+INTERPRETATION
+--------------------------------------------------------------------------------
+  * A clear collapse occurred Q1 2025. Likely causes: a site migration, a
+    Google core-update impact, mass de-indexing, or a temporary robots/
+    sitemap problem. Check Google Search Console history for that window.
+  * Recovery began March 2026 and accelerated in April. Whatever changed
+    recently (content refresh, new backlinks, technical fix) is working -
+    double down on it.
+  * Ranking-keyword count rose from 3-5 in mid-2025 to 24 in April 2026,
+    validating the recovery.
+
+
+================================================================================
+4. BACKLINK PROFILE
+================================================================================
+
+  Source                                  DA  PA  Spam  Anchor                 Type      Last Seen
+  --------------------------------------  --  --  ----  ---------------------  --------  ----------
+  strollmag.com/.../jacksonville-golf...  40  22  2%    jax outdoor spaces     Follow    03/29/2026
+  shortenurls.eu/share/2805035            15  22  7%    jaxoutdoorspaces.com   NoFollow  10/27/2025
+  sergechel.info/list-5be5225c19870c80..  13  23  14%   jaxoutdoorspaces.com   Follow    01/08/2025
+  knows.sbs/domain/domain/part/122373     10  17  93%   jaxoutdoorspaces.com   NoFollow  02/27/2026
+
+Total: 7 backlinks across 4 referring domains.
+Domain Authority is only 4/100 - the primary growth constraint.
+
+BACKLINK OBSERVATIONS
+--------------------------------------------------------------------------------
+  * Only one quality referral: strollmag.com (DA 40) - a real local
+    neighborhood publication. Excellent - replicate.
+  * Two of the four referring domains (shortenurls.eu, sergechel.info,
+    knows.sbs) appear to be scraper/SEO-tool listing sites. The knows.sbs
+    link has 93% spam score - strongly consider disavowing.
+  * No backlinks from local-business directories, association sites, or
+    supplier sites - easy wins available.
+
+BACKLINK BUILDING PLAN (NEXT 90 DAYS)
+--------------------------------------------------------------------------------
+  * Citations & directories: Google Business Profile (optimize), Yelp, BBB,
+    Houzz, Angi, HomeAdvisor, Thumbtack, Porch, Nextdoor business,
+    BuildZoom, NARI, Jacksonville Chamber of Commerce.
+  * Local partnerships: Get linked from Tremron (paver supplier - likely a
+    "find an installer" page), Belgard, Unilock dealer directories. The
+    site already ranks for "tremron jacksonville" - pitch them for a
+    partner-listing link.
+  * Local PR: Pitch Florida Times-Union, Jacksonville Magazine, Stroll Mag
+    (already a backlink - request another for a different neighborhood),
+    The Coastal magazines, Folio Weekly. Angle: 10-year warranty,
+    hurricane-resilient hardscapes, finished project case studies.
+  * Content-led links: Publish "Cost of a Paver Patio in Jacksonville 2026"
+    and "Hurricane-Code Pergola Guide for Florida." These types of resource
+    pages earn natural links.
+  * Audit & disavow: Submit a Google disavow file for knows.sbs and any
+    other obvious spam referrers.
+
+
+================================================================================
+5. COMPETITOR LANDSCAPE
+================================================================================
+
+Ubersuggest auto-identified the following domains sharing keywords with
+jaxoutdoorspaces.com. Excluding non-relevant national sites (homeadvisor
+.com, bbb.org, mapquest.com, dot.gov), the realistic local competitors are:
+
+  Competitor                Shared KWs   Est. Traffic   Notes
+  ------------------------  -----------  -------------  --------------------------------
+  jaxsp.com                 5            4              Direct local rival - likely a
+                                                        paver/outdoor company. Closest match.
+  jaxasphaltservices.com    2            6              Adjacent (asphalt vs pavers) -
+                                                        competing for some Jax driveway queries.
+  jaxasphaltco.com          1            0              Adjacent. Low overlap.
+
+RECOMMENDED COMPETITOR ACTIONS
+--------------------------------------------------------------------------------
+  * Set up jaxsp.com as a tracked competitor in Ubersuggest and pull their
+    full keyword list to identify gaps.
+  * Analyze top-performing landing pages of jaxsp.com - note their H1,
+    content depth, schema, and internal-link structure.
+  * Reverse-engineer their backlink profile and target the same referring
+    domains.
+  * Identify keywords where they rank in top 10 and you don't - that's
+    your gap-content roadmap.
+
+
+================================================================================
+6. KEYWORD OPPORTUNITIES & RESEARCH
+================================================================================
+
+6.1 QUICK-WIN OPTIMIZATION (UBERSUGGEST TOP 10)
+--------------------------------------------------------------------------------
+  #   Keyword                              Vol   Action                       Page
+  --  -----------------------------------  ----  ---------------------------  -------------------
+  1   outdoor kitchens in jacksonville fl  210   Pos 45 -> push to page 1     /outdoor-kitchens/
+  2   tremron jacksonville                 480   Pos 24 -> defend & climb     /driveways/
+  3   outdoor kitchen jacksonville fl      210   Pos 47                       /outdoor-kitchens/
+  4   pavers and pergolas                  260   Pos 27                       /pergolas/
+  5   jacksonville pergola builders        140   Pos 30                       /pergolas/
+  6   outdoor kitchens jacksonville        210   Pos 44                       /outdoor-kitchens/
+  7   jacksonville outdoor kitchen         210   Pos 41                       /outdoor-kitchens/
+  8   outdoor kitchens jacksonville fl     210   Pos 67                       /outdoor-kitchens/
+  9   jacksonville paver installation      90    Pos 13 -> quick win top 5    /
+  10  pergolas jacksonville fl             70    Pos 25                       /pergolas/
+
+6.2 NEW KEYWORD TARGETS (FROM RESEARCH)
+--------------------------------------------------------------------------------
+
+  Paver / Patio cluster
+  ---------------------
+  Keyword                                       Vol/mo   SD   Recommendation
+  --------------------------------------------  -------  ---  --------------------------------------
+  paver installation cost                       5,400    27   Build a "2026 Cost Guide" pillar page
+  paving contractors jacksonville fl            210      28   Optimize homepage or create
+                                                              /paving-contractors/
+  concrete paver installation jacksonville      30       9    Easy win - dedicated FAQ/blog post
+  patio paver installation jacksonville         low      4    Long-tail blog target
+  driveway paver installation jacksonville      low      4    Long-tail target - add to /driveways/
+
+  Outdoor Kitchen cluster
+  -----------------------
+  Keyword                                       Vol/mo   SD   Recommendation
+  --------------------------------------------  -------  ---  --------------------------------------
+  outdoor kitchen ideas                         33,100   71   High volume but high SD - visual blog
+  outdoor kitchen cost                          1,300    32   Build "Outdoor Kitchen Cost in
+                                                              Jacksonville 2026" guide
+  is an outdoor kitchen worth it                20       33   FAQ / blog content
+  outdoor kitchen dining ideas                  10       36   Inspirational gallery post
+  what is considered an outdoor kitchen         10       27   Definitional blog post
+
+  Pergola cluster (high-priority - current strength)
+  --------------------------------------------------
+  * "pergola cost jacksonville", "pergola permit jacksonville",
+    "wood vs aluminum pergola florida" - long-tail, low SD, high
+    commercial intent.
+  * "hurricane proof pergola florida" - unique Florida angle, low
+    competition, perfect for your 10-year warranty message.
+
+6.3 CONTENT STRATEGY RECOMMENDATIONS
+--------------------------------------------------------------------------------
+  * Build topic clusters: one pillar page per service (Pavers, Pergolas,
+    Outdoor Kitchens, Driveways, Patios) plus 4-6 supporting blog posts
+    each linking back.
+  * Add an FAQ section to every service page covering: cost ranges,
+    timeline, permits in Duval/Clay/St. Johns counties, warranty terms,
+    materials. Use FAQ schema.
+  * Add LocalBusiness + Service schema markup site-wide.
+  * Publish portfolio case studies for each project with neighborhood names
+    (Ponte Vedra, San Marco, Mandarin, Nocatee, Riverside) - these capture
+    neighborhood-level long-tail searches.
+  * Start a "Jacksonville Outdoor Living Blog" with 2 posts/month minimum.
+
+
+================================================================================
+7. PRIORITIZED 90-DAY ACTION PLAN
+================================================================================
+
+PHASE 1 - WEEKS 1-2 - QUICK TECHNICAL WINS
+--------------------------------------------------------------------------------
+  * Shorten the 2 over-length title tags on / and /pergolas/.
+  * Fix the poorly formatted URL flagged in audit.
+  * Run a PageSpeed Insights mobile audit and implement image compression,
+    lazy loading, and script deferral - target sub-4s mobile LCP.
+  * Submit/refresh XML sitemap and verify GSC indexing on all 7 pages.
+  * Disavow knows.sbs (93% spam) and any other low-quality referrers.
+
+PHASE 2 - WEEKS 3-6 - ON-PAGE OPTIMIZATION FOR QUICK WINS
+--------------------------------------------------------------------------------
+  * Rewrite /outdoor-kitchens/ to target the cluster: outdoor kitchens
+    jacksonville (fl), outdoor kitchen cost, jacksonville outdoor kitchen.
+    Add 800-1,200 words, FAQs, schema, internal links.
+  * Strengthen / homepage for "jacksonville paver installation"
+    (currently Pos 13) - content expansion + targeted internal links.
+  * Expand /pergolas/ to capture "pergolas jacksonville", "jacksonville
+    pergola builders", "jacksonville pergola contractor".
+  * Build a hub page or refreshed /driveways/ targeting "tremron
+    jacksonville" (Vol 480, currently Pos 24).
+
+PHASE 3 - WEEKS 6-12 - CONTENT & LINK BUILDING
+--------------------------------------------------------------------------------
+  * Publish 6 cornerstone blog posts: paver cost guide, pergola cost
+    guide, outdoor kitchen cost guide, hurricane-proof outdoor design,
+    paver maintenance, ROI of outdoor living.
+  * Claim & optimize Google Business Profile, Yelp, BBB, Houzz, Angi,
+    HomeAdvisor, Thumbtack, Porch, Nextdoor, BuildZoom - target 25 new
+    citation/directory links.
+  * Outreach: pitch Tremron, Belgard, Unilock for installer directory
+    listings.
+  * Pitch 5 local publications (Jacksonville Magazine, Folio Weekly, The
+    Coastal, Florida Times-Union, Stroll Mag) for project features.
+
+PHASE 4 - ONGOING
+--------------------------------------------------------------------------------
+  * Track all 24 ranked keywords + 10 new opportunity keywords in Rank
+    Tracking weekly.
+  * Add 3-5 competitors (start with jaxsp.com) to Competitor Analysis and
+    review weekly.
+  * Publish 2+ blog posts per month.
+  * Build 3-5 new high-quality backlinks per month.
+  * Re-run a full Site Audit every 30 days.
+
+
+================================================================================
+8. SUGGESTED KPI TARGETS (12 MONTHS)
+================================================================================
+
+  KPI                              Today       12-Month Target
+  -------------------------------  ----------  -----------------
+  Domain Authority                 4           15-20
+  Referring Domains                4           30+
+  Total Backlinks                  7           75+
+  Ranking Keywords                 24          100+
+  Keywords in Top 10               1           10+
+  Est. Monthly Organic Visits      31          400+
+  Mobile LCP                       8.17 s      < 2.5 s
+  On-Page SEO Score                95          98+
+
+
+================================================================================
+APPENDIX - DATA SOURCE & METHODOLOGY
+================================================================================
+
+All metrics in this report were captured live from the Ubersuggest account
+for jaxoutdoorspaces.com on May 12, 2026. Sections referenced: Dashboard,
+Site Audit, Traffic Overview, Keywords by Traffic, Top Pages by Traffic,
+Backlinks Overview, Competitor Analysis, SEO Opportunities, and Keyword
+Ideas. Search-volume and SEO Difficulty values are Ubersuggest estimates
+and should be treated as directional, not absolute.
+
+Report generated by Claude using the Ubersuggest interface - May 12, 2026.
+
+================================================================================
+                            END OF REPORT
+================================================================================

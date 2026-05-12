@@ -10,7 +10,7 @@ const areas = [
   {
     name: "Jacksonville",
     description:
-      "As Jacksonville's premier paver contractor, we serve homeowners across Duval County with expert driveway, patio, pool deck, outdoor kitchen, and pergola installations. From the Southside to the Northside, Arlington to the Westside, our team delivers precision craftsmanship backed by a 10-year workmanship warranty.",
+      "As Jacksonville's premier paver contractor, we serve homeowners across Duval County with expert driveway, patio, pool deck, outdoor kitchen, and pergola installations. From the Southside to the Northside, Arlington to the Westside, our team delivers precision craftsmanship and a commitment to getting every detail right.",
   },
   {
     name: "Ponte Vedra Beach",
@@ -71,11 +71,11 @@ const ServiceAreasContent = () => {
             sizes="100vw"
           />
           <img
-            src={getImagePath("/pavers-hero.png")}
+            src={getImagePath("/pavers-hero-1920w.webp")}
             alt="Jax Pavers service areas across Northeast Florida"
             className="w-full h-full object-cover"
-            width={1536}
-            height={1024}
+            width={1920}
+            height={1280}
           />
         </picture>
         <div
@@ -109,7 +109,7 @@ const ServiceAreasContent = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             Premium paver installation across Jacksonville and surrounding
-            communities. Licensed, insured, and backed by our 10-year warranty.
+            communities. Licensed, insured, and locally owned.
           </motion.p>
         </div>
       </header>
@@ -134,8 +134,7 @@ const ServiceAreasContent = () => {
                 <Link href="/pool-decks" className="text-[#0A86C4] hover:underline">pool decks</Link>,{" "}
                 <Link href="/outdoor-kitchens" className="text-[#0A86C4] hover:underline">outdoor kitchens</Link>, and{" "}
                 <Link href="/pergolas" className="text-[#0A86C4] hover:underline">pergolas</Link>, we bring the same
-                premium craftsmanship and 10-year workmanship warranty to every project, no matter
-                which community you call home.
+                premium craftsmanship to every project, no matter which community you call home.
               </p>
               <p className="text-lg text-gray-700">
                 Whether you&apos;re in the heart of Jacksonville, along the beaches, or in the

@@ -27,9 +27,9 @@ const steps = [
   },
   {
     number: "04",
-    title: "Walkthrough & Warranty",
+    title: "Walkthrough & Sign-Off",
     description:
-      "Before we pack up, we walk every inch of the project with you. If something isn't right, we fix it on the spot. Once you sign off, your 10-year workmanship warranty kicks in.",
+      "Before we pack up, we walk every inch of the project with you. If something isn't right, we fix it on the spot. We stand behind every installation — when you sign off, you'll be confident in the work.",
   },
 ];
 
@@ -154,8 +154,8 @@ const ProcessSection = () => {
               across{" "}
               <Link href="/service-areas" className="text-white underline decoration-white/40 hover:decoration-white transition-colors">
                 Jacksonville and all of Northeast Florida
-              </Link>. Every project starts with a free consultation and comes with our
-              10-year workmanship warranty.
+              </Link>. Every project starts with a free consultation and is delivered by a
+              licensed and insured Jacksonville crew.
             </p>
           </div>
         </motion.div>

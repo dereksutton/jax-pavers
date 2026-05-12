@@ -99,7 +99,7 @@ const PatiosContent = () => {
       heroImage="/pavers-1.webp"
       heroAlt="Paver patio installation with fire pit by Jax Pavers in Jacksonville FL"
       heroTitle="Paver Patio Installation in Jacksonville, FL"
-      heroSubtitle="Custom patios and courtyards built for Florida outdoor living, backed by a 10-year warranty."
+      heroSubtitle="Custom patios and courtyards built for Florida outdoor living by a licensed and insured Jacksonville crew."
       relatedServices={relatedServices}
     >
       {/* Intro */}
@@ -118,8 +118,8 @@ const PatiosContent = () => {
           <Link href="/outdoor-kitchens" className="text-[#0A86C4] hover:underline">outdoor kitchen</Link>, or an
           elegant courtyard beside your{" "}
           <Link href="/pool-decks" className="text-[#0A86C4] hover:underline">pool deck</Link>, our team designs and builds patios that stand up to Florida&apos;s
-          weather while looking stunning for years to come. Every project is backed by our 10-year
-          workmanship warranty, and we are fully licensed and insured.
+          weather while looking stunning for years to come. We are fully licensed and insured,
+          and we stand behind every install we deliver.
         </p>
       </motion.section>
 

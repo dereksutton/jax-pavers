@@ -1,0 +1,33 @@
+# Disavow file for jaxoutdoorspaces.com
+# Generated: 2026-05-12
+# Reference: Ubersuggest SEO Audit Report, May 12 2026
+#
+# IMPORTANT: Google's Disavow tool does NOT support Domain properties (the kind
+# verified via DNS that cover all subdomains). You must use a URL-prefix property.
+#
+# Setup (one-time):
+#   1. Sign in to GSC: https://search.google.com/search-console
+#   2. Click property selector > Add property > choose "URL prefix" (right box)
+#   3. Enter: https://jaxoutdoorspaces.com/  (https, no www, trailing slash)
+#   4. Verify (usually auto-verifies if DNS is already verified at the domain level)
+#
+# Upload:
+#   1. Visit https://search.google.com/search-console/disavow-links
+#   2. Select the URL-prefix property: https://jaxoutdoorspaces.com/
+#      (NOT the sc-domain: version — that one won't load the tool)
+#   3. Upload this file. Google may take several weeks to fully reprocess.
+#
+# File format notes:
+#   - Comments begin with #.
+#   - Use "domain:" to disavow every link from a domain (preferred for spam directories).
+#   - Use a bare URL to disavow a single specific link.
+
+# --- Confirmed spam (Ubersuggest spam score >= 90%) ---
+domain:knows.sbs
+
+# --- Likely spam / low-value scraper directories (Ubersuggest spam 7-14%, NoFollow or zero traffic value) ---
+# Both of the below were Ubersuggest-detected referring domains that appear to be auto-generated
+# domain-listing / URL-shortener scraper sites. They provide no real link equity and are worth disavowing
+# to avoid any algorithmic association.
+domain:shortenurls.eu
+domain:sergechel.info

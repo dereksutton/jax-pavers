@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "Do you offer a warranty on your work?",
-    a: "Yes. We stand behind our craftsmanship with a 10-year workmanship warranty on all installations. The paver manufacturers also provide their own product warranties. We're licensed and insured for your peace of mind.",
+    a: "We're fully licensed and insured, and we stand behind every installation — if something isn't right, we make it right. The premium paver manufacturers we work with, including Tremron and Belgard, also provide their own product warranties on materials.",
   },
   {
     q: "What areas in Jacksonville do you serve?",

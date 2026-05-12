@@ -82,7 +82,7 @@ const processSteps = [
   { title: "Engineering and permitting", text: "Most pergola installations in Jacksonville require a building permit. We prepare the necessary engineering documents and submit the permit application on your behalf, handling the entire process from start to approval." },
   { title: "Foundation and post installation", text: "Depending on the design, we install concrete footings or mount the pergola posts directly to an existing paver patio or concrete slab. Proper foundation work is critical to a structure that stands straight and stays solid for decades in Florida's soil conditions." },
   { title: "Structure assembly", text: "Our crew assembles the pergola frame, installs the rafters or louvered roof panels, and ensures every connection is secure and level. Attached pergolas are fastened to the home's structure using engineered mounting hardware rated for Florida wind loads." },
-  { title: "Finishing touches", text: "We install any finishing elements (ceiling fans, integrated LED lighting, privacy screens, or decorative trim) and conduct a thorough final inspection. We walk you through the completed project and make sure every detail meets our standards and yours. Your 10-year workmanship warranty begins the moment you sign off." },
+  { title: "Finishing touches", text: "We install any finishing elements (ceiling fans, integrated LED lighting, privacy screens, or decorative trim) and conduct a thorough final inspection. We walk you through the completed project and make sure every detail meets our standards and yours. We stand behind every install — if anything isn't right, we make it right." },
 ];
 
 const PergolasContent = () => {
@@ -106,9 +106,8 @@ const PergolasContent = () => {
           <Link href="/outdoor-kitchens" className="text-[#0A86C4] hover:underline">outdoor kitchen</Link>. At Jax Pavers, we design and install custom pergolas
           throughout Jacksonville and Northeast Florida using premium materials
           that stand up to Florida's heat, humidity, and coastal conditions. Every
-          project is backed by our 10-year workmanship warranty and the attention
-          to detail that comes from a licensed and insured contractor who takes
-          pride in the finished product.
+          project gets the attention to detail that comes from a licensed and insured
+          contractor who takes pride in the finished product.
         </p>
       </motion.section>
 

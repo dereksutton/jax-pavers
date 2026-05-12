@@ -1,23 +1,23 @@
 import PoolDecksContent from '../../src/components/service-pages/PoolDecksContent';
 
 export const metadata = {
-  title: 'Pool Deck Pavers Jacksonville FL | 10-Year Warranty | Jax Pavers',
+  title: 'Pool Deck Pavers Jacksonville FL | Jax Pavers',
   description:
-    'Expert pool deck paver installation in Jacksonville FL. Slip-resistant, heat-reflective travertine and brick pavers. Licensed, insured, 10-year warranty. Free estimates.',
+    'Expert pool deck paver installation in Jacksonville FL. Slip-resistant, heat-reflective travertine and brick pavers. Licensed and insured. Free estimates.',
   alternates: {
-    canonical: '/pool-decks',
+    canonical: '/pool-decks/',
   },
   openGraph: {
     type: 'website',
-    url: 'https://jaxoutdoorspaces.com/pool-decks',
-    title: 'Pool Deck Pavers Jacksonville FL | 10-Year Warranty | Jax Pavers',
+    url: 'https://jaxoutdoorspaces.com/pool-decks/',
+    title: 'Pool Deck Pavers Jacksonville FL | Jax Pavers',
     description:
-      'Expert pool deck paver installation in Jacksonville FL. Slip-resistant, heat-reflective travertine and brick pavers. Licensed, insured, 10-year warranty.',
+      'Expert pool deck paver installation in Jacksonville FL. Slip-resistant, heat-reflective travertine and brick pavers. Licensed and insured.',
     images: [
       {
-        url: '/pavers-hero.png',
-        width: 1200,
-        height: 630,
+        url: '/base.webp',
+        width: 2400,
+        height: 1350,
         alt: 'Pool deck paver installation by Jax Pavers in Jacksonville FL',
       },
     ],
@@ -26,12 +26,12 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pool Deck Pavers Jacksonville FL | 10-Year Warranty | Jax Pavers',
+    title: 'Pool Deck Pavers Jacksonville FL | Jax Pavers',
     description:
-      'Expert pool deck paver installation in Jacksonville FL. Slip-resistant, heat-reflective travertine and brick pavers. Licensed, insured, 10-year warranty.',
+      'Expert pool deck paver installation in Jacksonville FL. Slip-resistant, heat-reflective travertine and brick pavers. Licensed and insured.',
     images: [
       {
-        url: '/pavers-hero.png',
+        url: '/base.webp',
         alt: 'Pool deck paver installation by Jax Pavers in Jacksonville FL',
       },
     ],
@@ -121,7 +121,7 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 2,
       name: 'Pool Deck Pavers',
-      item: 'https://jaxoutdoorspaces.com/pool-decks',
+      item: 'https://jaxoutdoorspaces.com/pool-decks/',
     },
   ],
 };

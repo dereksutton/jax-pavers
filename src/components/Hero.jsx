@@ -15,15 +15,16 @@ const Hero = () => {
       className="relative h-screen w-full overflow-hidden"
       role="banner"
     >
-      {/* Hero background video */}
+      {/* Hero background video — small poster paints LCP fast; video streams in after */}
       <video
         className="absolute inset-0 w-full h-full object-cover bg-black"
         src={getImagePath('/pavers-bg-hero.mp4')}
+        poster={getImagePath('/pavers-hero-640w.webp')}
         autoPlay
         loop
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
         aria-label="Premium paver installation by Jax Pavers in Jacksonville, Florida"
       />
       

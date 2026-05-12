@@ -109,9 +109,8 @@ const PoolDecksContent = () => {
           pool deck project. Many clients pair their new pool deck with a{" "}
           <Link href="/patios" className="text-[#0A86C4] hover:underline">paver patio</Link>,{" "}
           <Link href="/outdoor-kitchens" className="text-[#0A86C4] hover:underline">outdoor kitchen</Link>, or{" "}
-          <Link href="/pergolas" className="text-[#0A86C4] hover:underline">pergola</Link> to create a complete outdoor living space. Every installation is backed by our 10-year
-          workmanship warranty and a commitment to precision craftsmanship that our
-          clients rely on.
+          <Link href="/pergolas" className="text-[#0A86C4] hover:underline">pergola</Link> to create a complete outdoor living space. Every installation reflects our
+          commitment to precision craftsmanship that our clients rely on.
         </p>
       </motion.section>
 

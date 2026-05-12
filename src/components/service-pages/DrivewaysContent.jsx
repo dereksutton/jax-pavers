@@ -85,7 +85,7 @@ const processSteps = [
   { title: "Excavation and base preparation", text: "Proper base work is the foundation of a driveway that lasts. We excavate to the correct depth, install a compacted aggregate base layer, and ensure proper grading for drainage. These are the steps that separate a professional installation from a DIY job." },
   { title: "Paver laying", text: "Our experienced crew installs each paver by hand, following the approved design and maintaining tight, consistent joints throughout. Border pavers and edge restraints are set to lock the field in place and prevent lateral movement." },
   { title: "Joint sand and sealing", text: "We fill the joints with high-quality polymeric sand that hardens to resist weeds, ants, and washout. A professional-grade sealer is then applied to protect the surface, enhance color, and extend the life of your new driveway." },
-  { title: "Final inspection and walkthrough", text: "Before we consider the job complete, we conduct a thorough inspection and walk you through the finished project. We make sure every detail meets our standards and yours. Your 10-year workmanship warranty begins the moment you sign off." },
+  { title: "Final inspection and walkthrough", text: "Before we consider the job complete, we conduct a thorough inspection and walk you through the finished project. We make sure every detail meets our standards and yours. We stand behind every install — if anything isn't right, we make it right." },
 ];
 
 const DrivewaysContent = () => {
@@ -109,8 +109,8 @@ const DrivewaysContent = () => {
           that sets your property apart. At Jax Pavers, we design and install custom
           paver driveways, <Link href="/patios" className="text-[#0A86C4] hover:underline">patios</Link>,{" "}
           <Link href="/pool-decks" className="text-[#0A86C4] hover:underline">pool decks</Link>, and more
-          throughout Jacksonville and Northeast Florida, backed by a
-          10-year workmanship warranty and the craftsmanship your home deserves.
+          throughout Jacksonville and Northeast Florida, with the precision and
+          craftsmanship your home deserves.
         </p>
       </motion.section>
 

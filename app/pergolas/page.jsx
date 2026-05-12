@@ -1,23 +1,23 @@
 import PergolasContent from '../../src/components/service-pages/PergolasContent';
 
 export const metadata = {
-  title: 'Pergola Installation Jacksonville FL | 10-Year Warranty | Jax Pavers',
+  title: 'Pergola Installation Jacksonville FL | Jax Pavers',
   description:
-    'Custom pergola installation in Jacksonville FL. Aluminum, cedar & StruXure louvered pergolas. 10-year warranty, licensed & insured. Free consultation — (904) 445-1261.',
+    'Custom pergola installation in Jacksonville FL. Aluminum, cedar & StruXure louvered pergolas. Licensed and insured. Free consultation — (904) 445-1261.',
   alternates: {
-    canonical: '/pergolas',
+    canonical: '/pergolas/',
   },
   openGraph: {
     type: 'website',
-    title: 'Pergola Installation Jacksonville FL | 10-Year Warranty | Jax Pavers',
+    title: 'Pergola Installation Jacksonville FL | Jax Pavers',
     description:
-      'Custom pergola installation in Jacksonville FL. Aluminum, cedar & StruXure louvered pergolas. 10-year warranty. Free consultation — (904) 445-1261.',
-    url: 'https://jaxoutdoorspaces.com/pergolas',
+      'Custom pergola installation in Jacksonville FL. Aluminum, cedar & StruXure louvered pergolas. Licensed and insured. Free consultation — (904) 445-1261.',
+    url: 'https://jaxoutdoorspaces.com/pergolas/',
     images: [
       {
-        url: '/pavers-hero.png',
-        width: 1200,
-        height: 630,
+        url: '/base.webp',
+        width: 2400,
+        height: 1350,
         alt: 'Pergola installation by Jax Pavers in Jacksonville FL',
       },
     ],
@@ -26,12 +26,12 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pergola Installation Jacksonville FL | 10-Year Warranty | Jax Pavers',
+    title: 'Pergola Installation Jacksonville FL | Jax Pavers',
     description:
-      'Custom pergola installation in Jacksonville FL. Aluminum, cedar & StruXure louvered pergolas. 10-year warranty. Free consultation.',
+      'Custom pergola installation in Jacksonville FL. Aluminum, cedar & StruXure louvered pergolas. Licensed and insured. Free consultation.',
     images: [
       {
-        url: '/pavers-hero.png',
+        url: '/base.webp',
         alt: 'Pergola installation by Jax Pavers in Jacksonville FL',
       },
     ],
@@ -121,7 +121,7 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 2,
       name: 'Pergola Installation',
-      item: 'https://jaxoutdoorspaces.com/pergolas',
+      item: 'https://jaxoutdoorspaces.com/pergolas/',
     },
   ],
 };

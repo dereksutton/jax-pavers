@@ -1,23 +1,23 @@
 import DrivewaysContent from '../../src/components/service-pages/DrivewaysContent';
 
 export const metadata = {
-  title: 'Paver Driveways Jacksonville FL | 10-Year Warranty | Jax Pavers',
+  title: 'Paver Driveways Jacksonville FL | Jax Pavers',
   description:
-    'Expert paver driveway installation in Jacksonville FL. Tremron & Belgard pavers, 10-year warranty, licensed & insured. Free consultation — (904) 445-1261.',
+    'Expert paver driveway installation in Jacksonville FL. Premium Tremron & Belgard pavers, licensed and insured. Free consultation — (904) 445-1261.',
   alternates: {
-    canonical: '/driveways',
+    canonical: '/driveways/',
   },
   openGraph: {
     type: 'website',
-    title: 'Paver Driveways Jacksonville FL | 10-Year Warranty | Jax Pavers',
+    title: 'Paver Driveways Jacksonville FL | Jax Pavers',
     description:
-      'Expert paver driveway installation in Jacksonville FL. Premium Tremron & Belgard pavers, 10-year warranty. Free consultation — (904) 445-1261.',
-    url: 'https://jaxoutdoorspaces.com/driveways',
+      'Expert paver driveway installation in Jacksonville FL. Premium Tremron & Belgard pavers, licensed and insured. Free consultation — (904) 445-1261.',
+    url: 'https://jaxoutdoorspaces.com/driveways/',
     images: [
       {
-        url: '/pavers-hero.png',
-        width: 1200,
-        height: 630,
+        url: '/base.webp',
+        width: 2400,
+        height: 1350,
         alt: 'Paver driveway installation by Jax Pavers in Jacksonville FL',
       },
     ],
@@ -26,12 +26,12 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Paver Driveways Jacksonville FL | 10-Year Warranty | Jax Pavers',
+    title: 'Paver Driveways Jacksonville FL | Jax Pavers',
     description:
-      'Expert paver driveway installation in Jacksonville FL. Premium Tremron & Belgard pavers, 10-year warranty. Free consultation.',
+      'Expert paver driveway installation in Jacksonville FL. Premium Tremron & Belgard pavers, licensed and insured. Free consultation.',
     images: [
       {
-        url: '/pavers-hero.png',
+        url: '/base.webp',
         alt: 'Paver driveway installation by Jax Pavers in Jacksonville FL',
       },
     ],
@@ -121,7 +121,7 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 2,
       name: 'Paver Driveways',
-      item: 'https://jaxoutdoorspaces.com/driveways',
+      item: 'https://jaxoutdoorspaces.com/driveways/',
     },
   ],
 };

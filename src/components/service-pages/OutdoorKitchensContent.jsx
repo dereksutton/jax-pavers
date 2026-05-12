@@ -83,7 +83,7 @@ const processSteps = [
   { title: "Permitting", text: "Most outdoor kitchens in Jacksonville require permits for gas lines, electrical circuits, and plumbing. We handle the entire permitting process with Duval County so everything is code-compliant and inspection-ready." },
   { title: "Foundation and paver base", text: "A solid foundation is critical. We prepare a compacted aggregate base, install the paver surface, and ensure proper grading for drainage. We apply the same base preparation standards to every hardscape project." },
   { title: "Island construction and appliance installation", text: "The kitchen island is built with a steel or aluminum frame, wrapped in your chosen stone veneer, and topped with precision-cut countertops. Appliances, gas lines, electrical, and plumbing are installed and tested by licensed professionals." },
-  { title: "Finishing touches and walkthrough", text: "We install backsplash details, bar seating, lighting, and any remaining accessories. Before we consider the job complete, we walk you through every feature and make sure the finished kitchen meets our standards and yours. Your 10-year workmanship warranty begins the moment you sign off." },
+  { title: "Finishing touches and walkthrough", text: "We install backsplash details, bar seating, lighting, and any remaining accessories. Before we consider the job complete, we walk you through every feature and make sure the finished kitchen meets our standards and yours. We stand behind every install — if anything isn't right, we make it right." },
 ];
 
 const OutdoorKitchensContent = () => {
@@ -109,7 +109,7 @@ const OutdoorKitchensContent = () => {
           throughout Jacksonville and Northeast Florida. From compact grilling
           stations to expansive L-shaped islands with full appliance suites, every
           project we deliver is engineered for Florida's heat, humidity, and
-          afternoon storms, backed by our 10-year workmanship warranty. We also build the{" "}
+          afternoon storms, using materials and methods built for the coastal climate. We also build the{" "}
           <Link href="/patios" className="text-[#0A86C4] hover:underline">paver patios</Link> and{" "}
           <Link href="/pergolas" className="text-[#0A86C4] hover:underline">pergolas</Link> that complete your outdoor living space. As a
           licensed and insured contractor, we handle every detail from design
@@ -221,8 +221,9 @@ const OutdoorKitchensContent = () => {
                 <p>
                   Every stainless steel component we install (from access doors and
                   storage drawers to side burners and refrigerators) is rated for outdoor
-                  use and backed by manufacturer warranties. Combined with our own 10-year
-                  workmanship guarantee, your investment is protected from day one.
+                  use and backed by manufacturer warranties. Combined with the workmanship
+                  of a licensed and insured Jacksonville crew, your investment is built
+                  to last.
                 </p>
               </div>
             </motion.div>
