@@ -1,9 +1,9 @@
 [
   {
-    "id": "philip-staff-review",
-    "name": "Philip Staff",
+    "id": "john-wesley-review",
+    "name": "John Wesley",
     "rating": 5,
-    "text": "Aaron and his team were truly amazing. On time, on budget and quality was second to none. They turned my outdoor space into a place where my family and friends now come to hang out and be together!",
+    "text": "Aaron helped design the summer kitchen for our new custom-built house and did a great job bringing the vision to life. We can't wait to see the outdoor kitchen in the future!",
     "featured": false,
     "source": {
       "platform": "Google"
@@ -30,10 +30,10 @@
     }
   },
   {
-    "id": "nicole-marie-review",
-    "name": "Nicole Marie",
+    "id": "vicky-cole-review",
+    "name": "Vicky Cole",
     "rating": 5,
-    "text": "Aaron did an amazing job on our outdoor kitchen! He was professional, responsive, and truly listened to what we wanted. The finished space is beautiful, functional, and has completely transformed our backyard. The craftsmanship is top-notch, and the entire process was smooth from start to finish. Highly recommend Jax Pavers — five stars all the way! 🔥",
+    "text": "They widened our driveway, did landscaping and lighting in our front yard, and it turned out beautiful! We had a few cracked pavers and they came back after the job was finished to fix them. An overall wonderful experience.",
     "featured": true,
     "source": {
       "platform": "Google"

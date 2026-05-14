@@ -157,7 +157,7 @@ export default function RootLayout({ children }) {
               "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "5.0",
-                "reviewCount": "23",
+                "reviewCount": "21",
                 "bestRating": "5",
                 "worstRating": "1"
               },
@@ -171,14 +171,14 @@ export default function RootLayout({ children }) {
                 {
                   "@type": "Review",
                   "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-                  "author": { "@type": "Person", "name": "Nicole Marie" },
-                  "reviewBody": "Aaron did an amazing job on our outdoor kitchen! He was professional, responsive, and truly listened to what we wanted. The finished space is beautiful, functional, and has completely transformed our backyard."
+                  "author": { "@type": "Person", "name": "Vicky Cole" },
+                  "reviewBody": "They widened our driveway, did landscaping and lighting in our front yard, and it turned out beautiful! We had a few cracked pavers and they came back after the job was finished to fix them. An overall wonderful experience."
                 },
                 {
                   "@type": "Review",
                   "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-                  "author": { "@type": "Person", "name": "Jordan Cooper" },
-                  "reviewBody": "I can't say enough good things about Aaron and his crew at Jax Pavers. We had a very specific idea in mind for our backyard and they made it come to life better than we could have imagined."
+                  "author": { "@type": "Person", "name": "Olivia Zumwalde" },
+                  "reviewBody": "Aaron was amazing to work with and very helpful. Showed him an inspiration picture for the patio we were wanting and they brought it to life. It's perfect!"
                 }
               ],
               "hasOfferCatalog": {
