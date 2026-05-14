@@ -93,8 +93,8 @@ const stats = [
     ),
   },
   {
-    value: "23",
-    suffix: "+",
+    value: "21",
+    suffix: "",
     label: "5-star Google reviews",
     icon: (
       <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
