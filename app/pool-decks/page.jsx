@@ -101,7 +101,39 @@ const faqSchema = {
       name: 'How long does pool deck installation take?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Most pool deck paver installations take between 5 to 10 days depending on the size of the pool area, complexity of the design, and whether we are working around an existing pool or building alongside new construction.',
+        text: 'Most pool deck paver installations take between 5 to 10 days depending on the size of the pool area, complexity of the design, and whether we are working around an existing pool or building alongside new pool construction.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does a paver pool deck cost by size?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Pool deck cost scales with the square footage of the deck, the material you choose, and whether we are retrofitting an existing pool. Every Jax Pavers project starts at a $7,500 minimum, which generally covers a smaller deck and walkway. A standard residential pool deck with coping and a code-compliant base is a larger investment, and a large deck with travertine, a sun shelf surround, and multiple lounge zones sits at the top end. We measure your pool area during the free consultation and give you a detailed, no-obligation quote.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you resurface a cracked concrete pool deck with pavers?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, this is one of the most common pool deck projects we handle in Jacksonville. Cracked, stained, or heaved concrete decks are everywhere here because rigid concrete does not handle Florida\'s soil movement and heat cycles well. We remove the failing concrete, build a proper compacted aggregate base, and install new pavers with correct slope and drainage. The result is a deck that flexes with the ground instead of cracking, and individual pavers can be re-set later if anything ever settles.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the coolest paver for a Florida pool deck?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Travertine is the coolest option for a Jacksonville pool deck. Its naturally porous surface absorbs less heat than concrete or porcelain, so it stays comfortable on bare feet even in peak summer sun. Within concrete pavers, lighter color blends in ivory, sand, and silver tones reflect sunlight far better than dark charcoals. We recommend the lightest material that fits your design so the deck stays usable all day, and every option we install has a slip-resistant texture for safety when wet.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are travertine pool decks a good choice in Jacksonville?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Travertine is one of the best pool deck materials for Northeast Florida. It stays cool underfoot, provides natural slip resistance when wet, and its earthy tones blend beautifully with the coastal and tropical landscaping common around Jacksonville pools. We source premium travertine in tumbled, honed, and brushed finishes. It does benefit from periodic sealing to resist staining, and we walk you through the upkeep so you know exactly what to expect before you choose it.',
       },
     },
   ],

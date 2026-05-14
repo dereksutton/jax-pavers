@@ -40,6 +40,10 @@ const faqs = [
   { q: "Can you install pavers around an existing pool?", a: "Yes, we regularly retrofit paver pool decks around existing pools. We carefully remove the old deck surface, prepare a proper compacted base, and install new pavers with appropriate slope and drainage so everything integrates seamlessly with your current pool." },
   { q: "Are paver pool decks slippery when wet?", a: "No. Textured pavers provide excellent grip even when wet, making them much safer than polished concrete or smooth tile around a pool. We specifically recommend materials with slip-resistant finishes for every pool deck installation we complete." },
   { q: "How long does pool deck installation take?", a: "Most pool deck paver installations take between 5 to 10 days depending on the size of the pool area, complexity of the design, and whether we are working around an existing pool or building alongside new pool construction." },
+  { q: "How much does a paver pool deck cost by size?", a: "Pool deck cost scales with the square footage of the deck, the material you choose, and whether we are retrofitting an existing pool. Every Jax Pavers project starts at a $7,500 minimum, which generally covers a smaller deck and walkway. A standard residential pool deck with coping and a code-compliant base is a larger investment, and a large deck with travertine, a sun shelf surround, and multiple lounge zones sits at the top end. We measure your pool area during the free consultation and give you a detailed, no-obligation quote." },
+  { q: "Can you resurface a cracked concrete pool deck with pavers?", a: "Yes, this is one of the most common pool deck projects we handle in Jacksonville. Cracked, stained, or heaved concrete decks are everywhere here because rigid concrete does not handle Florida's soil movement and heat cycles well. We remove the failing concrete, build a proper compacted aggregate base, and install new pavers with correct slope and drainage. The result is a deck that flexes with the ground instead of cracking, and individual pavers can be re-set later if anything ever settles." },
+  { q: "What is the coolest paver for a Florida pool deck?", a: "Travertine is the coolest option for a Jacksonville pool deck. Its naturally porous surface absorbs less heat than concrete or porcelain, so it stays comfortable on bare feet even in peak summer sun. Within concrete pavers, lighter color blends in ivory, sand, and silver tones reflect sunlight far better than dark charcoals. We recommend the lightest material that fits your design so the deck stays usable all day, and every option we install has a slip-resistant texture for safety when wet." },
+  { q: "Are travertine pool decks a good choice in Jacksonville?", a: "Travertine is one of the best pool deck materials for Northeast Florida. It stays cool underfoot, provides natural slip resistance when wet, and its earthy tones blend beautifully with the coastal and tropical landscaping common around Jacksonville pools. We source premium travertine in tumbled, honed, and brushed finishes. It does benefit from periodic sealing to resist staining, and we walk you through the upkeep so you know exactly what to expect before you choose it." },
 ];
 
 const relatedServices = [
@@ -220,6 +224,75 @@ const PoolDecksContent = () => {
               <img src={getImagePath("/pavers-16.webp")} alt="Travertine pool deck with geometric spa surround by Jax Pavers" className="w-full h-full object-cover aspect-[4/3]" loading="lazy" width={800} height={600} />
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Local Knowledge / SEO cluster content */}
+      <section className="relative bg-white">
+        <div className="mx-auto max-w-4xl px-4 py-16 sm:py-20 md:px-8">
+          <motion.div {...fadeUp}>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#0A86C4]">Local Knowledge</p>
+            <div className="mt-2 h-px w-12 bg-[#0A86C4]/40" />
+            <h2 className="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
+              Pool Deck Pavers in Jacksonville: Materials, Cost, and Retrofits
+            </h2>
+            <div className="mt-6 space-y-4 text-gray-600 leading-relaxed">
+              <p>
+                The single biggest decision on a Jacksonville pool deck is the material. Travertine and
+                concrete pavers are both excellent choices, and they solve different priorities.
+                Travertine is the coolest option underfoot — its porous surface absorbs less heat than
+                concrete or porcelain, so it stays comfortable in peak summer sun — and its natural,
+                earthy tones suit the coastal and tropical landscaping common around North Florida
+                pools. Concrete pavers from Tremron and Belgard offer a broader color and shape
+                library, tend to come in at a lower price point, and hold up just as well to Florida's
+                heat cycles. We bring physical samples of both to every consultation.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Heat and Slip Resistance Around the Pool
+              </h3>
+              <p>
+                Two things matter most around a pool: how hot the surface gets and how it behaves when
+                wet. We steer Jacksonville homeowners toward lighter color blends — ivory, sand, and
+                silver tones — because they reflect sunlight instead of storing it, keeping the deck
+                usable all afternoon. Every paver we install around a pool has a slip-resistant texture,
+                which makes it far safer than polished concrete or smooth tile. The joints between
+                pavers also let splash-out and storm water drain through instead of pooling, which
+                keeps the deck safer underfoot during Jacksonville's heavy afternoon rain.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Retrofitting an Existing Pool Deck
+              </h3>
+              <p>
+                Most of the pool deck work we do in Jacksonville is retrofitting an existing pool.
+                Cracked, stained, and heaved concrete decks are everywhere here because rigid concrete
+                does not handle Florida's sandy soil movement well. We remove the failing surface,
+                build a proper compacted aggregate base, install coping around the pool edge, and set
+                new pavers with precise slope so water flows away from the pool and your home. Many
+                homeowners take the opportunity to tie the new deck into a{" "}
+                <Link href="/patios" className="text-[#0A86C4] hover:underline">paver patio</Link>, add an{" "}
+                <Link href="/outdoor-kitchens" className="text-[#0A86C4] hover:underline">outdoor kitchen</Link>,
+                or build a{" "}
+                <Link href="/pergolas" className="text-[#0A86C4] hover:underline">pergola</Link> for shade so the
+                whole backyard reads as one space.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Pool Deck Cost and Neighborhoods Served
+              </h3>
+              <p>
+                Pool deck cost scales with deck square footage, the material you choose, and whether we
+                are retrofitting an existing pool. Every Jax Pavers project starts at a $7,500 minimum;
+                a standard residential deck with coping sits above that, and a large travertine deck
+                with a sun shelf surround and multiple lounge zones sits at the top end. We install
+                paver pool decks across Jacksonville and the surrounding communities, including Ponte
+                Vedra Beach, Nocatee, St. Johns, Mandarin, Riverside, San Marco, Jacksonville Beach,
+                and St. Augustine, and we measure every pool area in person to give you a detailed,
+                no-obligation quote.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 

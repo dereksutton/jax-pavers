@@ -113,8 +113,18 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/paving-contractors" className="text-white/90 hover:text-gray-300 transition-colors">
+                  Paving Contractors
+                </Link>
+              </li>
+              <li>
                 <Link href="/service-areas" className="text-white/90 hover:text-gray-300 transition-colors">
                   Service Areas
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-white/90 hover:text-gray-300 transition-colors">
+                  Blog
                 </Link>
               </li>
               <li>
@@ -175,18 +185,31 @@ const Footer = () => {
               </div>
               <ul className="mt-4 inline-grid grid-cols-2 gap-x-6 gap-y-1.5 text-sm text-white/80 mx-auto text-left">
                 {[
-                  "Jacksonville", "Jacksonville Beach",
-                  "Ponte Vedra Beach", "Nocatee",
-                  "Neptune Beach", "St. Augustine",
-                  "St. Augustine Beach", "Atlantic Beach",
-                  "St. Johns", "Fruit Cove",
-                  "Mandarin", "Riverside",
-                  "Fleming Island", "Orange Park",
-                  "Green Cove Springs"
+                  { name: "Jacksonville" },
+                  { name: "Jacksonville Beach" },
+                  { name: "Ponte Vedra Beach", href: "/ponte-vedra-beach-pavers" },
+                  { name: "Nocatee", href: "/nocatee-pavers" },
+                  { name: "Neptune Beach" },
+                  { name: "St. Augustine", href: "/st-augustine-pavers" },
+                  { name: "St. Augustine Beach" },
+                  { name: "Atlantic Beach" },
+                  { name: "St. Johns", href: "/st-johns-pavers" },
+                  { name: "Fruit Cove" },
+                  { name: "Mandarin", href: "/mandarin-pavers" },
+                  { name: "Riverside" },
+                  { name: "Fleming Island" },
+                  { name: "Orange Park", href: "/orange-park-pavers" },
+                  { name: "Green Cove Springs" }
                 ].map((city) => (
-                  <li key={city} className="flex items-center gap-1.5">
+                  <li key={city.name} className="flex items-center gap-1.5">
                     <span className="h-1 w-1 rounded-full bg-white/50 shrink-0" aria-hidden="true" />
-                    {city}
+                    {city.href ? (
+                      <Link href={city.href} className="hover:text-gray-300 transition-colors">
+                        {city.name}
+                      </Link>
+                    ) : (
+                      city.name
+                    )}
                   </li>
                 ))}
               </ul>

@@ -41,6 +41,10 @@ const faqs = [
   { q: "How long does a patio installation take?", a: "Most paver patio installations take between 3 to 7 days, depending on the size of the patio, the complexity of the design, and any additional features like fire pits or seating walls. During your consultation, we provide a clear project timeline so you can plan accordingly." },
   { q: "What's the best paver material for a Florida patio?", a: "We work with premium brands like Tremron and Belgard, both excellent choices for Florida patios. Tumbled pavers are popular for a rustic, Old World look, while travertine pavers offer an elegant natural stone feel. During your free consultation, we help you choose the best material for your style, budget, and how you plan to use the space." },
   { q: "Do I need a permit for a paver patio in Jacksonville?", a: "Standard paver patio installations typically do not require a permit in Duval County. However, if your project includes structures like pergolas, outdoor kitchens, or electrical and gas work, permits may be needed. We handle the entire permitting process for you when applicable, so you never have to worry about it." },
+  { q: "Is a paver patio better than a concrete patio in Florida?", a: "For most Jacksonville homeowners, yes. A poured concrete patio is rigid, so it tends to crack as the ground shifts and as Florida's heat drives expansion and contraction. Pavers are individual units set on a compacted base, so they flex with the ground instead of splitting, drain water through the joints instead of pooling it, and can be lifted and re-set if a section ever settles. Pavers also offer far more color and pattern options than a plain concrete slab, and a single stained or chipped paver can be swapped without redoing the whole patio." },
+  { q: "Can you build a paver patio over my existing concrete slab?", a: "In many cases, yes. If your existing slab is structurally sound and properly drained, we can install pavers directly over it using a thin-set or sand-set method, which saves on demolition cost. If the slab is cracked, heaving, or holds water, we recommend removing it and building a proper compacted aggregate base from scratch for a longer-lasting result. We assess the slab during your free consultation and recommend the right approach for your patio." },
+  { q: "Does a paver patio add value to my home?", a: "A well-built paver patio is consistently one of the higher-ROI outdoor improvements you can make. In the Jacksonville market, buyers expect usable outdoor living space, and a finished paver patio with features like a fire pit or seating wall photographs well and helps a listing stand out. Because pavers read as a permanent, premium hardscape rather than a temporary fix, they tend to hold their value better than a plain concrete slab." },
+  { q: "What size paver patio should I budget for?", a: "It depends on how you plan to use the space. A compact fire pit patio for a small seating group generally starts near our $7,500 project minimum. A mid-size patio sized for a dining table and a separate lounge area is a larger investment, and a sprawling outdoor living area with multiple zones, a seating wall, and lighting sits at the top end. During your free consultation we measure your yard, talk through how you want to use it, and give you a detailed, no-obligation quote so the size and budget line up." },
 ];
 
 const relatedServices = [
@@ -227,6 +231,73 @@ const PatiosContent = () => {
               <img src={getImagePath("/pavers-22.webp")} alt="Freeform paver patio with fire pit and in-ground lighting by Jax Pavers" className="w-full h-full object-cover aspect-[4/3]" loading="lazy" width={800} height={600} />
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Local Knowledge / SEO cluster content */}
+      <section className="relative bg-white">
+        <div className="mx-auto max-w-4xl px-4 py-16 sm:py-20 md:px-8">
+          <motion.div {...fadeUp}>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#0A86C4]">Local Knowledge</p>
+            <div className="mt-2 h-px w-12 bg-[#0A86C4]/40" />
+            <h2 className="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
+              Paver Patios in Jacksonville: Cost, Design, and What to Expect
+            </h2>
+            <div className="mt-6 space-y-4 text-gray-600 leading-relaxed">
+              <p>
+                The most common question we hear is what a paver patio costs in Jacksonville, and the
+                honest answer is that it scales with size, materials, and features. Every Jax Pavers
+                project starts at a $7,500 minimum. A compact fire pit patio sized for a small seating
+                group typically lands near that minimum. A mid-size patio built for a dining table plus
+                a separate lounge area is a larger investment, and a full outdoor living area with
+                multiple zones, a seating wall, integrated lighting, and premium travertine sits at the
+                top end. Because we hand-measure every yard and price each project individually, the
+                free consultation is the only way to get a number you can actually plan around.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Designing a Patio for the Florida Climate
+              </h3>
+              <p>
+                Northeast Florida gets intense afternoon storms, and a patio that holds water is a
+                patio nobody uses. We grade every patio with a deliberate slope away from your home's
+                foundation, and the joints between pavers let rainwater filter through instead of
+                pooling on the surface. That same flexibility is why pavers outlast poured concrete
+                here: they move with the sandy soil and the heat cycles rather than cracking under
+                them. We also steer homeowners toward lighter color blends for patios that get full
+                sun, since they stay noticeably cooler underfoot through a Jacksonville summer.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Popular Patio Features
+              </h3>
+              <p>
+                Most of the patios we build do more than provide a flat surface. Stone fire pits are
+                the most-requested feature and instantly become the gathering spot. Seating walls add
+                built-in seating and architectural detail without crowding the space with furniture.
+                Many homeowners pair a patio with an{" "}
+                <Link href="/outdoor-kitchens" className="text-[#0A86C4] hover:underline">outdoor kitchen</Link> for
+                entertaining, add a{" "}
+                <Link href="/pergolas" className="text-[#0A86C4] hover:underline">pergola</Link> for shade, or
+                tie the patio into an existing{" "}
+                <Link href="/pool-decks" className="text-[#0A86C4] hover:underline">pool deck</Link> so the whole
+                backyard reads as one cohesive space. In-ground lighting and stepping-stone paths round
+                out the most popular upgrades.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Paver Patios for Every Jacksonville Neighborhood
+              </h3>
+              <p>
+                We design and install paver patios across Jacksonville and the surrounding Northeast
+                Florida communities, including Ponte Vedra Beach, Nocatee, St. Johns, Mandarin,
+                Riverside, San Marco, Jacksonville Beach, and St. Augustine. Each neighborhood has its
+                own architectural character, from historic Riverside and San Marco homes to newer
+                construction in Nocatee and St. Johns, and we help you choose the paver style, color,
+                and pattern that fits both your home and how you want to use your backyard.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 

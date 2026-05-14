@@ -109,6 +109,16 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            whileHover={{ scale: 1.1 }}
+          >
+            <Link href="/blog" className="text-white font-semibold hover:text-gray-300 transition-colors">
+              Blog
+            </Link>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
             whileHover={{
               scale: 1.05,
@@ -307,7 +317,9 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                     {[
                       { href: "/#why-us", text: "Why Us?" },
                       { href: "/#recent-work", text: "Recent Work" },
-                      { href: "/#testimonials", text: "Testimonials" }
+                      { href: "/#testimonials", text: "Testimonials" },
+                      { href: "/service-areas", text: "Service Areas" },
+                      { href: "/blog", text: "Blog" }
                     ].map((link, index) => (
                       <motion.div
                         key={link.href}

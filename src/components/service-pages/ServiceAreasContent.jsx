@@ -14,16 +14,19 @@ const areas = [
   },
   {
     name: "Ponte Vedra Beach",
+    href: "/ponte-vedra-beach-pavers",
     description:
       "Ponte Vedra Beach homeowners trust Jax Pavers for luxury hardscaping that matches the community's upscale aesthetic. We design and install custom paver driveways, elegant patios, and resort-style pool decks using premium Tremron and Belgard materials built to withstand the coastal climate.",
   },
   {
     name: "Nocatee",
+    href: "/nocatee-pavers",
     description:
       "Nocatee's master-planned community is one of the fastest-growing in Northeast Florida, and we're proud to help homeowners personalize their outdoor spaces. From new-construction driveway installations to backyard patio retreats, our work complements Nocatee's modern Florida lifestyle.",
   },
   {
     name: "St. Augustine & St. Augustine Beach",
+    href: "/st-augustine-pavers",
     description:
       "In the nation's oldest city, we install pavers that honor the area's timeless character while standing up to salt air and coastal weather. Whether you're upgrading a historic district driveway or building a beachside patio, Jax Pavers has the expertise for St. Augustine's unique environment.",
   },
@@ -34,16 +37,19 @@ const areas = [
   },
   {
     name: "Mandarin",
+    href: "/mandarin-pavers",
     description:
       "Mandarin's established neighborhoods feature some of Jacksonville's most beautiful homes, and our paver installations help homeowners elevate their curb appeal and outdoor living spaces. We frequently install driveways, patios, and pool decks throughout Mandarin and the surrounding St. Johns corridor.",
   },
   {
     name: "St. Johns & Fruit Cove",
+    href: "/st-johns-pavers",
     description:
       "The St. Johns County corridor — including Fruit Cove, Julington Creek, and Switzerland — is booming with new homes and families looking to create their perfect outdoor space. We install everything from paver driveways to complete outdoor kitchen and pergola packages throughout this growing area.",
   },
   {
     name: "Fleming Island & Orange Park",
+    href: "/orange-park-pavers",
     description:
       "Clay County homeowners in Fleming Island and Orange Park rely on Jax Pavers for quality hardscaping at competitive prices. Our installations include paver driveways that handle Florida's heavy rains, patios designed for year-round entertaining, and pool decks built for safety and style.",
   },
@@ -185,6 +191,17 @@ const ServiceAreasContent = () => {
                     <h3 className="text-xl font-bold text-gray-900">{area.name}</h3>
                   </div>
                   <p className="text-gray-700 leading-relaxed">{area.description}</p>
+                  {area.href && (
+                    <Link
+                      href={area.href}
+                      className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#0A86C4] hover:underline"
+                    >
+                      Explore {area.name.split(" & ")[0]} paver services
+                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  )}
                 </motion.div>
               ))}
             </div>
