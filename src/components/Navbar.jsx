@@ -10,7 +10,19 @@ import getImagePath from '../utils/imagePaths';
 const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
   const [catalogsOpen, setCatalogsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [areasOpen, setAreasOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileAreasOpen, setMobileAreasOpen] = useState(false);
+
+  const serviceAreaLinks = [
+    { href: "/service-areas", text: "All Service Areas" },
+    { href: "/ponte-vedra-beach-pavers", text: "Ponte Vedra Beach" },
+    { href: "/nocatee-pavers", text: "Nocatee" },
+    { href: "/st-augustine-pavers", text: "St. Augustine" },
+    { href: "/st-johns-pavers", text: "St. Johns" },
+    { href: "/mandarin-pavers", text: "Mandarin" },
+    { href: "/orange-park-pavers", text: "Orange Park" },
+  ];
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -70,6 +82,43 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                       className="block px-4 py-3 text-white/90 text-sm font-medium hover:bg-[#0A86C4]/30 hover:text-white transition-colors"
                     >
                       {svc.text}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+          {/* Service Areas Dropdown */}
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            onMouseEnter={() => setAreasOpen(true)}
+            onMouseLeave={() => setAreasOpen(false)}
+          >
+            <Link href="/service-areas" className="text-white font-semibold hover:text-gray-300 transition-colors flex items-center gap-1">
+              Service Areas
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </Link>
+            <AnimatePresence>
+              {areasOpen && (
+                <motion.div
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-gray-900/95 backdrop-blur-lg rounded-xl border border-gray-700 shadow-2xl overflow-hidden"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {serviceAreaLinks.map((area) => (
+                    <Link
+                      key={area.href}
+                      href={area.href}
+                      className="block px-4 py-3 text-white/90 text-sm font-medium hover:bg-[#0A86C4]/30 hover:text-white transition-colors"
+                    >
+                      {area.text}
                     </Link>
                   ))}
                 </motion.div>
@@ -314,11 +363,56 @@ const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                       </AnimatePresence>
                     </motion.div>
 
+                    {/* Service Areas Dropdown */}
+                    <motion.div
+                      initial={{ opacity: 0, x: 50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.08, duration: 0.3 }}
+                    >
+                      <button
+                        onClick={() => setMobileAreasOpen(!mobileAreasOpen)}
+                        className="flex items-center justify-between w-full text-white text-base font-medium hover:text-[#0A86C4] transition-colors"
+                      >
+                        Service Areas
+                        <motion.svg
+                          className="w-4 h-4 ml-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          animate={{ rotate: mobileAreasOpen ? 180 : 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </motion.svg>
+                      </button>
+                      <AnimatePresence>
+                        {mobileAreasOpen && (
+                          <motion.div
+                            className="ml-4 mt-2 space-y-2"
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            {serviceAreaLinks.map((area) => (
+                              <Link
+                                key={area.href}
+                                href={area.href}
+                                className="block text-gray-300 text-sm font-medium hover:text-[#0A86C4] transition-colors"
+                                onClick={toggleMenu}
+                              >
+                                {area.text}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+
                     {[
                       { href: "/#why-us", text: "Why Us?" },
                       { href: "/#recent-work", text: "Recent Work" },
                       { href: "/#testimonials", text: "Testimonials" },
-                      { href: "/service-areas", text: "Service Areas" },
                       { href: "/blog", text: "Blog" }
                     ].map((link, index) => (
                       <motion.div
