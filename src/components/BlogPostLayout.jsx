@@ -12,7 +12,20 @@ import { getOtherPosts } from "../data/blogPosts";
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.3 },
+  // `amount: "some"` triggers as soon as any pixel is visible. Using a numeric
+  // amount like 0.3 breaks on mobile when the element is taller than the
+  // viewport (e.g. the long blog article body) — IntersectionObserver can
+  // never satisfy "30% visible" so the element stays stuck at opacity: 0.
+  viewport: { once: true, amount: "some" },
+  transition: { duration: 0.5 },
+};
+
+// The article body is always above the fold on mount (right under the hero)
+// and is taller than the mobile viewport, so animate it on mount instead of
+// relying on whileInView at all.
+const fadeUpOnMount = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
   transition: { duration: 0.5 },
 };
 
@@ -110,7 +123,7 @@ const BlogPostLayout = ({
 
         {/* Article body */}
         <motion.article
-          {...fadeUp}
+          {...fadeUpOnMount}
           className="mx-auto max-w-3xl px-4 py-10 md:px-8 md:py-12"
         >
           {children}
