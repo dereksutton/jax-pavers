@@ -89,7 +89,7 @@ const faqSchema = {
       name: "How much does it cost to hire a paving contractor in Jacksonville?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Cost depends on the size of the area, the materials you choose, and the complexity of the design. Jax Pavers has a $7,500 project minimum for all installations. We provide free consultations and detailed, no-obligation written quotes so you know exactly what your project will cost before any work starts.",
+        text: "Cost depends on the size of the area, the materials you choose, and the complexity of the design. Jax Pavers has a $7,500 project minimum for all installations. Typical projects fall in these ranges: driveway replacements $12,000–$25,000+, patios and pool decks $10,000–$30,000+, outdoor kitchens $15,000–$50,000+, and full backyard build-outs $35,000–$80,000+. We provide free consultations and detailed, no-obligation written quotes so you know exactly what your project will cost before any work starts.",
       },
     },
     {
@@ -97,7 +97,7 @@ const faqSchema = {
       name: "What paver brands do you install?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "We install premium pavers from Tremron and Belgard, two of the most respected manufacturers in the Southeast. Both produce pavers engineered for Florida's heat, humidity, and UV exposure, in a wide range of colors, textures, and patterns rated for foot and vehicle traffic.",
+        text: "We install premium pavers from Tremron and Belgard, two of the most respected manufacturers in the Southeast. Common lines we work with include Tremron's Stonehedge, Olde Town, Mega-Plank, and Sahara series, and Belgard's Cambridge, Bergerac, Catalina, and Mega-Arbel. Both manufacturers engineer their pavers for Florida's heat, humidity, and UV exposure, in a wide range of colors, textures, and patterns rated for foot and vehicle traffic.",
       },
     },
     {
@@ -121,7 +121,31 @@ const faqSchema = {
       name: "How long does a paving project take?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Most residential paving projects in Jacksonville take between 3 and 7 days, depending on the size of the area, the complexity of the design, and any additional features. We provide a clear timeline in your written proposal so you know exactly what to expect from start to finish.",
+        text: "Most residential paving projects in Jacksonville take between 3 and 7 days, depending on the size of the area, the complexity of the design, and any additional features. Full backyard build-outs with pool deck, fire feature, and pergola run 1–3 weeks. We provide a clear timeline in your written proposal so you know exactly what to expect from start to finish.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What areas of Northeast Florida do you serve?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We work across Duval, St. Johns, and Clay counties. Our core service area includes Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach, Ponte Vedra Beach, Nocatee, St. Johns, Fruit Cove, Mandarin, Riverside, St. Augustine, St. Augustine Beach, Fleming Island, Orange Park, and Green Cove Springs. If your home is anywhere in Northeast Florida, contact us — we'll let you know if it falls inside our coverage area.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How are pavers different from poured concrete or stamped concrete?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Pavers are individually manufactured units installed over a compacted base. They flex with ground movement instead of cracking, drain rainwater through their joints, and can be lifted and reset if a section ever settles. Poured concrete cracks over time, especially in Florida's expansive sandy soil, and once it stains or cracks the only fix is full removal. Stamped concrete adds a decorative pattern but still cracks and discolors. Pavers cost more up front than poured concrete but typically outlast it by decades — which is why most of our customers who started with concrete are now replacing it with pavers.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What red flags should I watch for when hiring a paving contractor?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Watch for: refusal to show license and insurance documentation, vague verbal quotes instead of written itemized proposals, large up-front cash deposits, no physical address or local references, generic stock-photo portfolios with no recognizable Jacksonville projects, unwillingness to discuss base preparation specifics, and pressure tactics or 'today only' pricing. Anyone genuinely doing this work professionally will hand over their credentials, answer base-prep questions specifically, and give you time to think about your decision.",
       },
     },
   ],
