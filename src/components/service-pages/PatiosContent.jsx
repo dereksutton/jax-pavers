@@ -269,6 +269,42 @@ const PatiosContent = () => {
               </p>
 
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Permits, HOA Approval, and the Base That Actually Matters
+              </h3>
+              <p>
+                Standard backyard paver patios in Jacksonville usually don&apos;t
+                require a building permit — pavers laid on a compacted aggregate
+                base are treated as a surface finish, not a structure. HOA approval
+                is a different story: in deed-restricted communities (Nocatee,
+                Ponte Vedra Plantation, Marsh Landing, Queens Harbour, Coastal
+                Oaks), the Architectural Review Committee submission adds 2–4 weeks
+                to the timeline. We handle ARC packets as part of every project.
+                For the full permit rules and edge cases (when permits ARE
+                required, gas fire-pit lines, retaining-wall heights), see our{" "}
+                <Link
+                  href="/blog/patio-paver-permit-jacksonville"
+                  className="text-[#0A86C4] hover:underline"
+                >
+                  Jacksonville patio paver permit guide
+                </Link>
+                .
+              </p>
+              <p>
+                The bigger factor on a Jacksonville patio is the base layer
+                underneath. We excavate 6–10&quot; below finished grade, install
+                4–6&quot; of compacted limerock in 2&quot; lifts, screed 1&quot;
+                of coarse bedding sand, set the pavers, install perimeter edge
+                restraints, and sweep polymeric joint sand into the joints. Every
+                patio is graded with a deliberate 1.5–2% fall away from the home
+                so storm water moves itself off the surface. Cutting corners on
+                base depth, compaction, or drainage grading is invisible at
+                handoff and shows up 18 months later as settled or shifted pavers
+                — which is exactly where bargain contractors save money. The base
+                is the first question to ask any Jacksonville paver contractor
+                before signing.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
                 Popular Patio Features
               </h3>
               <p>
@@ -294,7 +330,15 @@ const PatiosContent = () => {
                 Riverside, San Marco, Jacksonville Beach, and St. Augustine. Each neighborhood has its
                 own architectural character, from historic Riverside and San Marco homes to newer
                 construction in Nocatee and St. Johns, and we help you choose the paver style, color,
-                and pattern that fits both your home and how you want to use your backyard.
+                and pattern that fits both your home and how you want to use your backyard. Explore
+                all of our{" "}
+                <Link
+                  href="/pavers-jacksonville-fl"
+                  className="text-[#0A86C4] hover:underline"
+                >
+                  Jacksonville paver services
+                </Link>{" "}
+                if you&apos;re planning a multi-surface project.
               </p>
             </div>
           </motion.div>

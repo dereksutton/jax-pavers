@@ -106,7 +106,11 @@ const PonteVedraBeachPaversContent = () => {
           <Link href="/pool-decks" className="text-[#0A86C4] hover:underline">pool decks</Link>,{" "}
           <Link href="/outdoor-kitchens" className="text-[#0A86C4] hover:underline">outdoor kitchens</Link>, and{" "}
           <Link href="/pergolas" className="text-[#0A86C4] hover:underline">pergolas</Link> to see what
-          we can build for your Ponte Vedra Beach home.
+          we can build for your Ponte Vedra Beach home — or browse all of our{" "}
+          <Link href="/pavers-jacksonville-fl" className="text-[#0A86C4] hover:underline">
+            Jacksonville pavers services
+          </Link>
+          .
         </p>
       </motion.section>
 

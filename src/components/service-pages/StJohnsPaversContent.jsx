@@ -108,7 +108,11 @@ const StJohnsPaversContent = () => {
           insured, every project starts at a $7,500 minimum, and we serve St. Johns,
           Fruit Cove, Julington Creek, and the surrounding communities. Whether you want
           to phase the work or build the whole backyard at once, we stand behind every
-          install we deliver.
+          install we deliver. Browse our full{" "}
+          <Link href="/pavers-jacksonville-fl" className="text-[#0A86C4] hover:underline">
+            Jacksonville pavers services
+          </Link>{" "}
+          for the complete lineup.
         </p>
       </motion.section>
 

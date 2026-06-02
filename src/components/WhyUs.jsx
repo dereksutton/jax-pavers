@@ -93,7 +93,7 @@ const stats = [
     ),
   },
   {
-    value: "21",
+    value: "24",
     suffix: "",
     label: "5-star Google reviews",
     icon: (

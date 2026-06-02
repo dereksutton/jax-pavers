@@ -217,6 +217,17 @@ const PoolDecksContent = () => {
                   Jacksonville because they reflect sunlight and keep the pool edge
                   comfortable throughout the day.
                 </p>
+                <p>
+                  For pool decks where slip resistance is the top priority — high-foot-
+                  traffic decks, decks with kids, or coastal homes with salt residue —
+                  we pair pavers with{" "}
+                  <strong className="text-gray-900">SurfaceLogix</strong>{" "}
+                  textured coatings. SurfaceLogix is a coastal-grade slip-resistant
+                  treatment that bonds to the paver surface for a dramatically safer
+                  wet-deck feel without changing the visual look of the pavers
+                  underneath. It&apos;s one of the upgrades Jacksonville pool owners
+                  most often add after the first summer with a smooth-finish deck.
+                </p>
               </div>
             </motion.div>
 
@@ -262,20 +273,35 @@ const PoolDecksContent = () => {
               </p>
 
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
-                Retrofitting an Existing Pool Deck
+                Pool Deck Resurfacing in Jacksonville, FL
               </h3>
               <p>
-                Most of the pool deck work we do in Jacksonville is retrofitting an existing pool.
-                Cracked, stained, and heaved concrete decks are everywhere here because rigid concrete
-                does not handle Florida's sandy soil movement well. We remove the failing surface,
-                build a proper compacted aggregate base, install coping around the pool edge, and set
-                new pavers with precise slope so water flows away from the pool and your home. Many
-                homeowners take the opportunity to tie the new deck into a{" "}
-                <Link href="/patios" className="text-[#0A86C4] hover:underline">paver patio</Link>, add an{" "}
+                Most of the pool deck work we do in Jacksonville is pool deck
+                resurfacing — replacing a cracked, stained, or heaved concrete deck
+                with pavers around an existing pool. Concrete decks fail here all the
+                time because rigid concrete does not handle Florida&apos;s sandy soil
+                movement or the heat-expansion cycles around a heated pool. Our pool
+                deck resurfacing process removes the failing concrete down to subgrade,
+                builds a proper compacted aggregate base, installs new coping around
+                the pool edge, and sets new pavers with precise slope so stormwater and
+                splash-out flow away from the pool and the home. The new deck flexes
+                with the ground at every joint, so it won&apos;t crack like the
+                concrete it replaced — and individual pavers can be lifted and reset
+                later if anything ever settles, which is impossible with a poured slab.
+              </p>
+              <p>
+                Many homeowners take the resurfacing opportunity to tie the new deck
+                into a{" "}
+                <Link href="/patios" className="text-[#0A86C4] hover:underline">paver patio</Link>,
+                add an{" "}
                 <Link href="/outdoor-kitchens" className="text-[#0A86C4] hover:underline">outdoor kitchen</Link>,
                 or build a{" "}
-                <Link href="/pergolas" className="text-[#0A86C4] hover:underline">pergola</Link> for shade so the
-                whole backyard reads as one space.
+                <Link href="/pergolas" className="text-[#0A86C4] hover:underline">pergola</Link>{" "}
+                for shade so the whole backyard reads as one space. See all of our{" "}
+                <Link href="/pavers-jacksonville-fl" className="text-[#0A86C4] hover:underline">
+                  Jacksonville paver services
+                </Link>{" "}
+                for the full lineup.
               </p>
 
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">

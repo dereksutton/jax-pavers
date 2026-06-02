@@ -45,6 +45,8 @@ const faqs = [
   { q: "How long does an outdoor kitchen take to build?", a: "Most outdoor kitchen installations take between 2 to 4 weeks depending on the complexity of the design, appliance lead times, and permitting timelines. During your consultation, we'll provide a clear project schedule so you know exactly what to expect." },
   { q: "What countertop materials work best for outdoor kitchens in Florida?", a: "Granite and quartz are the most popular countertop choices for outdoor kitchens in Florida. Both materials are heat-resistant, weather-resistant, and require very little maintenance. They stand up well to Jacksonville's intense sun, humidity, and rain while maintaining their appearance for years." },
   { q: "Can you add an outdoor kitchen to my existing patio?", a: "Yes. We regularly build outdoor kitchens on existing paver patios. If additional space is needed, we can expand the patio area to accommodate your new kitchen island. During your free consultation, we'll assess your current setup and recommend the best approach." },
+  { q: "Twin Eagles vs TrueFlame — which grill should I choose?", a: "Both are premium outdoor cooking brands we install regularly. Twin Eagles is the higher-end of the two — heavier 304-grade stainless construction, infrared burners, and a price tag that reflects the build (typically $5,000–$10,000+ for the grill alone). TrueFlame is excellent value for performance — slightly lighter stainless, fewer specialty features, and a $2,000–$4,500 range that hits the sweet spot for most mid-range outdoor kitchens. We'll walk you through both during your consultation; you can also pair either with a Big Green Egg or similar kamado for smoking and slow-cooking versatility." },
+  { q: "What paver brands do you use under the outdoor kitchen?", a: "We use premium Tremron and Belgard pavers for the flooring under and around every outdoor kitchen we build in Jacksonville. Both manufacturers engineer their pavers for Florida heat, UV, humidity, and the foot traffic an outdoor kitchen sees. On coastal projects, we pair the pavers with SurfaceLogix treatments where slip resistance matters. The same base prep that goes under our paver patios — proper excavation, compacted aggregate base, drainage grading — goes under the kitchen island so the surface stays flat for decades." },
 ];
 
 const relatedServices = [
@@ -114,11 +116,16 @@ const OutdoorKitchensContent = () => {
           stations to expansive L-shaped islands with full appliance suites, every
           project we deliver is engineered for Florida's heat, humidity, and
           afternoon storms, using materials and methods built for the coastal climate. We also build the{" "}
-          <Link href="/patios" className="text-[#0A86C4] hover:underline">paver patios</Link> and{" "}
-          <Link href="/pergolas" className="text-[#0A86C4] hover:underline">pergolas</Link> that complete your outdoor living space. As a
-          licensed and insured contractor, we handle every detail from design
-          consultation through final inspection so you can focus on choosing your
-          favorite recipes.
+          <Link href="/patios" className="text-[#0A86C4] hover:underline">paver patios</Link>{" "}
+          and{" "}
+          <Link href="/pergolas" className="text-[#0A86C4] hover:underline">pergolas</Link>{" "}
+          that complete your outdoor living space — see all of our{" "}
+          <Link href="/pavers-jacksonville-fl" className="text-[#0A86C4] hover:underline">
+            Jacksonville paver services
+          </Link>
+          . As a licensed and insured contractor, we handle every detail from
+          design consultation through final inspection so you can focus on
+          choosing your favorite recipes.
         </p>
       </motion.section>
 
@@ -193,6 +200,102 @@ const OutdoorKitchensContent = () => {
           </div>
           <ShimmerButton href="/#quote">Get My Free Quote</ShimmerButton>
         </motion.div>
+      </section>
+
+      {/* Pricing Tiers */}
+      <section className="relative bg-[#f7f9fc]">
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20 md:px-8">
+          <motion.div {...fadeUp} className="mb-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#0A86C4]">2026 Pricing</p>
+            <div className="mt-2 h-px w-12 bg-[#0A86C4]/40" />
+            <h2 className="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
+              Outdoor Kitchen Cost in Jacksonville by Tier
+            </h2>
+            <p className="mt-4 max-w-3xl text-gray-600 leading-relaxed">
+              Most outdoor kitchens we build in Jacksonville fall into three
+              clear tiers. Use these ranges as a starting point, then read our
+              full{" "}
+              <Link
+                href="/blog/outdoor-kitchen-cost-jacksonville"
+                className="text-[#0A86C4] hover:underline"
+              >
+                outdoor kitchen cost guide
+              </Link>{" "}
+              for line-item detail.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.15 }}
+            className="grid grid-cols-1 gap-6 md:grid-cols-3"
+          >
+            <motion.div
+              variants={item}
+              className="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+            >
+              <p className="text-sm font-semibold uppercase tracking-wider text-[#0A86C4]">
+                Compact
+              </p>
+              <p className="mt-2 text-3xl font-extrabold text-gray-900">
+                $15,000 – $20,000
+              </p>
+              <p className="mt-3 text-gray-600 leading-relaxed">
+                Built-in gas grill, single side burner, storage drawers,
+                granite top, stone veneer island base. Perfect for a single
+                cook and a compact patio footprint.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={item}
+              className="flex flex-col rounded-2xl border-2 border-[#0A86C4]/30 bg-white p-6 shadow-md"
+            >
+              <p className="text-sm font-semibold uppercase tracking-wider text-[#0A86C4]">
+                Mid-Range (Most Popular)
+              </p>
+              <p className="mt-2 text-3xl font-extrabold text-gray-900">
+                $25,000 – $40,000
+              </p>
+              <p className="mt-3 text-gray-600 leading-relaxed">
+                L-shaped or U-shaped island, outdoor refrigerator, premium
+                Twin Eagles or TrueFlame grill, bar seating for 4–6, granite
+                or quartz countertops, stone veneer wrap, integrated LED
+                lighting.
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={item}
+              className="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+            >
+              <p className="text-sm font-semibold uppercase tracking-wider text-[#0A86C4]">
+                Luxury
+              </p>
+              <p className="mt-2 text-3xl font-extrabold text-gray-900">
+                $50,000+
+              </p>
+              <p className="mt-3 text-gray-600 leading-relaxed">
+                Full appliance suite with pizza oven, dedicated kamado
+                smoker, sink with hot/cold water, weatherproof TV, custom
+                lighting, premium quartz counters, and a covered structure
+                or louvered pergola overhead.
+              </p>
+            </motion.div>
+          </motion.div>
+
+          <motion.p
+            {...fadeUp}
+            className="mt-6 text-sm text-gray-500 leading-relaxed"
+          >
+            Ranges are installed costs for 2026 Jacksonville-market projects
+            and include the paver flooring directly under the island. Jax
+            Pavers has a $7,500 project minimum, and every quote is written
+            and itemized.
+          </motion.p>
+        </div>
       </section>
 
       {/* Partners Split Layout */}
@@ -274,7 +377,15 @@ const OutdoorKitchensContent = () => {
                 stone veneer typically run $25,000 to $40,000. Full luxury outdoor kitchens — the kind
                 that include a kamado smoker, pizza oven, weatherproof TV, sink with hot and cold water,
                 custom lighting, and a covering overhead — can exceed $50,000. Our project minimum is
-                $7,500, and every quote we provide is itemized so there are no surprises later.
+                $7,500, and every quote we provide is itemized so there are no surprises later. For a
+                full line-item breakdown, see our{" "}
+                <Link
+                  href="/blog/outdoor-kitchen-cost-jacksonville"
+                  className="text-[#0A86C4] hover:underline"
+                >
+                  Jacksonville outdoor kitchen cost guide
+                </Link>
+                .
               </p>
 
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
@@ -290,6 +401,29 @@ const OutdoorKitchensContent = () => {
                 humidity or salt spray. For homes east of the Intracoastal — Jacksonville Beach,
                 Atlantic Beach, Neptune Beach, Ponte Vedra Beach — we specify marine-grade hardware
                 throughout to handle salt air exposure.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
+                Paver Flooring Under the Outdoor Kitchen
+              </h3>
+              <p>
+                The kitchen island only works as well as the paver surface
+                it sits on. We install premium{" "}
+                <strong className="text-gray-900">Tremron</strong> and{" "}
+                <strong className="text-gray-900">Belgard</strong> pavers
+                under and around every outdoor kitchen we build — engineered
+                for Florida heat, UV, and the kind of foot and chair traffic
+                that wears down lesser surfaces fast. For coastal projects
+                we also pair{" "}
+                <strong className="text-gray-900">SurfaceLogix</strong>{" "}
+                texture and slip-resistance treatments where the kitchen
+                wraps a pool deck. The base prep under the kitchen is the
+                same exacting work we put under any{" "}
+                <Link href="/patios" className="text-[#0A86C4] hover:underline">
+                  paver patio
+                </Link>{" "}
+                — proper excavation, a compacted aggregate base, and grading
+                that moves water away from the island and the home.
               </p>
               <p>
                 We also account for Florida's wind and storm load. Any covering, pergola, or attached

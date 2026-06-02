@@ -136,6 +136,22 @@ const faqSchema = {
         text: 'Yes. We regularly build outdoor kitchens on existing paver patios. If additional space is needed, we can expand the patio area to accommodate your new kitchen island. During your free consultation, we will assess your current setup and recommend the best approach.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'Twin Eagles vs TrueFlame — which outdoor kitchen grill should I choose?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Both are premium outdoor cooking brands we install regularly. Twin Eagles is the higher-end of the two with heavier 304-grade stainless construction, infrared burners, and a price tag that reflects the build (typically $5,000 to $10,000-plus for the grill alone). TrueFlame is excellent value for performance with slightly lighter stainless, fewer specialty features, and a $2,000 to $4,500 range that hits the sweet spot for most mid-range outdoor kitchens. We will walk you through both during your consultation; either can pair with a Big Green Egg or similar kamado for smoking versatility.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What paver brands do you use under the outdoor kitchen?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We use premium Tremron and Belgard pavers for the flooring under and around every outdoor kitchen we build in Jacksonville. Both manufacturers engineer their pavers for Florida heat, UV, humidity, and the foot traffic an outdoor kitchen sees. On coastal projects we pair the pavers with SurfaceLogix treatments where slip resistance matters. The same base prep that goes under our paver patios — proper excavation, compacted aggregate base, drainage grading — goes under the kitchen island so the surface stays flat for decades.',
+      },
+    },
   ],
 };
 

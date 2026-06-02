@@ -255,7 +255,22 @@ const PergolasContent = () => {
                 what a properly engineered pergola needs to look like. As one of the more experienced
                 pergola builders in Jacksonville, we design every structure we install around the
                 conditions homeowners here actually face — not the conditions a generic kit pergola
-                manufacturer assumes you live in.
+                manufacturer assumes you live in. For the full breakdown of what Florida requires, see
+                our two companion guides:{" "}
+                <Link
+                  href="/blog/pergola-permit-florida"
+                  className="text-[#0A86C4] hover:underline"
+                >
+                  do you need a permit for a pergola in Florida?
+                </Link>{" "}
+                and our{" "}
+                <Link
+                  href="/blog/hurricane-proof-pergola-florida"
+                  className="text-[#0A86C4] hover:underline"
+                >
+                  hurricane-rated pergola guide
+                </Link>
+                .
               </p>
 
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mt-8">
@@ -326,7 +341,12 @@ const PergolasContent = () => {
                 Riverside, San Marco, Atlantic Beach, Neptune Beach, Jacksonville Beach, St.
                 Augustine, Fleming Island, Orange Park, and Green Cove Springs. Each county has its
                 own permitting office and timeline — we coordinate with all of them so your pergola
-                project moves from design to inspection without homeowner intervention.
+                project moves from design to inspection without homeowner intervention. Pergolas are
+                one of six core services we offer; explore the full lineup on our{" "}
+                <Link href="/pavers-jacksonville-fl" className="text-[#0A86C4] hover:underline">
+                  Jacksonville pavers hub
+                </Link>
+                .
               </p>
             </div>
           </motion.div>

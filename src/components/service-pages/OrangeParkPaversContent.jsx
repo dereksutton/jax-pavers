@@ -106,7 +106,11 @@ const OrangeParkPaversContent = () => {
           rain Clay County is known for. We are fully licensed and insured, every project
           starts at a $7,500 minimum, and we serve Orange Park and the surrounding
           communities. We stand behind every install we deliver — quality work at a price
-          that makes sense.
+          that makes sense. Browse our full{" "}
+          <Link href="/pavers-jacksonville-fl" className="text-[#0A86C4] hover:underline">
+            Jacksonville pavers services
+          </Link>{" "}
+          for the complete lineup.
         </p>
       </motion.section>
 

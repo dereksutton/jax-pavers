@@ -157,7 +157,7 @@ export default function RootLayout({ children }) {
               "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "5.0",
-                "reviewCount": "21",
+                "reviewCount": "24",
                 "bestRating": "5",
                 "worstRating": "1"
               },

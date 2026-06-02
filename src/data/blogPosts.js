@@ -4,6 +4,66 @@
 
 const blogPosts = [
   {
+    slug: "paver-driveway-cost-jacksonville",
+    title: "Paver Driveway Cost in Jacksonville, FL (2026 Guide)",
+    excerpt:
+      "What a paver driveway actually costs in Jacksonville in 2026 — typical $18–$32 per sq ft installed, pricing by size, comparison vs. concrete and asphalt, and the line items every quote should have.",
+    date: "2026-06-02",
+    category: "Cost Guide",
+    readTime: "12 min read",
+    image: "/pavers-48.webp",
+    imageAlt:
+      "Curved paver driveway installation through palm-lined landscaping by Jax Pavers in Jacksonville FL",
+  },
+  {
+    slug: "outdoor-kitchen-worth-it-florida",
+    title: "Is an Outdoor Kitchen Worth It in Florida? (2026 Jacksonville ROI Guide)",
+    excerpt:
+      "Outdoor kitchen ROI in Jacksonville — 50–70% resale recoup, 9–11 months of use per year, the Florida-specific spec, and the three scenarios where the math doesn't work.",
+    date: "2026-06-02",
+    category: "Outdoor Living",
+    readTime: "9 min read",
+    image: "/pavers-29.webp",
+    imageAlt:
+      "Custom outdoor kitchen with grill, range hood, TV, and bar seating by Jax Pavers in Jacksonville FL",
+  },
+  {
+    slug: "are-pavers-good-for-driveways-florida",
+    title: "Are Pavers Good for Driveways? A Coastal Florida Guide",
+    excerpt:
+      "How paver driveways handle coastal Florida — heat, salt air, sandy soil, and storm rainfall. The 60mm thickness rule, the base prep, and the pro install process.",
+    date: "2026-06-02",
+    category: "Driveways",
+    readTime: "10 min read",
+    image: "/pavers-4.webp",
+    imageAlt:
+      "Tumbled paver driveway with curved border installed by Jax Pavers in Jacksonville FL",
+  },
+  {
+    slug: "patio-paver-permit-jacksonville",
+    title: "Do You Need a Permit for Patio Pavers in Jacksonville? (2026 Guide)",
+    excerpt:
+      "Standard backyard paver patios in Jacksonville usually don't need a permit, but HOA review and the right base prep are non-negotiable. Plus the full Florida install guide.",
+    date: "2026-06-02",
+    category: "Permits & Code",
+    readTime: "9 min read",
+    image: "/pavers-7.webp",
+    imageAlt:
+      "Backyard paver patio installation with circular fire pit by Jax Pavers in Jacksonville FL",
+  },
+  {
+    slug: "pergola-permit-florida",
+    title: "Do You Need a Permit for a Pergola in Florida? (2026 Jacksonville Guide)",
+    excerpt:
+      "Yes — permanent pergolas in Florida need a permit. County process, costs, timelines, HOA approval, and the real risks of skipping it in Jacksonville, Ponte Vedra, and Nocatee.",
+    date: "2026-06-02",
+    category: "Permits & Code",
+    readTime: "8 min read",
+    image: "/pavers-43.webp",
+    imageAlt:
+      "Permitted pergola and covered outdoor living area with paver flooring by Jax Pavers in Jacksonville FL",
+  },
+  {
     slug: "cost-of-paver-patio-jacksonville",
     title: "How Much Does a Paver Patio Cost in Jacksonville? (2026 Guide)",
     excerpt:

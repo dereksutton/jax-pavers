@@ -107,7 +107,12 @@ const MandarinPaversContent = () => {
           <Link href="/pergolas" className="text-[#0A86C4] hover:underline">pergolas</Link> that
           transform curb appeal and outlast poured concrete. We are fully licensed and
           insured, every project starts at a $7,500 minimum, and we serve Mandarin and
-          the surrounding communities. We stand behind every install we deliver.
+          the surrounding communities. We stand behind every install we deliver — see
+          all of our{" "}
+          <Link href="/pavers-jacksonville-fl" className="text-[#0A86C4] hover:underline">
+            Jacksonville pavers services
+          </Link>{" "}
+          for the full lineup.
         </p>
       </motion.section>
 
