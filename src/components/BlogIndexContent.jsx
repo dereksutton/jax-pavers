@@ -114,7 +114,12 @@ const BlogIndexContent = () => {
               variants={container}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, amount: 0.15 }}
+              // `amount: "some"` triggers as soon as any pixel of the grid is
+              // visible. A numeric amount (e.g. 0.15) breaks on mobile once the
+              // single-column grid is taller than the viewport can fit —
+              // IntersectionObserver can never satisfy "15% visible" so the
+              // parent stays at `hidden` and the child cards never cascade in.
+              viewport={{ once: true, amount: "some" }}
               className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
             >
               {blogPosts.map((post) => (

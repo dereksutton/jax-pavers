@@ -223,7 +223,10 @@ const PaversJacksonvilleFLContent = () => {
             variants={container}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.15 }}
+            // See BlogIndexContent — numeric `amount` thresholds break on
+            // mobile when the single-column stacked grid is taller than the
+            // viewport can satisfy. `"some"` triggers on first visible pixel.
+            viewport={{ once: true, amount: "some" }}
             className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
           >
             {services.map((svc) => (
