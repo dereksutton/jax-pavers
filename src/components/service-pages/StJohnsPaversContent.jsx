@@ -12,7 +12,11 @@ import ShimmerButton from "../ShimmerButton";
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.3 },
+  // `amount: "some"` triggers on first visible pixel. A numeric amount like
+  // 0.3 breaks on mobile when this preset wraps a section taller than the
+  // viewport (the Local Knowledge SEO block) — IntersectionObserver can't
+  // satisfy "30% visible" so the section stays at opacity: 0.
+  viewport: { once: true, amount: "some" },
   transition: { duration: 0.5 },
 };
 

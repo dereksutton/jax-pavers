@@ -12,7 +12,11 @@ import getImagePath from "../../utils/imagePaths";
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.3 },
+  // `amount: "some"` triggers on first visible pixel. A numeric amount like
+  // 0.3 breaks on mobile when this preset wraps a section taller than the
+  // viewport (the Local Knowledge SEO block) — IntersectionObserver can't
+  // satisfy "30% visible" so the section stays at opacity: 0.
+  viewport: { once: true, amount: "some" },
   transition: { duration: 0.5 },
 };
 
@@ -49,7 +53,7 @@ const faqs = [
 
 const relatedServices = [
   { href: "/driveways", image: "/pavers-4.webp", title: "Paver Driveways", blurb: "Durable, stunning driveways built to last." },
-  { href: "/pool-decks", image: "/pavers-11.webp", title: "Pool Deck Pavers", blurb: "Slip-resistant pool decks for safety and style." },
+  { href: "/pool-decks", image: "/pavers-14.webp", title: "Pool Deck Pavers", blurb: "Slip-resistant pool decks for safety and style." },
   { href: "/outdoor-kitchens", image: "/pavers-17.webp", title: "Outdoor Kitchens", blurb: "Fully equipped outdoor kitchens for entertaining." },
 ];
 
