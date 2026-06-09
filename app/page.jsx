@@ -9,10 +9,28 @@ import FAQ from '../src/components/FAQ';
 import JacksonvillePaverInstallation from '../src/components/JacksonvillePaverInstallation';
 import Quote from '../src/components/Quote';
 import Footer from '../src/components/Footer';
+import { faqs } from '../src/data/faqs';
+
+// FAQPage schema is generated from the same data the visible FAQ section
+// renders, so the structured data can never drift from on-page content.
+// Scoped to the homepage only — service pages declare their own FAQPage.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
 
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Preload hero video poster for fastest mobile LCP */}
       <link
         rel="preload"

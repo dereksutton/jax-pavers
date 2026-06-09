@@ -251,59 +251,6 @@ export default function RootLayout({ children }) {
           }}
         />
 
-        {/* Structured Data: FAQPage */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What types of paver projects do you handle?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "We specialize in paver driveways, patios and courtyards, pool decks, outdoor kitchens, and pergola installations. We work with premium brands like Tremron and Belgard to deliver durable, beautiful results designed for the Florida climate." }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How much does paver installation cost?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "Every project is unique, so pricing depends on the scope of work, materials selected, and site conditions. We have a $7,500 project minimum for all installations. During your free consultation, we'll assess your space and provide a detailed, transparent quote with no hidden fees." }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How long does a typical paver installation take?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "Most residential projects take between 3 to 10 days depending on size and complexity. Driveways and patios are typically on the shorter end, while outdoor kitchens and larger pool deck projects may take longer. We'll provide a clear timeline in your proposal." }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do you offer a warranty on your work?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "Yes. We're fully licensed and insured, and we stand behind every installation — if something isn't right, we make it right. The premium paver manufacturers we work with, including Tremron and Belgard, also provide their own product warranties on materials." }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What areas in Jacksonville do you serve?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "We serve Jacksonville and the surrounding communities including Jacksonville Beach, Ponte Vedra Beach, Nocatee, Neptune Beach, St. Augustine, Atlantic Beach, St. Johns, Fruit Cove, Mandarin, Riverside, Fleming Island, Orange Park, and Green Cove Springs." }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do I maintain my pavers after installation?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "Pavers are low-maintenance. We recommend periodic sweeping, rinsing with a garden hose, and re-sealing every 2–3 years to maintain color and protect against stains. Polymeric sand in the joints should be topped off as needed to prevent weed growth and ant activity." }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do I need a permit for paver installation?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "In most cases, standard paver installations like driveways and patios don't require a permit in Duval County. However, projects involving structural elements, electrical, gas, or plumbing — such as outdoor kitchens — may require permits. We handle the permitting process for you when needed." }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What happens during the free consultation?",
-                  "acceptedAnswer": { "@type": "Answer", "text": "We visit your property, listen to your ideas, take measurements, and discuss material options, design possibilities, and budget. You'll receive a detailed written proposal with transparent pricing and a clear project timeline — no pressure, no obligation." }
-                }
-              ]
-            }),
-          }}
-        />
-
         {/* Structured Data: WebSite */}
         <script
           type="application/ld+json"
@@ -313,23 +260,6 @@ export default function RootLayout({ children }) {
               "@type": "WebSite",
               "name": "Jax Pavers",
               "url": "https://jaxoutdoorspaces.com"
-            }),
-          }}
-        />
-
-        {/* Structured Data: BreadcrumbList */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              "itemListElement": [{
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://jaxoutdoorspaces.com/"
-              }]
             }),
           }}
         />

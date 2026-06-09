@@ -2,6 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /lander
 Disallow: /m/
-Disallow: /_next/static/
+Disallow: /_next/static/media/
 
 Sitemap: https://jaxoutdoorspaces.com/sitemap.xml
